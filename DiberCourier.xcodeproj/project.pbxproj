@@ -1,0 +1,565 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A324C6EC1FAF7A7600E0A02D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324C6EB1FAF7A7600E0A02D /* AppDelegate.swift */; };
+		A324C6EE1FAF7A7600E0A02D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324C6ED1FAF7A7600E0A02D /* RootViewController.swift */; };
+		A324C6F01FAF7A7600E0A02D /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324C6EF1FAF7A7600E0A02D /* DataViewController.swift */; };
+		A324C6F21FAF7A7600E0A02D /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324C6F11FAF7A7600E0A02D /* ModelController.swift */; };
+		A324C6F51FAF7A7600E0A02D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A324C6F31FAF7A7600E0A02D /* Main.storyboard */; };
+		A324C6F71FAF7A7600E0A02D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A324C6F61FAF7A7600E0A02D /* Assets.xcassets */; };
+		A324C6FA1FAF7A7600E0A02D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A324C6F81FAF7A7600E0A02D /* LaunchScreen.storyboard */; };
+		A324C7051FAF7A7600E0A02D /* DiberCourierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324C7041FAF7A7600E0A02D /* DiberCourierTests.swift */; };
+		A324C7101FAF7A7600E0A02D /* DiberCourierUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324C70F1FAF7A7600E0A02D /* DiberCourierUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A324C7011FAF7A7600E0A02D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A324C6E01FAF7A7600E0A02D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A324C6E71FAF7A7600E0A02D;
+			remoteInfo = DiberCourier;
+		};
+		A324C70C1FAF7A7600E0A02D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A324C6E01FAF7A7600E0A02D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A324C6E71FAF7A7600E0A02D;
+			remoteInfo = DiberCourier;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A324C6E81FAF7A7600E0A02D /* DiberCourier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiberCourier.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A324C6EB1FAF7A7600E0A02D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A324C6ED1FAF7A7600E0A02D /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		A324C6EF1FAF7A7600E0A02D /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		A324C6F11FAF7A7600E0A02D /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
+		A324C6F41FAF7A7600E0A02D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A324C6F61FAF7A7600E0A02D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A324C6F91FAF7A7600E0A02D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A324C6FB1FAF7A7600E0A02D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A324C7001FAF7A7600E0A02D /* DiberCourierTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiberCourierTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A324C7041FAF7A7600E0A02D /* DiberCourierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiberCourierTests.swift; sourceTree = "<group>"; };
+		A324C7061FAF7A7600E0A02D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A324C70B1FAF7A7600E0A02D /* DiberCourierUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiberCourierUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A324C70F1FAF7A7600E0A02D /* DiberCourierUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiberCourierUITests.swift; sourceTree = "<group>"; };
+		A324C7111FAF7A7600E0A02D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A324C6E51FAF7A7600E0A02D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A324C6FD1FAF7A7600E0A02D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A324C7081FAF7A7600E0A02D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A324C6DF1FAF7A7600E0A02D = {
+			isa = PBXGroup;
+			children = (
+				A324C6EA1FAF7A7600E0A02D /* DiberCourier */,
+				A324C7031FAF7A7600E0A02D /* DiberCourierTests */,
+				A324C70E1FAF7A7600E0A02D /* DiberCourierUITests */,
+				A324C6E91FAF7A7600E0A02D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A324C6E91FAF7A7600E0A02D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A324C6E81FAF7A7600E0A02D /* DiberCourier.app */,
+				A324C7001FAF7A7600E0A02D /* DiberCourierTests.xctest */,
+				A324C70B1FAF7A7600E0A02D /* DiberCourierUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A324C6EA1FAF7A7600E0A02D /* DiberCourier */ = {
+			isa = PBXGroup;
+			children = (
+				A324C6EB1FAF7A7600E0A02D /* AppDelegate.swift */,
+				A324C6ED1FAF7A7600E0A02D /* RootViewController.swift */,
+				A324C6EF1FAF7A7600E0A02D /* DataViewController.swift */,
+				A324C6F11FAF7A7600E0A02D /* ModelController.swift */,
+				A324C6F31FAF7A7600E0A02D /* Main.storyboard */,
+				A324C6F61FAF7A7600E0A02D /* Assets.xcassets */,
+				A324C6F81FAF7A7600E0A02D /* LaunchScreen.storyboard */,
+				A324C6FB1FAF7A7600E0A02D /* Info.plist */,
+			);
+			path = DiberCourier;
+			sourceTree = "<group>";
+		};
+		A324C7031FAF7A7600E0A02D /* DiberCourierTests */ = {
+			isa = PBXGroup;
+			children = (
+				A324C7041FAF7A7600E0A02D /* DiberCourierTests.swift */,
+				A324C7061FAF7A7600E0A02D /* Info.plist */,
+			);
+			path = DiberCourierTests;
+			sourceTree = "<group>";
+		};
+		A324C70E1FAF7A7600E0A02D /* DiberCourierUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A324C70F1FAF7A7600E0A02D /* DiberCourierUITests.swift */,
+				A324C7111FAF7A7600E0A02D /* Info.plist */,
+			);
+			path = DiberCourierUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A324C6E71FAF7A7600E0A02D /* DiberCourier */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A324C7141FAF7A7600E0A02D /* Build configuration list for PBXNativeTarget "DiberCourier" */;
+			buildPhases = (
+				A324C6E41FAF7A7600E0A02D /* Sources */,
+				A324C6E51FAF7A7600E0A02D /* Frameworks */,
+				A324C6E61FAF7A7600E0A02D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DiberCourier;
+			productName = DiberCourier;
+			productReference = A324C6E81FAF7A7600E0A02D /* DiberCourier.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A324C6FF1FAF7A7600E0A02D /* DiberCourierTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A324C7171FAF7A7600E0A02D /* Build configuration list for PBXNativeTarget "DiberCourierTests" */;
+			buildPhases = (
+				A324C6FC1FAF7A7600E0A02D /* Sources */,
+				A324C6FD1FAF7A7600E0A02D /* Frameworks */,
+				A324C6FE1FAF7A7600E0A02D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A324C7021FAF7A7600E0A02D /* PBXTargetDependency */,
+			);
+			name = DiberCourierTests;
+			productName = DiberCourierTests;
+			productReference = A324C7001FAF7A7600E0A02D /* DiberCourierTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A324C70A1FAF7A7600E0A02D /* DiberCourierUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A324C71A1FAF7A7600E0A02D /* Build configuration list for PBXNativeTarget "DiberCourierUITests" */;
+			buildPhases = (
+				A324C7071FAF7A7600E0A02D /* Sources */,
+				A324C7081FAF7A7600E0A02D /* Frameworks */,
+				A324C7091FAF7A7600E0A02D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A324C70D1FAF7A7600E0A02D /* PBXTargetDependency */,
+			);
+			name = DiberCourierUITests;
+			productName = DiberCourierUITests;
+			productReference = A324C70B1FAF7A7600E0A02D /* DiberCourierUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A324C6E01FAF7A7600E0A02D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = Diber;
+				TargetAttributes = {
+					A324C6E71FAF7A7600E0A02D = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					A324C6FF1FAF7A7600E0A02D = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A324C6E71FAF7A7600E0A02D;
+					};
+					A324C70A1FAF7A7600E0A02D = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A324C6E71FAF7A7600E0A02D;
+					};
+				};
+			};
+			buildConfigurationList = A324C6E31FAF7A7600E0A02D /* Build configuration list for PBXProject "DiberCourier" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A324C6DF1FAF7A7600E0A02D;
+			productRefGroup = A324C6E91FAF7A7600E0A02D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A324C6E71FAF7A7600E0A02D /* DiberCourier */,
+				A324C6FF1FAF7A7600E0A02D /* DiberCourierTests */,
+				A324C70A1FAF7A7600E0A02D /* DiberCourierUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A324C6E61FAF7A7600E0A02D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A324C6FA1FAF7A7600E0A02D /* LaunchScreen.storyboard in Resources */,
+				A324C6F71FAF7A7600E0A02D /* Assets.xcassets in Resources */,
+				A324C6F51FAF7A7600E0A02D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A324C6FE1FAF7A7600E0A02D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A324C7091FAF7A7600E0A02D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A324C6E41FAF7A7600E0A02D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A324C6EE1FAF7A7600E0A02D /* RootViewController.swift in Sources */,
+				A324C6F21FAF7A7600E0A02D /* ModelController.swift in Sources */,
+				A324C6F01FAF7A7600E0A02D /* DataViewController.swift in Sources */,
+				A324C6EC1FAF7A7600E0A02D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A324C6FC1FAF7A7600E0A02D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A324C7051FAF7A7600E0A02D /* DiberCourierTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A324C7071FAF7A7600E0A02D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A324C7101FAF7A7600E0A02D /* DiberCourierUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A324C7021FAF7A7600E0A02D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A324C6E71FAF7A7600E0A02D /* DiberCourier */;
+			targetProxy = A324C7011FAF7A7600E0A02D /* PBXContainerItemProxy */;
+		};
+		A324C70D1FAF7A7600E0A02D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A324C6E71FAF7A7600E0A02D /* DiberCourier */;
+			targetProxy = A324C70C1FAF7A7600E0A02D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A324C6F31FAF7A7600E0A02D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A324C6F41FAF7A7600E0A02D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A324C6F81FAF7A7600E0A02D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A324C6F91FAF7A7600E0A02D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A324C7121FAF7A7600E0A02D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A324C7131FAF7A7600E0A02D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A324C7151FAF7A7600E0A02D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DiberCourier/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.diber.DiberCourier;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A324C7161FAF7A7600E0A02D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DiberCourier/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.diber.DiberCourier;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A324C7181FAF7A7600E0A02D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DiberCourierTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.diber.DiberCourierTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DiberCourier.app/DiberCourier";
+			};
+			name = Debug;
+		};
+		A324C7191FAF7A7600E0A02D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DiberCourierTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.diber.DiberCourierTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DiberCourier.app/DiberCourier";
+			};
+			name = Release;
+		};
+		A324C71B1FAF7A7600E0A02D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DiberCourierUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.diber.DiberCourierUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DiberCourier;
+			};
+			name = Debug;
+		};
+		A324C71C1FAF7A7600E0A02D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DiberCourierUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.diber.DiberCourierUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DiberCourier;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A324C6E31FAF7A7600E0A02D /* Build configuration list for PBXProject "DiberCourier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A324C7121FAF7A7600E0A02D /* Debug */,
+				A324C7131FAF7A7600E0A02D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A324C7141FAF7A7600E0A02D /* Build configuration list for PBXNativeTarget "DiberCourier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A324C7151FAF7A7600E0A02D /* Debug */,
+				A324C7161FAF7A7600E0A02D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A324C7171FAF7A7600E0A02D /* Build configuration list for PBXNativeTarget "DiberCourierTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A324C7181FAF7A7600E0A02D /* Debug */,
+				A324C7191FAF7A7600E0A02D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A324C71A1FAF7A7600E0A02D /* Build configuration list for PBXNativeTarget "DiberCourierUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A324C71B1FAF7A7600E0A02D /* Debug */,
+				A324C71C1FAF7A7600E0A02D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A324C6E01FAF7A7600E0A02D /* Project object */;
+}
