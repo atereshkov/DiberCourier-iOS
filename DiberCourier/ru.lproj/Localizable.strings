@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  DiberCourier
+
+  Created by Alexander Tereshkov on 11/6/17.
+  Copyright © 2017 Diber. All rights reserved.
+*/
+
+// Alerts
+
+"alert.error.title" = "Ошибка";
+"alert.error.unexpected.description" = "Что-то пошло не так..";
+"alert.error.unexpected.recovery" = "Пожалуйста, попробуйте еще раз позже";
+"alert.ok" = "Ок";
+"alert.offline.message" = "Операция не может быть выполнена без интернет-соединения";
+"alert.login.user.error.message" = "Неправильный логин или пароль";
+"alert.error.unexpected.nodata" = "Нет данных";
+"alert.session.expired.error.msg" = "Извините, Ваша сессия просрочена. Вам необходимо войти в аккаунт еще раз";
+"alert.title.information" = "Информация";
+

@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (4.5.1)
-  - AsyncSwift (2.0.1)
+  - AsyncSwift (2.0.4)
   - EXPLogger (1.0.3)
   - Localize-Swift (2.0.0)
   - MBProgressHUD (1.0.0)
@@ -22,7 +22,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
-  AsyncSwift: 632138e42ead868b53c745fcde9bf733ce1527ad
+  AsyncSwift: 65775a7b32e740609b24969ece3de58723b9dc3e
   EXPLogger: 206c906c0eb65f1eb679c210adf7029ebf04e10f
   Localize-Swift: c798ec9286494866f7068f85f7c71283ac5bdab4
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
