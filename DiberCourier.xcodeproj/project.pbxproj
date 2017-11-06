@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BAD2B33CAFD0991D95AD315 /* Pods_DiberCourierTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD8029E31BD423249DE7B22 /* Pods_DiberCourierTests.framework */; };
+		6C10EFC69857044384D3C6DF /* Pods_DiberCourierUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84974AB7D832F16CDD605436 /* Pods_DiberCourierUITests.framework */; };
 		A324C6EC1FAF7A7600E0A02D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324C6EB1FAF7A7600E0A02D /* AppDelegate.swift */; };
 		A324C6EE1FAF7A7600E0A02D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324C6ED1FAF7A7600E0A02D /* RootViewController.swift */; };
 		A324C6F01FAF7A7600E0A02D /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324C6EF1FAF7A7600E0A02D /* DataViewController.swift */; };
@@ -16,6 +18,7 @@
 		A324C6FA1FAF7A7600E0A02D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A324C6F81FAF7A7600E0A02D /* LaunchScreen.storyboard */; };
 		A324C7051FAF7A7600E0A02D /* DiberCourierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324C7041FAF7A7600E0A02D /* DiberCourierTests.swift */; };
 		A324C7101FAF7A7600E0A02D /* DiberCourierUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324C70F1FAF7A7600E0A02D /* DiberCourierUITests.swift */; };
+		E3E083162559C0944F5BA3A9 /* Pods_DiberCourier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BB98A140006C42A4467F76 /* Pods_DiberCourier.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C165853BC27692EC68FB165 /* Pods-DiberCourier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiberCourier.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DiberCourier/Pods-DiberCourier.debug.xcconfig"; sourceTree = "<group>"; };
+		1DD8029E31BD423249DE7B22 /* Pods_DiberCourierTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiberCourierTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22BB98A140006C42A4467F76 /* Pods_DiberCourier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiberCourier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4118556A2229F73056D75BAF /* Pods-DiberCourierTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiberCourierTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DiberCourierTests/Pods-DiberCourierTests.release.xcconfig"; sourceTree = "<group>"; };
+		663239832AEFF3FC4F32909B /* Pods-DiberCourier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiberCourier.release.xcconfig"; path = "Pods/Target Support Files/Pods-DiberCourier/Pods-DiberCourier.release.xcconfig"; sourceTree = "<group>"; };
+		70982E64E82C5378C079FA27 /* Pods-DiberCourierUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiberCourierUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DiberCourierUITests/Pods-DiberCourierUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		84974AB7D832F16CDD605436 /* Pods_DiberCourierUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiberCourierUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A324C6E81FAF7A7600E0A02D /* DiberCourier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiberCourier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A324C6EB1FAF7A7600E0A02D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A324C6ED1FAF7A7600E0A02D /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +61,8 @@
 		A324C70B1FAF7A7600E0A02D /* DiberCourierUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiberCourierUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A324C70F1FAF7A7600E0A02D /* DiberCourierUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiberCourierUITests.swift; sourceTree = "<group>"; };
 		A324C7111FAF7A7600E0A02D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5B77126902C968B6FD1C8CE /* Pods-DiberCourierTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiberCourierTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DiberCourierTests/Pods-DiberCourierTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FA33E920737A9A6AD35DD8C1 /* Pods-DiberCourierUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiberCourierUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DiberCourierUITests/Pods-DiberCourierUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3E083162559C0944F5BA3A9 /* Pods_DiberCourier.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BAD2B33CAFD0991D95AD315 /* Pods_DiberCourierTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C10EFC69857044384D3C6DF /* Pods_DiberCourierUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +100,8 @@
 				A324C7031FAF7A7600E0A02D /* DiberCourierTests */,
 				A324C70E1FAF7A7600E0A02D /* DiberCourierUITests */,
 				A324C6E91FAF7A7600E0A02D /* Products */,
+				ABA9CFCC3A6B7B2AFCBC0550 /* Pods */,
+				B3B2A2DC10F4D6BD8F8ADB2C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,12 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				A324C6EB1FAF7A7600E0A02D /* AppDelegate.swift */,
-				A324C6ED1FAF7A7600E0A02D /* RootViewController.swift */,
-				A324C6EF1FAF7A7600E0A02D /* DataViewController.swift */,
-				A324C6F11FAF7A7600E0A02D /* ModelController.swift */,
-				A324C6F31FAF7A7600E0A02D /* Main.storyboard */,
+				A33AE33C1FB06E7F00180661 /* Classes */,
 				A324C6F61FAF7A7600E0A02D /* Assets.xcassets */,
-				A324C6F81FAF7A7600E0A02D /* LaunchScreen.storyboard */,
 				A324C6FB1FAF7A7600E0A02D /* Info.plist */,
 			);
 			path = DiberCourier;
@@ -131,6 +144,145 @@
 			path = DiberCourierUITests;
 			sourceTree = "<group>";
 		};
+		A33AE33C1FB06E7F00180661 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A33AE3441FB06EF900180661 /* Network */,
+				A33AE3491FB06F1D00180661 /* Extensions */,
+				A33AE3481FB06F1900180661 /* Utils */,
+				A33AE3451FB06EFD00180661 /* Managers */,
+				A33AE33D1FB06E8F00180661 /* Controllers */,
+				A33AE33E1FB06E9A00180661 /* Interface */,
+				A33AE3411FB06EDE00180661 /* Models */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A33AE33D1FB06E8F00180661 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A324C6ED1FAF7A7600E0A02D /* RootViewController.swift */,
+				A324C6EF1FAF7A7600E0A02D /* DataViewController.swift */,
+				A324C6F11FAF7A7600E0A02D /* ModelController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A33AE33E1FB06E9A00180661 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				A33AE33F1FB06EB700180661 /* Storyboards */,
+				A33AE3401FB06EC600180661 /* View */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		A33AE33F1FB06EB700180661 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A324C6F31FAF7A7600E0A02D /* Main.storyboard */,
+				A324C6F81FAF7A7600E0A02D /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		A33AE3401FB06EC600180661 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A33AE3411FB06EDE00180661 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A33AE3431FB06EF000180661 /* Realm */,
+				A33AE3421FB06EED00180661 /* View */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A33AE3421FB06EED00180661 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A33AE3431FB06EF000180661 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		A33AE3441FB06EF900180661 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A33AE3471FB06F0A00180661 /* Services */,
+				A33AE3461FB06F0600180661 /* Api */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A33AE3451FB06EFD00180661 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		A33AE3461FB06F0600180661 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		A33AE3471FB06F0A00180661 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A33AE3481FB06F1900180661 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A33AE3491FB06F1D00180661 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ABA9CFCC3A6B7B2AFCBC0550 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0C165853BC27692EC68FB165 /* Pods-DiberCourier.debug.xcconfig */,
+				663239832AEFF3FC4F32909B /* Pods-DiberCourier.release.xcconfig */,
+				A5B77126902C968B6FD1C8CE /* Pods-DiberCourierTests.debug.xcconfig */,
+				4118556A2229F73056D75BAF /* Pods-DiberCourierTests.release.xcconfig */,
+				70982E64E82C5378C079FA27 /* Pods-DiberCourierUITests.debug.xcconfig */,
+				FA33E920737A9A6AD35DD8C1 /* Pods-DiberCourierUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B3B2A2DC10F4D6BD8F8ADB2C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22BB98A140006C42A4467F76 /* Pods_DiberCourier.framework */,
+				1DD8029E31BD423249DE7B22 /* Pods_DiberCourierTests.framework */,
+				84974AB7D832F16CDD605436 /* Pods_DiberCourierUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +290,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A324C7141FAF7A7600E0A02D /* Build configuration list for PBXNativeTarget "DiberCourier" */;
 			buildPhases = (
+				FBBC78608383A1D93A24127B /* [CP] Check Pods Manifest.lock */,
 				A324C6E41FAF7A7600E0A02D /* Sources */,
 				A324C6E51FAF7A7600E0A02D /* Frameworks */,
 				A324C6E61FAF7A7600E0A02D /* Resources */,
+				5EA4681466C71180B5803939 /* [CP] Embed Pods Frameworks */,
+				E612C1B5A3B4556D1DA5E25B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -155,9 +310,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A324C7171FAF7A7600E0A02D /* Build configuration list for PBXNativeTarget "DiberCourierTests" */;
 			buildPhases = (
+				99FE2BE66694104FE646E702 /* [CP] Check Pods Manifest.lock */,
 				A324C6FC1FAF7A7600E0A02D /* Sources */,
 				A324C6FD1FAF7A7600E0A02D /* Frameworks */,
 				A324C6FE1FAF7A7600E0A02D /* Resources */,
+				B3E593EBC3467B2F8BE5B34E /* [CP] Embed Pods Frameworks */,
+				840700B105E4DF9985414B72 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -173,9 +331,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A324C71A1FAF7A7600E0A02D /* Build configuration list for PBXNativeTarget "DiberCourierUITests" */;
 			buildPhases = (
+				1BFEDB3A653A7A2DCEFE990B /* [CP] Check Pods Manifest.lock */,
 				A324C7071FAF7A7600E0A02D /* Sources */,
 				A324C7081FAF7A7600E0A02D /* Frameworks */,
 				A324C7091FAF7A7600E0A02D /* Resources */,
+				F09C3666D174A961BDD9A3ED /* [CP] Embed Pods Frameworks */,
+				4FE1AD46A1855877DBE83906 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -259,6 +420,170 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1BFEDB3A653A7A2DCEFE990B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DiberCourierUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4FE1AD46A1855877DBE83906 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DiberCourierUITests/Pods-DiberCourierUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5EA4681466C71180B5803939 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DiberCourier/Pods-DiberCourier-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AsyncSwift/Async.framework",
+				"${BUILT_PRODUCTS_DIR}/EXPLogger/EXPLogger.framework",
+				"${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/ReachabilitySwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Async.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EXPLogger.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReachabilitySwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DiberCourier/Pods-DiberCourier-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		840700B105E4DF9985414B72 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DiberCourierTests/Pods-DiberCourierTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99FE2BE66694104FE646E702 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DiberCourierTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3E593EBC3467B2F8BE5B34E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DiberCourierTests/Pods-DiberCourierTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E612C1B5A3B4556D1DA5E25B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DiberCourier/Pods-DiberCourier-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F09C3666D174A961BDD9A3ED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DiberCourierUITests/Pods-DiberCourierUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBBC78608383A1D93A24127B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DiberCourier-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A324C6E41FAF7A7600E0A02D /* Sources */ = {
@@ -432,6 +757,7 @@
 		};
 		A324C7151FAF7A7600E0A02D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C165853BC27692EC68FB165 /* Pods-DiberCourier.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -446,6 +772,7 @@
 		};
 		A324C7161FAF7A7600E0A02D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 663239832AEFF3FC4F32909B /* Pods-DiberCourier.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -460,6 +787,7 @@
 		};
 		A324C7181FAF7A7600E0A02D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5B77126902C968B6FD1C8CE /* Pods-DiberCourierTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -476,6 +804,7 @@
 		};
 		A324C7191FAF7A7600E0A02D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4118556A2229F73056D75BAF /* Pods-DiberCourierTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -492,6 +821,7 @@
 		};
 		A324C71B1FAF7A7600E0A02D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70982E64E82C5378C079FA27 /* Pods-DiberCourierUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -507,6 +837,7 @@
 		};
 		A324C71C1FAF7A7600E0A02D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA33E920737A9A6AD35DD8C1 /* Pods-DiberCourierUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
