@@ -14,7 +14,7 @@ extension String {
         return self.trimmingCharacters(in: CharacterSet.whitespaces)
     }
     
-    func contains(string: String) -> Bool{
+    func contains(string: String) -> Bool {
         return (self.range(of: string) != nil) ? true : false
     }
     
