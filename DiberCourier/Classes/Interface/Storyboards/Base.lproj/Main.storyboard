@@ -113,23 +113,28 @@
             </objects>
             <point key="canvasLocation" x="1209" y="-779"/>
         </scene>
-        <!--View Controller-->
+        <!--OrdersVC-->
         <scene sceneID="JIC-z2-YZt">
             <objects>
-                <viewController id="Hir-Cv-qU0" sceneMemberID="viewController">
+                <viewController id="Hir-Cv-qU0" customClass="OrdersVC" customModule="DiberCourier" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RnI-gW-csr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HpC-RV-8YK">
-                                <rect key="frame" x="154" y="323" width="66" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n15-pZ-tY0">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <connections>
+                                    <segue destination="Lfz-mf-fDy" kind="embed" identifier="OrdersTableVC" id="LWo-Gd-roL"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="445-6y-DZB" firstAttribute="bottom" secondItem="n15-pZ-tY0" secondAttribute="bottom" id="9dN-uZ-YYg"/>
+                            <constraint firstItem="445-6y-DZB" firstAttribute="trailing" secondItem="n15-pZ-tY0" secondAttribute="trailing" id="ICo-OZ-wFm"/>
+                            <constraint firstItem="n15-pZ-tY0" firstAttribute="leading" secondItem="445-6y-DZB" secondAttribute="leading" id="lds-Bv-FVn"/>
+                            <constraint firstItem="n15-pZ-tY0" firstAttribute="top" secondItem="445-6y-DZB" secondAttribute="top" id="vGH-GA-ho7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="445-6y-DZB"/>
                     </view>
                     <navigationItem key="navigationItem" id="moJ-1g-JHH"/>
@@ -138,6 +143,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZTK-oK-8Jv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2008.8" y="-778.56071964017997"/>
+        </scene>
+        <!--Orders TableVC-->
+        <scene sceneID="cad-ph-fId">
+            <objects>
+                <tableViewController id="Lfz-mf-fDy" customClass="OrdersTableVC" customModule="DiberCourier" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3kA-QW-X4g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OrderCell" id="MXN-eh-dcH" customClass="OrderCell" customModule="DiberCourier" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MXN-eh-dcH" id="6Yn-16-2g0">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSD-bU-esf">
+                                            <rect key="frame" x="8" y="11" width="359" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="XSD-bU-esf" firstAttribute="leading" secondItem="6Yn-16-2g0" secondAttribute="leading" constant="8" id="Dbn-V1-dPg"/>
+                                        <constraint firstAttribute="trailing" secondItem="XSD-bU-esf" secondAttribute="trailing" constant="8" id="ef2-Kt-Nx7"/>
+                                        <constraint firstItem="XSD-bU-esf" firstAttribute="centerY" secondItem="6Yn-16-2g0" secondAttribute="centerY" id="qQ0-OY-uLq"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="label" destination="XSD-bU-esf" id="kjZ-k1-dI1"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Lfz-mf-fDy" id="r7x-KA-QgO"/>
+                            <outlet property="delegate" destination="Lfz-mf-fDy" id="qIo-ij-cpZ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y9x-PZ-qU3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2836" y="-779"/>
         </scene>
     </scenes>
 </document>

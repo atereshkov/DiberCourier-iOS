@@ -11,6 +11,11 @@ import Foundation
 enum Segues: String {
     case mainScreen = "MainScreen"
     case loginFromMain = "LoginFromMain"
+    case ordersTable = "OrdersTableVC"
+}
+
+enum Cells: String {
+    case orders = "OrderCell"
 }
 
 class NetworkConstant {

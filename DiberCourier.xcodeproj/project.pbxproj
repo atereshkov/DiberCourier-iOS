@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		4BAD2B33CAFD0991D95AD315 /* Pods_DiberCourierTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD8029E31BD423249DE7B22 /* Pods_DiberCourierTests.framework */; };
 		6C10EFC69857044384D3C6DF /* Pods_DiberCourierUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84974AB7D832F16CDD605436 /* Pods_DiberCourierUITests.framework */; };
+		A31F9DE31FB1A340008CD08A /* OrdersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F9DE21FB1A340008CD08A /* OrdersVC.swift */; };
+		A31F9DE51FB1A35C008CD08A /* OrdersTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F9DE41FB1A35C008CD08A /* OrdersTableVC.swift */; };
+		A31F9DE81FB1A387008CD08A /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F9DE71FB1A387008CD08A /* OrderCell.swift */; };
+		A31F9DEA1FB1A3A4008CD08A /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F9DE91FB1A3A4008CD08A /* OrderView.swift */; };
+		A31F9DEC1FB1A3C8008CD08A /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F9DEB1FB1A3C8008CD08A /* Address.swift */; };
+		A31F9DEE1FB1A3E2008CD08A /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F9DED1FB1A3E2008CD08A /* AddressView.swift */; };
+		A31F9DF01FB1A416008CD08A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F9DEF1FB1A416008CD08A /* DataManager.swift */; };
+		A31F9DF21FB1A446008CD08A /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F9DF11FB1A446008CD08A /* Order.swift */; };
+		A31F9DF41FB1A5E5008CD08A /* OrderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F9DF31FB1A5E5008CD08A /* OrderService.swift */; };
+		A31F9DF61FB1A60F008CD08A /* OrderEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F9DF51FB1A60F008CD08A /* OrderEndpoint.swift */; };
 		A324C6EC1FAF7A7600E0A02D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324C6EB1FAF7A7600E0A02D /* AppDelegate.swift */; };
 		A324C6F51FAF7A7600E0A02D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A324C6F31FAF7A7600E0A02D /* Main.storyboard */; };
 		A324C6F71FAF7A7600E0A02D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A324C6F61FAF7A7600E0A02D /* Assets.xcassets */; };
@@ -64,6 +74,16 @@
 		663239832AEFF3FC4F32909B /* Pods-DiberCourier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiberCourier.release.xcconfig"; path = "Pods/Target Support Files/Pods-DiberCourier/Pods-DiberCourier.release.xcconfig"; sourceTree = "<group>"; };
 		70982E64E82C5378C079FA27 /* Pods-DiberCourierUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiberCourierUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DiberCourierUITests/Pods-DiberCourierUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		84974AB7D832F16CDD605436 /* Pods_DiberCourierUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiberCourierUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A31F9DE21FB1A340008CD08A /* OrdersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersVC.swift; sourceTree = "<group>"; };
+		A31F9DE41FB1A35C008CD08A /* OrdersTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableVC.swift; sourceTree = "<group>"; };
+		A31F9DE71FB1A387008CD08A /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
+		A31F9DE91FB1A3A4008CD08A /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
+		A31F9DEB1FB1A3C8008CD08A /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		A31F9DED1FB1A3E2008CD08A /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
+		A31F9DEF1FB1A416008CD08A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		A31F9DF11FB1A446008CD08A /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		A31F9DF31FB1A5E5008CD08A /* OrderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderService.swift; sourceTree = "<group>"; };
+		A31F9DF51FB1A60F008CD08A /* OrderEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderEndpoint.swift; sourceTree = "<group>"; };
 		A324C6E81FAF7A7600E0A02D /* DiberCourier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiberCourier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A324C6EB1FAF7A7600E0A02D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A324C6F41FAF7A7600E0A02D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -132,6 +152,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A31F9DE01FB1A2EA008CD08A /* CollectionVC */ = {
+			isa = PBXGroup;
+			children = (
+				A31F9DE41FB1A35C008CD08A /* OrdersTableVC.swift */,
+			);
+			path = CollectionVC;
+			sourceTree = "<group>";
+		};
+		A31F9DE61FB1A374008CD08A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A31F9DE71FB1A387008CD08A /* OrderCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		A324C6DF1FAF7A7600E0A02D = {
 			isa = PBXGroup;
 			children = (
@@ -201,8 +237,10 @@
 		A33AE33D1FB06E8F00180661 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A31F9DE01FB1A2EA008CD08A /* CollectionVC */,
 				A33AE3521FB082FA00180661 /* MainNavigationVC.swift */,
 				A3A999C61FB097F800D63B35 /* LoginVC.swift */,
+				A31F9DE21FB1A340008CD08A /* OrdersVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -229,6 +267,7 @@
 		A33AE3401FB06EC600180661 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A31F9DE61FB1A374008CD08A /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -245,6 +284,8 @@
 		A33AE3421FB06EED00180661 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A31F9DE91FB1A3A4008CD08A /* OrderView.swift */,
+				A31F9DED1FB1A3E2008CD08A /* AddressView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -255,6 +296,8 @@
 				A3A999C31FB0978B00D63B35 /* Base */,
 				A3A999BF1FB0976800D63B35 /* User.swift */,
 				A3A999C11FB0977700D63B35 /* Role.swift */,
+				A31F9DEB1FB1A3C8008CD08A /* Address.swift */,
+				A31F9DF11FB1A446008CD08A /* Order.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -275,6 +318,7 @@
 			children = (
 				A3A999A71FB086C800D63B35 /* LogManager.swift */,
 				A3A999A91FB0871A00D63B35 /* PreferenceManager.swift */,
+				A31F9DEF1FB1A416008CD08A /* DataManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -285,6 +329,7 @@
 				A3A999B11FB0967B00D63B35 /* Endpoint.swift */,
 				A3A999B31FB0969B00D63B35 /* BaseEndpoint.swift */,
 				A3A999B51FB096B700D63B35 /* AuthEndpoint.swift */,
+				A31F9DF51FB1A60F008CD08A /* OrderEndpoint.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -294,6 +339,7 @@
 			children = (
 				A3A999B71FB096DE00D63B35 /* AuthService.swift */,
 				A3A999CA1FB09A6300D63B35 /* UserService.swift */,
+				A31F9DF31FB1A5E5008CD08A /* OrderService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -658,25 +704,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A31F9DE51FB1A35C008CD08A /* OrdersTableVC.swift in Sources */,
 				A3A999C91FB09A4000D63B35 /* String.swift in Sources */,
 				A3A999AA1FB0871A00D63B35 /* PreferenceManager.swift in Sources */,
 				A3A999A81FB086C800D63B35 /* LogManager.swift in Sources */,
 				A3A999B21FB0967B00D63B35 /* Endpoint.swift in Sources */,
+				A31F9DE31FB1A340008CD08A /* OrdersVC.swift in Sources */,
+				A31F9DF21FB1A446008CD08A /* Order.swift in Sources */,
 				A3A999AC1FB0877100D63B35 /* NetworkManager.swift in Sources */,
 				A3A999B41FB0969B00D63B35 /* BaseEndpoint.swift in Sources */,
 				A3A999B81FB096DE00D63B35 /* AuthService.swift in Sources */,
+				A31F9DEC1FB1A3C8008CD08A /* Address.swift in Sources */,
+				A31F9DF41FB1A5E5008CD08A /* OrderService.swift in Sources */,
+				A31F9DEA1FB1A3A4008CD08A /* OrderView.swift in Sources */,
 				A3A999C51FB0979500D63B35 /* RealmObject.swift in Sources */,
 				A3A999BC1FB0972400D63B35 /* Realm.swift in Sources */,
+				A31F9DEE1FB1A3E2008CD08A /* AddressView.swift in Sources */,
 				A3A999C21FB0977700D63B35 /* Role.swift in Sources */,
+				A31F9DE81FB1A387008CD08A /* OrderCell.swift in Sources */,
 				A3A999BE1FB0974100D63B35 /* WeakTimer.swift in Sources */,
 				A3A999C01FB0976800D63B35 /* User.swift in Sources */,
 				A3A999BA1FB0970D00D63B35 /* AlertControllerHelper.swift in Sources */,
+				A31F9DF61FB1A60F008CD08A /* OrderEndpoint.swift in Sources */,
 				A3A999AE1FB0878800D63B35 /* OAuth2Handler.swift in Sources */,
 				A3A999B01FB0960A00D63B35 /* Constants.swift in Sources */,
 				A3A999C71FB097F800D63B35 /* LoginVC.swift in Sources */,
 				A3A999CB1FB09A6300D63B35 /* UserService.swift in Sources */,
 				A33AE3531FB082FA00180661 /* MainNavigationVC.swift in Sources */,
 				A3A999B61FB096B700D63B35 /* AuthEndpoint.swift in Sources */,
+				A31F9DF01FB1A416008CD08A /* DataManager.swift in Sources */,
 				A324C6EC1FAF7A7600E0A02D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

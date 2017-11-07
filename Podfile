@@ -11,7 +11,7 @@ target 'DiberCourier' do
   pod 'MBProgressHUD', '~> 1.0.0'
   pod 'AsyncSwift'
   pod 'ReachabilitySwift', '~> 3'
-  pod 'RealmSwift', '2.10.2'
+  pod 'RealmSwift', '3.0.1'
   pod 'Localize-Swift', '~> 2.0'
   pod 'EXPLogger', '~> 1.0.1'
 
