@@ -29,3 +29,7 @@ class NetworkConstant {
     static let headerAuthorization = "Authorization";
     static let authorizationValue = "Basic Y2xpZW50YXBwOjEyMzQ1Ng==";
 }
+
+class Pagination {
+    static let pageSize = 5 // items count for pagination load
+}

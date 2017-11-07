@@ -9,6 +9,10 @@
 import UIKit
 import RealmSwift
 
+protocol OrdersTableDelegate: class {
+    func didReachLastCell(page: Int)
+}
+
 class OrdersTableVC: UITableViewController {
     
     fileprivate var ordersDBO: Results<Order> = DataManager.shared.getOrders()
@@ -16,6 +20,12 @@ class OrdersTableVC: UITableViewController {
     
     fileprivate var ordersChangedNotification: NotificationToken? = nil
     fileprivate var debounceTimer: WeakTimer?
+    
+    weak var delegate: OrdersTableDelegate?
+    
+    fileprivate var currentPage = 0
+    fileprivate var totalItems = 0
+    var shouldShowLoadingCell = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +67,24 @@ class OrdersTableVC: UITableViewController {
         self.tableView.reloadData()
     }
     
+    private func fetchNextPage() {
+        self.currentPage += 1
+        self.delegate?.didReachLastCell(page: currentPage)
+    }
+    
     // MARK: TableView
+    
+    private func isLoadingIndexPath(_ indexPath: IndexPath) -> Bool {
+        return indexPath.row == self.orders.count - 1
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // fetch new data if user scroll to the last cell
+        guard isLoadingIndexPath(indexPath) else { return }
+        if self.totalItems > orders.count {
+            fetchNextPage()
+        }
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Cells.orders.rawValue, for: indexPath)
@@ -65,9 +92,15 @@ class OrdersTableVC: UITableViewController {
                 fatalError("The dequeued cell is not an instance of OrderCell")
         }
         
-        let order = orders[indexPath.row]
-        cell.bind(with: order)
-        return cell
+        if isLoadingIndexPath(indexPath) {
+            return cell
+            //return LoadingCell(style: .default, reuseIdentifier: "LoadingCell")
+        } else {
+            guard indexPath.row >= 0 && indexPath.row < orders.count else { return cell }
+            let order = orders[indexPath.row]
+            cell.bind(with: order)
+            return cell
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -75,7 +108,7 @@ class OrdersTableVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return orders.count
+        return shouldShowLoadingCell ? orders.count + 1 : orders.count
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

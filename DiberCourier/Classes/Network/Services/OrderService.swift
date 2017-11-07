@@ -15,13 +15,13 @@ class OrderService: NSObject {
     let sessionManager = NetworkManager.shared.sessionManager
     
     enum UserOrdersResult {
-        case Success(orders: [Order])
+        case Success(orders: [Order], totalPages: Int)
         case OfflineError
         case UnexpectedError(error: Error?)
     }
     
-    func getOrders(callback:((_ result: UserOrdersResult) -> ())? = nil) {
-        let url = OrderEndpoint.orders.url
+    func getOrders(page: Int, size: Int, callback:((_ result: UserOrdersResult) -> ())? = nil) {
+        let url = OrderEndpoint.orders(page: page, size: size).url
         
         sessionManager.request(url)
             .validate()
@@ -35,7 +35,8 @@ class OrderService: NSObject {
                             }
                         }
                     }
-                    callback?(UserOrdersResult.Success(orders: orders))
+                    let totalPages = data["totalPages"] as? Int ?? 0
+                    callback?(UserOrdersResult.Success(orders: orders, totalPages: totalPages))
                 } else {
                     callback?(UserOrdersResult.UnexpectedError(error: response.result.error))
                 }

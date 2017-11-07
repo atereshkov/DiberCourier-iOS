@@ -11,13 +11,14 @@ import Alamofire
 
 enum OrderEndpoint: BaseEndPoint {
     
-    case orders
+    case orders(page: Int, size: Int)
     
     func provideCallDetails() -> (url: String, method: HTTPMethod, parameters: [String : Any]?) {
         switch self {
-        case .orders:
+        case .orders(let page, let size):
             var url = "\(Endpoint.base.rawValue)\(Endpoint.apiVersion.rawValue)"
             url.append("/orders")
+            url.append("?page=\(page)&size=\(size)")
             return (url: url, method: .get, parameters: nil)
         }
     }

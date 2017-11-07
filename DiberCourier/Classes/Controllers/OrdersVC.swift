@@ -33,6 +33,7 @@ class OrdersVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Segues.ordersTable.rawValue {
             if let ordersTableVC = segue.destination as? OrdersTableVC {
+                ordersTableVC.delegate = self
                 self.ordersTableVC = ordersTableVC
             }
         }
@@ -40,21 +41,26 @@ class OrdersVC: UIViewController {
     
     // MARK: Networking
     
-    private func loadData(silent: Bool) {
+    private func loadData(silent: Bool, page: Int = 0) {
         guard !loadingData else { return }
         loadingData = true
         if !silent {
             MBProgressHUD.showAdded(to: self.view, animated: true)
+            ordersTableVC?.shouldShowLoadingCell = true
         }
         
-        OrderService.shared.getOrders() { [weak self] (result) in
+        let size = Pagination.pageSize
+        OrderService.shared.getOrders(page: page, size: size) { [weak self] (result) in
             guard let self_ = self else { return }
             defer {
                 MBProgressHUD.hide(for: self_.view, animated: true)
+                self_.loadingData = false
+                self_.ordersTableVC?.shouldShowLoadingCell = false
             }
             
             switch result {
-            case .Success(let orders):
+            case .Success(let orders, _):
+                LogManager.log.info("Got orders: \(orders.count) | page: \(page)")
                 self_.setup(orders)
             case .UnexpectedError(let error):
                 self_.showUnexpectedErrorAlert(error: error)
@@ -70,6 +76,14 @@ class OrdersVC: UIViewController {
     
     private func setup(_ orders: [Order]) {
         DataManager.shared.save(orders: orders)
+    }
+    
+}
+
+extension OrdersVC: OrdersTableDelegate {
+    
+    func didReachLastCell(page: Int) {
+        self.loadData(silent: false, page: page)
     }
     
 }
