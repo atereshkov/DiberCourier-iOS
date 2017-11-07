@@ -19,6 +19,7 @@
 		A31F9DF21FB1A446008CD08A /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F9DF11FB1A446008CD08A /* Order.swift */; };
 		A31F9DF41FB1A5E5008CD08A /* OrderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F9DF31FB1A5E5008CD08A /* OrderService.swift */; };
 		A31F9DF61FB1A60F008CD08A /* OrderEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F9DF51FB1A60F008CD08A /* OrderEndpoint.swift */; };
+		A31F9DF81FB1AC4B008CD08A /* Orders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31F9DF71FB1AC4B008CD08A /* Orders.storyboard */; };
 		A324C6EC1FAF7A7600E0A02D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324C6EB1FAF7A7600E0A02D /* AppDelegate.swift */; };
 		A324C6F51FAF7A7600E0A02D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A324C6F31FAF7A7600E0A02D /* Main.storyboard */; };
 		A324C6F71FAF7A7600E0A02D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A324C6F61FAF7A7600E0A02D /* Assets.xcassets */; };
@@ -84,6 +85,7 @@
 		A31F9DF11FB1A446008CD08A /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		A31F9DF31FB1A5E5008CD08A /* OrderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderService.swift; sourceTree = "<group>"; };
 		A31F9DF51FB1A60F008CD08A /* OrderEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderEndpoint.swift; sourceTree = "<group>"; };
+		A31F9DF71FB1AC4B008CD08A /* Orders.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Orders.storyboard; sourceTree = "<group>"; };
 		A324C6E81FAF7A7600E0A02D /* DiberCourier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiberCourier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A324C6EB1FAF7A7600E0A02D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A324C6F41FAF7A7600E0A02D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				A324C6F31FAF7A7600E0A02D /* Main.storyboard */,
+				A31F9DF71FB1AC4B008CD08A /* Orders.storyboard */,
 				A33AE3541FB0835900180661 /* Login.storyboard */,
 				A324C6F81FAF7A7600E0A02D /* LaunchScreen.storyboard */,
 			);
@@ -512,6 +515,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A324C6FA1FAF7A7600E0A02D /* LaunchScreen.storyboard in Resources */,
+				A31F9DF81FB1AC4B008CD08A /* Orders.storyboard in Resources */,
 				A33AE34C1FB0734E00180661 /* Localizable.strings in Resources */,
 				A324C6F71FAF7A7600E0A02D /* Assets.xcassets in Resources */,
 				A33AE3551FB0835900180661 /* Login.storyboard in Resources */,

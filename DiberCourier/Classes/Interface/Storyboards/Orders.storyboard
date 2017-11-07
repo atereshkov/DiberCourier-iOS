@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gs6-sr-nEr">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Orders-->
+        <scene sceneID="5h5-I0-yl8">
+            <objects>
+                <navigationController id="Gs6-sr-nEr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Orders" id="aPb-P4-7td"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HTV-ia-haG">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="qmD-hQ-C7a" kind="relationship" relationship="rootViewController" id="t8p-OS-48R"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rdN-7t-U21" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1145" y="-727"/>
+        </scene>
+        <!--OrdersVC-->
+        <scene sceneID="zKw-7f-vfe">
+            <objects>
+                <viewController id="qmD-hQ-C7a" customClass="OrdersVC" customModule="DiberCourier" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sy9-zs-TLw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Jk-pi-9H2">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <connections>
+                                    <segue destination="EIe-u4-xhJ" kind="embed" identifier="OrdersTableVC" id="Ino-fM-Tpc"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Wi3-WL-yeG" firstAttribute="bottom" secondItem="5Jk-pi-9H2" secondAttribute="bottom" id="Gvt-V6-Pp5"/>
+                            <constraint firstItem="Wi3-WL-yeG" firstAttribute="trailing" secondItem="5Jk-pi-9H2" secondAttribute="trailing" id="UeN-8C-wQW"/>
+                            <constraint firstItem="5Jk-pi-9H2" firstAttribute="leading" secondItem="Wi3-WL-yeG" secondAttribute="leading" id="gXF-bH-sEV"/>
+                            <constraint firstItem="5Jk-pi-9H2" firstAttribute="top" secondItem="Wi3-WL-yeG" secondAttribute="top" id="mxD-4R-gbA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Wi3-WL-yeG"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JqV-yH-dpu"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hLm-O5-YZO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1945" y="-726"/>
+        </scene>
+        <!--Orders TableVC-->
+        <scene sceneID="BdH-ic-Qio">
+            <objects>
+                <tableViewController id="EIe-u4-xhJ" customClass="OrdersTableVC" customModule="DiberCourier" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jt5-GY-Hyk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OrderCell" id="I9G-Us-hoO" customClass="OrderCell" customModule="DiberCourier" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I9G-Us-hoO" id="bCP-y9-zsp">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPU-0v-MGC">
+                                            <rect key="frame" x="8" y="11" width="359" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="uPU-0v-MGC" secondAttribute="trailing" constant="8" id="4vB-G0-Acp"/>
+                                        <constraint firstItem="uPU-0v-MGC" firstAttribute="leading" secondItem="bCP-y9-zsp" secondAttribute="leading" constant="8" id="h20-ek-7Qg"/>
+                                        <constraint firstItem="uPU-0v-MGC" firstAttribute="centerY" secondItem="bCP-y9-zsp" secondAttribute="centerY" id="lyU-0H-H3Q"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="label" destination="uPU-0v-MGC" id="ROt-zN-dD5"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="EIe-u4-xhJ" id="0nq-hf-ALC"/>
+                            <outlet property="delegate" destination="EIe-u4-xhJ" id="dUY-M9-1gR"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9bD-zz-sfk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2772" y="-727"/>
+        </scene>
+    </scenes>
+</document>
