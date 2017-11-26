@@ -12,6 +12,11 @@ enum Segues: String {
     case mainScreen = "MainScreen"
     case loginFromMain = "LoginFromMain"
     case ordersTable = "OrdersTableVC"
+    case showOrderDetails = "ShowOrderDetails"
+}
+
+enum Storyboards: String {
+    case order = "Order"
 }
 
 enum Cells: String {

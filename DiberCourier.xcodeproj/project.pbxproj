@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4BAD2B33CAFD0991D95AD315 /* Pods_DiberCourierTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD8029E31BD423249DE7B22 /* Pods_DiberCourierTests.framework */; };
 		6C10EFC69857044384D3C6DF /* Pods_DiberCourierUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84974AB7D832F16CDD605436 /* Pods_DiberCourierUITests.framework */; };
+		A31D0D261FCAC46C000D37F1 /* Order.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31D0D251FCAC46C000D37F1 /* Order.storyboard */; };
+		A31D0D2A1FCACA85000D37F1 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31D0D291FCACA85000D37F1 /* UINavigationController.swift */; };
 		A31F9DE31FB1A340008CD08A /* OrdersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F9DE21FB1A340008CD08A /* OrdersVC.swift */; };
 		A31F9DE51FB1A35C008CD08A /* OrdersTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F9DE41FB1A35C008CD08A /* OrdersTableVC.swift */; };
 		A31F9DE81FB1A387008CD08A /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F9DE71FB1A387008CD08A /* OrderCell.swift */; };
@@ -47,6 +49,7 @@
 		A3A999C71FB097F800D63B35 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A999C61FB097F800D63B35 /* LoginVC.swift */; };
 		A3A999C91FB09A4000D63B35 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A999C81FB09A4000D63B35 /* String.swift */; };
 		A3A999CB1FB09A6300D63B35 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A999CA1FB09A6300D63B35 /* UserService.swift */; };
+		A3C491BA1FB23E9F005574E7 /* OrderDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C491B91FB23E9F005574E7 /* OrderDetailVC.swift */; };
 		E3E083162559C0944F5BA3A9 /* Pods_DiberCourier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BB98A140006C42A4467F76 /* Pods_DiberCourier.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +78,8 @@
 		663239832AEFF3FC4F32909B /* Pods-DiberCourier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiberCourier.release.xcconfig"; path = "Pods/Target Support Files/Pods-DiberCourier/Pods-DiberCourier.release.xcconfig"; sourceTree = "<group>"; };
 		70982E64E82C5378C079FA27 /* Pods-DiberCourierUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiberCourierUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DiberCourierUITests/Pods-DiberCourierUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		84974AB7D832F16CDD605436 /* Pods_DiberCourierUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiberCourierUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A31D0D251FCAC46C000D37F1 /* Order.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Order.storyboard; sourceTree = "<group>"; };
+		A31D0D291FCACA85000D37F1 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		A31F9DE21FB1A340008CD08A /* OrdersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersVC.swift; sourceTree = "<group>"; };
 		A31F9DE41FB1A35C008CD08A /* OrdersTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableVC.swift; sourceTree = "<group>"; };
 		A31F9DE71FB1A387008CD08A /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
@@ -122,6 +127,7 @@
 		A3A999C61FB097F800D63B35 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		A3A999C81FB09A4000D63B35 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		A3A999CA1FB09A6300D63B35 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		A3C491B91FB23E9F005574E7 /* OrderDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailVC.swift; sourceTree = "<group>"; };
 		A5B77126902C968B6FD1C8CE /* Pods-DiberCourierTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiberCourierTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DiberCourierTests/Pods-DiberCourierTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FA33E920737A9A6AD35DD8C1 /* Pods-DiberCourierUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiberCourierUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DiberCourierUITests/Pods-DiberCourierUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -243,6 +249,7 @@
 				A33AE3521FB082FA00180661 /* MainNavigationVC.swift */,
 				A3A999C61FB097F800D63B35 /* LoginVC.swift */,
 				A31F9DE21FB1A340008CD08A /* OrdersVC.swift */,
+				A3C491B91FB23E9F005574E7 /* OrderDetailVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -261,6 +268,7 @@
 			children = (
 				A324C6F31FAF7A7600E0A02D /* Main.storyboard */,
 				A31F9DF71FB1AC4B008CD08A /* Orders.storyboard */,
+				A31D0D251FCAC46C000D37F1 /* Order.storyboard */,
 				A33AE3541FB0835900180661 /* Login.storyboard */,
 				A324C6F81FAF7A7600E0A02D /* LaunchScreen.storyboard */,
 			);
@@ -362,6 +370,7 @@
 			children = (
 				A3A999BB1FB0972400D63B35 /* Realm.swift */,
 				A3A999C81FB09A4000D63B35 /* String.swift */,
+				A31D0D291FCACA85000D37F1 /* UINavigationController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -518,6 +527,7 @@
 				A31F9DF81FB1AC4B008CD08A /* Orders.storyboard in Resources */,
 				A33AE34C1FB0734E00180661 /* Localizable.strings in Resources */,
 				A324C6F71FAF7A7600E0A02D /* Assets.xcassets in Resources */,
+				A31D0D261FCAC46C000D37F1 /* Order.storyboard in Resources */,
 				A33AE3551FB0835900180661 /* Login.storyboard in Resources */,
 				A324C6F51FAF7A7600E0A02D /* Main.storyboard in Resources */,
 			);
@@ -717,6 +727,7 @@
 				A31F9DF21FB1A446008CD08A /* Order.swift in Sources */,
 				A3A999AC1FB0877100D63B35 /* NetworkManager.swift in Sources */,
 				A3A999B41FB0969B00D63B35 /* BaseEndpoint.swift in Sources */,
+				A31D0D2A1FCACA85000D37F1 /* UINavigationController.swift in Sources */,
 				A3A999B81FB096DE00D63B35 /* AuthService.swift in Sources */,
 				A31F9DEC1FB1A3C8008CD08A /* Address.swift in Sources */,
 				A31F9DF41FB1A5E5008CD08A /* OrderService.swift in Sources */,
@@ -735,6 +746,7 @@
 				A3A999C71FB097F800D63B35 /* LoginVC.swift in Sources */,
 				A3A999CB1FB09A6300D63B35 /* UserService.swift in Sources */,
 				A33AE3531FB082FA00180661 /* MainNavigationVC.swift in Sources */,
+				A3C491BA1FB23E9F005574E7 /* OrderDetailVC.swift in Sources */,
 				A3A999B61FB096B700D63B35 /* AuthEndpoint.swift in Sources */,
 				A31F9DF01FB1A416008CD08A /* DataManager.swift in Sources */,
 				A324C6EC1FAF7A7600E0A02D /* AppDelegate.swift in Sources */,

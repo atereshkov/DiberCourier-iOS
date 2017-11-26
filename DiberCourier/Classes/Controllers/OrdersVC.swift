@@ -12,14 +12,13 @@ import MBProgressHUD
 class OrdersVC: UIViewController {
     
     private var ordersTableVC: OrdersTableVC? = nil
+    private var orderDetailVC: OrderDetailVC? = nil
     fileprivate var loadingData = false // Used to prevent multiple simultanious load requests
     
     // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
         LogManager.log.info("Initialization")
         loadData(silent: false)
     }
@@ -84,6 +83,17 @@ extension OrdersVC: OrdersTableDelegate {
     
     func didReachLastCell(page: Int) {
         self.loadData(silent: false, page: page)
+    }
+    
+    func didSelectOrder(order: OrderView) {
+        // TODO
+        let storyboard = UIStoryboard(name: Storyboards.order.rawValue, bundle: nil)
+        let orderNavVC = storyboard.instantiateInitialViewController() as? UINavigationController
+        
+        if let orderDetailVC = orderNavVC?.rootViewController as? OrderDetailVC {
+            orderDetailVC.orderId = order.id
+            self.performSegue(withIdentifier: Segues.showOrderDetails.rawValue, sender: self)
+        }
     }
     
 }

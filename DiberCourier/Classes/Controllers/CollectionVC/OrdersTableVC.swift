@@ -11,6 +11,7 @@ import RealmSwift
 
 protocol OrdersTableDelegate: class {
     func didReachLastCell(page: Int)
+    func didSelectOrder(order: OrderView)
 }
 
 class OrdersTableVC: UITableViewController {
@@ -116,7 +117,9 @@ class OrdersTableVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        guard indexPath.row >= 0 && indexPath.row < orders.count else { return }
+        let order = orders[indexPath.row]
+        delegate?.didSelectOrder(order: order)
     }
     
 }

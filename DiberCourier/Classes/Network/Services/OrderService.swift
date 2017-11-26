@@ -14,13 +14,19 @@ class OrderService: NSObject {
     static let shared = OrderService()
     let sessionManager = NetworkManager.shared.sessionManager
     
-    enum UserOrdersResult {
+    enum OrdersResult {
         case Success(orders: [Order], totalPages: Int)
         case OfflineError
         case UnexpectedError(error: Error?)
     }
     
-    func getOrders(page: Int, size: Int, callback:((_ result: UserOrdersResult) -> ())? = nil) {
+    enum OrderResult {
+        case Success(order: Order)
+        case OfflineError
+        case UnexpectedError(error: Error?)
+    }
+    
+    func getOrders(page: Int, size: Int, callback:((_ result: OrdersResult) -> ())? = nil) {
         let url = OrderEndpoint.orders(page: page, size: size).url
         
         sessionManager.request(url)
@@ -36,9 +42,25 @@ class OrderService: NSObject {
                         }
                     }
                     let totalPages = data["totalPages"] as? Int ?? 0
-                    callback?(UserOrdersResult.Success(orders: orders, totalPages: totalPages))
+                    callback?(OrdersResult.Success(orders: orders, totalPages: totalPages))
                 } else {
-                    callback?(UserOrdersResult.UnexpectedError(error: response.result.error))
+                    callback?(OrdersResult.UnexpectedError(error: response.result.error))
+                }
+        }
+    }
+    
+    func getOrder(id: Int, callback:((_ result: OrderResult) -> ())? = nil) {
+        let url = OrderEndpoint.order(id: id).url
+        
+        sessionManager.request(url)
+            .validate()
+            .responseJSON { response in
+                if response.result.error == nil, let data = response.result.value as? [String: Any] {
+                    if let order = Order.with(data: data) {
+                        callback?(OrderResult.Success(order: order))
+                    }
+                } else {
+                    callback?(OrderResult.UnexpectedError(error: response.result.error))
                 }
         }
     }
