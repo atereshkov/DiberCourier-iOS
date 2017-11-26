@@ -14,7 +14,11 @@ protocol OrderCellDelegate : class {
 
 class OrderCell: UITableViewCell {
     
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var fromLabel: UILabel!
+    @IBOutlet weak var toLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var dateTimeLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
     
     weak var delegate: OrderCellDelegate?
     
@@ -31,7 +35,10 @@ class OrderCell: UITableViewCell {
     //MARK:- Public
     
     public func bind(with item: OrderView) {
-        label.text = "\(item.id) | \(item.date)"
+        fromLabel.text = item.addressFrom.address
+        toLabel.text = item.addressTo.address
+        descriptionLabel.text = item.descr
+        dateTimeLabel.text = "\(item.date)"
     }
     
     //MARK:- Actions

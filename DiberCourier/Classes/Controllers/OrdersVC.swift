@@ -74,6 +74,7 @@ class OrdersVC: UIViewController {
     // MARK: Helpers
     
     private func setup(_ orders: [Order]) {
+        self.ordersTableVC?.totalItems += orders.count
         DataManager.shared.save(orders: orders)
     }
     

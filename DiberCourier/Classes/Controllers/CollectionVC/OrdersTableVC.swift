@@ -25,7 +25,7 @@ class OrdersTableVC: UITableViewController {
     weak var delegate: OrdersTableDelegate?
     
     fileprivate var currentPage = 0
-    fileprivate var totalItems = 0
+    var totalItems = 0
     var shouldShowLoadingCell = false
     
     override func viewDidLoad() {
@@ -63,8 +63,13 @@ class OrdersTableVC: UITableViewController {
         debounceTimer = WeakTimer(timeInterval: 0.05, target: self, selector: #selector(reloadOrders), repeats: false)
     }
     
+    // Since queries in Realm are lazy, performing this sort of paginating behavior isn’t necessary at all, as Realm will only load objects from the results of the query once they are explicitly accessed.
+    // https://realm.io/docs/swift/latest/#limiting-results
     @objc fileprivate func reloadOrders() {
-        self.orders = OrderView.from(orders: ordersDBO)
+        let startIndex = currentPage * Pagination.pageSize
+        let endIndex = min(startIndex + Pagination.pageSize, ordersDBO.count)
+        let pagedOrders = Array(ordersDBO[startIndex..<endIndex])
+        self.orders = OrderView.from(orders: pagedOrders)
         self.tableView.reloadData()
     }
     
@@ -81,10 +86,10 @@ class OrdersTableVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         // fetch new data if user scroll to the last cell
-        guard isLoadingIndexPath(indexPath) else { return }
-        if self.totalItems > orders.count {
-            fetchNextPage()
-        }
+        //guard isLoadingIndexPath(indexPath) else { return }
+        //if self.totalItems > orders.count {
+        //    fetchNextPage()
+        //}
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -93,6 +98,7 @@ class OrdersTableVC: UITableViewController {
                 fatalError("The dequeued cell is not an instance of OrderCell")
         }
         
+        /*
         if isLoadingIndexPath(indexPath) {
             return cell
             //return LoadingCell(style: .default, reuseIdentifier: "LoadingCell")
@@ -102,10 +108,12 @@ class OrdersTableVC: UITableViewController {
             cell.bind(with: order)
             return cell
         }
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80.0
+        */
+        
+        guard indexPath.row >= 0 && indexPath.row < orders.count else { return cell }
+        let order = orders[indexPath.row]
+        cell.bind(with: order)
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

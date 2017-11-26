@@ -64,4 +64,16 @@ extension OrderView {
         return ordersDVO
     }
     
+    class func from(orders: [Order]) -> [OrderView] {
+        var ordersDVO = [OrderView]()
+        
+        for orderDBO in orders {
+            if let order = OrderView.create(from: orderDBO) {
+                ordersDVO.append(order)
+            }
+        }
+        
+        return ordersDVO
+    }
+    
 }
