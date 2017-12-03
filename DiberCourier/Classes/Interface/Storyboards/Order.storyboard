@@ -12,6 +12,7 @@
         <array key="HelveticaNeue.ttc">
             <string>HelveticaNeue</string>
             <string>HelveticaNeue-Bold</string>
+            <string>HelveticaNeue-Italic</string>
         </array>
     </customFonts>
     <scenes>
@@ -39,38 +40,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uIP-4p-Phe">
-                                <rect key="frame" x="0.0" y="64" width="375" height="180"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uIP-4p-Phe" userLabel="Details View" customClass="OrderDetailView" customModule="DiberCourier" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="160"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kq6-wH-JCT">
-                                        <rect key="frame" x="8" y="8" width="42" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kq6-wH-JCT">
+                                        <rect key="frame" x="8" y="8" width="359" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNz-mR-H1r">
-                                        <rect key="frame" x="8" y="37" width="42" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNz-mR-H1r">
+                                        <rect key="frame" x="8" y="37" width="359" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6r-xB-o7h">
-                                        <rect key="frame" x="8" y="66" width="42" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6r-xB-o7h">
+                                        <rect key="frame" x="8" y="66" width="359" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iy1-U9-rSy">
+                                        <rect key="frame" x="8" y="95" width="359" height="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="rur-ZU-5H1"/>
+                                    <constraint firstItem="kq6-wH-JCT" firstAttribute="top" secondItem="uIP-4p-Phe" secondAttribute="top" constant="8" id="A1g-Jd-XO1"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="iy1-U9-rSy" secondAttribute="bottom" constant="8" id="Cju-VR-pBH"/>
+                                    <constraint firstAttribute="trailing" secondItem="O6r-xB-o7h" secondAttribute="trailing" constant="8" id="M5C-dv-nq0"/>
+                                    <constraint firstItem="kq6-wH-JCT" firstAttribute="leading" secondItem="uIP-4p-Phe" secondAttribute="leading" constant="8" id="NTp-FF-Vsc"/>
+                                    <constraint firstItem="O6r-xB-o7h" firstAttribute="leading" secondItem="uIP-4p-Phe" secondAttribute="leading" constant="8" id="P7x-ZE-F6m"/>
+                                    <constraint firstItem="iy1-U9-rSy" firstAttribute="leading" secondItem="uIP-4p-Phe" secondAttribute="leading" constant="8" id="RLi-Ln-9D9"/>
+                                    <constraint firstAttribute="trailing" secondItem="MNz-mR-H1r" secondAttribute="trailing" constant="8" id="bpd-nN-pA2"/>
+                                    <constraint firstItem="O6r-xB-o7h" firstAttribute="top" secondItem="MNz-mR-H1r" secondAttribute="bottom" constant="8" id="eDc-n8-m5P"/>
+                                    <constraint firstItem="iy1-U9-rSy" firstAttribute="top" secondItem="O6r-xB-o7h" secondAttribute="bottom" constant="8" id="foJ-JZ-ofD"/>
+                                    <constraint firstAttribute="trailing" secondItem="kq6-wH-JCT" secondAttribute="trailing" constant="8" id="o7Q-NU-zfH"/>
+                                    <constraint firstAttribute="height" constant="160" id="rur-ZU-5H1"/>
+                                    <constraint firstItem="MNz-mR-H1r" firstAttribute="leading" secondItem="uIP-4p-Phe" secondAttribute="leading" constant="8" id="sqR-W1-Wds"/>
+                                    <constraint firstAttribute="trailing" secondItem="iy1-U9-rSy" secondAttribute="trailing" constant="8" id="uPy-yf-ja8"/>
+                                    <constraint firstItem="MNz-mR-H1r" firstAttribute="top" secondItem="kq6-wH-JCT" secondAttribute="bottom" constant="8" id="yPi-c2-NzW"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qhp-Um-sud" userLabel="Price View">
-                                <rect key="frame" x="0.0" y="252" width="375" height="80"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qhp-Um-sud" userLabel="Price View" customClass="OrderPriceView" customModule="DiberCourier" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="232" width="375" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You will earn:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XW-T4-kPd">
                                         <rect key="frame" x="0.0" y="8" width="375" height="19"/>
@@ -78,7 +95,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$10.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rY9-vk-V8g">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rY9-vk-V8g">
                                         <rect key="frame" x="0.0" y="35" width="375" height="20"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -95,9 +112,12 @@
                                     <constraint firstAttribute="height" constant="80" id="N4y-nD-Iqe"/>
                                     <constraint firstAttribute="trailing" secondItem="rY9-vk-V8g" secondAttribute="trailing" id="fwj-Tf-zM0"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="priceLabel" destination="rY9-vk-V8g" id="0e0-lG-hwU"/>
+                                </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZLg-BY-zMp">
-                                <rect key="frame" x="0.0" y="340" width="375" height="90"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZLg-BY-zMp" userLabel="Request View" customClass="OrderRequestView" customModule="DiberCourier" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="320" width="375" height="90"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9b-Ck-WLf">
                                         <rect key="frame" x="72.5" y="30" width="230" height="30"/>
@@ -106,6 +126,9 @@
                                             <constraint firstAttribute="height" constant="30" id="MdJ-LF-FfO"/>
                                         </constraints>
                                         <state key="normal" title="Execute this order"/>
+                                        <connections>
+                                            <action selector="executeOrderDidPress:" destination="ZLg-BY-zMp" eventType="touchUpInside" id="e7Q-bg-gig"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -137,6 +160,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="detailsView" destination="uIP-4p-Phe" id="Hw9-m7-mH1"/>
+                        <outlet property="priceView" destination="Qhp-Um-sud" id="gcN-ee-J8H"/>
+                        <outlet property="requestView" destination="ZLg-BY-zMp" id="bM3-Cl-i92"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gFF-5s-X9e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

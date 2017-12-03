@@ -63,10 +63,8 @@ class OrdersVC: UIViewController {
                 self_.setup(orders)
             case .UnexpectedError(let error):
                 self_.showUnexpectedErrorAlert(error: error)
-                break
             case .OfflineError:
                 self_.showOfflineErrorAlert()
-                break
             }
         }
     }
@@ -87,13 +85,12 @@ extension OrdersVC: OrdersTableDelegate {
     }
     
     func didSelectOrder(order: OrderView) {
-        // TODO
         let storyboard = UIStoryboard(name: Storyboards.order.rawValue, bundle: nil)
-        let orderNavVC = storyboard.instantiateInitialViewController() as? UINavigationController
         
-        if let orderDetailVC = orderNavVC?.rootViewController as? OrderDetailVC {
+        if let orderNavVC = storyboard.instantiateInitialViewController() as? UINavigationController,
+            let orderDetailVC = orderNavVC.rootViewController as? OrderDetailVC {
             orderDetailVC.orderId = order.id
-            self.performSegue(withIdentifier: Segues.showOrderDetails.rawValue, sender: self)
+            self.present(orderNavVC, animated: true, completion: nil)
         }
     }
     

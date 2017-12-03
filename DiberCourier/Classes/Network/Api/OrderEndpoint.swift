@@ -13,6 +13,7 @@ enum OrderEndpoint: BaseEndPoint {
     
     case orders(page: Int, size: Int)
     case order(id: Int)
+    case addRequest(orderId: Int)
     
     func provideCallDetails() -> (url: String, method: HTTPMethod, parameters: [String : Any]?) {
         switch self {
@@ -24,6 +25,11 @@ enum OrderEndpoint: BaseEndPoint {
         case .order(let id):
             var url = "\(Endpoint.base.rawValue)\(Endpoint.apiVersion.rawValue)"
             url.append("/orders/\(id)")
+            return (url: url, method: .get, parameters: nil)
+        case .addRequest(let orderId):
+            var url = "\(Endpoint.base.rawValue)\(Endpoint.apiVersion.rawValue)"
+            url.append("/orders/\(orderId)")
+            url.append("/requests")
             return (url: url, method: .get, parameters: nil)
         }
     }

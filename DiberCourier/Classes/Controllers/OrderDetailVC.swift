@@ -11,6 +11,10 @@ import MBProgressHUD
 
 class OrderDetailVC: UIViewController {
     
+    @IBOutlet weak var detailsView: OrderDetailView!
+    @IBOutlet weak var requestView: OrderRequestView!
+    @IBOutlet weak var priceView: OrderPriceView!
+    
     fileprivate var loadingData = false // Used to prevent multiple simultanious load requests
     
     var orderId: Int?
@@ -22,6 +26,8 @@ class OrderDetailVC: UIViewController {
         LogManager.log.info("Initialization")
         guard let id = orderId else { return }
         loadData(silent: false, id: id)
+        
+        requestView.delegate = self
     }
     
     deinit {
@@ -32,6 +38,12 @@ class OrderDetailVC: UIViewController {
     
     @IBAction func backButtonDidPress(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: Helpers
+    
+    private func setup(_ order: Order) {
+        
     }
     
     // MARK: Networking
@@ -56,19 +68,39 @@ class OrderDetailVC: UIViewController {
                 self_.setup(order)
             case .UnexpectedError(let error):
                 self_.showUnexpectedErrorAlert(error: error)
-                break
             case .OfflineError:
                 self_.showOfflineErrorAlert()
-                break
             }
         }
     }
     
-    // MARK: Helpers
-    
-    private func setup(_ order: Order) {
-        // TODO convert and bind
+    private func refreshRequests() {
+        
     }
     
 }
 
+extension OrderDetailVC: OrderRequestViewDelegate {
+    
+    func executeOrderDidPress() {
+        guard let id = orderId else { return }
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        
+        OrderService.shared.addRequest(orderId: id) { [weak self] (result) in
+            guard let self_ = self else { return }
+            defer {
+                MBProgressHUD.hide(for: self_.view, animated: true)
+            }
+            
+            switch result {
+            case .Success():
+                LogManager.log.info("Request added succesfully")
+            case .UnexpectedError(let error):
+                self_.showUnexpectedErrorAlert(error: error)
+            case .OfflineError:
+                self_.showOfflineErrorAlert()
+            }
+        }
+    }
+    
+}

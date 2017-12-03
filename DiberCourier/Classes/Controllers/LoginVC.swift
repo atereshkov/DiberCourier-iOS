@@ -70,14 +70,11 @@ class LoginVC: UIViewController {
                 self_.getUserInfo()
             case .UnexpectedError(let error):
                 self_.showUnexpectedErrorAlert(error: error)
-                break
             case .OfflineError:
                 self_.showOfflineErrorAlert()
-                break
             case .InvalidCredentials:
                 // TODO
                 self_.showMessageErrorAlert(message: "Incorrect password")
-                break
             }
         }
     }
@@ -100,10 +97,8 @@ class LoginVC: UIViewController {
                 self_.performSegue(withIdentifier: Segues.mainScreen.rawValue, sender: self)
             case .UnexpectedError(let error):
                 self_.showUnexpectedErrorAlert(error: error)
-                break
             case .OfflineError:
                 self_.showOfflineErrorAlert()
-                break
             }
         }
     }

@@ -32,6 +32,9 @@
 		A33AE34C1FB0734E00180661 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A33AE34E1FB0734E00180661 /* Localizable.strings */; };
 		A33AE3531FB082FA00180661 /* MainNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33AE3521FB082FA00180661 /* MainNavigationVC.swift */; };
 		A33AE3551FB0835900180661 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33AE3541FB0835900180661 /* Login.storyboard */; };
+		A39A2C681FD467980014BD46 /* OrderRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39A2C671FD467980014BD46 /* OrderRequestView.swift */; };
+		A39A2C6B1FD469740014BD46 /* OrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39A2C6A1FD469740014BD46 /* OrderDetailView.swift */; };
+		A39A2C6D1FD4698F0014BD46 /* OrderPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39A2C6C1FD4698F0014BD46 /* OrderPriceView.swift */; };
 		A3A999A81FB086C800D63B35 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A999A71FB086C800D63B35 /* LogManager.swift */; };
 		A3A999AA1FB0871A00D63B35 /* PreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A999A91FB0871A00D63B35 /* PreferenceManager.swift */; };
 		A3A999AC1FB0877100D63B35 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A999AB1FB0877100D63B35 /* NetworkManager.swift */; };
@@ -111,6 +114,9 @@
 		A33AE3511FB073A200180661 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A33AE3521FB082FA00180661 /* MainNavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationVC.swift; sourceTree = "<group>"; };
 		A33AE3541FB0835900180661 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		A39A2C671FD467980014BD46 /* OrderRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRequestView.swift; sourceTree = "<group>"; };
+		A39A2C6A1FD469740014BD46 /* OrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailView.swift; sourceTree = "<group>"; };
+		A39A2C6C1FD4698F0014BD46 /* OrderPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPriceView.swift; sourceTree = "<group>"; };
 		A3A999A71FB086C800D63B35 /* LogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
 		A3A999A91FB0871A00D63B35 /* PreferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceManager.swift; sourceTree = "<group>"; };
 		A3A999AB1FB0877100D63B35 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -288,6 +294,7 @@
 		A33AE3401FB06EC600180661 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A39A2C691FD469640014BD46 /* Order */,
 				A31F9DE61FB1A374008CD08A /* Cells */,
 			);
 			path = View;
@@ -384,6 +391,16 @@
 				A31D0D291FCACA85000D37F1 /* UINavigationController.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A39A2C691FD469640014BD46 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				A39A2C671FD467980014BD46 /* OrderRequestView.swift */,
+				A39A2C6A1FD469740014BD46 /* OrderDetailView.swift */,
+				A39A2C6C1FD4698F0014BD46 /* OrderPriceView.swift */,
+			);
+			path = Order;
 			sourceTree = "<group>";
 		};
 		A3A999C31FB0978B00D63B35 /* Base */ = {
@@ -748,6 +765,9 @@
 				A3A999BC1FB0972400D63B35 /* Realm.swift in Sources */,
 				A31F9DEE1FB1A3E2008CD08A /* AddressView.swift in Sources */,
 				A3A999C21FB0977700D63B35 /* Role.swift in Sources */,
+				A39A2C6B1FD469740014BD46 /* OrderDetailView.swift in Sources */,
+				A39A2C681FD467980014BD46 /* OrderRequestView.swift in Sources */,
+				A39A2C6D1FD4698F0014BD46 /* OrderPriceView.swift in Sources */,
 				A31F9DE81FB1A387008CD08A /* OrderCell.swift in Sources */,
 				A3A999BE1FB0974100D63B35 /* WeakTimer.swift in Sources */,
 				A3A999C01FB0976800D63B35 /* User.swift in Sources */,

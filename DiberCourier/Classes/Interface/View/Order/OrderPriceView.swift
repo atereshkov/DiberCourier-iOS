@@ -7,3 +7,22 @@
 //
 
 import Foundation
+import UIKit
+
+class OrderPriceView: UIView {
+    
+    @IBOutlet weak var priceLabel: UILabel!
+    
+    // MARK: Lifecycle
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    // Public API
+    
+    func setPrice(_ price: Double) {
+        priceLabel.text = "\(price)"
+    }
+    
+}

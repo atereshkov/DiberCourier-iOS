@@ -8,6 +8,7 @@
 
 import Foundation
 import Async
+import Alamofire
 
 class OrderService: NSObject {
     
@@ -22,6 +23,12 @@ class OrderService: NSObject {
     
     enum OrderResult {
         case Success(order: Order)
+        case OfflineError
+        case UnexpectedError(error: Error?)
+    }
+    
+    enum AddRequestResult {
+        case Success()
         case OfflineError
         case UnexpectedError(error: Error?)
     }
@@ -61,6 +68,28 @@ class OrderService: NSObject {
                     }
                 } else {
                     callback?(OrderResult.UnexpectedError(error: response.result.error))
+                }
+        }
+    }
+    
+    func addRequest(orderId: Int, callback:((_ result: AddRequestResult) -> ())? = nil) {
+        let url = OrderEndpoint.addRequest(orderId: orderId).url
+        
+        let orderId: [String: Any] = [ "id": orderId ]
+        let courierid: [String: Any] = [ "id": PreferenceManager.shared.userId ]
+        
+        let params: [String: Any] = [
+            "order": orderId,
+            "courier": courierid
+        ]
+        
+        sessionManager.request(url, method: .post, parameters: params, encoding: JSONEncoding.default)
+            .validate()
+            .responseJSON { response in
+                if response.result.error == nil, let _ = response.result.value as? [String: Any] {
+                    callback?(AddRequestResult.Success())
+                } else {
+                    callback?(AddRequestResult.UnexpectedError(error: response.result.error))
                 }
         }
     }

@@ -9,8 +9,24 @@
 import Foundation
 import UIKit
 
+protocol OrderRequestViewDelegate: class {
+    func executeOrderDidPress()
+}
+
 class OrderRequestView: UIView {
     
+    weak var delegate: OrderRequestViewDelegate?
     
+    // MARK: Lifecycle
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    // Actions
+    
+    @IBAction func executeOrderDidPress(_ sender: Any) {
+        delegate?.executeOrderDidPress()
+    }
     
 }

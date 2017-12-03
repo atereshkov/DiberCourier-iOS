@@ -84,6 +84,8 @@ class OAuth2Handler: RequestAdapter, RequestRetrier {
                     PreferenceManager.shared.refreshToken = refreshToken
                     completion(true, accessToken, refreshToken)
                 } else {
+                    LogManager.log.error("Can't refresh auth session")
+                    LogManager.log.debug(response.result.value as? [String: Any])
                     let notification = Notification(name: .AuthenticationExpired)
                     NotificationCenter.default.post(notification)
                     completion(false, nil, nil)
