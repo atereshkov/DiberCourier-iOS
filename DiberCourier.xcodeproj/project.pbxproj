@@ -32,6 +32,7 @@
 		A33AE34C1FB0734E00180661 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A33AE34E1FB0734E00180661 /* Localizable.strings */; };
 		A33AE3531FB082FA00180661 /* MainNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33AE3521FB082FA00180661 /* MainNavigationVC.swift */; };
 		A33AE3551FB0835900180661 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33AE3541FB0835900180661 /* Login.storyboard */; };
+		A386F0D41FE5946900BC8B30 /* Requests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A386F0D31FE5946900BC8B30 /* Requests.storyboard */; };
 		A39A2C681FD467980014BD46 /* OrderRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39A2C671FD467980014BD46 /* OrderRequestView.swift */; };
 		A39A2C6B1FD469740014BD46 /* OrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39A2C6A1FD469740014BD46 /* OrderDetailView.swift */; };
 		A39A2C6D1FD4698F0014BD46 /* OrderPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39A2C6C1FD4698F0014BD46 /* OrderPriceView.swift */; };
@@ -114,6 +115,7 @@
 		A33AE3511FB073A200180661 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A33AE3521FB082FA00180661 /* MainNavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationVC.swift; sourceTree = "<group>"; };
 		A33AE3541FB0835900180661 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		A386F0D31FE5946900BC8B30 /* Requests.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Requests.storyboard; sourceTree = "<group>"; };
 		A39A2C671FD467980014BD46 /* OrderRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRequestView.swift; sourceTree = "<group>"; };
 		A39A2C6A1FD469740014BD46 /* OrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailView.swift; sourceTree = "<group>"; };
 		A39A2C6C1FD4698F0014BD46 /* OrderPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPriceView.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 			children = (
 				A324C6F31FAF7A7600E0A02D /* Main.storyboard */,
 				A31F9DF71FB1AC4B008CD08A /* Orders.storyboard */,
+				A386F0D31FE5946900BC8B30 /* Requests.storyboard */,
 				A31D0D251FCAC46C000D37F1 /* Order.storyboard */,
 				A33AE3541FB0835900180661 /* Login.storyboard */,
 				A324C6F81FAF7A7600E0A02D /* LaunchScreen.storyboard */,
@@ -557,6 +560,7 @@
 				A324C6F71FAF7A7600E0A02D /* Assets.xcassets in Resources */,
 				A31D0D261FCAC46C000D37F1 /* Order.storyboard in Resources */,
 				A33AE3551FB0835900180661 /* Login.storyboard in Resources */,
+				A386F0D41FE5946900BC8B30 /* Requests.storyboard in Resources */,
 				A324C6F51FAF7A7600E0A02D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

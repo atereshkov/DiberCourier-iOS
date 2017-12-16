@@ -19,7 +19,7 @@
         <scene sceneID="5h5-I0-yl8">
             <objects>
                 <navigationController id="Gs6-sr-nEr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Orders" id="aPb-P4-7td"/>
+                    <tabBarItem key="tabBarItem" title="Orders" image="ic_view_list" id="aPb-P4-7td"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HTV-ia-haG">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -42,18 +42,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Jk-pi-9H2">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="124" width="375" height="494"/>
                                 <connections>
                                     <segue destination="EIe-u4-xhJ" kind="embed" identifier="OrdersTableVC" id="Ino-fM-Tpc"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Mr-Lk-UMV">
+                                <rect key="frame" x="0.0" y="64" width="375" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="JDp-xg-950"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="oyf-jc-3fs" kind="embed" id="tyn-VM-nG1"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Wi3-WL-yeG" firstAttribute="trailing" secondItem="0Mr-Lk-UMV" secondAttribute="trailing" id="3J7-AI-0qk"/>
+                            <constraint firstItem="0Mr-Lk-UMV" firstAttribute="top" secondItem="Wi3-WL-yeG" secondAttribute="top" id="BiH-lS-CBd"/>
+                            <constraint firstItem="0Mr-Lk-UMV" firstAttribute="leading" secondItem="Wi3-WL-yeG" secondAttribute="leading" id="EoD-jH-hcd"/>
                             <constraint firstItem="Wi3-WL-yeG" firstAttribute="bottom" secondItem="5Jk-pi-9H2" secondAttribute="bottom" id="Gvt-V6-Pp5"/>
                             <constraint firstItem="Wi3-WL-yeG" firstAttribute="trailing" secondItem="5Jk-pi-9H2" secondAttribute="trailing" id="UeN-8C-wQW"/>
                             <constraint firstItem="5Jk-pi-9H2" firstAttribute="leading" secondItem="Wi3-WL-yeG" secondAttribute="leading" id="gXF-bH-sEV"/>
-                            <constraint firstItem="5Jk-pi-9H2" firstAttribute="top" secondItem="Wi3-WL-yeG" secondAttribute="top" id="mxD-4R-gbA"/>
+                            <constraint firstItem="5Jk-pi-9H2" firstAttribute="top" secondItem="0Mr-Lk-UMV" secondAttribute="bottom" id="qce-fU-qUD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Wi3-WL-yeG"/>
                     </view>
@@ -62,14 +74,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLm-O5-YZO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1945" y="-726"/>
+            <point key="canvasLocation" x="1944.8" y="-726.38680659670172"/>
         </scene>
         <!--Orders TableVC-->
         <scene sceneID="BdH-ic-Qio">
             <objects>
                 <tableViewController id="EIe-u4-xhJ" customClass="OrdersTableVC" customModule="DiberCourier" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jt5-GY-Hyk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="494"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -210,7 +222,24 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9bD-zz-sfk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2850" y="-728"/>
+            <point key="canvasLocation" x="2849" y="-704"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="CmY-au-W5m">
+            <objects>
+                <viewController id="oyf-jc-3fs" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kgi-KQ-nxD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bAi-bM-3O8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2849" y="-1128"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_view_list" width="24" height="24"/>
+    </resources>
 </document>

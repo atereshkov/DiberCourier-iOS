@@ -94,8 +94,7 @@ class OrdersTableVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Cells.orders.rawValue, for: indexPath)
-            as? OrderCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Cells.orders.rawValue, for: indexPath) as? OrderCell else {
                 fatalError("The dequeued cell is not an instance of OrderCell")
         }
         
