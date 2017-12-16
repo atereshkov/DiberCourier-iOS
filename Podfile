@@ -14,6 +14,7 @@ target 'DiberCourier' do
   pod 'RealmSwift', '3.0.1'
   pod 'Localize-Swift', '~> 2.0'
   pod 'EXPLogger', '~> 1.0.1'
+  pod 'DropDown', '~> 2.0.2'
 
   target 'DiberCourierTests' do
     inherit! :search_paths

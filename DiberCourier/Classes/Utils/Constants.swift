@@ -13,6 +13,7 @@ enum Segues: String {
     case loginFromMain = "LoginFromMain"
     case ordersTable = "OrdersTableVC"
     case showOrderDetails = "ShowOrderDetails"
+    case ordersDropDown = "OrdersDropDown"
 }
 
 enum Storyboards: String {
@@ -37,4 +38,26 @@ class NetworkConstant {
 
 class Pagination {
     static let pageSize = 5 // items count for pagination load
+}
+
+
+enum OrderType: String {
+    
+    case all = "All"
+    case in_progress = "In progress"
+    
+    func displayName() -> String {
+        switch self {
+        case .all: return "All"
+        case .in_progress: return "In progress"
+        }
+    }
+    
+    static func allItems() -> [OrderType] {
+        return [.all, .in_progress]
+    }
+    
+    static func selectionItems() -> [String] {
+        return allItems().map({ $0.displayName() })
+    }
 }

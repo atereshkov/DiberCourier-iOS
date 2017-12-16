@@ -19,16 +19,16 @@ enum OrderEndpoint: BaseEndPoint {
         switch self {
         case .orders(let page, let size):
             var url = "\(Endpoint.base.rawValue)\(Endpoint.apiVersion.rawValue)"
-            url.append("/orders")
+            url.append("orders")
             url.append("?page=\(page)&size=\(size)")
             return (url: url, method: .get, parameters: nil)
         case .order(let id):
             var url = "\(Endpoint.base.rawValue)\(Endpoint.apiVersion.rawValue)"
-            url.append("/orders/\(id)")
+            url.append("orders/\(id)")
             return (url: url, method: .get, parameters: nil)
         case .addRequest(let orderId):
             var url = "\(Endpoint.base.rawValue)\(Endpoint.apiVersion.rawValue)"
-            url.append("/orders/\(orderId)")
+            url.append("orders/\(orderId)")
             url.append("/requests")
             return (url: url, method: .get, parameters: nil)
         }

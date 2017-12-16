@@ -33,6 +33,7 @@
 		A33AE3531FB082FA00180661 /* MainNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33AE3521FB082FA00180661 /* MainNavigationVC.swift */; };
 		A33AE3551FB0835900180661 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33AE3541FB0835900180661 /* Login.storyboard */; };
 		A386F0D41FE5946900BC8B30 /* Requests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A386F0D31FE5946900BC8B30 /* Requests.storyboard */; };
+		A386F0D71FE5B78100BC8B30 /* OrdersDropdownVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A386F0D61FE5B78100BC8B30 /* OrdersDropdownVC.swift */; };
 		A39A2C681FD467980014BD46 /* OrderRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39A2C671FD467980014BD46 /* OrderRequestView.swift */; };
 		A39A2C6B1FD469740014BD46 /* OrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39A2C6A1FD469740014BD46 /* OrderDetailView.swift */; };
 		A39A2C6D1FD4698F0014BD46 /* OrderPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39A2C6C1FD4698F0014BD46 /* OrderPriceView.swift */; };
@@ -116,6 +117,7 @@
 		A33AE3521FB082FA00180661 /* MainNavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationVC.swift; sourceTree = "<group>"; };
 		A33AE3541FB0835900180661 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		A386F0D31FE5946900BC8B30 /* Requests.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Requests.storyboard; sourceTree = "<group>"; };
+		A386F0D61FE5B78100BC8B30 /* OrdersDropdownVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersDropdownVC.swift; sourceTree = "<group>"; };
 		A39A2C671FD467980014BD46 /* OrderRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRequestView.swift; sourceTree = "<group>"; };
 		A39A2C6A1FD469740014BD46 /* OrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailView.swift; sourceTree = "<group>"; };
 		A39A2C6C1FD4698F0014BD46 /* OrderPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPriceView.swift; sourceTree = "<group>"; };
@@ -178,14 +180,6 @@
 				A31D0D2C1FCB4740000D37F1 /* Request.swift */,
 			);
 			path = DTO;
-			sourceTree = "<group>";
-		};
-		A31F9DE01FB1A2EA008CD08A /* CollectionVC */ = {
-			isa = PBXGroup;
-			children = (
-				A31F9DE41FB1A35C008CD08A /* OrdersTableVC.swift */,
-			);
-			path = CollectionVC;
 			sourceTree = "<group>";
 		};
 		A31F9DE61FB1A374008CD08A /* Cells */ = {
@@ -265,10 +259,9 @@
 		A33AE33D1FB06E8F00180661 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A31F9DE01FB1A2EA008CD08A /* CollectionVC */,
+				A386F0D51FE5B73800BC8B30 /* Orders */,
 				A33AE3521FB082FA00180661 /* MainNavigationVC.swift */,
 				A3A999C61FB097F800D63B35 /* LoginVC.swift */,
-				A31F9DE21FB1A340008CD08A /* OrdersVC.swift */,
 				A3C491B91FB23E9F005574E7 /* OrderDetailVC.swift */,
 			);
 			path = Controllers;
@@ -394,6 +387,16 @@
 				A31D0D291FCACA85000D37F1 /* UINavigationController.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A386F0D51FE5B73800BC8B30 /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				A31F9DE21FB1A340008CD08A /* OrdersVC.swift */,
+				A31F9DE41FB1A35C008CD08A /* OrdersTableVC.swift */,
+				A386F0D61FE5B78100BC8B30 /* OrdersDropdownVC.swift */,
+			);
+			path = Orders;
 			sourceTree = "<group>";
 		};
 		A39A2C691FD469640014BD46 /* Order */ = {
@@ -624,6 +627,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-DiberCourier/Pods-DiberCourier-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AsyncSwift/Async.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/EXPLogger/EXPLogger.framework",
 				"${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
@@ -635,6 +639,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Async.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EXPLogger.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
@@ -776,6 +781,7 @@
 				A3A999BE1FB0974100D63B35 /* WeakTimer.swift in Sources */,
 				A3A999C01FB0976800D63B35 /* User.swift in Sources */,
 				A3A999BA1FB0970D00D63B35 /* AlertControllerHelper.swift in Sources */,
+				A386F0D71FE5B78100BC8B30 /* OrdersDropdownVC.swift in Sources */,
 				A31F9DF61FB1A60F008CD08A /* OrderEndpoint.swift in Sources */,
 				A3A999AE1FB0878800D63B35 /* OAuth2Handler.swift in Sources */,
 				A3A999B01FB0960A00D63B35 /* Constants.swift in Sources */,

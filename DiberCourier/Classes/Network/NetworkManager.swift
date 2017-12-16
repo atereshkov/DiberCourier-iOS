@@ -16,8 +16,8 @@ class NetworkManager: NSObject {
     
     private override init() {
         let configuration: URLSessionConfiguration = URLSessionConfiguration.default
-        configuration.timeoutIntervalForRequest = 15
-        configuration.timeoutIntervalForResource = 15
+        configuration.timeoutIntervalForRequest = 20
+        configuration.timeoutIntervalForResource = 20
         sessionManager = SessionManager(configuration: configuration)
         let handler = OAuth2Handler(sessionManager)
         sessionManager.adapter = handler

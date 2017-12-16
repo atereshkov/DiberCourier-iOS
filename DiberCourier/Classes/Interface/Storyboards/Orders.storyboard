@@ -33,7 +33,7 @@
             </objects>
             <point key="canvasLocation" x="1145" y="-727"/>
         </scene>
-        <!--OrdersVC-->
+        <!--Orders-->
         <scene sceneID="zKw-7f-vfe">
             <objects>
                 <viewController id="qmD-hQ-C7a" customClass="OrdersVC" customModule="DiberCourier" customModuleProvider="target" sceneMemberID="viewController">
@@ -53,7 +53,7 @@
                                     <constraint firstAttribute="height" constant="60" id="JDp-xg-950"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="oyf-jc-3fs" kind="embed" id="tyn-VM-nG1"/>
+                                    <segue destination="oyf-jc-3fs" kind="embed" identifier="OrdersDropDown" id="tyn-VM-nG1"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -69,8 +69,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Wi3-WL-yeG"/>
                     </view>
-                    <navigationItem key="navigationItem" id="JqV-yH-dpu"/>
+                    <navigationItem key="navigationItem" title="Orders" id="JqV-yH-dpu"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="topContainerView" destination="0Mr-Lk-UMV" id="f8d-H5-Jx7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLm-O5-YZO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -224,15 +227,51 @@
             </objects>
             <point key="canvasLocation" x="2849" y="-704"/>
         </scene>
-        <!--View Controller-->
+        <!--Orders DropdownVC-->
         <scene sceneID="CmY-au-W5m">
             <objects>
-                <viewController id="oyf-jc-3fs" sceneMemberID="viewController">
+                <viewController id="oyf-jc-3fs" customClass="OrdersDropdownVC" customModule="DiberCourier" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kgi-KQ-nxD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQb-yt-CYe">
+                                <rect key="frame" x="16" y="19" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DgL-oy-TKQ">
+                                <rect key="frame" x="319" y="10" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="46K-j6-Wyp"/>
+                                    <constraint firstAttribute="width" constant="40" id="fLZ-qA-UCy"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OaY-kB-ORn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                <connections>
+                                    <action selector="changeStateAction:" destination="oyf-jc-3fs" eventType="touchUpInside" id="Swb-i2-vb3"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="DgL-oy-TKQ" secondAttribute="trailing" constant="16" id="AAw-A4-bv5"/>
+                            <constraint firstItem="OaY-kB-ORn" firstAttribute="leading" secondItem="kgi-KQ-nxD" secondAttribute="leading" id="DEV-e7-dUe"/>
+                            <constraint firstItem="MQb-yt-CYe" firstAttribute="centerY" secondItem="kgi-KQ-nxD" secondAttribute="centerY" id="FMf-ar-xi2"/>
+                            <constraint firstItem="DgL-oy-TKQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MQb-yt-CYe" secondAttribute="trailing" constant="10" id="LKB-aT-IsX"/>
+                            <constraint firstAttribute="bottom" secondItem="OaY-kB-ORn" secondAttribute="bottom" id="LcP-yV-k25"/>
+                            <constraint firstItem="OaY-kB-ORn" firstAttribute="top" secondItem="kgi-KQ-nxD" secondAttribute="top" id="QGr-z3-LKR"/>
+                            <constraint firstItem="DgL-oy-TKQ" firstAttribute="centerY" secondItem="kgi-KQ-nxD" secondAttribute="centerY" id="REY-V5-gXk"/>
+                            <constraint firstItem="MQb-yt-CYe" firstAttribute="leading" secondItem="kgi-KQ-nxD" secondAttribute="leading" constant="16" id="VSQ-fG-o3q"/>
+                            <constraint firstAttribute="trailing" secondItem="OaY-kB-ORn" secondAttribute="trailing" id="Yjx-h8-y2g"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="DgL-oy-TKQ" id="rpJ-MZ-1J6"/>
+                        <outlet property="textLabel" destination="MQb-yt-CYe" id="izr-kv-1yl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bAi-bM-3O8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

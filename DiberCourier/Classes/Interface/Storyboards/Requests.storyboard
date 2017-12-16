@@ -30,7 +30,7 @@
             </objects>
             <point key="canvasLocation" x="-1137" y="32"/>
         </scene>
-        <!--View Controller-->
+        <!--Requests-->
         <scene sceneID="kLG-Kf-ITy">
             <objects>
                 <viewController id="kbN-ur-2ox" sceneMemberID="viewController">
@@ -54,7 +54,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AFN-1A-nI6"/>
                     </view>
-                    <navigationItem key="navigationItem" id="UDz-yx-ySl"/>
+                    <navigationItem key="navigationItem" title="Requests" id="UDz-yx-ySl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ndl-CW-D0p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
