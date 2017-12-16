@@ -7,18 +7,17 @@
 //
 
 import Foundation
-import RealmSwift
 
 class AddressView {
     
-    var id: Int
-    var name: String
-    var postalCode: Int?
-    var country: String
-    var city: String
-    var region: String?
-    var address: String
-    var phone: String
+    private(set) var id: Int
+    private(set) var name: String
+    private(set) var postalCode: Int?
+    private(set) var country: String
+    private(set) var city: String
+    private(set) var region: String?
+    private(set) var address: String
+    private(set) var phone: String
     
     init(id: Int, name: String, postalCode: Int? = nil, country: String, city: String, region: String? = nil, address: String, phone: String) {
         self.id = id

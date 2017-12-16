@@ -56,7 +56,6 @@ class OrdersVC: UIViewController {
         loadingData = true
         if !silent {
             MBProgressHUD.showAdded(to: self.view, animated: true)
-            ordersTableVC?.shouldShowLoadingCell = true
         }
         
         OrderService.shared.getOrders(page: page, size: size) { [weak self] (result) in
@@ -64,7 +63,6 @@ class OrdersVC: UIViewController {
             defer {
                 MBProgressHUD.hide(for: self_.view, animated: true)
                 self_.loadingData = false
-                self_.ordersTableVC?.shouldShowLoadingCell = false
             }
             
             switch result {

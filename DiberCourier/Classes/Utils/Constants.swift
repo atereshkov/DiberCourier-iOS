@@ -12,7 +12,9 @@ enum Segues: String {
     case mainScreen = "MainScreen"
     case loginFromMain = "LoginFromMain"
     case ordersTable = "OrdersTableVC"
+    case requestsTable = "RequestsTableVC"
     case showOrderDetails = "ShowOrderDetails"
+    case showRequestDetails = "ShowRequestDetails"
     case ordersDropDown = "OrdersDropDown"
 }
 
@@ -22,6 +24,7 @@ enum Storyboards: String {
 
 enum Cells: String {
     case orders = "OrderCell"
+    case requests = "RequestCell"
 }
 
 class NetworkConstant {

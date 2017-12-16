@@ -10,15 +10,15 @@ import RealmSwift
 
 class OrderView {
     
-    var id: Int
-    var date: Date = Date(timeIntervalSince1970: 1)
-    var descr: String = ""
-    var price: Double
-    var status: String
-    var addressFrom: AddressView
-    var addressTo: AddressView
-    var courier: User? = nil
-    var customer: User
+    private(set) var id: Int
+    private(set) var date: Date = Date(timeIntervalSince1970: 1)
+    private(set) var descr: String = ""
+    private(set) var price: Double
+    private(set) var status: String
+    private(set) var addressFrom: AddressView
+    private(set) var addressTo: AddressView
+    private(set) var courier: User? = nil
+    private(set) var customer: User
     
     init(id: Int, date: Date, descr: String, price: Double, status: String, addressFrom: AddressView, addressTo: AddressView, courier: User? = nil, customer: User) {
         self.id = id

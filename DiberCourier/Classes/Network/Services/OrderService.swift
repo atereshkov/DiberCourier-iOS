@@ -77,11 +77,11 @@ class OrderService: NSObject {
         let url = OrderEndpoint.addRequest(orderId: orderId).url
         
         let orderId: [String: Any] = [ "id": orderId ]
-        let courierid: [String: Any] = [ "id": PreferenceManager.shared.userId ]
+        let courierId: [String: Any] = [ "id": PreferenceManager.shared.userId ]
         
         let params: [String: Any] = [
             "order": orderId,
-            "courier": courierid
+            "courier": courierId
         ]
         
         sessionManager.request(url, method: .post, parameters: params, encoding: JSONEncoding.default)

@@ -1,25 +1,25 @@
 //
-//  OrdersTableVC.swift
+//  RequestsTableVC.swift
 //  DiberCourier
 //
-//  Created by Alexander Tereshkov on 11/7/17.
+//  Created by Alexander Tereshkov on 12/17/17.
 //  Copyright © 2017 Diber. All rights reserved.
 //
 
 import UIKit
 
-protocol OrdersTableDelegate: class {
+protocol RequestsTableDelegate: class {
     func didReachLastCell(page: Int)
-    func didSelectOrder(order: OrderView)
-    func didPullRefresh(totalLoadedOrders: Int)
+    func didSelectRequest(request: RequestView)
+    func didPullRefresh()
 }
 
-class OrdersTableVC: UITableViewController {
+class RequestsTableVC: UITableViewController {
     
-    fileprivate var orders = [OrderView]()
+    fileprivate var requests = [RequestView]()
     fileprivate var debounceTimer: WeakTimer?
     
-    weak var delegate: OrdersTableDelegate?
+    weak var delegate: RequestsTableDelegate?
     
     fileprivate var currentPage = 0
     var totalItems = 0
@@ -39,13 +39,13 @@ class OrdersTableVC: UITableViewController {
     
     // MARK: Public
     
-    func addOrders(_ orders: [OrderView]) {
-        self.orders.append(contentsOf: orders)
+    func addRequests(_ requests: [RequestView]) {
+        self.requests.append(contentsOf: requests)
         reloadOrdersDebounced()
     }
     
     func removeAll() {
-        self.orders.removeAll()
+        self.requests.removeAll()
     }
     
     // MARK: Private
@@ -57,16 +57,16 @@ class OrdersTableVC: UITableViewController {
     }
     
     @objc private func handlePullRefresh(_ refreshControl: UIRefreshControl) {
-        delegate?.didPullRefresh(totalLoadedOrders: orders.count)
+        delegate?.didPullRefresh()
         refreshControl.endRefreshing()
     }
     
     fileprivate func reloadOrdersDebounced() {
         debounceTimer?.invalidate()
-        debounceTimer = WeakTimer(timeInterval: 0.05, target: self, selector: #selector(reloadOrders), repeats: false)
+        debounceTimer = WeakTimer(timeInterval: 0.05, target: self, selector: #selector(reloadRequests), repeats: false)
     }
     
-    @objc fileprivate func reloadOrders() {
+    @objc fileprivate func reloadRequests() {
         self.tableView.reloadData()
     }
     
@@ -78,30 +78,30 @@ class OrdersTableVC: UITableViewController {
     // MARK: TableView
     
     private func isLoadingIndexPath(_ indexPath: IndexPath) -> Bool {
-        return indexPath.row == self.orders.count - 1
+        return indexPath.row == self.requests.count - 1
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         // fetch new data if user scroll to the last cell
         guard isLoadingIndexPath(indexPath) else { return }
-        if self.totalItems > orders.count {
+        if self.totalItems > requests.count {
             fetchNextPage()
         }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Cells.orders.rawValue, for: indexPath) as? OrderCell else {
-                fatalError("The dequeued cell is not an instance of OrderCell")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Cells.requests.rawValue, for: indexPath) as? RequestCell else {
+            fatalError("The dequeued cell is not an instance of RequestCell")
         }
         
-        guard indexPath.row >= 0 && indexPath.row < orders.count else { return cell }
-        let order = orders[indexPath.row]
+        guard indexPath.row >= 0 && indexPath.row < requests.count else { return cell }
+        let order = requests[indexPath.row]
         cell.bind(with: order)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return orders.count
+        return requests.count
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -109,10 +109,11 @@ class OrdersTableVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard indexPath.row >= 0 && indexPath.row < orders.count else { return }
-        let order = orders[indexPath.row]
-        delegate?.didSelectOrder(order: order)
+        guard indexPath.row >= 0 && indexPath.row < requests.count else { return }
+        let request = requests[indexPath.row]
+        delegate?.didSelectRequest(request: request)
     }
     
 }
+
 

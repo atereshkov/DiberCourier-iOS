@@ -66,5 +66,3 @@ extension OrderDTO {
         return OrderDTO(id: id, date: date, descr: descr, price: price, status: status, addressFrom: addressFrom, addressTo: addressTo, courier: courier, customer: customer)
     }
 }
-
-
