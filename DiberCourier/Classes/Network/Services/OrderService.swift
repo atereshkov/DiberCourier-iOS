@@ -16,7 +16,7 @@ class OrderService: NSObject {
     let sessionManager = NetworkManager.shared.sessionManager
     
     enum OrdersResult {
-        case Success(orders: [Order], totalPages: Int)
+        case Success(orders: [Order], totalPages: Int, totalElements: Int)
         case OfflineError
         case UnexpectedError(error: Error?)
     }
@@ -49,7 +49,8 @@ class OrderService: NSObject {
                         }
                     }
                     let totalPages = data["totalPages"] as? Int ?? 0
-                    callback?(OrdersResult.Success(orders: orders, totalPages: totalPages))
+                    let totalElements = data["totalElements"] as? Int ?? 0
+                    callback?(OrdersResult.Success(orders: orders, totalPages: totalPages, totalElements: totalElements))
                 } else {
                     callback?(OrdersResult.UnexpectedError(error: response.result.error))
                 }

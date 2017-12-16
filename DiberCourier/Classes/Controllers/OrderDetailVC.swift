@@ -18,6 +18,7 @@ class OrderDetailVC: UIViewController {
     fileprivate var loadingData = false // Used to prevent multiple simultanious load requests
     
     var orderId: Int?
+    fileprivate(set) var order: OrderView?
     
     // MARK: Lifecycle
     
@@ -28,6 +29,7 @@ class OrderDetailVC: UIViewController {
         loadData(silent: false, id: id)
         
         requestView.delegate = self
+        detailsView.delegate = self
     }
     
     deinit {
@@ -43,7 +45,12 @@ class OrderDetailVC: UIViewController {
     // MARK: Helpers
     
     private func setup(_ order: Order) {
+        let orderView = OrderView.create(from: order)
+        self.order = orderView
         
+        guard let order = self.order else { return }
+        detailsView.set(order: order)
+        priceView.setPrice(order.price)
     }
     
     // MARK: Networking
@@ -55,7 +62,6 @@ class OrderDetailVC: UIViewController {
             MBProgressHUD.showAdded(to: self.view, animated: true)
         }
         
-        let size = Pagination.pageSize
         OrderService.shared.getOrder(id: id) { [weak self] (result) in
             guard let self_ = self else { return }
             defer {
@@ -75,7 +81,7 @@ class OrderDetailVC: UIViewController {
     }
     
     private func refreshRequests() {
-        
+        // TODO get all request for order with id and courier with id OR get all orders and find
     }
     
 }
@@ -101,6 +107,18 @@ extension OrderDetailVC: OrderRequestViewDelegate {
                 self_.showOfflineErrorAlert()
             }
         }
+    }
+    
+}
+
+extension OrderDetailVC: OrderDetailViewDelegate {
+    
+    func showToAddressDetails() {
+        // TODO show popup
+    }
+    
+    func showFromAddreesDetails() {
+        // TODO show popup
     }
     
 }

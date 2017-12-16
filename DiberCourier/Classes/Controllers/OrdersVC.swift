@@ -40,7 +40,7 @@ class OrdersVC: UIViewController {
     
     // MARK: Networking
     
-    private func loadData(silent: Bool, page: Int = 0) {
+    private func loadData(silent: Bool, page: Int = 0, size: Int = Pagination.pageSize) {
         guard !loadingData else { return }
         loadingData = true
         if !silent {
@@ -48,7 +48,6 @@ class OrdersVC: UIViewController {
             ordersTableVC?.shouldShowLoadingCell = true
         }
         
-        let size = Pagination.pageSize
         OrderService.shared.getOrders(page: page, size: size) { [weak self] (result) in
             guard let self_ = self else { return }
             defer {
@@ -58,9 +57,9 @@ class OrdersVC: UIViewController {
             }
             
             switch result {
-            case .Success(let orders, _):
+            case .Success(let orders, _, let totalElements):
                 LogManager.log.info("Got orders: \(orders.count) | page: \(page)")
-                self_.setup(orders)
+                self_.setup(orders, totalElements: totalElements)
             case .UnexpectedError(let error):
                 self_.showUnexpectedErrorAlert(error: error)
             case .OfflineError:
@@ -71,8 +70,8 @@ class OrdersVC: UIViewController {
     
     // MARK: Helpers
     
-    private func setup(_ orders: [Order]) {
-        self.ordersTableVC?.totalItems += orders.count
+    private func setup(_ orders: [Order], totalElements: Int) {
+        self.ordersTableVC?.totalItems = totalElements
         DataManager.shared.save(orders: orders)
     }
     
@@ -92,6 +91,10 @@ extension OrdersVC: OrdersTableDelegate {
             orderDetailVC.orderId = order.id
             self.present(orderNavVC, animated: true, completion: nil)
         }
+    }
+    
+    func didPullRefresh(totalLoadedOrders: Int) {
+        self.loadData(silent: false, size: totalLoadedOrders)
     }
     
 }

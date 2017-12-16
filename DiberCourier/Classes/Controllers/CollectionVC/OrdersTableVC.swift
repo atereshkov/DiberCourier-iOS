@@ -12,6 +12,7 @@ import RealmSwift
 protocol OrdersTableDelegate: class {
     func didReachLastCell(page: Int)
     func didSelectOrder(order: OrderView)
+    func didPullRefresh(totalLoadedOrders: Int)
 }
 
 class OrdersTableVC: UITableViewController {
@@ -25,13 +26,17 @@ class OrdersTableVC: UITableViewController {
     weak var delegate: OrdersTableDelegate?
     
     fileprivate var currentPage = 0
+    fileprivate var realmPage = 1
     var totalItems = 0
     var shouldShowLoadingCell = false
+    
+    private let refreshControlView = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         registerNotifications()
+        setupRefreshControl()
     }
     
     deinit {
@@ -42,7 +47,7 @@ class OrdersTableVC: UITableViewController {
     
     // MARK: Private
     
-    fileprivate func registerNotifications() {
+    private func registerNotifications() {
         guard !DataManager.shared.isInWriteTransaction else { return }
         ordersChangedNotification?.invalidate()
         ordersChangedNotification = ordersDBO.observe { [weak self] (changes) in
@@ -58,6 +63,18 @@ class OrdersTableVC: UITableViewController {
         }
     }
     
+    private func setupRefreshControl() {
+        refreshControlView.addTarget(self, action: #selector(handlePullRefresh(_:)), for: .valueChanged)
+        refreshControlView.tintColor = UIColor.red
+        
+        tableView.addSubview(refreshControlView)
+    }
+    
+    @objc private func handlePullRefresh(_ refreshControl: UIRefreshControl) {
+        delegate?.didPullRefresh(totalLoadedOrders: orders.count)
+        refreshControl.endRefreshing()
+    }
+    
     fileprivate func reloadOrdersDebounced() {
         debounceTimer?.invalidate()
         debounceTimer = WeakTimer(timeInterval: 0.05, target: self, selector: #selector(reloadOrders), repeats: false)
@@ -66,15 +83,17 @@ class OrdersTableVC: UITableViewController {
     // Since queries in Realm are lazy, performing this sort of paginating behavior isn’t necessary at all, as Realm will only load objects from the results of the query once they are explicitly accessed.
     // https://realm.io/docs/swift/latest/#limiting-results
     @objc fileprivate func reloadOrders() {
-        let startIndex = currentPage * Pagination.pageSize
-        let endIndex = min(startIndex + Pagination.pageSize, ordersDBO.count)
+        let startIndex = 0
+        let endIndex = min(startIndex + Pagination.pageSize * realmPage, ordersDBO.count)
         let pagedOrders = Array(ordersDBO[startIndex..<endIndex])
         self.orders = OrderView.from(orders: pagedOrders)
         self.tableView.reloadData()
+        Swift.print("Load: \(startIndex) - \(endIndex) | currentPage: \(currentPage)")
     }
     
     private func fetchNextPage() {
         self.currentPage += 1
+        self.realmPage += 1
         self.delegate?.didReachLastCell(page: currentPage)
     }
     
@@ -86,10 +105,10 @@ class OrdersTableVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         // fetch new data if user scroll to the last cell
-        //guard isLoadingIndexPath(indexPath) else { return }
-        //if self.totalItems > orders.count {
-        //    fetchNextPage()
-        //}
+        guard isLoadingIndexPath(indexPath) else { return }
+        if self.totalItems > orders.count {
+            fetchNextPage()
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
