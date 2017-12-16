@@ -17,10 +17,7 @@ protocol OrdersTableDelegate: class {
 
 class OrdersTableVC: UITableViewController {
     
-    fileprivate var ordersDBO: Results<Order> = DataManager.shared.getOrders()
     fileprivate var orders = [OrderView]()
-    
-    fileprivate var ordersChangedNotification: NotificationToken? = nil
     fileprivate var debounceTimer: WeakTimer?
     
     weak var delegate: OrdersTableDelegate?
@@ -35,38 +32,30 @@ class OrdersTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        registerNotifications()
         setupRefreshControl()
     }
     
     deinit {
         debounceTimer?.invalidate()
-        ordersChangedNotification?.invalidate()
         LogManager.log.info("Deinitialization")
+    }
+    
+    // MARK: Public
+    
+    func addOrders(_ orders: [OrderView]) {
+        self.orders.append(contentsOf: orders)
+        reloadOrdersDebounced()
+    }
+    
+    func removeAll() {
+        self.orders.removeAll()
     }
     
     // MARK: Private
     
-    private func registerNotifications() {
-        guard !DataManager.shared.isInWriteTransaction else { return }
-        ordersChangedNotification?.invalidate()
-        ordersChangedNotification = ordersDBO.observe { [weak self] (changes) in
-            guard let _self = self else { return }
-            switch changes {
-            case .initial:
-                _self.reloadOrdersDebounced()
-            case .update(_, _, _, _):
-                _self.reloadOrdersDebounced()
-            case .error(let error):
-                LogManager.log.error("Failed to update fetch results: \(error)")
-            }
-        }
-    }
-    
     private func setupRefreshControl() {
         refreshControlView.addTarget(self, action: #selector(handlePullRefresh(_:)), for: .valueChanged)
-        refreshControlView.tintColor = UIColor.red
-        
+        refreshControlView.tintColor = UIColor.gray
         tableView.addSubview(refreshControlView)
     }
     
@@ -80,15 +69,8 @@ class OrdersTableVC: UITableViewController {
         debounceTimer = WeakTimer(timeInterval: 0.05, target: self, selector: #selector(reloadOrders), repeats: false)
     }
     
-    // Since queries in Realm are lazy, performing this sort of paginating behavior isn’t necessary at all, as Realm will only load objects from the results of the query once they are explicitly accessed.
-    // https://realm.io/docs/swift/latest/#limiting-results
     @objc fileprivate func reloadOrders() {
-        let startIndex = 0
-        let endIndex = min(startIndex + Pagination.pageSize * realmPage, ordersDBO.count)
-        let pagedOrders = Array(ordersDBO[startIndex..<endIndex])
-        self.orders = OrderView.from(orders: pagedOrders)
         self.tableView.reloadData()
-        Swift.print("Load: \(startIndex) - \(endIndex) | currentPage: \(currentPage)")
     }
     
     private func fetchNextPage() {

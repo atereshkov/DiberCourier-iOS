@@ -70,9 +70,11 @@ class OrdersVC: UIViewController {
     
     // MARK: Helpers
     
-    private func setup(_ orders: [Order], totalElements: Int) {
-        self.ordersTableVC?.totalItems = totalElements
-        DataManager.shared.save(orders: orders)
+    private func setup(_ orders: [OrderDTO], totalElements: Int) {
+        guard let ordersTableVC = self.ordersTableVC else { return }
+        ordersTableVC.totalItems = totalElements
+        let ordersDVO = OrderView.from(orders: orders)
+        ordersTableVC.addOrders(ordersDVO)
     }
     
 }
@@ -94,6 +96,8 @@ extension OrdersVC: OrdersTableDelegate {
     }
     
     func didPullRefresh(totalLoadedOrders: Int) {
+        guard let ordersTableVC = self.ordersTableVC else { return }
+        ordersTableVC.removeAll()
         self.loadData(silent: false, size: totalLoadedOrders)
     }
     

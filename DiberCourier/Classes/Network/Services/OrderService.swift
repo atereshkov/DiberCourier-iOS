@@ -16,13 +16,13 @@ class OrderService: NSObject {
     let sessionManager = NetworkManager.shared.sessionManager
     
     enum OrdersResult {
-        case Success(orders: [Order], totalPages: Int, totalElements: Int)
+        case Success(orders: [OrderDTO], totalPages: Int, totalElements: Int)
         case OfflineError
         case UnexpectedError(error: Error?)
     }
     
     enum OrderResult {
-        case Success(order: Order)
+        case Success(order: OrderDTO)
         case OfflineError
         case UnexpectedError(error: Error?)
     }
@@ -39,11 +39,11 @@ class OrderService: NSObject {
         sessionManager.request(url)
             .validate()
             .responseJSON { response in
-                var orders = [Order]()
+                var orders = [OrderDTO]()
                 if response.result.error == nil, let data = response.result.value as? [String: Any] {
                     if let ordersData = data["content"] as? [[String: Any]] {
                         for orderData in ordersData {
-                            if let order = Order.with(data: orderData) {
+                            if let order = OrderDTO.with(data: orderData) {
                                 orders.append(order)
                             }
                         }
@@ -64,7 +64,7 @@ class OrderService: NSObject {
             .validate()
             .responseJSON { response in
                 if response.result.error == nil, let data = response.result.value as? [String: Any] {
-                    if let order = Order.with(data: data) {
+                    if let order = OrderDTO.with(data: data) {
                         callback?(OrderResult.Success(order: order))
                     }
                 } else {

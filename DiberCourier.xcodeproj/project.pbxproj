@@ -171,6 +171,8 @@
 		A31D0D2B1FCB4723000D37F1 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				A31F9DEB1FB1A3C8008CD08A /* Address.swift */,
+				A31F9DF11FB1A446008CD08A /* Order.swift */,
 				A31D0D2C1FCB4740000D37F1 /* Request.swift */,
 			);
 			path = DTO;
@@ -325,8 +327,6 @@
 				A3A999C31FB0978B00D63B35 /* Base */,
 				A3A999BF1FB0976800D63B35 /* User.swift */,
 				A3A999C11FB0977700D63B35 /* Role.swift */,
-				A31F9DEB1FB1A3C8008CD08A /* Address.swift */,
-				A31F9DF11FB1A446008CD08A /* Order.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";

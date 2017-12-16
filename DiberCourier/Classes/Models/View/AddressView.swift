@@ -35,7 +35,7 @@ class AddressView {
 
 extension AddressView {
     
-    class func create(from address: Address) -> AddressView? {
+    class func create(from address: AddressDTO) -> AddressView? {
         let id = address.id
         let name = address.name
         let postalCode = address.postalCode
@@ -47,11 +47,11 @@ extension AddressView {
         return AddressView(id: id, name: name, postalCode: postalCode, country: country, city: city, address: addressStr, phone: phone)
     }
     
-    class func from(addresses: Results<Address>) -> [AddressView] {
+    class func from(addresses: [AddressDTO]) -> [AddressView] {
         var addressesDVO = [AddressView]()
         
-        for addressDBO in addresses {
-            if let address = AddressView.create(from: addressDBO) {
+        for addressDTO in addresses {
+            if let address = AddressView.create(from: addressDTO) {
                 addressesDVO.append(address)
             }
         }

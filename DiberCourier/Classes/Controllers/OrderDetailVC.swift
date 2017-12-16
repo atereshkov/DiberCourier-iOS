@@ -44,7 +44,7 @@ class OrderDetailVC: UIViewController {
     
     // MARK: Helpers
     
-    private func setup(_ order: Order) {
+    private func setup(_ order: OrderDTO) {
         let orderView = OrderView.create(from: order)
         self.order = orderView
         

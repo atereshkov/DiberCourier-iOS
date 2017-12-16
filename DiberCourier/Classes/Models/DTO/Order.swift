@@ -7,22 +7,20 @@
 //
 
 import Foundation
-import RealmSwift
 
-class Order: RealmObject {
+class OrderDTO {
     
-    @objc private(set) dynamic var id: Int = -1
-    @objc private(set) dynamic var date: Date = Date(timeIntervalSince1970: 1)
-    @objc private(set) dynamic var descr: String = ""
-    @objc private(set) dynamic var price: Double = 0
-    @objc private(set) dynamic var status: String = ""
-    @objc private(set) dynamic var addressFrom: Address? = nil
-    @objc private(set) dynamic var addressTo: Address? = nil
-    @objc private(set) dynamic var courier: User? = nil
-    @objc private(set) dynamic var customer: User? = nil
+    private(set) var id: Int
+    private(set) var date: Date = Date(timeIntervalSince1970: 1)
+    private(set) var descr: String
+    private(set) var price: Double
+    private(set) var status: String
+    private(set) var addressFrom: AddressDTO? = nil
+    private(set) var addressTo: AddressDTO? = nil
+    private(set) var courier: User? = nil
+    private(set) var customer: User? = nil
     
-    convenience init(id: Int, date: Date, descr: String, price: Double, status: String, addressFrom: Address? = nil, addressTo: Address? = nil, courier: User? = nil, customer: User? = nil) {
-        self.init()
+    init(id: Int, date: Date, descr: String, price: Double, status: String, addressFrom: AddressDTO? = nil, addressTo: AddressDTO? = nil, courier: User? = nil, customer: User? = nil) {
         self.id = id
         self.date = date
         self.descr = descr
@@ -34,18 +32,13 @@ class Order: RealmObject {
         self.customer = customer
     }
     
-    // MARK: Realm
-    
-    override static func primaryKey() -> String? {
-        return "id"
-    }
 }
 
 // MARK: Serialization
 
-extension Order {
+extension OrderDTO {
     
-    class func with(data: [String: Any]) -> Order? {
+    class func with(data: [String: Any]) -> OrderDTO? {
         guard let id = data["id"] as? Int, let timestamp = data["date"] as? TimeInterval, let price = data["price"] as? Double, let status = data["status"] as? String else {
             LogManager.log.error("Failed to parse Order")
             return nil
@@ -53,13 +46,13 @@ extension Order {
         let descr = data["description"] as? String ?? ""
         let date = Date(timeIntervalSince1970: timestamp)
         
-        var addressTo: Address?
+        var addressTo: AddressDTO?
         if let addressToData = data["addressTo"] as? [String: Any] {
-            addressTo = Address.with(data: addressToData)
+            addressTo = AddressDTO.with(data: addressToData)
         }
-        var addressFrom: Address?
+        var addressFrom: AddressDTO?
         if let addressFromData = data["addressFrom"] as? [String: Any] {
-            addressFrom = Address.with(data: addressFromData)
+            addressFrom = AddressDTO.with(data: addressFromData)
         }
         var courier: User?
         if let courierData = data["courier"] as? [String: Any] {
@@ -70,7 +63,7 @@ extension Order {
             customer = User.with(data: customerData)
         }
         
-        return Order(id: id, date: date, descr: descr, price: price, status: status, addressFrom: addressFrom, addressTo: addressTo, courier: courier, customer: customer)
+        return OrderDTO(id: id, date: date, descr: descr, price: price, status: status, addressFrom: addressFrom, addressTo: addressTo, courier: courier, customer: customer)
     }
 }
 
