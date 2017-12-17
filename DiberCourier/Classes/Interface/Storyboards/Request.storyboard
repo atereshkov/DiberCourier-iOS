@@ -32,7 +32,45 @@
                     <view key="view" contentMode="scaleToFill" id="lzD-3y-r0e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E4v-EO-ZrO">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcC-59-wfr">
+                                        <rect key="frame" x="16" y="16" width="343" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DfK-vw-rWx">
+                                        <rect key="frame" x="122" y="108" width="130" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="130" id="H9m-Y5-say"/>
+                                            <constraint firstAttribute="height" constant="30" id="kBT-2j-TMJ"/>
+                                        </constraints>
+                                        <state key="normal" title="Cancel request"/>
+                                        <connections>
+                                            <action selector="cancelRequestDidPress:" destination="1qA-J4-d76" eventType="touchUpInside" id="86O-1d-okr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="DfK-vw-rWx" firstAttribute="top" secondItem="xcC-59-wfr" secondAttribute="bottom" constant="71" id="AJe-iJ-s1J"/>
+                                    <constraint firstItem="xcC-59-wfr" firstAttribute="leading" secondItem="E4v-EO-ZrO" secondAttribute="leading" constant="16" id="Osf-0A-cIG"/>
+                                    <constraint firstItem="xcC-59-wfr" firstAttribute="top" secondItem="E4v-EO-ZrO" secondAttribute="top" constant="16" id="aWd-q1-ITJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="xcC-59-wfr" secondAttribute="trailing" constant="16" id="gQH-F2-f99"/>
+                                    <constraint firstItem="DfK-vw-rWx" firstAttribute="centerX" secondItem="E4v-EO-ZrO" secondAttribute="centerX" id="qMm-sK-nf4"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NY9-Iu-yB0" firstAttribute="bottom" secondItem="E4v-EO-ZrO" secondAttribute="bottom" id="5Yo-tc-Yxi"/>
+                            <constraint firstItem="E4v-EO-ZrO" firstAttribute="top" secondItem="NY9-Iu-yB0" secondAttribute="top" id="Dqs-Oy-RK2"/>
+                            <constraint firstItem="E4v-EO-ZrO" firstAttribute="leading" secondItem="NY9-Iu-yB0" secondAttribute="leading" id="pfv-5W-9n4"/>
+                            <constraint firstItem="NY9-Iu-yB0" firstAttribute="trailing" secondItem="E4v-EO-ZrO" secondAttribute="trailing" id="v1c-HU-uc7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="NY9-Iu-yB0"/>
                     </view>
                     <navigationItem key="navigationItem" id="tmQ-gV-nun">
@@ -42,6 +80,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="statusLabel" destination="xcC-59-wfr" id="Dz9-9P-b7b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KN1-Bc-lAE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -27,6 +27,12 @@ class RequestService: NSObject {
         case UnexpectedError(error: Error?)
     }
     
+    enum CancelRequestResult {
+        case Success()
+        case OfflineError
+        case UnexpectedError(error: Error?)
+    }
+    
     func getRequests(callback:((_ result: RequestsResult) -> ())? = nil) {
         let userId = PreferenceManager.shared.userId
         let url = RequestEndpoint.requests(userId: userId).url
@@ -60,6 +66,26 @@ class RequestService: NSObject {
                     }
                 } else {
                     callback?(RequestResult.UnexpectedError(error: response.result.error))
+                }
+        }
+    }
+    
+    func cancelRequest(id: Int, callback:((_ result: CancelRequestResult) -> ())? = nil) {
+        let url = RequestEndpoint.cancel(id: id, status: RequestStatus.canceled_by_courier).url
+        let method = RequestEndpoint.cancel(id: id, status: RequestStatus.canceled_by_courier).method
+        let params = RequestEndpoint.cancel(id: id, status: RequestStatus.canceled_by_courier).parameters
+        
+        sessionManager.request(url, method: method, parameters: params, encoding: JSONEncoding.default)
+            .validate()
+            .responseJSON { response in
+                if response.result.error == nil, let data = response.result.value as? [String: Any] {
+                    if let _ = RequestDTO.with(data: data) {
+                        callback?(CancelRequestResult.Success())
+                    } else {
+                        callback?(CancelRequestResult.UnexpectedError(error: response.result.error))
+                    }
+                } else {
+                    callback?(CancelRequestResult.UnexpectedError(error: response.result.error))
                 }
         }
     }

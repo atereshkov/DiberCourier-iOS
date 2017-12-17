@@ -111,7 +111,7 @@ class OrderDetailVC: UIViewController {
 extension OrderDetailVC: OrderRequestViewDelegate {
     
     func executeOrderDidPress() {
-        let msg = "make.request.alert".localized()
+        let msg = "alert.request.make".localized()
         
         let ok = UIAlertAction(title: "alert.yes".localized(), style: .default, handler: { (action) in
             self.addRequest()

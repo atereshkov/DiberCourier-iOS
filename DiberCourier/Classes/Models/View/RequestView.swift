@@ -11,10 +11,10 @@ import Foundation
 class RequestView {
     
     private(set) var id: Int
-    private(set) var status: String
+    private(set) var status: RequestStatus
     private(set) var order: OrderView
     
-    init(id: Int, status: String, order: OrderView) {
+    init(id: Int, status: RequestStatus, order: OrderView) {
         self.id = id
         self.status = status
         self.order = order

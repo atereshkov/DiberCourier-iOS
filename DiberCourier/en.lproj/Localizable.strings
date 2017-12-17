@@ -25,4 +25,5 @@
 
 // Requests
 
-"make.request.alert" = "Are you sure you want to make an request?";
+"alert.request.make" = "Are you sure you want to make an request?";
+"alert.request.cancel" = "Are you sure you want to cancel the request?";

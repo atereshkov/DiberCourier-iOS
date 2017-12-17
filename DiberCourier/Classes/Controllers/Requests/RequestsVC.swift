@@ -71,6 +71,7 @@ class RequestsVC: UIViewController {
     
     private func setup(_ requests: [RequestDTO]) {
         guard let requestsTableVC = self.requestsTableVC else { return }
+        //let requestsDVO = RequestView.from(requests: requests).filter({ $0.status == "Not reviewed" })
         let requestsDVO = RequestView.from(requests: requests)
         requestsTableVC.addRequests(requestsDVO)
     }

@@ -29,6 +29,23 @@ enum OrderType: String {
     }
 }
 
+// TODO
+enum RequestStatus: String {
+    
+    case not_reviewed = "Not reviewed"
+    case canceled_by_courier = "Canceled by courier"
+    case canceled_by_customer = "Canceled by customer"
+    
+    func displayName() -> String {
+        switch self {
+        case .not_reviewed: return "Not reviewed"
+        case .canceled_by_courier: return "Canceled by courier"
+        case .canceled_by_customer: return "Canceled by customer"
+        }
+    }
+    
+}
+
 enum ServerError: String {
     
     case unexpected = "Unexpected error"
