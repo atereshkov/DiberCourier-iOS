@@ -27,6 +27,12 @@ class RequestService: NSObject {
         case UnexpectedError(error: Error?)
     }
     
+    enum AddRequestResult {
+        case Success()
+        case OfflineError
+        case UnexpectedError(error: Error?)
+    }
+    
     enum CancelRequestResult {
         case Success()
         case OfflineError
@@ -70,12 +76,37 @@ class RequestService: NSObject {
         }
     }
     
-    func cancelRequest(id: Int, callback:((_ result: CancelRequestResult) -> ())? = nil) {
-        let url = RequestEndpoint.cancel(id: id, status: RequestStatus.canceled_by_courier).url
-        let method = RequestEndpoint.cancel(id: id, status: RequestStatus.canceled_by_courier).method
-        let params = RequestEndpoint.cancel(id: id, status: RequestStatus.canceled_by_courier).parameters
+    func addRequest(orderId: Int, callback:((_ result: AddRequestResult) -> ())? = nil) {
+        let endpoint = OrderEndpoint.addRequest(orderId: orderId)
         
-        sessionManager.request(url, method: method, parameters: params, encoding: JSONEncoding.default)
+        let orderId: [String: Any] = [ "id": orderId ]
+        let courierId: [String: Any] = [ "id": PreferenceManager.shared.userId ]
+        
+        let params: [String: Any] = [
+            "order": orderId,
+            "courier": courierId
+        ]
+        
+        sessionManager.request(endpoint.url, method: endpoint.method, parameters: params, encoding: JSONEncoding.default)
+            .validate()
+            .responseJSON { response in
+                if let data = response.result.value as? [String: Any] {
+                    if let error = data["error_description"] as? String {
+                        let customError = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: error])
+                        callback?(AddRequestResult.UnexpectedError(error: customError))
+                    } else {
+                        callback?(AddRequestResult.Success())
+                    }
+                } else {
+                    callback?(AddRequestResult.UnexpectedError(error: response.result.error))
+                }
+        }
+    }
+    
+    func cancelRequest(id: Int, callback:((_ result: CancelRequestResult) -> ())? = nil) {
+        let endpoint = RequestEndpoint.cancel(id: id, status: RequestStatus.canceled_by_courier)
+        
+        sessionManager.request(endpoint.url, method: endpoint.method, parameters: endpoint.parameters, encoding: JSONEncoding.default)
             .validate()
             .responseJSON { response in
                 if response.result.error == nil, let data = response.result.value as? [String: Any] {

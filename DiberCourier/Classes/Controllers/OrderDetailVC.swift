@@ -85,7 +85,7 @@ class OrderDetailVC: UIViewController {
         guard let id = orderId else { return }
         MBProgressHUD.showAdded(to: self.view, animated: true)
         
-        OrderService.shared.addRequest(orderId: id) { [weak self] (result) in
+        RequestService.shared.addRequest(orderId: id) { [weak self] (result) in
             guard let self_ = self else { return }
             defer {
                 MBProgressHUD.hide(for: self_.view, animated: true)

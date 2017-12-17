@@ -30,7 +30,7 @@ enum OrderEndpoint: BaseEndPoint {
             var url = "\(Endpoint.base.rawValue)\(Endpoint.apiVersion.rawValue)"
             url.append("orders/\(orderId)")
             url.append("/requests")
-            return (url: url, method: .get, parameters: nil)
+            return (url: url, method: .post, parameters: nil)
         }
     }
     

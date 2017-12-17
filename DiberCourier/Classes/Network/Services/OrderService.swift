@@ -27,16 +27,10 @@ class OrderService: NSObject {
         case UnexpectedError(error: Error?)
     }
     
-    enum AddRequestResult {
-        case Success()
-        case OfflineError
-        case UnexpectedError(error: Error?)
-    }
-    
     func getOrders(page: Int, size: Int, callback:((_ result: OrdersResult) -> ())? = nil) {
-        let url = OrderEndpoint.orders(page: page, size: size).url
+        let endpoint = OrderEndpoint.orders(page: page, size: size)
         
-        sessionManager.request(url)
+        sessionManager.request(endpoint.url)
             .validate()
             .responseJSON { response in
                 var orders = [OrderDTO]()
@@ -58,9 +52,9 @@ class OrderService: NSObject {
     }
     
     func getOrder(id: Int, callback:((_ result: OrderResult) -> ())? = nil) {
-        let url = OrderEndpoint.order(id: id).url
+        let endpoint = OrderEndpoint.order(id: id)
         
-        sessionManager.request(url)
+        sessionManager.request(endpoint.url)
             .validate()
             .responseJSON { response in
                 if response.result.error == nil, let data = response.result.value as? [String: Any] {
@@ -69,28 +63,6 @@ class OrderService: NSObject {
                     }
                 } else {
                     callback?(OrderResult.UnexpectedError(error: response.result.error))
-                }
-        }
-    }
-    
-    func addRequest(orderId: Int, callback:((_ result: AddRequestResult) -> ())? = nil) {
-        let url = OrderEndpoint.addRequest(orderId: orderId).url
-        
-        let orderId: [String: Any] = [ "id": orderId ]
-        let courierId: [String: Any] = [ "id": PreferenceManager.shared.userId ]
-        
-        let params: [String: Any] = [
-            "order": orderId,
-            "courier": courierId
-        ]
-        
-        sessionManager.request(url, method: .post, parameters: params, encoding: JSONEncoding.default)
-            .validate()
-            .responseJSON { response in
-                if response.result.error == nil, let _ = response.result.value as? [String: Any] {
-                    callback?(AddRequestResult.Success())
-                } else {
-                    callback?(AddRequestResult.UnexpectedError(error: response.result.error))
                 }
         }
     }

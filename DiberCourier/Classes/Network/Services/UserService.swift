@@ -21,9 +21,9 @@ class UserService: NSObject {
     }
     
     func getUserInfo(callback:((_ result: UserInfoResult) -> ())? = nil) {
-        let url = AuthEndpoint.userInfo.url
+        let endpoint = AuthEndpoint.userInfo
         
-        sessionManager.request(url)
+        sessionManager.request(endpoint.url)
             .validate()
             .responseJSON {(response) in
                 if let result = response.result.value as? [String: Any] {
