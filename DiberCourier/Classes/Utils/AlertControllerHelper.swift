@@ -125,5 +125,14 @@ extension UIViewController {
         }
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    func showAlert(with title: String, and message: String, buttons: [UIAlertAction]) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        for button in buttons {
+            alertController.addAction(button)
+        }
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
 }
 

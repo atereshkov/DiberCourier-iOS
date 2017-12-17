@@ -80,15 +80,7 @@ class OrderDetailVC: UIViewController {
         }
     }
     
-    private func refreshRequests() {
-        // TODO get all request for order with id and courier with id OR get all orders and find
-    }
-    
-}
-
-extension OrderDetailVC: OrderRequestViewDelegate {
-    
-    func executeOrderDidPress() {
+    private func addRequest() {
         guard let id = orderId else { return }
         MBProgressHUD.showAdded(to: self.view, animated: true)
         
@@ -107,6 +99,25 @@ extension OrderDetailVC: OrderRequestViewDelegate {
                 self_.showOfflineErrorAlert()
             }
         }
+    }
+    
+    private func refreshRequests() {
+        // TODO get all request for order with id and courier with id OR get all orders and find
+    }
+    
+}
+
+extension OrderDetailVC: OrderRequestViewDelegate {
+    
+    func executeOrderDidPress() {
+        let msg = "Are you sure you want to make an request?"
+        
+        let ok = UIAlertAction(title: "Yes", style: .default, handler: { (action) in
+            self.addRequest()
+        })
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in }
+        
+        self.showAlert(with: "Request", and: msg, buttons: [ok, cancel])
     }
     
 }
