@@ -86,15 +86,13 @@ extension RequestsVC: RequestsTableDelegate {
     }
     
     func didSelectRequest(request: RequestView) {
-        /*
-        let storyboard = UIStoryboard(name: Storyboards.order.rawValue, bundle: nil)
+        let storyboard = UIStoryboard(name: Storyboards.request.rawValue, bundle: nil)
         
-        if let orderNavVC = storyboard.instantiateInitialViewController() as? UINavigationController,
-            let orderDetailVC = orderNavVC.rootViewController as? OrderDetailVC {
-            orderDetailVC.orderId = order.id
-            self.present(orderNavVC, animated: true, completion: nil)
+        if let requestNavVC = storyboard.instantiateInitialViewController() as? UINavigationController,
+            let requestDetailVC = requestNavVC.rootViewController as? RequestDetailVC {
+            requestDetailVC.requestId = request.id
+            self.present(requestNavVC, animated: true, completion: nil)
         }
-        */
     }
     
     func didPullRefresh() {

@@ -95,8 +95,8 @@ class RequestsTableVC: UITableViewController {
         }
         
         guard indexPath.row >= 0 && indexPath.row < requests.count else { return cell }
-        let order = requests[indexPath.row]
-        cell.bind(with: order)
+        let request = requests[indexPath.row]
+        cell.bind(with: request)
         return cell
     }
     

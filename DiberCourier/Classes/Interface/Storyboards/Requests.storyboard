@@ -64,12 +64,12 @@
         <scene sceneID="PKR-8q-MNe">
             <objects>
                 <tableViewController id="oz9-ie-svG" customClass="RequestsTableVC" customModule="DiberCourier" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dVk-2h-T6Z">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dVk-2h-T6Z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="RequestCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RequestCell" id="aPG-nu-unY" customClass="RequestCell" customModule="DiberCourier" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="RequestCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RequestCell" id="aPG-nu-unY" customClass="RequestCell" customModule="DiberCourier" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aPG-nu-unY" id="jph-h5-tik">
@@ -92,8 +92,8 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="oz9-ie-svG" id="Uot-iV-hof"/>
-                            <outlet property="delegate" destination="oz9-ie-svG" id="B7k-Ge-xB1"/>
+                            <outlet property="dataSource" destination="oz9-ie-svG" id="J0S-gs-DrY"/>
+                            <outlet property="delegate" destination="oz9-ie-svG" id="FQL-ah-tGc"/>
                         </connections>
                     </tableView>
                 </tableViewController>

@@ -20,6 +20,7 @@ enum Segues: String {
 
 enum Storyboards: String {
     case order = "Order"
+    case request = "Request"
 }
 
 enum Cells: String {
@@ -40,27 +41,5 @@ class NetworkConstant {
 }
 
 class Pagination {
-    static let pageSize = 5 // items count for pagination load
-}
-
-
-enum OrderType: String {
-    
-    case all = "All"
-    case in_progress = "In progress"
-    
-    func displayName() -> String {
-        switch self {
-        case .all: return "All"
-        case .in_progress: return "In progress"
-        }
-    }
-    
-    static func allItems() -> [OrderType] {
-        return [.all, .in_progress]
-    }
-    
-    static func selectionItems() -> [String] {
-        return allItems().map({ $0.displayName() })
-    }
+    static let pageSize = 5 // items number for pagination loading
 }

@@ -40,6 +40,9 @@
 		A386F0E01FE5DADA00BC8B30 /* RequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A386F0DF1FE5DADA00BC8B30 /* RequestView.swift */; };
 		A386F0E21FE5DF4900BC8B30 /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A386F0E11FE5DF4900BC8B30 /* RequestService.swift */; };
 		A386F0E41FE5DF5D00BC8B30 /* RequestEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A386F0E31FE5DF5D00BC8B30 /* RequestEndpoint.swift */; };
+		A386F0E61FE661EE00BC8B30 /* Request.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A386F0E51FE661EE00BC8B30 /* Request.storyboard */; };
+		A386F0E81FE6628700BC8B30 /* RequestDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A386F0E71FE6628700BC8B30 /* RequestDetailVC.swift */; };
+		A386F0EA1FE667F800BC8B30 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = A386F0E91FE667F800BC8B30 /* Enums.swift */; };
 		A39A2C681FD467980014BD46 /* OrderRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39A2C671FD467980014BD46 /* OrderRequestView.swift */; };
 		A39A2C6B1FD469740014BD46 /* OrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39A2C6A1FD469740014BD46 /* OrderDetailView.swift */; };
 		A39A2C6D1FD4698F0014BD46 /* OrderPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39A2C6C1FD4698F0014BD46 /* OrderPriceView.swift */; };
@@ -130,6 +133,9 @@
 		A386F0DF1FE5DADA00BC8B30 /* RequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestView.swift; sourceTree = "<group>"; };
 		A386F0E11FE5DF4900BC8B30 /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
 		A386F0E31FE5DF5D00BC8B30 /* RequestEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestEndpoint.swift; sourceTree = "<group>"; };
+		A386F0E51FE661EE00BC8B30 /* Request.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Request.storyboard; sourceTree = "<group>"; };
+		A386F0E71FE6628700BC8B30 /* RequestDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDetailVC.swift; sourceTree = "<group>"; };
+		A386F0E91FE667F800BC8B30 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		A39A2C671FD467980014BD46 /* OrderRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRequestView.swift; sourceTree = "<group>"; };
 		A39A2C6A1FD469740014BD46 /* OrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailView.swift; sourceTree = "<group>"; };
 		A39A2C6C1FD4698F0014BD46 /* OrderPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPriceView.swift; sourceTree = "<group>"; };
@@ -277,6 +283,7 @@
 				A33AE3521FB082FA00180661 /* MainNavigationVC.swift */,
 				A3A999C61FB097F800D63B35 /* LoginVC.swift */,
 				A3C491B91FB23E9F005574E7 /* OrderDetailVC.swift */,
+				A386F0E71FE6628700BC8B30 /* RequestDetailVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -295,8 +302,9 @@
 			children = (
 				A324C6F31FAF7A7600E0A02D /* Main.storyboard */,
 				A31F9DF71FB1AC4B008CD08A /* Orders.storyboard */,
-				A386F0D31FE5946900BC8B30 /* Requests.storyboard */,
 				A31D0D251FCAC46C000D37F1 /* Order.storyboard */,
+				A386F0D31FE5946900BC8B30 /* Requests.storyboard */,
+				A386F0E51FE661EE00BC8B30 /* Request.storyboard */,
 				A33AE3541FB0835900180661 /* Login.storyboard */,
 				A324C6F81FAF7A7600E0A02D /* LaunchScreen.storyboard */,
 			);
@@ -390,6 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				A3A999AF1FB0960A00D63B35 /* Constants.swift */,
+				A386F0E91FE667F800BC8B30 /* Enums.swift */,
 				A3A999B91FB0970D00D63B35 /* AlertControllerHelper.swift */,
 				A3A999BD1FB0974100D63B35 /* WeakTimer.swift */,
 			);
@@ -585,6 +594,7 @@
 			files = (
 				A324C6FA1FAF7A7600E0A02D /* LaunchScreen.storyboard in Resources */,
 				A31F9DF81FB1AC4B008CD08A /* Orders.storyboard in Resources */,
+				A386F0E61FE661EE00BC8B30 /* Request.storyboard in Resources */,
 				A33AE34C1FB0734E00180661 /* Localizable.strings in Resources */,
 				A324C6F71FAF7A7600E0A02D /* Assets.xcassets in Resources */,
 				A31D0D261FCAC46C000D37F1 /* Order.storyboard in Resources */,
@@ -786,7 +796,9 @@
 				A386F0E41FE5DF5D00BC8B30 /* RequestEndpoint.swift in Sources */,
 				A3A999AA1FB0871A00D63B35 /* PreferenceManager.swift in Sources */,
 				A3A999A81FB086C800D63B35 /* LogManager.swift in Sources */,
+				A386F0E81FE6628700BC8B30 /* RequestDetailVC.swift in Sources */,
 				A31D0D2D1FCB4740000D37F1 /* Request.swift in Sources */,
+				A386F0EA1FE667F800BC8B30 /* Enums.swift in Sources */,
 				A3A999B21FB0967B00D63B35 /* Endpoint.swift in Sources */,
 				A31F9DE31FB1A340008CD08A /* OrdersVC.swift in Sources */,
 				A386F0E21FE5DF4900BC8B30 /* RequestService.swift in Sources */,
