@@ -26,8 +26,7 @@ class OrderDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         LogManager.log.info("Initialization")
-        guard let id = orderId else { return }
-        loadData(silent: false, id: id)
+        loadData(silent: false)
         
         requestView.delegate = self
         detailsView.delegate = self
@@ -57,7 +56,8 @@ class OrderDetailVC: UIViewController {
     
     // MARK: Networking
     
-    private func loadData(silent: Bool, id: Int) {
+    private func loadData(silent: Bool) {
+        guard let id = orderId else { return }
         guard !loadingData else { return }
         loadingData = true
         if !silent {
@@ -97,8 +97,7 @@ class OrderDetailVC: UIViewController {
                 self_.showAlert(title: "Request added", message: "Request added succesfully. Don't start order executing until client approval")
                 LogManager.log.info("Request added succesfully")
                 
-                guard let id = self_.orderId else { return }
-                self_.loadData(silent: true, id: id)
+                self_.loadData(silent: true)
             case .UnexpectedError(let error):
                 self_.showUnexpectedErrorAlert(error: error)
             case .OfflineError:
@@ -121,8 +120,7 @@ class OrderDetailVC: UIViewController {
                 self_.showAlert(title: "Request canceled", message: "Request was canceled succesfully")
                 LogManager.log.info("Request with id \(id) canceled")
                 
-                guard let id = self_.orderId else { return }
-                self_.loadData(silent: true, id: id)
+                self_.loadData(silent: true)
             case .UnexpectedError(let error):
                 self_.showUnexpectedErrorAlert(error: error)
             case .OfflineError:
