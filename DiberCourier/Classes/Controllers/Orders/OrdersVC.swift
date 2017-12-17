@@ -12,13 +12,18 @@ import DropDown
 
 class OrdersVC: UIViewController {
     
+    @IBOutlet weak var topContainerView: UIView!
+    @IBOutlet weak var tableViewContainerTopSafe: NSLayoutConstraint!
+    @IBOutlet weak var tableViewContainerDropdown: NSLayoutConstraint!
+    
     private var ordersTableVC: OrdersTableVC? = nil
     private var orderDetailVC: OrderDetailVC? = nil
     private var dropDownVC: OrdersDropdownVC? = nil
-    fileprivate var loadingData = false // Used to prevent multiple simultanious load requests
-    
     fileprivate let dropDown = DropDown()
-    @IBOutlet weak var topContainerView: UIView!
+    
+    fileprivate var loadingData = false // Used to prevent multiple simultanious load requests
+    fileprivate var hideTopView = false
+    fileprivate var debounceTimer: WeakTimer?
     
     // MARK: Lifecycle
     
@@ -110,6 +115,23 @@ class OrdersVC: UIViewController {
         dropDown.selectRow(at: initialIndex)
     }
     
+    // MARK: Scrolling
+    
+    fileprivate func updateTopViewDebounced() {
+        let interval = 0.03
+        debounceTimer?.invalidate()
+        debounceTimer = WeakTimer(timeInterval: interval, target: self, selector: #selector(updateTopViewState), repeats: false)
+    }
+    
+    @objc fileprivate func updateTopViewState() {
+        tableViewContainerDropdown.priority = hideTopView ? UILayoutPriority(rawValue: 250) : UILayoutPriority(rawValue: 900)
+        tableViewContainerTopSafe.priority = hideTopView ? UILayoutPriority(rawValue: 900) : UILayoutPriority(rawValue: 250)
+        
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
 }
 
 extension OrdersVC: OrdersTableDelegate {
@@ -132,6 +154,11 @@ extension OrdersVC: OrdersTableDelegate {
         guard let ordersTableVC = self.ordersTableVC else { return }
         ordersTableVC.removeAll()
         self.loadData(silent: false, size: totalLoadedOrders)
+    }
+    
+    func hideTopView(hide: Bool) {
+        self.hideTopView = hide
+        updateTopViewDebounced()
     }
     
 }

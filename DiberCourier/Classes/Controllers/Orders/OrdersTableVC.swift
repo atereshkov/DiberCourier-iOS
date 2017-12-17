@@ -12,6 +12,8 @@ protocol OrdersTableDelegate: class {
     func didReachLastCell(page: Int)
     func didSelectOrder(order: OrderView)
     func didPullRefresh(totalLoadedOrders: Int)
+    
+    func hideTopView(hide: Bool)
 }
 
 class OrdersTableVC: UITableViewController {
@@ -23,6 +25,8 @@ class OrdersTableVC: UITableViewController {
     
     fileprivate var currentPage = 0
     var totalItems = 0
+    
+    var lastContentOffset: CGFloat = 0
     
     private let refreshControlView = UIRefreshControl()
     
@@ -112,6 +116,20 @@ class OrdersTableVC: UITableViewController {
         guard indexPath.row >= 0 && indexPath.row < orders.count else { return }
         let order = orders[indexPath.row]
         delegate?.didSelectOrder(order: order)
+    }
+    
+    // MARK: TableView Scroll
+    
+    override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.lastContentOffset = scrollView.contentOffset.y
+    }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (self.lastContentOffset < scrollView.contentOffset.y) {
+            delegate?.hideTopView(hide: true)
+        } else if (self.lastContentOffset > scrollView.contentOffset.y) {
+            delegate?.hideTopView(hide: false)
+        }
     }
     
 }

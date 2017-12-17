@@ -41,12 +41,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Jk-pi-9H2">
-                                <rect key="frame" x="0.0" y="124" width="375" height="494"/>
-                                <connections>
-                                    <segue destination="EIe-u4-xhJ" kind="embed" identifier="OrdersTableVC" id="Ino-fM-Tpc"/>
-                                </connections>
-                            </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Mr-Lk-UMV">
                                 <rect key="frame" x="0.0" y="64" width="375" height="60"/>
                                 <constraints>
@@ -56,6 +50,12 @@
                                     <segue destination="oyf-jc-3fs" kind="embed" identifier="OrdersDropDown" id="tyn-VM-nG1"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Jk-pi-9H2">
+                                <rect key="frame" x="0.0" y="124" width="375" height="494"/>
+                                <connections>
+                                    <segue destination="EIe-u4-xhJ" kind="embed" identifier="OrdersTableVC" id="Ino-fM-Tpc"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -63,15 +63,18 @@
                             <constraint firstItem="0Mr-Lk-UMV" firstAttribute="top" secondItem="Wi3-WL-yeG" secondAttribute="top" id="BiH-lS-CBd"/>
                             <constraint firstItem="0Mr-Lk-UMV" firstAttribute="leading" secondItem="Wi3-WL-yeG" secondAttribute="leading" id="EoD-jH-hcd"/>
                             <constraint firstItem="Wi3-WL-yeG" firstAttribute="bottom" secondItem="5Jk-pi-9H2" secondAttribute="bottom" id="Gvt-V6-Pp5"/>
+                            <constraint firstItem="5Jk-pi-9H2" firstAttribute="top" secondItem="Wi3-WL-yeG" secondAttribute="top" priority="250" id="HX5-dI-uMi"/>
                             <constraint firstItem="Wi3-WL-yeG" firstAttribute="trailing" secondItem="5Jk-pi-9H2" secondAttribute="trailing" id="UeN-8C-wQW"/>
                             <constraint firstItem="5Jk-pi-9H2" firstAttribute="leading" secondItem="Wi3-WL-yeG" secondAttribute="leading" id="gXF-bH-sEV"/>
-                            <constraint firstItem="5Jk-pi-9H2" firstAttribute="top" secondItem="0Mr-Lk-UMV" secondAttribute="bottom" id="qce-fU-qUD"/>
+                            <constraint firstItem="5Jk-pi-9H2" firstAttribute="top" secondItem="0Mr-Lk-UMV" secondAttribute="bottom" priority="900" id="qce-fU-qUD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Wi3-WL-yeG"/>
                     </view>
                     <navigationItem key="navigationItem" title="Orders" id="JqV-yH-dpu"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="tableViewContainerDropdown" destination="qce-fU-qUD" id="ekn-77-lhd"/>
+                        <outlet property="tableViewContainerTopSafe" destination="HX5-dI-uMi" id="PrF-GO-9cc"/>
                         <outlet property="topContainerView" destination="0Mr-Lk-UMV" id="f8d-H5-Jx7"/>
                     </connections>
                 </viewController>
@@ -236,7 +239,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQb-yt-CYe">
-                                <rect key="frame" x="16" y="19" width="42" height="21"/>
+                                <rect key="frame" x="16" y="19.5" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
