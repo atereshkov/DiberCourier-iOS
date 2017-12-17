@@ -81,6 +81,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cancelRequestButton" destination="DfK-vw-rWx" id="11I-sp-mxt"/>
                         <outlet property="statusLabel" destination="xcC-59-wfr" id="Dz9-9P-b7b"/>
                     </connections>
                 </viewController>

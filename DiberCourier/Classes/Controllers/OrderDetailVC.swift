@@ -96,6 +96,9 @@ class OrderDetailVC: UIViewController {
             case .Success():
                 self_.showAlert(title: "Request added", message: "Request added succesfully. Don't start order executing until client approval")
                 LogManager.log.info("Request added succesfully")
+                
+                guard let id = self_.orderId else { return }
+                self_.loadData(silent: true, id: id)
             case .UnexpectedError(let error):
                 self_.showUnexpectedErrorAlert(error: error)
             case .OfflineError:
@@ -117,6 +120,9 @@ class OrderDetailVC: UIViewController {
             case .Success():
                 self_.showAlert(title: "Request canceled", message: "Request was canceled succesfully")
                 LogManager.log.info("Request with id \(id) canceled")
+                
+                guard let id = self_.orderId else { return }
+                self_.loadData(silent: true, id: id)
             case .UnexpectedError(let error):
                 self_.showUnexpectedErrorAlert(error: error)
             case .OfflineError:

@@ -112,15 +112,17 @@ class OrderRequestView: UIView {
             case .canceled_by_courier:
                 self.hintLabel.text = "You have canceled your request. Submit again?"
             case .canceled_by_customer:
+                // todo use modified date instead creation date
                 self.hintLabel.text = "Your request was rejected by the customer on \(request.date)"
             case .not_reviewed:
+                // todo use modified date instead creation date
                 self.hintLabel.text = "You have already submitted the request on \(request.date)"
             }
         } else {
             self.hintLabel.text = "You can submit request for this order"
         }
         
-        self.executeButton.isHidden = state == .requestNotFound || state != .canceled_by_courier
+        self.executeButton.isHidden = state != .requestNotFound && state != .canceled_by_courier
         self.cancelRequestButton.isHidden = state != .requestExists
     }
     

@@ -11,6 +11,7 @@ import MBProgressHUD
 
 class RequestDetailVC: UIViewController {
     
+    @IBOutlet weak var cancelRequestButton: UIButton!
     @IBOutlet weak var statusLabel: UILabel!
     
     fileprivate var loadingData = false // Used to prevent multiple simultanious load requests
@@ -55,6 +56,15 @@ class RequestDetailVC: UIViewController {
         
         guard let request = self.request else { return }
         statusLabel.text = request.status.displayName()
+        
+        switch request.status {
+        case .canceled_by_courier:
+            self.cancelRequestButton.isHidden = true
+        case .canceled_by_customer:
+            self.cancelRequestButton.isHidden = true
+        case .not_reviewed:
+            self.cancelRequestButton.isHidden = false
+        }
     }
     
     // MARK: Networking
@@ -96,6 +106,8 @@ class RequestDetailVC: UIViewController {
             
             switch result {
             case .Success():
+                guard let requestId = self_.requestId else { return }
+                self_.loadData(silent: true, id: requestId)
                 LogManager.log.info("Request canceled")
             case .UnexpectedError(let error):
                 self_.showUnexpectedErrorAlert(error: error)
