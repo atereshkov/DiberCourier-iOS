@@ -28,3 +28,17 @@ enum OrderType: String {
         return allItems().map({ $0.displayName() })
     }
 }
+
+enum ServerError: String {
+    
+    case unexpected = "Unexpected error"
+    case bad_credentials = "Bad credentials"
+    
+    func raw() -> String {
+        switch self {
+        case .unexpected: return self.rawValue
+        case .bad_credentials: return self.rawValue
+        }
+    }
+    
+}

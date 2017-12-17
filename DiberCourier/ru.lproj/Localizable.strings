@@ -13,7 +13,16 @@
 "alert.error.unexpected.recovery" = "Пожалуйста, попробуйте еще раз позже";
 "alert.ok" = "Ок";
 "alert.offline.message" = "Операция не может быть выполнена без интернет-соединения";
-"alert.login.user.error.message" = "Неправильный логин или пароль";
+"alert.login.bad.credentials" = "Неправильный логин или пароль";
 "alert.error.unexpected.nodata" = "Нет данных";
 "alert.session.expired.error.msg" = "Извините, Ваша сессия просрочена. Вам необходимо войти в аккаунт еще раз";
 "alert.title.information" = "Информация";
+
+"alert.yes" = "Да";
+"alert.cancel" = "Отмена";
+
+"alert.request" = "Заявка";
+
+// Requests
+
+"make.request.alert" = "Вы действительно хотите подать заявку на выполнение заказа?";

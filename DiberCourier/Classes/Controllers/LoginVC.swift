@@ -73,8 +73,7 @@ class LoginVC: UIViewController {
             case .OfflineError:
                 self_.showOfflineErrorAlert()
             case .InvalidCredentials:
-                // TODO
-                self_.showMessageErrorAlert(message: "Incorrect password")
+                self_.showMessageErrorAlert(message: "alert.login.bad.credentials".localized())
             }
         }
     }

@@ -13,7 +13,16 @@
 "alert.error.unexpected.recovery" = "Please try again later";
 "alert.ok" = "Ok";
 "alert.offline.message" = "The operation cannot be performed without an Internet connection";
-"alert.login.user.error.message" = "Failed to login with this combination of email and password";
-"alert.error.unexpected.nodata" = "No Data";
+"alert.login.bad.credentials" = "You have entered an invalid username or password";
+"alert.error.unexpected.nodata" = "No data";
 "alert.session.expired.error.msg" = "Sorry! Your session has been expired. You will be navigated to login screen";
 "alert.title.information" = "Information";
+
+"alert.yes" = "Yes";
+"alert.cancel" = "Cancel";
+
+"alert.request" = "Request";
+
+// Requests
+
+"make.request.alert" = "Are you sure you want to make an request?";

@@ -33,8 +33,10 @@ class AuthService: NSObject {
                         PreferenceManager.shared.token = accessToken
                         PreferenceManager.shared.refreshToken = refreshToken
                         callback?(AuthResult.Success())
+                    } else if let error = result["error_description"] as? String, error == ServerError.bad_credentials.raw() {
+                        callback?(AuthResult.InvalidCredentials)
                     } else {
-                        callback?(AuthResult.UnexpectedError(error: nil))
+                        callback?(AuthResult.UnexpectedError(error: response.result.error))
                     }
                 } else {
                     callback?(AuthResult.UnexpectedError(error: response.result.error))

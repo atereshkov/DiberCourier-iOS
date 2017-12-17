@@ -8,6 +8,7 @@
 
 import UIKit
 import MBProgressHUD
+import Localize_Swift
 
 class OrderDetailVC: UIViewController {
     
@@ -110,14 +111,14 @@ class OrderDetailVC: UIViewController {
 extension OrderDetailVC: OrderRequestViewDelegate {
     
     func executeOrderDidPress() {
-        let msg = "Are you sure you want to make an request?"
+        let msg = "make.request.alert".localized()
         
-        let ok = UIAlertAction(title: "Yes", style: .default, handler: { (action) in
+        let ok = UIAlertAction(title: "alert.yes".localized(), style: .default, handler: { (action) in
             self.addRequest()
         })
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in }
+        let cancel = UIAlertAction(title: "alert.cancel".localized(), style: .cancel) { (action) in }
         
-        self.showAlert(with: "Request", and: msg, buttons: [ok, cancel])
+        self.showAlert(with: "alert.request".localized(), and: msg, buttons: [ok, cancel])
     }
     
 }
