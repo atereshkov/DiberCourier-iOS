@@ -52,6 +52,7 @@ class OrderDetailVC: UIViewController {
         guard let order = self.order else { return }
         detailsView.set(order: order)
         priceView.setPrice(order.price)
+        requestView.set(order: order)
     }
     
     // MARK: Networking
@@ -93,6 +94,7 @@ class OrderDetailVC: UIViewController {
             
             switch result {
             case .Success():
+                self_.showAlert(title: "Request added", message: "Request added succesfully. Don't start order executing until client approval")
                 LogManager.log.info("Request added succesfully")
             case .UnexpectedError(let error):
                 self_.showUnexpectedErrorAlert(error: error)
@@ -102,8 +104,25 @@ class OrderDetailVC: UIViewController {
         }
     }
     
-    private func refreshRequests() {
-        // TODO get all request for order with id and courier with id OR get all orders and find
+    private func cancelRequest(id: Int) {
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        
+        RequestService.shared.cancelRequest(id: id) { [weak self] (result) in
+            guard let self_ = self else { return }
+            defer {
+                MBProgressHUD.hide(for: self_.view, animated: true)
+            }
+            
+            switch result {
+            case .Success():
+                self_.showAlert(title: "Request canceled", message: "Request was canceled succesfully")
+                LogManager.log.info("Request with id \(id) canceled")
+            case .UnexpectedError(let error):
+                self_.showUnexpectedErrorAlert(error: error)
+            case .OfflineError:
+                self_.showOfflineErrorAlert()
+            }
+        }
     }
     
 }
@@ -112,11 +131,20 @@ extension OrderDetailVC: OrderRequestViewDelegate {
     
     func executeOrderDidPress() {
         let msg = "alert.request.make".localized()
-        
+        let cancel = UIAlertAction(title: "alert.cancel".localized(), style: .cancel) { (action) in }
         let ok = UIAlertAction(title: "alert.yes".localized(), style: .default, handler: { (action) in
             self.addRequest()
         })
+        
+        self.showAlert(with: "alert.request".localized(), and: msg, buttons: [ok, cancel])
+    }
+    
+    func cancelRequestDidPress(from: OrderRequestView, request: RequestView) {
+        let msg = "alert.request.cancel".localized()
         let cancel = UIAlertAction(title: "alert.cancel".localized(), style: .cancel) { (action) in }
+        let ok = UIAlertAction(title: "alert.yes".localized(), style: .default, handler: { (action) in
+            self.cancelRequest(id: request.id)
+        })
         
         self.showAlert(with: "alert.request".localized(), and: msg, buttons: [ok, cancel])
     }

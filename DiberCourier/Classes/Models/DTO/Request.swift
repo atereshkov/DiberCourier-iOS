@@ -13,11 +13,13 @@ class RequestDTO {
     var id: Int
     var status: RequestStatus
     var order: OrderDTO
+    var date: Date = Date(timeIntervalSince1970: 1)
     
-    init(id: Int, status: RequestStatus, order: OrderDTO) {
+    init(id: Int, status: RequestStatus, order: OrderDTO, date: Date) {
         self.id = id
         self.status = status
         self.order = order
+        self.date = date
     }
     
 }
@@ -32,6 +34,9 @@ extension RequestDTO {
             return nil
         }
         
-        return RequestDTO(id: id, status: status, order: order)
+        let timestamp = data["creation_date"] as? TimeInterval ?? 0
+        let date = Date(timeIntervalSince1970: timestamp)
+        
+        return RequestDTO(id: id, status: status, order: order, date: date)
     }
 }

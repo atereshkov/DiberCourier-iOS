@@ -76,6 +76,22 @@ class RequestService: NSObject {
         }
     }
     
+    func getRequest(orderId: Int, courierId: Int, callback:((_ result: RequestResult) -> ())? = nil) {
+        let url = RequestEndpoint.requestBy(orderId: orderId, courierId: courierId).url
+        
+        sessionManager.request(url)
+            .validate()
+            .responseJSON { response in
+                if response.result.error == nil, let data = response.result.value as? [String: Any] {
+                    if let request = RequestDTO.with(data: data) {
+                        callback?(RequestResult.Success(request: request))
+                    }
+                } else {
+                    callback?(RequestResult.UnexpectedError(error: response.result.error))
+                }
+        }
+    }
+    
     func addRequest(orderId: Int, callback:((_ result: AddRequestResult) -> ())? = nil) {
         let endpoint = OrderEndpoint.addRequest(orderId: orderId)
         

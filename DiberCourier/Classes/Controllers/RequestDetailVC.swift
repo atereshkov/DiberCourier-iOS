@@ -39,11 +39,10 @@ class RequestDetailVC: UIViewController {
     
     @IBAction func cancelRequestDidPress(_ sender: Any) {
         let msg = "alert.request.cancel".localized()
-        
+        let cancel = UIAlertAction(title: "alert.cancel".localized(), style: .cancel) { (action) in }
         let ok = UIAlertAction(title: "alert.yes".localized(), style: .default, handler: { (action) in
             self.cancelRequest()
         })
-        let cancel = UIAlertAction(title: "alert.cancel".localized(), style: .cancel) { (action) in }
         
         self.showAlert(with: "alert.request".localized(), and: msg, buttons: [ok, cancel])
     }

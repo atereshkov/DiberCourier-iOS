@@ -12,16 +12,18 @@ enum OrderType: String {
     
     case all = "All"
     case in_progress = "In progress"
+    case request_submitted = "Request submitted"
     
     func displayName() -> String {
         switch self {
         case .all: return "All"
         case .in_progress: return "In progress"
+        case .request_submitted: return "Request submitted"
         }
     }
     
     static func allItems() -> [OrderType] {
-        return [.all, .in_progress]
+        return [.all, .in_progress, .request_submitted]
     }
     
     static func selectionItems() -> [String] {
