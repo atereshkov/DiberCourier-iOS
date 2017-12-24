@@ -9,6 +9,7 @@
 import UIKit
 import MBProgressHUD
 import Localize_Swift
+import PopupDialog
 
 class OrderDetailVC: UIViewController {
     
@@ -158,7 +159,29 @@ extension OrderDetailVC: OrderRequestViewDelegate {
 extension OrderDetailVC: OrderDetailViewDelegate {
     
     func showToAddressDetails() {
-        // TODO show popup
+        let title = "THIS IS THE DIALOG TITLE"
+        let message = "This is the message section of the popup dialog default view"
+        let image = #imageLiteral(resourceName: "ic_description")
+        
+        // Create the dialog
+        let popup = PopupDialog(title: title, message: message, image: image)
+        
+        // Create buttons
+        let buttonOne = CancelButton(title: "CANCEL") {
+            print("You canceled the dialog.")
+        }
+        
+        // This button will not the dismiss the dialog
+        let buttonTwo = DefaultButton(title: "BUTTON TWO", dismissOnTap: false) {
+            print("What a beauty!")
+        }
+        
+        let buttonThree = DefaultButton(title: "BUTTON THREE") {
+            print("Ah, maybe next time :)")
+        }
+        
+        popup.addButtons([buttonOne, buttonTwo, buttonThree])
+        self.present(popup, animated: true, completion: nil)
     }
     
     func showFromAddreesDetails() {

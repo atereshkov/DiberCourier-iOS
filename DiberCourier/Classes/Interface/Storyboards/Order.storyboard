@@ -75,7 +75,7 @@
                                         </constraints>
                                         <state key="normal" image="ic_info"/>
                                         <connections>
-                                            <action selector="fromAddressPressed:" destination="XlF-DP-izI" eventType="touchUpInside" id="IF0-GV-i0R"/>
+                                            <action selector="fromAddressPressed:" destination="uIP-4p-Phe" eventType="touchUpInside" id="nJ1-ap-MEs"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yW-H3-ebb">
@@ -86,7 +86,7 @@
                                         </constraints>
                                         <state key="normal" image="ic_info"/>
                                         <connections>
-                                            <action selector="toAddressPressed:" destination="XlF-DP-izI" eventType="touchUpInside" id="84a-Ke-lWZ"/>
+                                            <action selector="toAddressPressed:" destination="uIP-4p-Phe" eventType="touchUpInside" id="irv-eq-2GQ"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MD7-La-Otf">
@@ -247,7 +247,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gFF-5s-X9e" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="XlF-DP-izI" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1164" y="-182.15892053973016"/>
         </scene>
