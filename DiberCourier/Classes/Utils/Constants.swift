@@ -43,3 +43,7 @@ class NetworkConstant {
 class Pagination {
     static let pageSize = 5 // items number for pagination loading
 }
+
+class GoogleMaps {
+    static let apiURL = "https://www.google.com/maps/search/?api=1&query="
+}

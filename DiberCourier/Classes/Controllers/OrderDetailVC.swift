@@ -159,33 +159,57 @@ extension OrderDetailVC: OrderRequestViewDelegate {
 extension OrderDetailVC: OrderDetailViewDelegate {
     
     func showToAddressDetails() {
-        let title = "THIS IS THE DIALOG TITLE"
-        let message = "This is the message section of the popup dialog default view"
-        let image = #imageLiteral(resourceName: "ic_description")
+        guard let address = self.order?.addressTo else { return }
         
-        // Create the dialog
-        let popup = PopupDialog(title: title, message: message, image: image)
+        let title = "Destination address"
+        let message = "\(address.country), \(address.city), \(address.address)"
+        let popup = PopupDialog(title: title, message: message)
         
-        // Create buttons
-        let buttonOne = CancelButton(title: "CANCEL") {
-            print("You canceled the dialog.")
+        let clipboardButton = DefaultButton(title: "COPY TO CLIPBOARD", dismissOnTap: false) {
+            let strAddress = "\(address.country), \(address.city), \(address.address)"
+            UIPasteboard.general.string = strAddress
         }
         
-        // This button will not the dismiss the dialog
-        let buttonTwo = DefaultButton(title: "BUTTON TWO", dismissOnTap: false) {
-            print("What a beauty!")
+        let mapButton = DefaultButton(title: "SHOW ON MAP") {
+            let mapLinkQuery = GoogleMaps.apiURL + "\(address.country), \(address.city), \(address.address)"
+            let link = mapLinkQuery.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+            if let link = link, let url = URL(string: link) {
+                Swift.print("URL: \(url)")
+                UIApplication.shared.open(url)
+            }
         }
         
-        let buttonThree = DefaultButton(title: "BUTTON THREE") {
-            print("Ah, maybe next time :)")
-        }
+        let closeButton = CancelButton(title: "CLOSE") { }
         
-        popup.addButtons([buttonOne, buttonTwo, buttonThree])
+        popup.addButtons([clipboardButton, mapButton, closeButton])
         self.present(popup, animated: true, completion: nil)
     }
     
     func showFromAddreesDetails() {
-        // TODO show popup
+        guard let address = self.order?.addressFrom else { return }
+        
+        let title = "Address from"
+        let message = "\(address.country), \(address.city), \(address.address)"
+        let popup = PopupDialog(title: title, message: message)
+        
+        let clipboardButton = DefaultButton(title: "COPY TO CLIPBOARD", dismissOnTap: false) {
+            let strAddress = "\(address.country), \(address.city), \(address.address)"
+            UIPasteboard.general.string = strAddress
+        }
+        
+        let mapButton = DefaultButton(title: "SHOW ON MAP") {
+            let mapLinkQuery = GoogleMaps.apiURL + "\(address.country), \(address.city), \(address.address)"
+            let link = mapLinkQuery.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+            if let link = link, let url = URL(string: link) {
+                Swift.print("URL: \(url)")
+                UIApplication.shared.open(url)
+            }
+        }
+        
+        let closeButton = CancelButton(title: "CLOSE") { }
+        
+        popup.addButtons([clipboardButton, mapButton, closeButton])
+        self.present(popup, animated: true, completion: nil)
     }
     
 }
