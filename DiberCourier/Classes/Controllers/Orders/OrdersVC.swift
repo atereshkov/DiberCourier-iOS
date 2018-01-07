@@ -95,6 +95,7 @@ class OrdersVC: UIViewController {
         dropDown.anchorView = topContainerView
         dropDown.direction = .bottom
         dropDown.bottomOffset = CGPoint(x: 0, y: topContainerView.bounds.height)
+        dropDown.dataSource = OrderType.selectionItems()
         
         dropDown.cancelAction = { [weak self] in
             guard let self_ = self, let dropDownVC = self_.dropDownVC else { return }
@@ -105,14 +106,27 @@ class OrdersVC: UIViewController {
             guard let self_ = self, let dropDownVC = self_.dropDownVC else { return }
             dropDownVC.setSelected(item)
             dropDownVC.setState(DropdownState.collapsed)
+            guard let orderType = OrderType(rawValue: item) else { return }
+            self_.handleOrdersTypeSorting(with: orderType)
         }
-        
-        dropDown.dataSource = OrderType.selectionItems()
         
         guard let dropDownVC = self.dropDownVC, OrderType.selectionItems().count > 0 else { return }
         let initialIndex = 0
         dropDownVC.setSelected(OrderType.selectionItems()[initialIndex])
         dropDown.selectRow(at: initialIndex)
+    }
+    
+    fileprivate func handleOrdersTypeSorting(with type: OrderType) {
+        switch type {
+        case .all:
+            guard let ordersTableVC = ordersTableVC else { return }
+            ordersTableVC.removeAll()
+            loadData(silent: false)
+        case .in_progress:
+            break
+        case .request_submitted:
+            break
+        }
     }
     
     // MARK: Scrolling

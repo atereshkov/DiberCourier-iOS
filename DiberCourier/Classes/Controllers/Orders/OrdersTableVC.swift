@@ -50,6 +50,7 @@ class OrdersTableVC: UITableViewController {
     }
     
     func removeAll() {
+        self.currentPage = 0
         self.orders.removeAll()
     }
     
