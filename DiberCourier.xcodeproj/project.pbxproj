@@ -32,6 +32,7 @@
 		A33AE34C1FB0734E00180661 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A33AE34E1FB0734E00180661 /* Localizable.strings */; };
 		A33AE3531FB082FA00180661 /* MainNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33AE3521FB082FA00180661 /* MainNavigationVC.swift */; };
 		A33AE3551FB0835900180661 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33AE3541FB0835900180661 /* Login.storyboard */; };
+		A33EF92620023A0F002A9D40 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33EF92520023A0F002A9D40 /* Date.swift */; };
 		A386F0D41FE5946900BC8B30 /* Requests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A386F0D31FE5946900BC8B30 /* Requests.storyboard */; };
 		A386F0D71FE5B78100BC8B30 /* OrdersDropdownVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A386F0D61FE5B78100BC8B30 /* OrdersDropdownVC.swift */; };
 		A386F0DA1FE5D8B200BC8B30 /* RequestsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A386F0D91FE5D8B200BC8B30 /* RequestsVC.swift */; };
@@ -125,6 +126,7 @@
 		A33AE3511FB073A200180661 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A33AE3521FB082FA00180661 /* MainNavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationVC.swift; sourceTree = "<group>"; };
 		A33AE3541FB0835900180661 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		A33EF92520023A0F002A9D40 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		A386F0D31FE5946900BC8B30 /* Requests.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Requests.storyboard; sourceTree = "<group>"; };
 		A386F0D61FE5B78100BC8B30 /* OrdersDropdownVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersDropdownVC.swift; sourceTree = "<group>"; };
 		A386F0D91FE5D8B200BC8B30 /* RequestsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsVC.swift; sourceTree = "<group>"; };
@@ -411,6 +413,7 @@
 				A3A999BB1FB0972400D63B35 /* Realm.swift */,
 				A3A999C81FB09A4000D63B35 /* String.swift */,
 				A31D0D291FCACA85000D37F1 /* UINavigationController.swift */,
+				A33EF92520023A0F002A9D40 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -816,6 +819,7 @@
 				A3A999C51FB0979500D63B35 /* RealmObject.swift in Sources */,
 				A3A999BC1FB0972400D63B35 /* Realm.swift in Sources */,
 				A386F0DC1FE5D8BD00BC8B30 /* RequestsTableVC.swift in Sources */,
+				A33EF92620023A0F002A9D40 /* Date.swift in Sources */,
 				A31F9DEE1FB1A3E2008CD08A /* AddressView.swift in Sources */,
 				A3A999C21FB0977700D63B35 /* Role.swift in Sources */,
 				A39A2C6B1FD469740014BD46 /* OrderDetailView.swift in Sources */,

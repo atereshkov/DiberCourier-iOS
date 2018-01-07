@@ -38,7 +38,7 @@ class OrderCell: UITableViewCell {
         fromLabel.text = item.addressFrom.address
         toLabel.text = item.addressTo.address
         descriptionLabel.text = item.descr
-        dateTimeLabel.text = "\(item.date)"
+        dateTimeLabel.text = item.date.toString()
     }
     
     //MARK:- Actions
