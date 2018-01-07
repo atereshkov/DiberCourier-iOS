@@ -25,6 +25,8 @@ class OrdersVC: UIViewController {
     fileprivate var hideTopView = false
     fileprivate var debounceTimer: WeakTimer?
     
+    fileprivate var sortType: OrderType = OrderType.all
+    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
@@ -72,7 +74,7 @@ class OrdersVC: UIViewController {
             
             switch result {
             case .Success(let orders, _, let totalElements):
-                LogManager.log.info("Got orders: \(orders.count) | page: \(page)")
+                LogManager.log.info("Load orders: \(orders.count) | page: \(page)")
                 self_.setup(orders, totalElements: totalElements)
             case .UnexpectedError(let error):
                 self_.showUnexpectedErrorAlert(error: error)
@@ -84,11 +86,26 @@ class OrdersVC: UIViewController {
     
     // MARK: Helpers
     
+    private func filterByOrderType(_ orders: [OrderView], type: OrderType) -> [OrderView] {
+        let userId = PreferenceManager.shared.userId
+        switch type {
+        case .all:
+            return orders.filter({ $0.status != "Completed" }) // todo show only actual orders
+        case .in_progress:
+            return orders.filter({ $0.courier?.id == userId && $0.status == "In progress" })
+        case .my:
+            return orders.filter({ $0.courier?.id == userId })
+        case .completed:
+            return orders.filter({ $0.status == "Completed" })
+        }
+    }
+    
     private func setup(_ orders: [OrderDTO], totalElements: Int) {
         guard let ordersTableVC = self.ordersTableVC else { return }
         ordersTableVC.totalItems = totalElements
         let ordersDVO = OrderView.from(orders: orders)
-        ordersTableVC.addOrders(ordersDVO)
+        let filteredOrders = self.filterByOrderType(ordersDVO, type: self.sortType)
+        ordersTableVC.addOrders(filteredOrders)
     }
     
     private func setupDropDownView() {
@@ -117,16 +134,10 @@ class OrdersVC: UIViewController {
     }
     
     fileprivate func handleOrdersTypeSorting(with type: OrderType) {
-        switch type {
-        case .all:
-            guard let ordersTableVC = ordersTableVC else { return }
-            ordersTableVC.removeAll()
-            loadData(silent: false)
-        case .in_progress:
-            break
-        case .request_submitted:
-            break
-        }
+        guard let ordersTableVC = ordersTableVC else { return }
+        ordersTableVC.removeAll()
+        self.sortType = type
+        loadData(silent: false)
     }
     
     // MARK: Scrolling

@@ -11,19 +11,21 @@ import Foundation
 enum OrderType: String {
     
     case all = "All"
+    case my = "My"
     case in_progress = "In progress"
-    case request_submitted = "Request submitted"
+    case completed = "Completed"
     
     func displayName() -> String {
         switch self {
         case .all: return "All"
+        case .my: return "My"
         case .in_progress: return "In progress"
-        case .request_submitted: return "Request submitted"
+        case .completed: return "Completed"
         }
     }
     
     static func allItems() -> [OrderType] {
-        return [.all, .in_progress, .request_submitted]
+        return [.all, .my, .in_progress, .completed]
     }
     
     static func selectionItems() -> [String] {
