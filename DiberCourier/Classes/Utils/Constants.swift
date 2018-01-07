@@ -42,6 +42,7 @@ class NetworkConstant {
 
 class Pagination {
     static let pageSize = 5 // items number for pagination loading
+    static let cellOffset = 120.0 // offset for pagination loading between screen bottom and scrubber
 }
 
 class GoogleMaps {

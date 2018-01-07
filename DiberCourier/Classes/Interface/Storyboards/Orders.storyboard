@@ -220,6 +220,7 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="EIe-u4-xhJ" id="0nq-hf-ALC"/>
                             <outlet property="delegate" destination="EIe-u4-xhJ" id="dUY-M9-1gR"/>
@@ -270,6 +271,7 @@
                             <constraint firstItem="MQb-yt-CYe" firstAttribute="leading" secondItem="kgi-KQ-nxD" secondAttribute="leading" constant="16" id="VSQ-fG-o3q"/>
                             <constraint firstAttribute="trailing" secondItem="OaY-kB-ORn" secondAttribute="trailing" id="Yjx-h8-y2g"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="xqK-F2-PNb"/>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="DgL-oy-TKQ" id="rpJ-MZ-1J6"/>

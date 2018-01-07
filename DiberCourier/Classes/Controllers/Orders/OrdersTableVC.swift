@@ -25,6 +25,7 @@ class OrdersTableVC: UITableViewController {
     
     fileprivate var currentPage = 0
     var totalItems = 0
+    var dataLoading = false
     
     var lastContentOffset: CGFloat = 0
     
@@ -85,14 +86,6 @@ class OrdersTableVC: UITableViewController {
         return indexPath.row == self.orders.count - 1
     }
     
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        // fetch new data if user scroll to the last cell
-        guard isLoadingIndexPath(indexPath) else { return }
-        if self.totalItems > orders.count {
-            fetchNextPage()
-        }
-    }
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Cells.orders.rawValue, for: indexPath) as? OrderCell else {
                 fatalError("The dequeued cell is not an instance of OrderCell")
@@ -121,6 +114,7 @@ class OrdersTableVC: UITableViewController {
     // MARK: TableView Scroll
     
     override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.dataLoading = false
         self.lastContentOffset = scrollView.contentOffset.y
     }
     
@@ -129,6 +123,17 @@ class OrdersTableVC: UITableViewController {
             delegate?.hideTopView(hide: true)
         } else if (self.lastContentOffset > scrollView.contentOffset.y) {
             delegate?.hideTopView(hide: false)
+        }
+    }
+    
+    // Pagination handling
+    override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let contentOffset = tableView.contentOffset.y + tableView.frame.size.height
+        if (contentOffset + CGFloat(Pagination.cellOffset) >= tableView.contentSize.height) {
+            if !dataLoading && self.totalItems > orders.count {
+                self.dataLoading = true
+                fetchNextPage()
+            }
         }
     }
     
