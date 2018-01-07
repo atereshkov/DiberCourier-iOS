@@ -14,6 +14,7 @@ fileprivate enum PreferenceKeys: String {
     case refreshToken = "key.diber.RefreshTokenKey"
     case userId = "key.diber.UserIdKeyPreference"
     case userName = "key.diber.UserNameKeyPreference"
+    case sortType = "key.diber.sortType"
 }
 
 class PreferenceManager: NSObject {
@@ -66,6 +67,15 @@ class PreferenceManager: NSObject {
         }
     }
     
+    var sortType: OrderType {
+        get {
+            return OrderType(rawValue: UserDefaults.standard.string(forKey: PreferenceKeys.sortType.rawValue) ?? OrderType.all.rawValue) ?? OrderType.all
+        }
+        set {
+            UserDefaults.standard.set(newValue.rawValue, forKey: PreferenceKeys.sortType.rawValue)
+        }
+    }
+    
     // MARK: Clear
     
     func clear() {
@@ -73,6 +83,7 @@ class PreferenceManager: NSObject {
         UserDefaults.standard.removeObject(forKey: PreferenceKeys.refreshToken.rawValue)
         UserDefaults.standard.removeObject(forKey: PreferenceKeys.userId.rawValue)
         UserDefaults.standard.removeObject(forKey: PreferenceKeys.userName.rawValue)
+        UserDefaults.standard.removeObject(forKey: PreferenceKeys.sortType.rawValue)
     }
     
     func isFirstRunApp() -> Bool {

@@ -25,7 +25,7 @@ class OrdersVC: UIViewController {
     fileprivate var hideTopView = false
     fileprivate var debounceTimer: WeakTimer?
     
-    fileprivate var sortType: OrderType = OrderType.all
+    fileprivate var sortType: OrderType = PreferenceManager.shared.sortType
     
     // MARK: Lifecycle
     
@@ -128,14 +128,15 @@ class OrdersVC: UIViewController {
         }
         
         guard let dropDownVC = self.dropDownVC, OrderType.selectionItems().count > 0 else { return }
-        let initialIndex = 0
-        dropDownVC.setSelected(OrderType.selectionItems()[initialIndex])
+        let initialIndex = OrderType.selectionItems().index(of: PreferenceManager.shared.sortType.rawValue)
+        dropDownVC.setSelected(PreferenceManager.shared.sortType.rawValue)
         dropDown.selectRow(at: initialIndex)
     }
     
     fileprivate func handleOrdersTypeSorting(with type: OrderType) {
         guard let ordersTableVC = ordersTableVC else { return }
         ordersTableVC.removeAll()
+        PreferenceManager.shared.sortType = type
         self.sortType = type
         loadData(silent: false)
     }
