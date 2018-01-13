@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eSJ-xI-628">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eSJ-xI-628">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DEX-Pf-q8z" userLabel="Center container">
-                                <rect key="frame" x="16" y="200" width="343" height="267"/>
+                                <rect key="frame" x="16" y="206" width="343" height="267"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zkj-jk-SeW">
                                         <rect key="frame" x="8" y="40" width="327" height="30"/>
@@ -33,28 +33,42 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHa-Yv-NhG">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHa-Yv-NhG" customClass="RoundedStyledButton" customModule="DiberCourier" customModuleProvider="target">
                                         <rect key="frame" x="8" y="140" width="327" height="35"/>
                                         <color key="backgroundColor" red="0.1333333333" green="0.5450980392" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="Y0h-0m-jdT"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="SIGN IN">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="signInAction:" destination="eSJ-xI-628" eventType="touchUpInside" id="Fi3-Qn-DX9"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NnF-g0-cPd">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NnF-g0-cPd" customClass="RoundedStyledButton" customModule="DiberCourier" customModuleProvider="target">
                                         <rect key="frame" x="8" y="187" width="327" height="35"/>
                                         <color key="backgroundColor" red="0.1333333333" green="0.5450980392" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="vDn-Kk-fOe"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="SIGN UP">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="signUpAction:" destination="eSJ-xI-628" eventType="touchUpInside" id="Mhg-Oi-Agf"/>
                                         </connections>
@@ -76,11 +90,11 @@
                                     <constraint firstItem="NnF-g0-cPd" firstAttribute="leading" secondItem="DEX-Pf-q8z" secondAttribute="leading" constant="8" id="zWA-rF-Hka"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fw5-zT-WS3" userLabel="Logo">
-                                <rect key="frame" x="157" y="124" width="60" height="60"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Fw5-zT-WS3" userLabel="Logo">
+                                <rect key="frame" x="123.5" y="76" width="128" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="1OT-aA-pMz"/>
-                                    <constraint firstAttribute="width" constant="60" id="Qo9-MU-a0B"/>
+                                    <constraint firstAttribute="height" constant="128" id="1OT-aA-pMz"/>
+                                    <constraint firstAttribute="width" constant="128" id="Qo9-MU-a0B"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -88,8 +102,8 @@
                         <constraints>
                             <constraint firstItem="vtf-MW-8Dk" firstAttribute="trailing" secondItem="DEX-Pf-q8z" secondAttribute="trailing" constant="16" id="4EO-UE-3SQ"/>
                             <constraint firstItem="DEX-Pf-q8z" firstAttribute="height" secondItem="Phz-c2-KlN" secondAttribute="height" multiplier="1:2.5" id="GqZ-hz-Jew"/>
-                            <constraint firstItem="DEX-Pf-q8z" firstAttribute="top" secondItem="Fw5-zT-WS3" secondAttribute="bottom" constant="16" id="MYH-g6-Kft"/>
-                            <constraint firstItem="DEX-Pf-q8z" firstAttribute="centerY" secondItem="vtf-MW-8Dk" secondAttribute="centerY" constant="-10" id="R1a-H3-9Ez"/>
+                            <constraint firstItem="DEX-Pf-q8z" firstAttribute="top" secondItem="Fw5-zT-WS3" secondAttribute="bottom" constant="2" id="MYH-g6-Kft"/>
+                            <constraint firstItem="DEX-Pf-q8z" firstAttribute="centerY" secondItem="vtf-MW-8Dk" secondAttribute="centerY" constant="-4" id="R1a-H3-9Ez"/>
                             <constraint firstItem="DEX-Pf-q8z" firstAttribute="leading" secondItem="vtf-MW-8Dk" secondAttribute="leading" constant="16" id="UrP-wf-TLJ"/>
                             <constraint firstItem="Fw5-zT-WS3" firstAttribute="centerX" secondItem="vtf-MW-8Dk" secondAttribute="centerX" id="o9w-Oe-uQg"/>
                         </constraints>
@@ -114,4 +128,7 @@
             <point key="canvasLocation" x="702" y="238"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="main_logo" width="512" height="512"/>
+    </resources>
 </document>

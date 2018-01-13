@@ -29,6 +29,7 @@
 		A324C6FA1FAF7A7600E0A02D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A324C6F81FAF7A7600E0A02D /* LaunchScreen.storyboard */; };
 		A324C7051FAF7A7600E0A02D /* DiberCourierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324C7041FAF7A7600E0A02D /* DiberCourierTests.swift */; };
 		A324C7101FAF7A7600E0A02D /* DiberCourierUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324C70F1FAF7A7600E0A02D /* DiberCourierUITests.swift */; };
+		A32F807B200A117100E8F29D /* RoundedStyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32F807A200A117100E8F29D /* RoundedStyledButton.swift */; };
 		A33AE34C1FB0734E00180661 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A33AE34E1FB0734E00180661 /* Localizable.strings */; };
 		A33AE3531FB082FA00180661 /* MainNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33AE3521FB082FA00180661 /* MainNavigationVC.swift */; };
 		A33AE3551FB0835900180661 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33AE3541FB0835900180661 /* Login.storyboard */; };
@@ -120,6 +121,7 @@
 		A324C70B1FAF7A7600E0A02D /* DiberCourierUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiberCourierUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A324C70F1FAF7A7600E0A02D /* DiberCourierUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiberCourierUITests.swift; sourceTree = "<group>"; };
 		A324C7111FAF7A7600E0A02D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A32F807A200A117100E8F29D /* RoundedStyledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedStyledButton.swift; sourceTree = "<group>"; };
 		A33AE34D1FB0734E00180661 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A33AE34F1FB073A200180661 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		A33AE3501FB073A200180661 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 			children = (
 				A39A2C691FD469640014BD46 /* Order */,
 				A31F9DE61FB1A374008CD08A /* Cells */,
+				A32F807A200A117100E8F29D /* RoundedStyledButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -808,6 +811,7 @@
 				A31F9DE31FB1A340008CD08A /* OrdersVC.swift in Sources */,
 				A386F0E21FE5DF4900BC8B30 /* RequestService.swift in Sources */,
 				A31F9DF21FB1A446008CD08A /* Order.swift in Sources */,
+				A32F807B200A117100E8F29D /* RoundedStyledButton.swift in Sources */,
 				A3A999AC1FB0877100D63B35 /* NetworkManager.swift in Sources */,
 				A3A999B41FB0969B00D63B35 /* BaseEndpoint.swift in Sources */,
 				A31D0D2A1FCACA85000D37F1 /* UINavigationController.swift in Sources */,
