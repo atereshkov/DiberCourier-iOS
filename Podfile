@@ -19,6 +19,10 @@ target 'DiberCourier' do
   pod 'EXPLogger', '~> 1.0.1'
   pod 'DropDown', '~> 2.0.2'
   pod 'PopupDialog', '~> 0.6'
+  
+  # Maps
+  pod 'GoogleMaps', '~> 2.5.0'
+  pod 'GooglePlaces', '~> 2.5.0'
 
   target 'DiberCourierTests' do
     inherit! :search_paths

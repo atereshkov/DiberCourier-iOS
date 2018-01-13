@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,6 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Realm
         Realm.Configuration.defaultConfiguration.deleteRealmIfMigrationNeeded = true
         LogManager.log.info("[Realm] URL: \(String(describing: Realm.Configuration.defaultConfiguration.fileURL))")
+        
+        // Google Maps & Places
+        GMSServices.provideAPIKey("AIzaSyB5-zjTdDCNfpoMNjUcLrCTfqZy_JIm8NE")
         
         return true
     }

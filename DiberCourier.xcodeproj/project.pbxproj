@@ -32,6 +32,8 @@
 		A32F807B200A117100E8F29D /* RoundedStyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32F807A200A117100E8F29D /* RoundedStyledButton.swift */; };
 		A32F807D200A150700E8F29D /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A32F807C200A150700E8F29D /* Signup.storyboard */; };
 		A32F807F200A15EA00E8F29D /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32F807E200A15EA00E8F29D /* SignupVC.swift */; };
+		A32F8082200A1A6C00E8F29D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32F8081200A1A6C00E8F29D /* MapViewController.swift */; };
+		A32F8084200A203900E8F29D /* GoogleMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A32F8083200A203900E8F29D /* GoogleMap.storyboard */; };
 		A33AE34C1FB0734E00180661 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A33AE34E1FB0734E00180661 /* Localizable.strings */; };
 		A33AE3531FB082FA00180661 /* MainNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33AE3521FB082FA00180661 /* MainNavigationVC.swift */; };
 		A33AE3551FB0835900180661 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33AE3541FB0835900180661 /* Login.storyboard */; };
@@ -126,6 +128,8 @@
 		A32F807A200A117100E8F29D /* RoundedStyledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedStyledButton.swift; sourceTree = "<group>"; };
 		A32F807C200A150700E8F29D /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
 		A32F807E200A15EA00E8F29D /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		A32F8081200A1A6C00E8F29D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A32F8083200A203900E8F29D /* GoogleMap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GoogleMap.storyboard; sourceTree = "<group>"; };
 		A33AE34D1FB0734E00180661 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A33AE34F1FB073A200180661 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		A33AE3501FB073A200180661 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -269,6 +273,14 @@
 			path = DiberCourierUITests;
 			sourceTree = "<group>";
 		};
+		A32F8080200A1A5800E8F29D /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				A32F8081200A1A6C00E8F29D /* MapViewController.swift */,
+			);
+			path = Maps;
+			sourceTree = "<group>";
+		};
 		A33AE33C1FB06E7F00180661 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +305,7 @@
 				A386F0E71FE6628700BC8B30 /* RequestDetailVC.swift */,
 				A3A999C61FB097F800D63B35 /* LoginVC.swift */,
 				A32F807E200A15EA00E8F29D /* SignupVC.swift */,
+				A32F8080200A1A5800E8F29D /* Maps */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -317,6 +330,7 @@
 				A33AE3541FB0835900180661 /* Login.storyboard */,
 				A32F807C200A150700E8F29D /* Signup.storyboard */,
 				A324C6F81FAF7A7600E0A02D /* LaunchScreen.storyboard */,
+				A32F8083200A203900E8F29D /* GoogleMap.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -614,6 +628,7 @@
 				A386F0D41FE5946900BC8B30 /* Requests.storyboard in Resources */,
 				A32F807D200A150700E8F29D /* Signup.storyboard in Resources */,
 				A324C6F51FAF7A7600E0A02D /* Main.storyboard in Resources */,
+				A32F8084200A203900E8F29D /* GoogleMap.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -757,9 +772,13 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DiberCourier/Pods-DiberCourier-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -840,6 +859,7 @@
 				A31F9DE81FB1A387008CD08A /* OrderCell.swift in Sources */,
 				A3A999BE1FB0974100D63B35 /* WeakTimer.swift in Sources */,
 				A3A999C01FB0976800D63B35 /* User.swift in Sources */,
+				A32F8082200A1A6C00E8F29D /* MapViewController.swift in Sources */,
 				A3A999BA1FB0970D00D63B35 /* AlertControllerHelper.swift in Sources */,
 				A386F0D71FE5B78100BC8B30 /* OrdersDropdownVC.swift in Sources */,
 				A31F9DF61FB1A60F008CD08A /* OrderEndpoint.swift in Sources */,
