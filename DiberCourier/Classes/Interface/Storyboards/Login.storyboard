@@ -34,7 +34,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHa-Yv-NhG" customClass="RoundedStyledButton" customModule="DiberCourier" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="140" width="327" height="35"/>
+                                        <rect key="frame" x="8" y="165" width="327" height="35"/>
                                         <color key="backgroundColor" red="0.1333333333" green="0.5450980392" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="Y0h-0m-jdT"/>
@@ -54,7 +54,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NnF-g0-cPd" customClass="RoundedStyledButton" customModule="DiberCourier" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="187" width="327" height="35"/>
+                                        <rect key="frame" x="8" y="212" width="327" height="35"/>
                                         <color key="backgroundColor" red="0.1333333333" green="0.5450980392" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="vDn-Kk-fOe"/>
@@ -71,7 +71,17 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="signUpAction:" destination="eSJ-xI-628" eventType="touchUpInside" id="Mhg-Oi-Agf"/>
+                                            <segue destination="mtU-ux-Ohm" kind="show" id="Ix0-HT-aem"/>
                                         </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTa-8U-jIH">
+                                        <rect key="frame" x="215" y="128" width="120" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="29" id="If3-3k-oiI"/>
+                                            <constraint firstAttribute="width" constant="120" id="J7c-iJ-X3s"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="Forgot password"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -80,12 +90,14 @@
                                     <constraint firstAttribute="trailing" secondItem="XHa-Yv-NhG" secondAttribute="trailing" constant="8" id="9Ay-Cv-91T"/>
                                     <constraint firstAttribute="trailing" secondItem="NnF-g0-cPd" secondAttribute="trailing" constant="8" id="AJ9-1h-3Bf"/>
                                     <constraint firstAttribute="trailing" secondItem="zkj-jk-SeW" secondAttribute="trailing" constant="8" id="GP2-XS-ICW"/>
-                                    <constraint firstItem="XHa-Yv-NhG" firstAttribute="top" secondItem="BO4-W8-Kcp" secondAttribute="bottom" constant="20" id="aKX-no-Weq"/>
+                                    <constraint firstItem="XTa-8U-jIH" firstAttribute="top" secondItem="BO4-W8-Kcp" secondAttribute="bottom" constant="8" id="SfX-aV-euV"/>
                                     <constraint firstItem="BO4-W8-Kcp" firstAttribute="top" secondItem="zkj-jk-SeW" secondAttribute="bottom" constant="20" id="aks-wC-Zkw"/>
                                     <constraint firstAttribute="trailing" secondItem="BO4-W8-Kcp" secondAttribute="trailing" constant="8" id="bTT-2I-Mde"/>
                                     <constraint firstItem="NnF-g0-cPd" firstAttribute="top" secondItem="XHa-Yv-NhG" secondAttribute="bottom" constant="12" id="dWD-4h-eWO"/>
                                     <constraint firstItem="BO4-W8-Kcp" firstAttribute="leading" secondItem="DEX-Pf-q8z" secondAttribute="leading" constant="8" id="dv6-xe-VJW"/>
+                                    <constraint firstItem="XHa-Yv-NhG" firstAttribute="top" secondItem="XTa-8U-jIH" secondAttribute="bottom" constant="8" id="fCe-t4-Lhw"/>
                                     <constraint firstItem="zkj-jk-SeW" firstAttribute="leading" secondItem="DEX-Pf-q8z" secondAttribute="leading" constant="8" id="j1J-vA-3n8"/>
+                                    <constraint firstAttribute="trailing" secondItem="XTa-8U-jIH" secondAttribute="trailing" constant="8" id="mzu-To-Ks1"/>
                                     <constraint firstItem="XHa-Yv-NhG" firstAttribute="leading" secondItem="DEX-Pf-q8z" secondAttribute="leading" constant="8" id="y4p-FS-x6E"/>
                                     <constraint firstItem="NnF-g0-cPd" firstAttribute="leading" secondItem="DEX-Pf-q8z" secondAttribute="leading" constant="8" id="zWA-rF-Hka"/>
                                 </constraints>
@@ -125,7 +137,15 @@
                 <viewControllerPlaceholder storyboardName="Main" id="LAP-vg-AAR" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k5h-LI-XVF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="702" y="238"/>
+            <point key="canvasLocation" x="680" y="238"/>
+        </scene>
+        <!--Signup-->
+        <scene sceneID="KWe-aM-6Tf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Signup" id="mtU-ux-Ohm" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JRv-lF-RHP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="690" y="302"/>
         </scene>
     </scenes>
     <resources>

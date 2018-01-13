@@ -30,6 +30,8 @@
 		A324C7051FAF7A7600E0A02D /* DiberCourierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324C7041FAF7A7600E0A02D /* DiberCourierTests.swift */; };
 		A324C7101FAF7A7600E0A02D /* DiberCourierUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324C70F1FAF7A7600E0A02D /* DiberCourierUITests.swift */; };
 		A32F807B200A117100E8F29D /* RoundedStyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32F807A200A117100E8F29D /* RoundedStyledButton.swift */; };
+		A32F807D200A150700E8F29D /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A32F807C200A150700E8F29D /* Signup.storyboard */; };
+		A32F807F200A15EA00E8F29D /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32F807E200A15EA00E8F29D /* SignupVC.swift */; };
 		A33AE34C1FB0734E00180661 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A33AE34E1FB0734E00180661 /* Localizable.strings */; };
 		A33AE3531FB082FA00180661 /* MainNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33AE3521FB082FA00180661 /* MainNavigationVC.swift */; };
 		A33AE3551FB0835900180661 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33AE3541FB0835900180661 /* Login.storyboard */; };
@@ -122,6 +124,8 @@
 		A324C70F1FAF7A7600E0A02D /* DiberCourierUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiberCourierUITests.swift; sourceTree = "<group>"; };
 		A324C7111FAF7A7600E0A02D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A32F807A200A117100E8F29D /* RoundedStyledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedStyledButton.swift; sourceTree = "<group>"; };
+		A32F807C200A150700E8F29D /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
+		A32F807E200A15EA00E8F29D /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		A33AE34D1FB0734E00180661 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A33AE34F1FB073A200180661 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		A33AE3501FB073A200180661 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -285,9 +289,10 @@
 				A386F0D51FE5B73800BC8B30 /* Orders */,
 				A386F0D81FE5D89700BC8B30 /* Requests */,
 				A33AE3521FB082FA00180661 /* MainNavigationVC.swift */,
-				A3A999C61FB097F800D63B35 /* LoginVC.swift */,
 				A3C491B91FB23E9F005574E7 /* OrderDetailVC.swift */,
 				A386F0E71FE6628700BC8B30 /* RequestDetailVC.swift */,
+				A3A999C61FB097F800D63B35 /* LoginVC.swift */,
+				A32F807E200A15EA00E8F29D /* SignupVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -310,6 +315,7 @@
 				A386F0D31FE5946900BC8B30 /* Requests.storyboard */,
 				A386F0E51FE661EE00BC8B30 /* Request.storyboard */,
 				A33AE3541FB0835900180661 /* Login.storyboard */,
+				A32F807C200A150700E8F29D /* Signup.storyboard */,
 				A324C6F81FAF7A7600E0A02D /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -606,6 +612,7 @@
 				A31D0D261FCAC46C000D37F1 /* Order.storyboard in Resources */,
 				A33AE3551FB0835900180661 /* Login.storyboard in Resources */,
 				A386F0D41FE5946900BC8B30 /* Requests.storyboard in Resources */,
+				A32F807D200A150700E8F29D /* Signup.storyboard in Resources */,
 				A324C6F51FAF7A7600E0A02D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -823,6 +830,7 @@
 				A3A999C51FB0979500D63B35 /* RealmObject.swift in Sources */,
 				A3A999BC1FB0972400D63B35 /* Realm.swift in Sources */,
 				A386F0DC1FE5D8BD00BC8B30 /* RequestsTableVC.swift in Sources */,
+				A32F807F200A15EA00E8F29D /* SignupVC.swift in Sources */,
 				A33EF92620023A0F002A9D40 /* Date.swift in Sources */,
 				A31F9DEE1FB1A3E2008CD08A /* AddressView.swift in Sources */,
 				A3A999C21FB0977700D63B35 /* Role.swift in Sources */,
