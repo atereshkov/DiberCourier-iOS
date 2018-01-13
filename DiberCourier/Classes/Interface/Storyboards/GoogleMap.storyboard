@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uev-sM-6VQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,32 +9,43 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Map View Controller-->
-        <scene sceneID="WBy-UZ-IsO">
+        <!--Navigation Controller-->
+        <scene sceneID="mIv-Cx-YJU">
             <objects>
-                <viewController storyboardIdentifier="MapViewController" id="zUq-X3-kog" customClass="MapViewController" customModule="DiberCourier" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="66i-QY-JL9">
+                <navigationController id="Uev-sM-6VQ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uFl-zi-yHX">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vzJ-sb-g9Q" kind="relationship" relationship="rootViewController" id="K8g-rG-GzX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H6z-9Y-5JP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1073" y="179"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="d2T-6S-zEw">
+            <objects>
+                <viewController id="vzJ-sb-g9Q" customClass="MapViewController" customModule="DiberCourier" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Y3-9D-oh3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rlq-ve-a5d" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Rlq-ve-a5d" firstAttribute="leading" secondItem="vij-sD-ZI5" secondAttribute="leading" id="1a5-xV-hUt"/>
-                            <constraint firstItem="vij-sD-ZI5" firstAttribute="trailing" secondItem="Rlq-ve-a5d" secondAttribute="trailing" id="2w3-bd-gWc"/>
-                            <constraint firstItem="Rlq-ve-a5d" firstAttribute="top" secondItem="vij-sD-ZI5" secondAttribute="top" id="tvy-J5-huL"/>
-                            <constraint firstItem="vij-sD-ZI5" firstAttribute="bottom" secondItem="Rlq-ve-a5d" secondAttribute="bottom" id="yQ4-eo-evZ"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="vij-sD-ZI5"/>
+                        <viewLayoutGuide key="safeArea" id="jrb-X5-Lli"/>
                     </view>
+                    <navigationItem key="navigationItem" id="INc-aV-YNU">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="l0q-Mx-VGa">
+                            <connections>
+                                <action selector="backButtonPressed:" destination="vzJ-sb-g9Q" id="plW-FX-ydx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PXX-D2-8bm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wfG-1z-0tS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="129" y="143"/>
+            <point key="canvasLocation" x="-265" y="179"/>
         </scene>
     </scenes>
 </document>
