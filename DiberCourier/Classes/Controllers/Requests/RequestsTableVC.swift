@@ -23,6 +23,8 @@ class RequestsTableVC: UITableViewController {
     
     fileprivate var currentPage = 0
     var totalItems = 0
+    fileprivate var dataLoading = false
+    var lastContentOffset: CGFloat = 0
     
     private let refreshControlView = UIRefreshControl()
     
@@ -77,18 +79,6 @@ class RequestsTableVC: UITableViewController {
     
     // MARK: TableView
     
-    private func isLoadingIndexPath(_ indexPath: IndexPath) -> Bool {
-        return indexPath.row == self.requests.count - 1
-    }
-    
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        // fetch new data if user scroll to the last cell
-        guard isLoadingIndexPath(indexPath) else { return }
-        if self.totalItems > requests.count {
-            fetchNextPage()
-        }
-    }
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Cells.requests.rawValue, for: indexPath) as? RequestCell else {
             fatalError("The dequeued cell is not an instance of RequestCell")
@@ -114,6 +104,15 @@ class RequestsTableVC: UITableViewController {
         delegate?.didSelectRequest(request: request)
     }
     
+    // Pagination handling
+    override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let contentOffset = tableView.contentOffset.y + tableView.frame.size.height
+        if (contentOffset + CGFloat(Pagination.cellOffset) >= tableView.contentSize.height) {
+            if !dataLoading && self.totalItems > requests.count {
+                self.dataLoading = true
+                fetchNextPage()
+            }
+        }
+    }
+    
 }
-
-

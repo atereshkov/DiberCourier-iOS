@@ -25,8 +25,7 @@ class OrdersTableVC: UITableViewController {
     
     fileprivate var currentPage = 0
     var totalItems = 0
-    var dataLoading = false
-    
+    fileprivate var dataLoading = false
     var lastContentOffset: CGFloat = 0
     
     private let refreshControlView = UIRefreshControl()
@@ -82,10 +81,6 @@ class OrdersTableVC: UITableViewController {
     }
     
     // MARK: TableView
-    
-    private func isLoadingIndexPath(_ indexPath: IndexPath) -> Bool {
-        return indexPath.row == self.orders.count - 1
-    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Cells.orders.rawValue, for: indexPath) as? OrderCell else {
