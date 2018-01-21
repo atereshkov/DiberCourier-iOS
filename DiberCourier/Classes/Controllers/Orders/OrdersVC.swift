@@ -90,7 +90,7 @@ class OrdersVC: UIViewController {
         let userId = PreferenceManager.shared.userId
         switch type {
         case .all:
-            return orders.filter({ $0.status != "Completed" }) // todo show only actual orders
+            return orders.filter({ $0.status != "Completed" }) // todo get from the server
         case .in_progress:
             return orders.filter({ $0.courier?.id == userId && $0.status == "In progress" })
         case .my:
