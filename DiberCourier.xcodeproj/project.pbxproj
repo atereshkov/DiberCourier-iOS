@@ -72,6 +72,8 @@
 		A3A999CB1FB09A6300D63B35 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A999CA1FB09A6300D63B35 /* UserService.swift */; };
 		A3C491BA1FB23E9F005574E7 /* OrderDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C491B91FB23E9F005574E7 /* OrderDetailVC.swift */; };
 		A3FC0D2520152013002AF21F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3FC0D2420152013002AF21F /* Profile.storyboard */; };
+		A3FC0D2720152D22002AF21F /* OrderExecutionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC0D2620152D22002AF21F /* OrderExecutionService.swift */; };
+		A3FC0D2920152D82002AF21F /* OrderExecutionEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC0D2820152D82002AF21F /* OrderExecutionEndpoint.swift */; };
 		E3E083162559C0944F5BA3A9 /* Pods_DiberCourier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BB98A140006C42A4467F76 /* Pods_DiberCourier.framework */; };
 /* End PBXBuildFile section */
 
@@ -172,6 +174,8 @@
 		A3A999CA1FB09A6300D63B35 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		A3C491B91FB23E9F005574E7 /* OrderDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailVC.swift; sourceTree = "<group>"; };
 		A3FC0D2420152013002AF21F /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		A3FC0D2620152D22002AF21F /* OrderExecutionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderExecutionService.swift; sourceTree = "<group>"; };
+		A3FC0D2820152D82002AF21F /* OrderExecutionEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderExecutionEndpoint.swift; sourceTree = "<group>"; };
 		A5B77126902C968B6FD1C8CE /* Pods-DiberCourierTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiberCourierTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DiberCourierTests/Pods-DiberCourierTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FA33E920737A9A6AD35DD8C1 /* Pods-DiberCourierUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiberCourierUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DiberCourierUITests/Pods-DiberCourierUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -407,6 +411,7 @@
 				A3A999B51FB096B700D63B35 /* AuthEndpoint.swift */,
 				A31F9DF51FB1A60F008CD08A /* OrderEndpoint.swift */,
 				A386F0E31FE5DF5D00BC8B30 /* RequestEndpoint.swift */,
+				A3FC0D2820152D82002AF21F /* OrderExecutionEndpoint.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -418,6 +423,7 @@
 				A3A999CA1FB09A6300D63B35 /* UserService.swift */,
 				A31F9DF31FB1A5E5008CD08A /* OrderService.swift */,
 				A386F0E11FE5DF4900BC8B30 /* RequestService.swift */,
+				A3FC0D2620152D22002AF21F /* OrderExecutionService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -854,6 +860,7 @@
 				A3A999BC1FB0972400D63B35 /* Realm.swift in Sources */,
 				A386F0DC1FE5D8BD00BC8B30 /* RequestsTableVC.swift in Sources */,
 				A32F807F200A15EA00E8F29D /* SignupVC.swift in Sources */,
+				A3FC0D2720152D22002AF21F /* OrderExecutionService.swift in Sources */,
 				A33EF92620023A0F002A9D40 /* Date.swift in Sources */,
 				A31F9DEE1FB1A3E2008CD08A /* AddressView.swift in Sources */,
 				A3A999C21FB0977700D63B35 /* Role.swift in Sources */,
@@ -877,6 +884,7 @@
 				A3A999B61FB096B700D63B35 /* AuthEndpoint.swift in Sources */,
 				A386F0DE1FE5DA4A00BC8B30 /* RequestCell.swift in Sources */,
 				A31F9DF01FB1A416008CD08A /* DataManager.swift in Sources */,
+				A3FC0D2920152D82002AF21F /* OrderExecutionEndpoint.swift in Sources */,
 				A324C6EC1FAF7A7600E0A02D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

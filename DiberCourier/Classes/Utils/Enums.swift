@@ -8,6 +8,26 @@
 
 import Foundation
 
+enum OrderExecution: String {
+    
+    case new = "New"
+    case in_progress = "In progress"
+    case accepted = "Accepted"
+    
+    func displayName() -> String {
+        switch self {
+        case .new: return "New"
+        case .in_progress: return "In progress"
+        case .accepted: return "Completed"
+        }
+    }
+    
+    static func allItems() -> [OrderExecution] {
+        return [.new, .in_progress, .accepted]
+    }
+    
+}
+
 enum OrderType: String {
     
     case all = "All"
@@ -39,12 +59,14 @@ enum RequestStatus: String {
     case not_reviewed = "Not reviewed"
     case canceled_by_courier = "Canceled by courier"
     case canceled_by_customer = "Canceled by customer"
+    case accepted = "Accepted"
     
     func displayName() -> String {
         switch self {
         case .not_reviewed: return "Not reviewed"
         case .canceled_by_courier: return "Canceled by courier"
         case .canceled_by_customer: return "Canceled by customer"
+        case .accepted: return "Accepted"
         }
     }
     

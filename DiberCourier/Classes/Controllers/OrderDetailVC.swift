@@ -130,9 +130,43 @@ class OrderDetailVC: UIViewController {
         }
     }
     
+    private func startOrder() {
+        guard let id = orderId else { return }
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        
+        let status: OrderExecution = .in_progress
+        OrderExecutionService.shared.startOrder(id: id, status: status) { [weak self] (result) in
+            guard let self_ = self else { return }
+            defer {
+                MBProgressHUD.hide(for: self_.view, animated: true)
+            }
+            
+            switch result {
+            case .Success():
+                self_.showAlert(title: "Order", message: "Order execution started. You can start the delivery")
+                LogManager.log.info("Order with id \(id) started")
+                // TODO: Dismiss self and show OrderExecutionVC
+            case .UnexpectedError(let error):
+                self_.showUnexpectedErrorAlert(error: error)
+            case .OfflineError:
+                self_.showOfflineErrorAlert()
+            }
+        }
+    }
+    
 }
 
 extension OrderDetailVC: OrderRequestViewDelegate {
+    
+    func startOrderExecution() {
+        let msg = "alert.order.start.execution".localized()
+        let cancel = UIAlertAction(title: "alert.cancel".localized(), style: .cancel) { (action) in }
+        let ok = UIAlertAction(title: "alert.yes".localized(), style: .default, handler: { (action) in
+            self.startOrder()
+        })
+        
+        self.showAlert(with: "alert.order".localized(), and: msg, buttons: [ok, cancel])
+    }
     
     func executeOrderDidPress() {
         let msg = "alert.request.make".localized()

@@ -64,6 +64,8 @@ class RequestDetailVC: UIViewController {
             self.cancelRequestButton.isHidden = true
         case .not_reviewed:
             self.cancelRequestButton.isHidden = false
+        case .accepted:
+            self.cancelRequestButton.isHidden = true
         }
     }
     

@@ -13,6 +13,7 @@ import MBProgressHUD
 protocol OrderRequestViewDelegate: class {
     func executeOrderDidPress()
     func cancelRequestDidPress(from: OrderRequestView, request: RequestView)
+    func startOrderExecution()
 }
 
 internal enum State {
@@ -20,6 +21,7 @@ internal enum State {
     case requestExists
     case canceled_by_customer
     case canceled_by_courier
+    case accepted
 }
 
 class OrderRequestView: UIView {
@@ -27,6 +29,7 @@ class OrderRequestView: UIView {
     @IBOutlet weak var hintLabel: UILabel!
     @IBOutlet weak var cancelRequestButton: UIButton!
     @IBOutlet weak var executeButton: UIButton!
+    @IBOutlet weak var startOrderButton: UIButton!
     
     weak var delegate: OrderRequestViewDelegate?
     fileprivate(set) var state: State = .requestNotFound {
@@ -56,6 +59,10 @@ class OrderRequestView: UIView {
         delegate?.cancelRequestDidPress(from: self, request: request)
     }
     
+    @IBAction func startOrderDidPress(_ sender: Any) {
+        delegate?.startOrderExecution()
+    }
+    
     // MARK: Public API
     
     func set(order: OrderView) {
@@ -73,6 +80,7 @@ class OrderRequestView: UIView {
             MBProgressHUD.showAdded(to: self, animated: true)
         }
         
+        LogManager.log.info("Get request with orderId: \(orderId) and courierId: \(courierId)")
         RequestService.shared.getRequest(orderId: orderId, courierId: courierId) { [weak self] (result) in
             guard let self_ = self else { return }
             defer {
@@ -83,7 +91,8 @@ class OrderRequestView: UIView {
             switch result {
             case .Success(let request):
                 self_.update(request)
-            case .UnexpectedError(_):
+            case .UnexpectedError(let error):
+                LogManager.log.error("Error during getRequest: \(String(describing: error))")
                 self_.state = .requestNotFound
             case .OfflineError:
                 break
@@ -103,6 +112,8 @@ class OrderRequestView: UIView {
             self.state = .canceled_by_customer
         case .not_reviewed:
             self.state = .requestExists
+        case .accepted:
+            self.state = .accepted
         }
     }
     
@@ -117,6 +128,9 @@ class OrderRequestView: UIView {
             case .not_reviewed:
                 // todo use modified date instead creation date
                 self.hintLabel.text = "You have already submitted the request on \(request.date)"
+            case .accepted:
+                self.hintLabel.text = "Your request was accepted by the customer."
+                self.startOrderButton.isHidden = false
             }
         } else {
             self.hintLabel.text = "You can submit request for this order"
