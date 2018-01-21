@@ -115,10 +115,11 @@ class OrdersTableVC: UITableViewController {
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // Uncomment if you wanna have to hide Top View when scrolling
         if (self.lastContentOffset < scrollView.contentOffset.y) {
-            delegate?.hideTopView(hide: true)
+            //delegate?.hideTopView(hide: true)
         } else if (self.lastContentOffset > scrollView.contentOffset.y) {
-            delegate?.hideTopView(hide: false)
+            //delegate?.hideTopView(hide: false)
         }
     }
     
