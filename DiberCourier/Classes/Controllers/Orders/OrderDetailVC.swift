@@ -55,7 +55,107 @@ class OrderDetailVC: UIViewController {
         requestView.set(order: order)
     }
     
-    // MARK: Networking
+}
+
+// MARK: OrderRequestViewDelegate
+
+extension OrderDetailVC: OrderRequestViewDelegate {
+    
+    func startOrderExecution() {
+        let msg = "alert.order.start.execution".localized()
+        let cancel = UIAlertAction(title: "alert.cancel".localized(), style: .cancel) { (action) in }
+        let ok = UIAlertAction(title: "alert.yes".localized(), style: .default, handler: { (action) in
+            self.startOrder()
+        })
+        
+        self.showAlert(with: "alert.order".localized(), and: msg, buttons: [ok, cancel])
+    }
+    
+    func executeOrderDidPress() {
+        let msg = "alert.request.make".localized()
+        let cancel = UIAlertAction(title: "alert.cancel".localized(), style: .cancel) { (action) in }
+        let ok = UIAlertAction(title: "alert.yes".localized(), style: .default, handler: { (action) in
+            self.addRequest()
+        })
+        
+        self.showAlert(with: "alert.request".localized(), and: msg, buttons: [ok, cancel])
+    }
+    
+    func cancelRequestDidPress(from: OrderRequestView, request: RequestView) {
+        let msg = "alert.request.cancel".localized()
+        let cancel = UIAlertAction(title: "alert.cancel".localized(), style: .cancel) { (action) in }
+        let ok = UIAlertAction(title: "alert.yes".localized(), style: .default, handler: { (action) in
+            self.cancelRequest(id: request.id)
+        })
+        
+        self.showAlert(with: "alert.request".localized(), and: msg, buttons: [ok, cancel])
+    }
+    
+}
+
+// MARK: OrderDetailViewDelegate
+
+extension OrderDetailVC: OrderDetailViewDelegate {
+    
+    func showToAddressDetails() {
+        guard let address = self.order?.addressTo else { return }
+        
+        let title = "Destination address"
+        let message = "\(address.country), \(address.city), \(address.address)"
+        let popup = PopupDialog(title: title, message: message)
+        
+        let clipboardButton = DefaultButton(title: "COPY TO CLIPBOARD", dismissOnTap: false) {
+            let strAddress = "\(address.country), \(address.city), \(address.address)"
+            UIPasteboard.general.string = strAddress
+        }
+        
+        let mapButton = DefaultButton(title: "SHOW ON MAP") {
+            let mapLinkQuery = GoogleMaps.apiURL + "\(address.country), \(address.city), \(address.address)"
+            let link = mapLinkQuery.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+            if let link = link, let url = URL(string: link) {
+                Swift.print("URL: \(url)")
+                UIApplication.shared.open(url)
+            }
+        }
+        
+        let closeButton = CancelButton(title: "CLOSE") { }
+        
+        popup.addButtons([clipboardButton, mapButton, closeButton])
+        self.present(popup, animated: true, completion: nil)
+    }
+    
+    func showFromAddreesDetails() {
+        guard let address = self.order?.addressFrom else { return }
+        
+        let title = "Address from"
+        let message = "\(address.country), \(address.city), \(address.address)"
+        let popup = PopupDialog(title: title, message: message)
+        
+        let clipboardButton = DefaultButton(title: "COPY TO CLIPBOARD", dismissOnTap: false) {
+            let strAddress = "\(address.country), \(address.city), \(address.address)"
+            UIPasteboard.general.string = strAddress
+        }
+        
+        let mapButton = DefaultButton(title: "SHOW ON MAP") {
+            let mapLinkQuery = GoogleMaps.apiURL + "\(address.country), \(address.city), \(address.address)"
+            let link = mapLinkQuery.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+            if let link = link, let url = URL(string: link) {
+                Swift.print("URL: \(url)")
+                UIApplication.shared.open(url)
+            }
+        }
+        
+        let closeButton = CancelButton(title: "CLOSE") { }
+        
+        popup.addButtons([clipboardButton, mapButton, closeButton])
+        self.present(popup, animated: true, completion: nil)
+    }
+    
+}
+
+// MARK: Networking
+
+extension OrderDetailVC {
     
     private func loadData(silent: Bool) {
         guard let id = orderId else { return }
@@ -145,105 +245,13 @@ class OrderDetailVC: UIViewController {
             case .Success():
                 self_.showAlert(title: "Order", message: "Order execution started. You can start the delivery")
                 LogManager.log.info("Order with id \(id) started")
-                // TODO: Dismiss self and show OrderExecutionVC
+            // TODO: Dismiss self and show OrderExecutionVC
             case .UnexpectedError(let error):
                 self_.showUnexpectedErrorAlert(error: error)
             case .OfflineError:
                 self_.showOfflineErrorAlert()
             }
         }
-    }
-    
-}
-
-extension OrderDetailVC: OrderRequestViewDelegate {
-    
-    func startOrderExecution() {
-        let msg = "alert.order.start.execution".localized()
-        let cancel = UIAlertAction(title: "alert.cancel".localized(), style: .cancel) { (action) in }
-        let ok = UIAlertAction(title: "alert.yes".localized(), style: .default, handler: { (action) in
-            self.startOrder()
-        })
-        
-        self.showAlert(with: "alert.order".localized(), and: msg, buttons: [ok, cancel])
-    }
-    
-    func executeOrderDidPress() {
-        let msg = "alert.request.make".localized()
-        let cancel = UIAlertAction(title: "alert.cancel".localized(), style: .cancel) { (action) in }
-        let ok = UIAlertAction(title: "alert.yes".localized(), style: .default, handler: { (action) in
-            self.addRequest()
-        })
-        
-        self.showAlert(with: "alert.request".localized(), and: msg, buttons: [ok, cancel])
-    }
-    
-    func cancelRequestDidPress(from: OrderRequestView, request: RequestView) {
-        let msg = "alert.request.cancel".localized()
-        let cancel = UIAlertAction(title: "alert.cancel".localized(), style: .cancel) { (action) in }
-        let ok = UIAlertAction(title: "alert.yes".localized(), style: .default, handler: { (action) in
-            self.cancelRequest(id: request.id)
-        })
-        
-        self.showAlert(with: "alert.request".localized(), and: msg, buttons: [ok, cancel])
-    }
-    
-}
-
-extension OrderDetailVC: OrderDetailViewDelegate {
-    
-    func showToAddressDetails() {
-        guard let address = self.order?.addressTo else { return }
-        
-        let title = "Destination address"
-        let message = "\(address.country), \(address.city), \(address.address)"
-        let popup = PopupDialog(title: title, message: message)
-        
-        let clipboardButton = DefaultButton(title: "COPY TO CLIPBOARD", dismissOnTap: false) {
-            let strAddress = "\(address.country), \(address.city), \(address.address)"
-            UIPasteboard.general.string = strAddress
-        }
-        
-        let mapButton = DefaultButton(title: "SHOW ON MAP") {
-            let mapLinkQuery = GoogleMaps.apiURL + "\(address.country), \(address.city), \(address.address)"
-            let link = mapLinkQuery.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-            if let link = link, let url = URL(string: link) {
-                Swift.print("URL: \(url)")
-                UIApplication.shared.open(url)
-            }
-        }
-        
-        let closeButton = CancelButton(title: "CLOSE") { }
-        
-        popup.addButtons([clipboardButton, mapButton, closeButton])
-        self.present(popup, animated: true, completion: nil)
-    }
-    
-    func showFromAddreesDetails() {
-        guard let address = self.order?.addressFrom else { return }
-        
-        let title = "Address from"
-        let message = "\(address.country), \(address.city), \(address.address)"
-        let popup = PopupDialog(title: title, message: message)
-        
-        let clipboardButton = DefaultButton(title: "COPY TO CLIPBOARD", dismissOnTap: false) {
-            let strAddress = "\(address.country), \(address.city), \(address.address)"
-            UIPasteboard.general.string = strAddress
-        }
-        
-        let mapButton = DefaultButton(title: "SHOW ON MAP") {
-            let mapLinkQuery = GoogleMaps.apiURL + "\(address.country), \(address.city), \(address.address)"
-            let link = mapLinkQuery.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-            if let link = link, let url = URL(string: link) {
-                Swift.print("URL: \(url)")
-                UIApplication.shared.open(url)
-            }
-        }
-        
-        let closeButton = CancelButton(title: "CLOSE") { }
-        
-        popup.addButtons([clipboardButton, mapButton, closeButton])
-        self.present(popup, animated: true, completion: nil)
     }
     
 }

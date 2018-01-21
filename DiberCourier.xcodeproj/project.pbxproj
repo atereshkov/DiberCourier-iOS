@@ -74,6 +74,7 @@
 		A3FC0D2520152013002AF21F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3FC0D2420152013002AF21F /* Profile.storyboard */; };
 		A3FC0D2720152D22002AF21F /* OrderExecutionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC0D2620152D22002AF21F /* OrderExecutionService.swift */; };
 		A3FC0D2920152D82002AF21F /* OrderExecutionEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC0D2820152D82002AF21F /* OrderExecutionEndpoint.swift */; };
+		A3FC0D2E2015331A002AF21F /* OrderExecutionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC0D2D2015331A002AF21F /* OrderExecutionVC.swift */; };
 		E3E083162559C0944F5BA3A9 /* Pods_DiberCourier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BB98A140006C42A4467F76 /* Pods_DiberCourier.framework */; };
 /* End PBXBuildFile section */
 
@@ -176,6 +177,7 @@
 		A3FC0D2420152013002AF21F /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		A3FC0D2620152D22002AF21F /* OrderExecutionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderExecutionService.swift; sourceTree = "<group>"; };
 		A3FC0D2820152D82002AF21F /* OrderExecutionEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderExecutionEndpoint.swift; sourceTree = "<group>"; };
+		A3FC0D2D2015331A002AF21F /* OrderExecutionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderExecutionVC.swift; sourceTree = "<group>"; };
 		A5B77126902C968B6FD1C8CE /* Pods-DiberCourierTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiberCourierTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DiberCourierTests/Pods-DiberCourierTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FA33E920737A9A6AD35DD8C1 /* Pods-DiberCourierUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiberCourierUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DiberCourierUITests/Pods-DiberCourierUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -304,13 +306,11 @@
 		A33AE33D1FB06E8F00180661 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A33AE3521FB082FA00180661 /* MainNavigationVC.swift */,
+				A3FC0D2B20153268002AF21F /* Auth */,
 				A386F0D51FE5B73800BC8B30 /* Orders */,
 				A386F0D81FE5D89700BC8B30 /* Requests */,
-				A33AE3521FB082FA00180661 /* MainNavigationVC.swift */,
-				A3C491B91FB23E9F005574E7 /* OrderDetailVC.swift */,
-				A386F0E71FE6628700BC8B30 /* RequestDetailVC.swift */,
-				A3A999C61FB097F800D63B35 /* LoginVC.swift */,
-				A32F807E200A15EA00E8F29D /* SignupVC.swift */,
+				A3FC0D2A20153257002AF21F /* OrderExecution */,
 				A32F8080200A1A5800E8F29D /* Maps */,
 			);
 			path = Controllers;
@@ -456,6 +456,7 @@
 				A31F9DE21FB1A340008CD08A /* OrdersVC.swift */,
 				A31F9DE41FB1A35C008CD08A /* OrdersTableVC.swift */,
 				A386F0D61FE5B78100BC8B30 /* OrdersDropdownVC.swift */,
+				A3C491B91FB23E9F005574E7 /* OrderDetailVC.swift */,
 			);
 			path = Orders;
 			sourceTree = "<group>";
@@ -465,6 +466,7 @@
 			children = (
 				A386F0D91FE5D8B200BC8B30 /* RequestsVC.swift */,
 				A386F0DB1FE5D8BD00BC8B30 /* RequestsTableVC.swift */,
+				A386F0E71FE6628700BC8B30 /* RequestDetailVC.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -485,6 +487,23 @@
 				A3A999C41FB0979500D63B35 /* RealmObject.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		A3FC0D2A20153257002AF21F /* OrderExecution */ = {
+			isa = PBXGroup;
+			children = (
+				A3FC0D2D2015331A002AF21F /* OrderExecutionVC.swift */,
+			);
+			path = OrderExecution;
+			sourceTree = "<group>";
+		};
+		A3FC0D2B20153268002AF21F /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				A3A999C61FB097F800D63B35 /* LoginVC.swift */,
+				A32F807E200A15EA00E8F29D /* SignupVC.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		ABA9CFCC3A6B7B2AFCBC0550 /* Pods */ = {
@@ -869,6 +888,7 @@
 				A39A2C6D1FD4698F0014BD46 /* OrderPriceView.swift in Sources */,
 				A31F9DE81FB1A387008CD08A /* OrderCell.swift in Sources */,
 				A3A999BE1FB0974100D63B35 /* WeakTimer.swift in Sources */,
+				A3FC0D2E2015331A002AF21F /* OrderExecutionVC.swift in Sources */,
 				A3A999C01FB0976800D63B35 /* User.swift in Sources */,
 				A32F8082200A1A6C00E8F29D /* MapViewController.swift in Sources */,
 				A3A999BA1FB0970D00D63B35 /* AlertControllerHelper.swift in Sources */,
