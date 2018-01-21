@@ -24,20 +24,17 @@ class OrderExecutionService: NSObject {
     func startOrder(id: Int, status: OrderExecution, callback:((_ result: StartExecutionResult) -> ())? = nil) {
         let endpoint = OrderExecutionEndpoint.startOrder(id: id, status: status)
         
-        // TODO
-        /*
-        sessionManager.request(endpoint.url)
+        sessionManager.request(endpoint.url, method: endpoint.method, parameters: endpoint.parameters, encoding: JSONEncoding.default)
             .validate()
             .responseJSON { response in
                 if response.result.error == nil, let data = response.result.value as? [String: Any] {
-                    if let order = OrderDTO.with(data: data) {
-                        callback?(OrderResult.Success(order: order))
+                    if OrderDTO.with(data: data) != nil {
+                        callback?(StartExecutionResult.Success())
                     }
                 } else {
-                    callback?(OrderResult.UnexpectedError(error: response.result.error))
+                    callback?(StartExecutionResult.UnexpectedError(error: response.result.error))
                 }
         }
-        */
     }
     
 }
