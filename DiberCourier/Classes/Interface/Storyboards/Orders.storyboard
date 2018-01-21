@@ -104,15 +104,25 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="swf-h0-HGQ">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="25"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rvl-SR-OIO">
-                                                            <rect key="frame" x="10" y="4.5" width="29.5" height="17"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="14"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_new" translatesAutoresizingMaskIntoConstraints="NO" id="WNo-9e-YOM">
+                                                            <rect key="frame" x="10" y="2" width="20" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="REj-R3-g91"/>
+                                                                <constraint firstAttribute="width" constant="20" id="cy2-wK-wLY"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.05.2018 14:50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbY-wb-xvf">
+                                                            <rect key="frame" x="245" y="4" width="120" height="17.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="120" id="Lit-Y4-cPy"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.05.2018 14:50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbY-wb-xvf">
-                                                            <rect key="frame" x="248" y="4" width="117" height="17.5"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rvl-SR-OIO">
+                                                            <rect key="frame" x="38" y="4" width="29.5" height="17"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -120,10 +130,13 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="WbY-wb-xvf" secondAttribute="trailing" constant="10" id="5nW-gJ-kaL"/>
+                                                        <constraint firstItem="WbY-wb-xvf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Rvl-SR-OIO" secondAttribute="trailing" constant="10" id="8wp-z8-FRE"/>
+                                                        <constraint firstItem="WNo-9e-YOM" firstAttribute="leading" secondItem="swf-h0-HGQ" secondAttribute="leading" constant="10" id="E0R-tC-15S"/>
                                                         <constraint firstAttribute="height" constant="25" id="RKJ-hQ-CBa"/>
+                                                        <constraint firstItem="Rvl-SR-OIO" firstAttribute="leading" secondItem="WNo-9e-YOM" secondAttribute="trailing" constant="8" id="WuG-RU-zGp"/>
+                                                        <constraint firstItem="WNo-9e-YOM" firstAttribute="centerY" secondItem="swf-h0-HGQ" secondAttribute="centerY" id="YW4-xx-pqN"/>
                                                         <constraint firstItem="WbY-wb-xvf" firstAttribute="centerY" secondItem="swf-h0-HGQ" secondAttribute="centerY" id="bJv-OG-vfp"/>
                                                         <constraint firstItem="Rvl-SR-OIO" firstAttribute="centerY" secondItem="swf-h0-HGQ" secondAttribute="centerY" id="xTi-fW-DRU"/>
-                                                        <constraint firstItem="Rvl-SR-OIO" firstAttribute="leading" secondItem="swf-h0-HGQ" secondAttribute="leading" constant="10" id="z3w-4u-SuT"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcc-u1-7zQ">
@@ -215,6 +228,7 @@
                                     <outlet property="dateTimeLabel" destination="WbY-wb-xvf" id="sQH-Mw-aBb"/>
                                     <outlet property="descriptionLabel" destination="fKp-DI-sGr" id="BYm-il-IDq"/>
                                     <outlet property="fromLabel" destination="LG6-nU-NlR" id="jTA-OH-DsD"/>
+                                    <outlet property="icon" destination="WNo-9e-YOM" id="Chg-BY-5LE"/>
                                     <outlet property="toLabel" destination="ta8-Sc-ZYe" id="ZA7-GY-6h2"/>
                                     <outlet property="typeLabel" destination="Rvl-SR-OIO" id="h9Y-DN-RAL"/>
                                 </connections>
@@ -284,6 +298,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_new" width="24" height="24"/>
         <image name="ic_view_list" width="24" height="24"/>
     </resources>
 </document>

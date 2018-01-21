@@ -19,6 +19,7 @@ class OrderCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var dateTimeLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var icon: UIImageView!
     
     weak var delegate: OrderCellDelegate?
     
@@ -30,6 +31,8 @@ class OrderCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        
+        icon.image = nil
     }
     
     //MARK:- Public
@@ -39,6 +42,15 @@ class OrderCell: UITableViewCell {
         toLabel.text = item.addressTo.address
         descriptionLabel.text = item.descr
         dateTimeLabel.text = item.date.toString()
+        
+        switch item.status {
+        case "In progress":
+            icon.image = #imageLiteral(resourceName: "ic_swap")
+        case "New":
+            icon.image = #imageLiteral(resourceName: "ic_new")
+        default:
+            icon.image = nil
+        }
     }
     
     //MARK:- Actions
