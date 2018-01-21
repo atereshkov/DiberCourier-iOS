@@ -14,7 +14,7 @@ class OrderView {
     private(set) var date: Date = Date(timeIntervalSince1970: 1)
     private(set) var descr: String = ""
     private(set) var price: Double
-    private(set) var status: String
+    private(set) var status: String // TODO: change status to Enum
     private(set) var addressFrom: AddressView
     private(set) var addressTo: AddressView
     private(set) var courier: User? = nil

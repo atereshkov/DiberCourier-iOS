@@ -75,6 +75,7 @@
 		A3FC0D2720152D22002AF21F /* OrderExecutionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC0D2620152D22002AF21F /* OrderExecutionService.swift */; };
 		A3FC0D2920152D82002AF21F /* OrderExecutionEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC0D2820152D82002AF21F /* OrderExecutionEndpoint.swift */; };
 		A3FC0D2E2015331A002AF21F /* OrderExecutionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC0D2D2015331A002AF21F /* OrderExecutionVC.swift */; };
+		A3FC0D30201533F7002AF21F /* OrderExecution.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3FC0D2F201533F7002AF21F /* OrderExecution.storyboard */; };
 		E3E083162559C0944F5BA3A9 /* Pods_DiberCourier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BB98A140006C42A4467F76 /* Pods_DiberCourier.framework */; };
 /* End PBXBuildFile section */
 
@@ -178,6 +179,7 @@
 		A3FC0D2620152D22002AF21F /* OrderExecutionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderExecutionService.swift; sourceTree = "<group>"; };
 		A3FC0D2820152D82002AF21F /* OrderExecutionEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderExecutionEndpoint.swift; sourceTree = "<group>"; };
 		A3FC0D2D2015331A002AF21F /* OrderExecutionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderExecutionVC.swift; sourceTree = "<group>"; };
+		A3FC0D2F201533F7002AF21F /* OrderExecution.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderExecution.storyboard; sourceTree = "<group>"; };
 		A5B77126902C968B6FD1C8CE /* Pods-DiberCourierTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiberCourierTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DiberCourierTests/Pods-DiberCourierTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FA33E920737A9A6AD35DD8C1 /* Pods-DiberCourierUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiberCourierUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DiberCourierUITests/Pods-DiberCourierUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -338,6 +340,7 @@
 				A324C6F81FAF7A7600E0A02D /* LaunchScreen.storyboard */,
 				A32F8083200A203900E8F29D /* GoogleMap.storyboard */,
 				A3FC0D2420152013002AF21F /* Profile.storyboard */,
+				A3FC0D2F201533F7002AF21F /* OrderExecution.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -658,6 +661,7 @@
 				A32F807D200A150700E8F29D /* Signup.storyboard in Resources */,
 				A324C6F51FAF7A7600E0A02D /* Main.storyboard in Resources */,
 				A32F8084200A203900E8F29D /* GoogleMap.storyboard in Resources */,
+				A3FC0D30201533F7002AF21F /* OrderExecution.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

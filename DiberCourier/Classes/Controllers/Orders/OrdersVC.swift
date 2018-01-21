@@ -167,12 +167,26 @@ extension OrdersVC: OrdersTableDelegate {
     }
     
     func didSelectOrder(order: OrderView) {
-        let storyboard = UIStoryboard(name: Storyboards.order.rawValue, bundle: nil)
-        
-        if let orderNavVC = storyboard.instantiateInitialViewController() as? UINavigationController,
-            let orderDetailVC = orderNavVC.rootViewController as? OrderDetailVC {
-            orderDetailVC.orderId = order.id
-            self.present(orderNavVC, animated: true, completion: nil)
+        // TODO: change status to Enum
+        switch order.status {
+        case "In progress":
+            let storyboard = UIStoryboard(name: Storyboards.orderExecution.rawValue, bundle: nil)
+            
+            if let navVC = storyboard.instantiateInitialViewController() as? UINavigationController,
+                let orderExecutionVC = navVC.rootViewController as? OrderExecutionVC {
+                orderExecutionVC.orderId = order.id
+                //self.present(orderExecutionVC, animated: true, completion: nil)
+                self.navigationController?.pushViewController(orderExecutionVC, animated: true)
+            }
+        default:
+            let storyboard = UIStoryboard(name: Storyboards.order.rawValue, bundle: nil)
+            
+            if let orderNavVC = storyboard.instantiateInitialViewController() as? UINavigationController,
+                let orderDetailVC = orderNavVC.rootViewController as? OrderDetailVC {
+                orderDetailVC.orderId = order.id
+                //self.present(orderNavVC, animated: true, completion: nil)
+                self.navigationController?.pushViewController(orderDetailVC, animated: true)
+            }
         }
     }
     

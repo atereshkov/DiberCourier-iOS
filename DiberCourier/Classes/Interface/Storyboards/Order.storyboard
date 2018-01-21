@@ -200,7 +200,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ut-tK-f2j">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ut-tK-f2j">
                                         <rect key="frame" x="114.5" y="38" width="145" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="145" id="3yg-33-H9J"/>
@@ -247,13 +247,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="T6H-qa-u2N"/>
                     </view>
-                    <navigationItem key="navigationItem" id="WpC-hY-dg7">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="4sM-Jw-lo2">
-                            <connections>
-                                <action selector="backButtonDidPress:" destination="7a2-AW-BHf" id="lTt-t5-xkW"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="WpC-hY-dg7"/>
                     <connections>
                         <outlet property="detailsView" destination="uIP-4p-Phe" id="Hw9-m7-mH1"/>
                         <outlet property="priceView" destination="Qhp-Um-sud" id="gcN-ee-J8H"/>
