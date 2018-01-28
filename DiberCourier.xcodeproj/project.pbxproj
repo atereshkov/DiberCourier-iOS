@@ -38,6 +38,10 @@
 		A33AE3531FB082FA00180661 /* MainNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33AE3521FB082FA00180661 /* MainNavigationVC.swift */; };
 		A33AE3551FB0835900180661 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33AE3541FB0835900180661 /* Login.storyboard */; };
 		A33EF92620023A0F002A9D40 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33EF92520023A0F002A9D40 /* Date.swift */; };
+		A34C4079201E590E0045E678 /* TopBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34C4078201E590E0045E678 /* TopBarController.swift */; };
+		A34C407B201E59230045E678 /* OrderMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34C407A201E59230045E678 /* OrderMenuController.swift */; };
+		A34C407D201E5A160045E678 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34C407C201E5A160045E678 /* GradientView.swift */; };
+		A34C407F201E604C0045E678 /* BorderedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34C407E201E604C0045E678 /* BorderedView.swift */; };
 		A386F0D41FE5946900BC8B30 /* Requests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A386F0D31FE5946900BC8B30 /* Requests.storyboard */; };
 		A386F0D71FE5B78100BC8B30 /* OrdersDropdownVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A386F0D61FE5B78100BC8B30 /* OrdersDropdownVC.swift */; };
 		A386F0DA1FE5D8B200BC8B30 /* RequestsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A386F0D91FE5D8B200BC8B30 /* RequestsVC.swift */; };
@@ -142,6 +146,10 @@
 		A33AE3521FB082FA00180661 /* MainNavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationVC.swift; sourceTree = "<group>"; };
 		A33AE3541FB0835900180661 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		A33EF92520023A0F002A9D40 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		A34C4078201E590E0045E678 /* TopBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarController.swift; sourceTree = "<group>"; };
+		A34C407A201E59230045E678 /* OrderMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderMenuController.swift; sourceTree = "<group>"; };
+		A34C407C201E5A160045E678 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		A34C407E201E604C0045E678 /* BorderedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedView.swift; sourceTree = "<group>"; };
 		A386F0D31FE5946900BC8B30 /* Requests.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Requests.storyboard; sourceTree = "<group>"; };
 		A386F0D61FE5B78100BC8B30 /* OrdersDropdownVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersDropdownVC.swift; sourceTree = "<group>"; };
 		A386F0D91FE5D8B200BC8B30 /* RequestsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsVC.swift; sourceTree = "<group>"; };
@@ -351,6 +359,8 @@
 				A39A2C691FD469640014BD46 /* Order */,
 				A31F9DE61FB1A374008CD08A /* Cells */,
 				A32F807A200A117100E8F29D /* RoundedStyledButton.swift */,
+				A34C407C201E5A160045E678 /* GradientView.swift */,
+				A34C407E201E604C0045E678 /* BorderedView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -460,6 +470,8 @@
 				A31F9DE41FB1A35C008CD08A /* OrdersTableVC.swift */,
 				A386F0D61FE5B78100BC8B30 /* OrdersDropdownVC.swift */,
 				A3C491B91FB23E9F005574E7 /* OrderDetailVC.swift */,
+				A34C4078201E590E0045E678 /* TopBarController.swift */,
+				A34C407A201E59230045E678 /* OrderMenuController.swift */,
 			);
 			path = Orders;
 			sourceTree = "<group>";
@@ -860,17 +872,20 @@
 			files = (
 				A31F9DE51FB1A35C008CD08A /* OrdersTableVC.swift in Sources */,
 				A3A999C91FB09A4000D63B35 /* String.swift in Sources */,
+				A34C407D201E5A160045E678 /* GradientView.swift in Sources */,
 				A386F0E41FE5DF5D00BC8B30 /* RequestEndpoint.swift in Sources */,
 				A3A999AA1FB0871A00D63B35 /* PreferenceManager.swift in Sources */,
 				A3A999A81FB086C800D63B35 /* LogManager.swift in Sources */,
 				A386F0E81FE6628700BC8B30 /* RequestDetailVC.swift in Sources */,
 				A31D0D2D1FCB4740000D37F1 /* Request.swift in Sources */,
+				A34C407B201E59230045E678 /* OrderMenuController.swift in Sources */,
 				A386F0EA1FE667F800BC8B30 /* Enums.swift in Sources */,
 				A3A999B21FB0967B00D63B35 /* Endpoint.swift in Sources */,
 				A31F9DE31FB1A340008CD08A /* OrdersVC.swift in Sources */,
 				A386F0E21FE5DF4900BC8B30 /* RequestService.swift in Sources */,
 				A31F9DF21FB1A446008CD08A /* Order.swift in Sources */,
 				A32F807B200A117100E8F29D /* RoundedStyledButton.swift in Sources */,
+				A34C407F201E604C0045E678 /* BorderedView.swift in Sources */,
 				A3A999AC1FB0877100D63B35 /* NetworkManager.swift in Sources */,
 				A3A999B41FB0969B00D63B35 /* BaseEndpoint.swift in Sources */,
 				A31D0D2A1FCACA85000D37F1 /* UINavigationController.swift in Sources */,
@@ -897,6 +912,7 @@
 				A32F8082200A1A6C00E8F29D /* MapViewController.swift in Sources */,
 				A3A999BA1FB0970D00D63B35 /* AlertControllerHelper.swift in Sources */,
 				A386F0D71FE5B78100BC8B30 /* OrdersDropdownVC.swift in Sources */,
+				A34C4079201E590E0045E678 /* TopBarController.swift in Sources */,
 				A31F9DF61FB1A60F008CD08A /* OrderEndpoint.swift in Sources */,
 				A3A999AE1FB0878800D63B35 /* OAuth2Handler.swift in Sources */,
 				A3A999B01FB0960A00D63B35 /* Constants.swift in Sources */,
