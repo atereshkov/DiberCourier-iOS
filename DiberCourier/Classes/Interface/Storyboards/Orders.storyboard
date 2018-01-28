@@ -324,7 +324,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WJo-bQ-Sra">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_identity_white" translatesAutoresizingMaskIntoConstraints="NO" id="WJo-bQ-Sra">
                                         <rect key="frame" x="64" y="26" width="46" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="46" id="IYC-d0-Vny"/>
@@ -361,7 +361,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ud3-4A-26h">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_swap_white" translatesAutoresizingMaskIntoConstraints="NO" id="Ud3-4A-26h">
                                         <rect key="frame" x="65" y="26" width="46" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="46" id="0YF-DK-n2g"/>
@@ -398,7 +398,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pmF-j0-aph">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_done_white" translatesAutoresizingMaskIntoConstraints="NO" id="pmF-j0-aph">
                                         <rect key="frame" x="64" y="26" width="46" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="46" id="w3X-Ua-aXg"/>
@@ -518,8 +518,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_done_white" width="24" height="24"/>
+        <image name="ic_identity_white" width="24" height="24"/>
         <image name="ic_new" width="24" height="24"/>
         <image name="ic_search_white" width="24" height="24"/>
+        <image name="ic_swap_white" width="24" height="24"/>
         <image name="ic_view_list" width="24" height="24"/>
         <image name="ic_view_list_white" width="24" height="24"/>
     </resources>
