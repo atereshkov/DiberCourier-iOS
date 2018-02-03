@@ -12,8 +12,6 @@ protocol OrdersTableDelegate: class {
     func didReachLastCell(page: Int)
     func didSelectOrder(order: OrderView)
     func didPullRefresh(totalLoadedOrders: Int)
-    
-    func hideTopView(hide: Bool)
 }
 
 class OrdersTableVC: UITableViewController {

@@ -13,8 +13,6 @@ import DropDown
 class OrdersVC: UIViewController {
     
     @IBOutlet weak var topContainerView: UIView!
-    @IBOutlet weak var tableViewContainerTopSafe: NSLayoutConstraint!
-    @IBOutlet weak var tableViewContainerDropdown: NSLayoutConstraint!
     
     private var ordersTableVC: OrdersTableVC? = nil
     private var orderDetailVC: OrderDetailVC? = nil
@@ -111,6 +109,7 @@ class OrdersVC: UIViewController {
     
     // MARK: Scrolling
     
+    /*
     fileprivate func updateTopViewDebounced() {
         let interval = 0.03
         debounceTimer?.invalidate()
@@ -125,6 +124,7 @@ class OrdersVC: UIViewController {
             self.view.layoutIfNeeded()
         }
     }
+    */
     
 }
 
@@ -162,11 +162,6 @@ extension OrdersVC: OrdersTableDelegate {
         guard let ordersTableVC = self.ordersTableVC else { return }
         ordersTableVC.removeAll()
         self.loadData(silent: false, size: totalLoadedOrders)
-    }
-    
-    func hideTopView(hide: Bool) {
-        self.hideTopView = hide
-        updateTopViewDebounced()
     }
     
 }
