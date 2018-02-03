@@ -46,13 +46,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Mr-Lk-UMV">
-                                <rect key="frame" x="0.0" y="65" width="375" height="190.5"/>
+                                <rect key="frame" x="0.0" y="65" width="375" height="180.5"/>
                                 <connections>
                                     <segue destination="oyf-jc-3fs" kind="embed" identifier="OrdersDropDown" id="tyn-VM-nG1"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Jk-pi-9H2">
-                                <rect key="frame" x="0.0" y="299.5" width="375" height="318.5"/>
+                                <rect key="frame" x="0.0" y="289.5" width="375" height="328.5"/>
                                 <connections>
                                     <segue destination="EIe-u4-xhJ" kind="embed" identifier="OrdersTableVC" id="Ino-fM-Tpc"/>
                                 </connections>
@@ -67,7 +67,7 @@
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yaY-HW-PbB">
-                                <rect key="frame" x="0.0" y="261.5" width="375" height="35"/>
+                                <rect key="frame" x="0.0" y="251.5" width="375" height="35"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Orders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmk-Z3-dN3">
                                         <rect key="frame" x="14" y="5" width="123.5" height="25"/>
@@ -98,7 +98,7 @@
                             <constraint firstItem="Wi3-WL-yeG" firstAttribute="trailing" secondItem="JuQ-wQ-eVC" secondAttribute="trailing" id="dWQ-vi-7V6"/>
                             <constraint firstItem="5Jk-pi-9H2" firstAttribute="leading" secondItem="Wi3-WL-yeG" secondAttribute="leading" id="gXF-bH-sEV"/>
                             <constraint firstItem="Wi3-WL-yeG" firstAttribute="trailing" secondItem="yaY-HW-PbB" secondAttribute="trailing" id="jUz-Tt-upr"/>
-                            <constraint firstItem="0Mr-Lk-UMV" firstAttribute="height" secondItem="Sy9-zs-TLw" secondAttribute="height" multiplier="1:3.5" id="rAW-Qx-sKa"/>
+                            <constraint firstItem="0Mr-Lk-UMV" firstAttribute="height" secondItem="Sy9-zs-TLw" secondAttribute="height" multiplier="1:3.7" id="rAW-Qx-sKa"/>
                             <constraint firstItem="5Jk-pi-9H2" firstAttribute="top" secondItem="yaY-HW-PbB" secondAttribute="bottom" constant="3" id="sRh-DW-lKe"/>
                             <constraint firstItem="JuQ-wQ-eVC" firstAttribute="leading" secondItem="Wi3-WL-yeG" secondAttribute="leading" id="zSM-Aw-ENj"/>
                         </constraints>
@@ -119,7 +119,7 @@
             <objects>
                 <tableViewController id="EIe-u4-xhJ" customClass="OrdersTableVC" customModule="DiberCourier" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jt5-GY-Hyk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="318.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="328.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -275,18 +275,18 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9bD-zz-sfk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2849" y="-508"/>
+            <point key="canvasLocation" x="2849" y="-533"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="CmY-au-W5m">
             <objects>
                 <viewController id="oyf-jc-3fs" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kgi-KQ-nxD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="190.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="180.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yl9-Nb-mBe" customClass="GradientView" customModule="DiberCourier" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="190.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="180.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="YES"/>
@@ -299,7 +299,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yos-re-p2C" customClass="BorderedView" customModule="DiberCourier" customModuleProvider="target">
-                                <rect key="frame" x="8" y="8" width="174.5" height="83"/>
+                                <rect key="frame" x="8" y="8" width="174.5" height="78.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ALL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obs-fZ-Zl3">
                                         <rect key="frame" x="8" y="6" width="158.5" height="16"/>
@@ -308,10 +308,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_view_list_white" translatesAutoresizingMaskIntoConstraints="NO" id="Dfk-Mn-1Em">
-                                        <rect key="frame" x="64" y="26" width="46" height="46"/>
+                                        <rect key="frame" x="67" y="26" width="40" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="46" id="pFh-qK-6yW"/>
-                                            <constraint firstAttribute="height" constant="46" id="uab-yi-3gU"/>
+                                            <constraint firstAttribute="width" constant="40" id="pFh-qK-6yW"/>
+                                            <constraint firstAttribute="height" constant="40" id="uab-yi-3gU"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
@@ -336,7 +336,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uxd-mw-HLr" customClass="BorderedView" customModule="DiberCourier" customModuleProvider="target">
-                                <rect key="frame" x="192.5" y="8" width="174.5" height="83"/>
+                                <rect key="frame" x="192.5" y="8" width="174.5" height="78.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3RB-34-NRt">
                                         <rect key="frame" x="8" y="6" width="158.5" height="16"/>
@@ -345,10 +345,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_identity_white" translatesAutoresizingMaskIntoConstraints="NO" id="WJo-bQ-Sra">
-                                        <rect key="frame" x="64" y="26" width="46" height="46"/>
+                                        <rect key="frame" x="67" y="26" width="40" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="46" id="IYC-d0-Vny"/>
-                                            <constraint firstAttribute="height" constant="46" id="PJb-3A-HvU"/>
+                                            <constraint firstAttribute="width" constant="40" id="IYC-d0-Vny"/>
+                                            <constraint firstAttribute="height" constant="40" id="PJb-3A-HvU"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
@@ -373,7 +373,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dCc-Ai-SGG" customClass="BorderedView" customModule="DiberCourier" customModuleProvider="target">
-                                <rect key="frame" x="8" y="99.5" width="174.5" height="83"/>
+                                <rect key="frame" x="8" y="94" width="174.5" height="78.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IN PROGRESS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aek-Gy-o9p">
                                         <rect key="frame" x="8" y="6" width="158.5" height="16"/>
@@ -382,10 +382,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_swap_white" translatesAutoresizingMaskIntoConstraints="NO" id="Ud3-4A-26h">
-                                        <rect key="frame" x="65" y="26" width="46" height="46"/>
+                                        <rect key="frame" x="68" y="26" width="40" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="46" id="0YF-DK-n2g"/>
-                                            <constraint firstAttribute="height" constant="46" id="F5A-KN-Ppa"/>
+                                            <constraint firstAttribute="width" constant="40" id="0YF-DK-n2g"/>
+                                            <constraint firstAttribute="height" constant="40" id="F5A-KN-Ppa"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
@@ -410,7 +410,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJi-eg-e0F" customClass="BorderedView" customModule="DiberCourier" customModuleProvider="target">
-                                <rect key="frame" x="192.5" y="99.5" width="174.5" height="83"/>
+                                <rect key="frame" x="192.5" y="94" width="174.5" height="78.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COMPLETED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5G-ic-hcU">
                                         <rect key="frame" x="8" y="6" width="158.5" height="16"/>
@@ -419,10 +419,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_done_white" translatesAutoresizingMaskIntoConstraints="NO" id="pmF-j0-aph">
-                                        <rect key="frame" x="64" y="26" width="46" height="46"/>
+                                        <rect key="frame" x="67" y="26" width="40" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="46" id="w3X-Ua-aXg"/>
-                                            <constraint firstAttribute="width" constant="46" id="xUj-0S-lIr"/>
+                                            <constraint firstAttribute="height" constant="40" id="w3X-Ua-aXg"/>
+                                            <constraint firstAttribute="width" constant="40" id="xUj-0S-lIr"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
@@ -475,7 +475,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bAi-bM-3O8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2848.8000000000002" y="-830.73463268365822"/>
+            <point key="canvasLocation" x="2849" y="-846"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="yoz-Eg-YUj">
@@ -536,7 +536,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ibb-CM-tod" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2849" y="-1007"/>
+            <point key="canvasLocation" x="2849" y="-1030"/>
         </scene>
     </scenes>
     <resources>
