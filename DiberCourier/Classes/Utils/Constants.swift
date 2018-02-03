@@ -15,7 +15,6 @@ enum Segues: String {
     case requestsTable = "RequestsTableVC"
     case showOrderDetails = "ShowOrderDetails"
     case showRequestDetails = "ShowRequestDetails"
-    case ordersDropDown = "OrdersDropDown"
 }
 
 enum Storyboards: String {

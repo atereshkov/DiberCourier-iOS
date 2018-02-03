@@ -18,7 +18,6 @@ class OrdersVC: UIViewController {
     
     private var ordersTableVC: OrdersTableVC? = nil
     private var orderDetailVC: OrderDetailVC? = nil
-    private var dropDownVC: OrdersDropdownVC? = nil
     fileprivate let dropDown = DropDown()
     
     fileprivate var loadingData = false // Used to prevent multiple simultanious load requests
@@ -33,7 +32,6 @@ class OrdersVC: UIViewController {
         super.viewDidLoad()
         LogManager.log.info("Initialization")
         loadData(silent: false)
-        setupDropDownView()
     }
     
     deinit {
@@ -47,11 +45,6 @@ class OrdersVC: UIViewController {
             if let ordersTableVC = segue.destination as? OrdersTableVC {
                 ordersTableVC.delegate = self
                 self.ordersTableVC = ordersTableVC
-            }
-        } else if segue.identifier == Segues.ordersDropDown.rawValue {
-            if let dropDownVC = segue.destination as? OrdersDropdownVC {
-                dropDownVC.delegate = self
-                self.dropDownVC = dropDownVC
             }
         }
     }
@@ -106,31 +99,6 @@ class OrdersVC: UIViewController {
         let ordersDVO = OrderView.from(orders: orders)
         let filteredOrders = self.filterByOrderType(ordersDVO, type: self.sortType)
         ordersTableVC.addOrders(filteredOrders)
-    }
-    
-    private func setupDropDownView() {
-        dropDown.anchorView = topContainerView
-        dropDown.direction = .bottom
-        dropDown.bottomOffset = CGPoint(x: 0, y: topContainerView.bounds.height)
-        dropDown.dataSource = OrderType.selectionItems()
-        
-        dropDown.cancelAction = { [weak self] in
-            guard let self_ = self, let dropDownVC = self_.dropDownVC else { return }
-            dropDownVC.setState(DropdownState.collapsed)
-        }
-        
-        dropDown.selectionAction = { [weak self] (index: Int, item: String) in
-            guard let self_ = self, let dropDownVC = self_.dropDownVC else { return }
-            dropDownVC.setSelected(item)
-            dropDownVC.setState(DropdownState.collapsed)
-            guard let orderType = OrderType(rawValue: item) else { return }
-            self_.handleOrdersTypeSorting(with: orderType)
-        }
-        
-        guard let dropDownVC = self.dropDownVC, OrderType.selectionItems().count > 0 else { return }
-        let initialIndex = OrderType.selectionItems().index(of: PreferenceManager.shared.sortType.rawValue)
-        dropDownVC.setSelected(PreferenceManager.shared.sortType.rawValue)
-        dropDown.selectRow(at: initialIndex)
     }
     
     fileprivate func handleOrdersTypeSorting(with type: OrderType) {
@@ -199,19 +167,6 @@ extension OrdersVC: OrdersTableDelegate {
     func hideTopView(hide: Bool) {
         self.hideTopView = hide
         updateTopViewDebounced()
-    }
-    
-}
-
-extension OrdersVC: OrdersDropdownDelegate {
-    
-    func stateChanged(controller: OrdersDropdownVC, to state: DropdownState) {
-        switch state {
-        case .collapsed:
-            dropDown.hide()
-        case .expanded:
-            dropDown.show()
-        }
     }
     
 }
