@@ -89,9 +89,14 @@
                                         </constraints>
                                         <state key="normal" image="ic_search_white"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdO-et-nZ2">
-                                        <rect key="frame" x="10" y="8" width="34" height="30"/>
-                                        <state key="normal" title="Back"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdO-et-nZ2">
+                                        <rect key="frame" x="4" y="8" width="40" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="QeO-rF-oZ5"/>
+                                            <constraint firstAttribute="width" constant="40" id="tw2-R6-e08"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="ic_back"/>
                                         <connections>
                                             <action selector="backButtonPressed:" destination="rf8-18-Smo" eventType="touchUpInside" id="u4Y-2u-ihd"/>
                                         </connections>
@@ -109,7 +114,7 @@
                                     <constraint firstItem="Bc2-NE-JyS" firstAttribute="centerY" secondItem="yAV-3K-iNP" secondAttribute="centerY" id="A18-b5-AQZ"/>
                                     <constraint firstAttribute="trailing" secondItem="bRg-Ff-74K" secondAttribute="trailing" constant="10" id="Bmb-fs-gbM"/>
                                     <constraint firstItem="bRg-Ff-74K" firstAttribute="centerY" secondItem="yAV-3K-iNP" secondAttribute="centerY" id="NIL-uq-jtT"/>
-                                    <constraint firstItem="WdO-et-nZ2" firstAttribute="leading" secondItem="yAV-3K-iNP" secondAttribute="leading" constant="10" id="Rmf-uC-H9V"/>
+                                    <constraint firstItem="WdO-et-nZ2" firstAttribute="leading" secondItem="yAV-3K-iNP" secondAttribute="leading" constant="4" id="Rmf-uC-H9V"/>
                                     <constraint firstItem="Bc2-NE-JyS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="WdO-et-nZ2" secondAttribute="trailing" constant="6" id="WkJ-OX-MOV"/>
                                     <constraint firstItem="WdO-et-nZ2" firstAttribute="centerY" secondItem="yAV-3K-iNP" secondAttribute="centerY" id="fIu-Zq-3Sp"/>
                                     <constraint firstItem="bRg-Ff-74K" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Bc2-NE-JyS" secondAttribute="trailing" constant="6" id="yvy-RX-eDR"/>
@@ -141,6 +146,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_back" width="13" height="21"/>
         <image name="ic_search_white" width="24" height="24"/>
     </resources>
 </document>

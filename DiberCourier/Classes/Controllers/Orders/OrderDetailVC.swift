@@ -63,6 +63,12 @@ class OrderDetailVC: UIViewController {
         requestView.set(order: order)
     }
     
+    private func showContent(_ show: Bool) {
+        detailsView.isHidden = !show
+        requestView.isHidden = !show
+        priceView.isHidden = !show
+    }
+    
 }
 
 // MARK: OrderRequestViewDelegate
@@ -166,6 +172,8 @@ extension OrderDetailVC: OrderDetailViewDelegate {
 extension OrderDetailVC {
     
     private func loadData(silent: Bool) {
+        showContent(false)
+        
         guard let id = orderId else { return }
         guard !loadingData else { return }
         loadingData = true
@@ -183,6 +191,7 @@ extension OrderDetailVC {
             switch result {
             case .Success(let order):
                 self_.setup(order)
+                self_.showContent(true)
             case .UnexpectedError(let error):
                 self_.showUnexpectedErrorAlert(error: error)
             case .OfflineError:

@@ -281,17 +281,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XpD-7o-klg" customClass="GradientView" customModule="DiberCourier" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bxp-0N-IJp">
-                                        <rect key="frame" x="325" y="3" width="40" height="40"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mG9-gh-x9V">
+                                        <rect key="frame" x="6" y="12" width="40" height="22"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="DUO-9Q-8Yl"/>
-                                            <constraint firstAttribute="height" constant="40" id="Wqp-W6-ayL"/>
+                                            <constraint firstAttribute="width" constant="40" id="Hei-qK-odq"/>
                                         </constraints>
-                                        <state key="normal" image="ic_search_white"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mG9-gh-x9V">
-                                        <rect key="frame" x="10" y="8" width="34" height="30"/>
-                                        <state key="normal" title="Back"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="titleEdgeInsets" minX="12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="ic_back">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="backButtonPressed:" destination="cu7-DN-nBE" eventType="touchUpInside" id="cHC-Nm-4eW"/>
                                         </connections>
@@ -306,13 +305,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="mG9-gh-x9V" firstAttribute="centerY" secondItem="XpD-7o-klg" secondAttribute="centerY" id="4ya-xU-qT8"/>
-                                    <constraint firstItem="Bxp-0N-IJp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="GZf-Km-rN2" secondAttribute="trailing" constant="6" id="BI1-g7-oag"/>
                                     <constraint firstItem="GZf-Km-rN2" firstAttribute="centerY" secondItem="XpD-7o-klg" secondAttribute="centerY" id="Eun-zI-f8c"/>
-                                    <constraint firstItem="mG9-gh-x9V" firstAttribute="leading" secondItem="XpD-7o-klg" secondAttribute="leading" constant="10" id="FWg-66-cYL"/>
+                                    <constraint firstItem="mG9-gh-x9V" firstAttribute="leading" secondItem="XpD-7o-klg" secondAttribute="leading" constant="6" id="FWg-66-cYL"/>
                                     <constraint firstItem="GZf-Km-rN2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mG9-gh-x9V" secondAttribute="trailing" constant="6" id="IT7-ti-V55"/>
                                     <constraint firstItem="GZf-Km-rN2" firstAttribute="centerX" secondItem="XpD-7o-klg" secondAttribute="centerX" id="cKV-hf-WOb"/>
-                                    <constraint firstItem="Bxp-0N-IJp" firstAttribute="centerY" secondItem="XpD-7o-klg" secondAttribute="centerY" id="gXz-Le-1cY"/>
-                                    <constraint firstAttribute="trailing" secondItem="Bxp-0N-IJp" secondAttribute="trailing" constant="10" id="yst-Ny-aQS"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="YES"/>
@@ -337,11 +333,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="su0-gV-r43" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1948" y="-462"/>
+            <point key="canvasLocation" x="1948" y="-462.8185907046477"/>
         </scene>
     </scenes>
     <resources>
+        <image name="ic_back" width="13" height="21"/>
         <image name="ic_info" width="24" height="24"/>
-        <image name="ic_search_white" width="24" height="24"/>
     </resources>
 </document>
