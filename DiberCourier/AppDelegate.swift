@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         LogManager.shared.initialize()
         
         // Realm
-        Realm.Configuration.defaultConfiguration.deleteRealmIfMigrationNeeded = true
+        Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 1)
         LogManager.log.info("[Realm] URL: \(String(describing: Realm.Configuration.defaultConfiguration.fileURL))")
         
         // Google Maps & Places
