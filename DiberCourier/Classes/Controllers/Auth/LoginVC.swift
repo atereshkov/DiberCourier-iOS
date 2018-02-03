@@ -23,7 +23,7 @@ class LoginVC: UIViewController {
     override func viewDidAppear(_ animated:Bool) {
         super.viewDidAppear(false)
         
-        skipLoginIfAuthorized()
+        //skipLoginIfAuthorized()
     }
     
     deinit {
@@ -43,14 +43,7 @@ class LoginVC: UIViewController {
         
     }
     
-    // MARK:
-    
-    fileprivate func skipLoginIfAuthorized() {
-        // if PreferenceManager.shared.isAuthorized() && StoreManager.shared.getCurrentUser() != nil {
-        if PreferenceManager.shared.isAuthorized() {
-            self.performSegue(withIdentifier: Segues.mainScreen.rawValue, sender: self)
-        }
-    }
+    // MARK: Networking
     
     private func perfomLogin(_ login: String, _ password: String) {
         MBProgressHUD.showAdded(to: self.view, animated: true)

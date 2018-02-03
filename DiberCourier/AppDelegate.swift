@@ -33,6 +33,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Google Maps & Places
         GMSServices.provideAPIKey("AIzaSyBjw6_8ORK7CM8heg9egK9P824KlbPDiTg")
         
+        var initialStoryboard: String? = nil
+        if PreferenceManager.shared.isAuthorized() {
+            initialStoryboard = "Main"
+        } else {
+            initialStoryboard = "Login"
+        }
+        guard let resultStoryboard = initialStoryboard else { return true }
+        let storyboard = UIStoryboard(name: resultStoryboard, bundle: nil)
+        self.window?.rootViewController = storyboard.instantiateInitialViewController()
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 
