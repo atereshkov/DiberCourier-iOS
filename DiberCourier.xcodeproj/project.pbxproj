@@ -74,6 +74,8 @@
 		A3A999CB1FB09A6300D63B35 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A999CA1FB09A6300D63B35 /* UserService.swift */; };
 		A3C491BA1FB23E9F005574E7 /* OrderDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C491B91FB23E9F005574E7 /* OrderDetailVC.swift */; };
 		A3E2D56B202642AE008FEC73 /* TopHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2D56A202642AE008FEC73 /* TopHeaderVC.swift */; };
+		A3E2D56E20265C5B008FEC73 /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2D56D20265C5B008FEC73 /* MyProfileVC.swift */; };
+		A3E2D57020265C6A008FEC73 /* MyProfileHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2D56F20265C6A008FEC73 /* MyProfileHeaderVC.swift */; };
 		A3FC0D2520152013002AF21F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3FC0D2420152013002AF21F /* Profile.storyboard */; };
 		A3FC0D2720152D22002AF21F /* OrderExecutionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC0D2620152D22002AF21F /* OrderExecutionService.swift */; };
 		A3FC0D2920152D82002AF21F /* OrderExecutionEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC0D2820152D82002AF21F /* OrderExecutionEndpoint.swift */; };
@@ -181,6 +183,8 @@
 		A3A999CA1FB09A6300D63B35 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		A3C491B91FB23E9F005574E7 /* OrderDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailVC.swift; sourceTree = "<group>"; };
 		A3E2D56A202642AE008FEC73 /* TopHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeaderVC.swift; sourceTree = "<group>"; };
+		A3E2D56D20265C5B008FEC73 /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
+		A3E2D56F20265C6A008FEC73 /* MyProfileHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileHeaderVC.swift; sourceTree = "<group>"; };
 		A3FC0D2420152013002AF21F /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		A3FC0D2620152D22002AF21F /* OrderExecutionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderExecutionService.swift; sourceTree = "<group>"; };
 		A3FC0D2820152D82002AF21F /* OrderExecutionEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderExecutionEndpoint.swift; sourceTree = "<group>"; };
@@ -315,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				A3E2D56920264267008FEC73 /* Base */,
+				A3E2D56C20265C2A008FEC73 /* Profile */,
 				A3FC0D2B20153268002AF21F /* Auth */,
 				A386F0D51FE5B73800BC8B30 /* Orders */,
 				A386F0D81FE5D89700BC8B30 /* Requests */,
@@ -507,6 +512,15 @@
 				A33AE3521FB082FA00180661 /* MainNavigationVC.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		A3E2D56C20265C2A008FEC73 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A3E2D56D20265C5B008FEC73 /* MyProfileVC.swift */,
+				A3E2D56F20265C6A008FEC73 /* MyProfileHeaderVC.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		A3FC0D2A20153257002AF21F /* OrderExecution */ = {
@@ -900,6 +914,7 @@
 				A386F0E01FE5DADA00BC8B30 /* RequestView.swift in Sources */,
 				A31F9DEA1FB1A3A4008CD08A /* OrderView.swift in Sources */,
 				A3A999C51FB0979500D63B35 /* RealmObject.swift in Sources */,
+				A3E2D57020265C6A008FEC73 /* MyProfileHeaderVC.swift in Sources */,
 				A3A999BC1FB0972400D63B35 /* Realm.swift in Sources */,
 				A386F0DC1FE5D8BD00BC8B30 /* RequestsTableVC.swift in Sources */,
 				A32F807F200A15EA00E8F29D /* SignupVC.swift in Sources */,
@@ -927,6 +942,7 @@
 				A386F0DA1FE5D8B200BC8B30 /* RequestsVC.swift in Sources */,
 				A3A999B61FB096B700D63B35 /* AuthEndpoint.swift in Sources */,
 				A386F0DE1FE5DA4A00BC8B30 /* RequestCell.swift in Sources */,
+				A3E2D56E20265C5B008FEC73 /* MyProfileVC.swift in Sources */,
 				A31F9DF01FB1A416008CD08A /* DataManager.swift in Sources */,
 				A3FC0D2920152D82002AF21F /* OrderExecutionEndpoint.swift in Sources */,
 				A324C6EC1FAF7A7600E0A02D /* AppDelegate.swift in Sources */,

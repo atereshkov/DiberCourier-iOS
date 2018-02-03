@@ -35,7 +35,7 @@
         <!--My Account-->
         <scene sceneID="L7a-Jt-2lt">
             <objects>
-                <viewController id="hph-UR-BtF" sceneMemberID="viewController">
+                <viewController id="hph-UR-BtF" customClass="MyProfileVC" customModule="DiberCourier" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wij-aJ-rLU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="-145" y="122"/>
         </scene>
-        <!--View Controller-->
+        <!--My Profile HeaderVC-->
         <scene sceneID="YWc-CY-dJD">
             <objects>
-                <viewController id="Kjc-O3-BMC" sceneMemberID="viewController">
+                <viewController id="Kjc-O3-BMC" customClass="MyProfileHeaderVC" customModule="DiberCourier" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W1L-nA-PKb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,6 +83,9 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="12" maxY="0.0"/>
                                         <state key="normal" title="Sign Out" image="ic_exit_white"/>
+                                        <connections>
+                                            <action selector="signOutButtonPressed:" destination="Kjc-O3-BMC" eventType="touchUpInside" id="y9w-ru-qgi"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hjj-dj-I0g">
                                         <rect key="frame" x="14" y="11.5" width="130" height="23.5"/>
