@@ -38,7 +38,6 @@
 		A33AE3531FB082FA00180661 /* MainNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33AE3521FB082FA00180661 /* MainNavigationVC.swift */; };
 		A33AE3551FB0835900180661 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33AE3541FB0835900180661 /* Login.storyboard */; };
 		A33EF92620023A0F002A9D40 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33EF92520023A0F002A9D40 /* Date.swift */; };
-		A34C4079201E590E0045E678 /* TopBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34C4078201E590E0045E678 /* TopBarController.swift */; };
 		A34C407B201E59230045E678 /* OrderMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34C407A201E59230045E678 /* OrderMenuController.swift */; };
 		A34C407D201E5A160045E678 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34C407C201E5A160045E678 /* GradientView.swift */; };
 		A34C407F201E604C0045E678 /* BorderedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34C407E201E604C0045E678 /* BorderedView.swift */; };
@@ -75,6 +74,7 @@
 		A3A999C91FB09A4000D63B35 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A999C81FB09A4000D63B35 /* String.swift */; };
 		A3A999CB1FB09A6300D63B35 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A999CA1FB09A6300D63B35 /* UserService.swift */; };
 		A3C491BA1FB23E9F005574E7 /* OrderDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C491B91FB23E9F005574E7 /* OrderDetailVC.swift */; };
+		A3E2D56B202642AE008FEC73 /* TopHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2D56A202642AE008FEC73 /* TopHeaderVC.swift */; };
 		A3FC0D2520152013002AF21F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3FC0D2420152013002AF21F /* Profile.storyboard */; };
 		A3FC0D2720152D22002AF21F /* OrderExecutionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC0D2620152D22002AF21F /* OrderExecutionService.swift */; };
 		A3FC0D2920152D82002AF21F /* OrderExecutionEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC0D2820152D82002AF21F /* OrderExecutionEndpoint.swift */; };
@@ -146,7 +146,6 @@
 		A33AE3521FB082FA00180661 /* MainNavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationVC.swift; sourceTree = "<group>"; };
 		A33AE3541FB0835900180661 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		A33EF92520023A0F002A9D40 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		A34C4078201E590E0045E678 /* TopBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarController.swift; sourceTree = "<group>"; };
 		A34C407A201E59230045E678 /* OrderMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderMenuController.swift; sourceTree = "<group>"; };
 		A34C407C201E5A160045E678 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		A34C407E201E604C0045E678 /* BorderedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedView.swift; sourceTree = "<group>"; };
@@ -183,6 +182,7 @@
 		A3A999C81FB09A4000D63B35 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		A3A999CA1FB09A6300D63B35 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		A3C491B91FB23E9F005574E7 /* OrderDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailVC.swift; sourceTree = "<group>"; };
+		A3E2D56A202642AE008FEC73 /* TopHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeaderVC.swift; sourceTree = "<group>"; };
 		A3FC0D2420152013002AF21F /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		A3FC0D2620152D22002AF21F /* OrderExecutionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderExecutionService.swift; sourceTree = "<group>"; };
 		A3FC0D2820152D82002AF21F /* OrderExecutionEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderExecutionEndpoint.swift; sourceTree = "<group>"; };
@@ -316,7 +316,7 @@
 		A33AE33D1FB06E8F00180661 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A33AE3521FB082FA00180661 /* MainNavigationVC.swift */,
+				A3E2D56920264267008FEC73 /* Base */,
 				A3FC0D2B20153268002AF21F /* Auth */,
 				A386F0D51FE5B73800BC8B30 /* Orders */,
 				A386F0D81FE5D89700BC8B30 /* Requests */,
@@ -470,7 +470,6 @@
 				A31F9DE41FB1A35C008CD08A /* OrdersTableVC.swift */,
 				A386F0D61FE5B78100BC8B30 /* OrdersDropdownVC.swift */,
 				A3C491B91FB23E9F005574E7 /* OrderDetailVC.swift */,
-				A34C4078201E590E0045E678 /* TopBarController.swift */,
 				A34C407A201E59230045E678 /* OrderMenuController.swift */,
 			);
 			path = Orders;
@@ -500,6 +499,15 @@
 			isa = PBXGroup;
 			children = (
 				A3A999C41FB0979500D63B35 /* RealmObject.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		A3E2D56920264267008FEC73 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A3E2D56A202642AE008FEC73 /* TopHeaderVC.swift */,
+				A33AE3521FB082FA00180661 /* MainNavigationVC.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -898,6 +906,7 @@
 				A3A999BC1FB0972400D63B35 /* Realm.swift in Sources */,
 				A386F0DC1FE5D8BD00BC8B30 /* RequestsTableVC.swift in Sources */,
 				A32F807F200A15EA00E8F29D /* SignupVC.swift in Sources */,
+				A3E2D56B202642AE008FEC73 /* TopHeaderVC.swift in Sources */,
 				A3FC0D2720152D22002AF21F /* OrderExecutionService.swift in Sources */,
 				A33EF92620023A0F002A9D40 /* Date.swift in Sources */,
 				A31F9DEE1FB1A3E2008CD08A /* AddressView.swift in Sources */,
@@ -912,7 +921,6 @@
 				A32F8082200A1A6C00E8F29D /* MapViewController.swift in Sources */,
 				A3A999BA1FB0970D00D63B35 /* AlertControllerHelper.swift in Sources */,
 				A386F0D71FE5B78100BC8B30 /* OrdersDropdownVC.swift in Sources */,
-				A34C4079201E590E0045E678 /* TopBarController.swift in Sources */,
 				A31F9DF61FB1A60F008CD08A /* OrderEndpoint.swift in Sources */,
 				A3A999AE1FB0878800D63B35 /* OAuth2Handler.swift in Sources */,
 				A3A999B01FB0960A00D63B35 /* Constants.swift in Sources */,
