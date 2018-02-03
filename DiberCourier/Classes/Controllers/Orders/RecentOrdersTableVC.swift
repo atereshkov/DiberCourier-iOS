@@ -1,20 +1,20 @@
 //
-//  OrdersTableVC.swift
+//  RecentOrdersTableVC.swift
 //  DiberCourier
 //
-//  Created by Alexander Tereshkov on 11/7/17.
-//  Copyright © 2017 Diber. All rights reserved.
+//  Created by Alexander Tereshkov on 2/4/18.
+//  Copyright © 2018 Diber. All rights reserved.
 //
 
 import UIKit
 
-protocol OrdersTableDelegate: class {
+protocol RecentOrdersTableDelegate: class {
     func didReachLastCell(page: Int)
     func didSelectOrder(order: OrderView)
     func didPullRefresh(totalLoadedOrders: Int)
 }
 
-class OrdersTableVC: UITableViewController {
+class RecentOrdersTableVC: UITableViewController {
     
     fileprivate var orders = [OrderView]()
     fileprivate var debounceTimer: WeakTimer?
@@ -81,8 +81,8 @@ class OrdersTableVC: UITableViewController {
     // MARK: TableView
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Cells.orders.rawValue, for: indexPath) as? OrderCell else {
-                fatalError("The dequeued cell is not an instance of OrderCell")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Cells.recentOrder.rawValue, for: indexPath) as? RecentOrderCell else {
+            fatalError("The dequeued cell is not an instance of RecentOrderCell")
         }
         
         guard indexPath.row >= 0 && indexPath.row < orders.count else { return cell }
@@ -133,3 +133,4 @@ class OrdersTableVC: UITableViewController {
     }
     
 }
+

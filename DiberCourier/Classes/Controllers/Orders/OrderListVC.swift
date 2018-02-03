@@ -1,26 +1,24 @@
 //
-//  OrdersVC.swift
+//  OrderListVC.swift
 //  DiberCourier
 //
-//  Created by Alexander Tereshkov on 11/7/17.
-//  Copyright © 2017 Diber. All rights reserved.
+//  Created by Alexander Tereshkov on 2/4/18.
+//  Copyright © 2018 Diber. All rights reserved.
 //
 
 import UIKit
 import MBProgressHUD
 import DropDown
 
-class OrdersVC: UIViewController {
+class OrderListVC: UIViewController {
     
     @IBOutlet weak var topContainerView: UIView!
     
-    private var ordersTableVC: RecentOrdersTableVC? = nil
+    private var ordersTableVC: OrdersTableVC? = nil
     private var orderDetailVC: OrderDetailVC? = nil
     fileprivate let dropDown = DropDown()
     
     fileprivate var loadingData = false // Used to prevent multiple simultanious load requests
-    fileprivate var hideTopView = false
-    fileprivate var debounceTimer: WeakTimer?
     
     fileprivate var sortType: OrderType = PreferenceManager.shared.sortType
     
@@ -39,8 +37,8 @@ class OrdersVC: UIViewController {
     // MARK: Prepare segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Segues.recentOrdersTable.rawValue {
-            if let ordersTableVC = segue.destination as? RecentOrdersTableVC {
+        if segue.identifier == Segues.ordersTable.rawValue {
+            if let ordersTableVC = segue.destination as? OrdersTableVC {
                 ordersTableVC.delegate = self
                 self.ordersTableVC = ordersTableVC
             }
@@ -107,28 +105,9 @@ class OrdersVC: UIViewController {
         loadData(silent: false)
     }
     
-    // MARK: Scrolling
-    
-    /*
-    fileprivate func updateTopViewDebounced() {
-        let interval = 0.03
-        debounceTimer?.invalidate()
-        debounceTimer = WeakTimer(timeInterval: interval, target: self, selector: #selector(updateTopViewState), repeats: false)
-    }
-    
-    @objc fileprivate func updateTopViewState() {
-        tableViewContainerDropdown.priority = hideTopView ? UILayoutPriority(rawValue: 250) : UILayoutPriority(rawValue: 900)
-        tableViewContainerTopSafe.priority = hideTopView ? UILayoutPriority(rawValue: 900) : UILayoutPriority(rawValue: 250)
-        
-        UIView.animate(withDuration: 0.5) {
-            self.view.layoutIfNeeded()
-        }
-    }
-    */
-    
 }
 
-extension OrdersVC: OrdersTableDelegate {
+extension OrderListVC: OrdersTableDelegate {
     
     func didReachLastCell(page: Int) {
         self.loadData(silent: false, page: page)
@@ -152,6 +131,7 @@ extension OrdersVC: OrdersTableDelegate {
             if let orderNavVC = storyboard.instantiateInitialViewController() as? UINavigationController,
                 let orderDetailVC = orderNavVC.rootViewController as? OrderDetailVC {
                 orderDetailVC.orderId = order.id
+                //self.present(orderNavVC, animated: true, completion: nil)
                 self.navigationController?.pushViewController(orderDetailVC, animated: true)
             }
         }
@@ -164,3 +144,4 @@ extension OrdersVC: OrdersTableDelegate {
     }
     
 }
+
