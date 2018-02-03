@@ -24,6 +24,7 @@ class OrdersTableVC: UITableViewController {
     fileprivate var currentPage = 0
     var totalItems = 0
     fileprivate var dataLoading = false
+    fileprivate var scrollToBottom = false
     var lastContentOffset: CGFloat = 0
     
     private let refreshControlView = UIRefreshControl()
@@ -116,15 +117,18 @@ class OrdersTableVC: UITableViewController {
         // Uncomment if you wanna have to hide Top View when scrolling
         if (self.lastContentOffset < scrollView.contentOffset.y) {
             //delegate?.hideTopView(hide: true)
+            self.scrollToBottom = false
         } else if (self.lastContentOffset > scrollView.contentOffset.y) {
             //delegate?.hideTopView(hide: false)
+            self.scrollToBottom = true
         }
     }
     
     // Pagination handling
     override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let cellOffset: CGFloat = scrollToBottom ? 0 : CGFloat(Pagination.cellOffset)
         let contentOffset = tableView.contentOffset.y + tableView.frame.size.height
-        if (contentOffset + CGFloat(Pagination.cellOffset) >= tableView.contentSize.height) {
+        if (contentOffset + cellOffset >= tableView.contentSize.height) {
             if !dataLoading && self.totalItems > orders.count {
                 self.dataLoading = true
                 fetchNextPage()

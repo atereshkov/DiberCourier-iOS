@@ -45,6 +45,9 @@ class OrdersVC: UIViewController {
                 self.ordersTableVC = ordersTableVC
             }
         }
+        if let ordersMenuVC = segue.destination as? OrdersMenuVC {
+            ordersMenuVC.delegate = self
+        }
     }
     
     // MARK: Networking
@@ -161,6 +164,24 @@ extension OrdersVC: OrdersTableDelegate {
         guard let ordersTableVC = self.ordersTableVC else { return }
         ordersTableVC.removeAll()
         self.loadData(silent: false, size: totalLoadedOrders)
+    }
+    
+}
+
+extension OrdersVC: OrdersMenuDelegate {
+    
+    func menuPressed(vc: OrdersMenuVC, type: OrdersMenuType) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Orders", bundle: nil)
+        guard let orderListVC = storyBoard.instantiateViewController(withIdentifier: "OrderListVC") as? OrderListVC else { return }
+        
+        switch type {
+        case .all: break
+        case .completed: break
+        case .in_progress: break
+        case .my: break
+        }
+        
+        self.navigationController?.pushViewController(orderListVC, animated: true)
     }
     
 }

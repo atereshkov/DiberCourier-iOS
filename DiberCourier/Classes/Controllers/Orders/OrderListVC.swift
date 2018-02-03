@@ -43,6 +43,9 @@ class OrderListVC: UIViewController {
                 self.ordersTableVC = ordersTableVC
             }
         }
+        if let headerVC = segue.destination as? TopHeaderVC {
+            headerVC.delegate = self
+        }
     }
     
     // MARK: Networking
@@ -145,3 +148,12 @@ extension OrderListVC: OrdersTableDelegate {
     
 }
 
+// MARK: TopHeaderVC Delegate
+
+extension OrderListVC: TopHeaderVCDelegate {
+    
+    func backButtonPressed(vc: TopHeaderVC) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+}
