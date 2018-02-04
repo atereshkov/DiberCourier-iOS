@@ -477,11 +477,8 @@
 		A386F0D51FE5B73800BC8B30 /* Orders */ = {
 			isa = PBXGroup;
 			children = (
-				A31F9DE21FB1A340008CD08A /* OrdersVC.swift */,
-				A3E2D57520266C2E008FEC73 /* RecentOrdersTableVC.swift */,
-				A34C407A201E59230045E678 /* OrdersMenuVC.swift */,
-				A3E2D57120266AB1008FEC73 /* OrderListVC.swift */,
-				A31F9DE41FB1A35C008CD08A /* OrdersTableVC.swift */,
+				A3E2D5782026F804008FEC73 /* Main */,
+				A3E2D5792026F80A008FEC73 /* List */,
 			);
 			path = Orders;
 			sourceTree = "<group>";
@@ -538,6 +535,25 @@
 				A3C491B91FB23E9F005574E7 /* OrderDetailVC.swift */,
 			);
 			path = OrderDetail;
+			sourceTree = "<group>";
+		};
+		A3E2D5782026F804008FEC73 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A31F9DE21FB1A340008CD08A /* OrdersVC.swift */,
+				A3E2D57520266C2E008FEC73 /* RecentOrdersTableVC.swift */,
+				A34C407A201E59230045E678 /* OrdersMenuVC.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		A3E2D5792026F80A008FEC73 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				A3E2D57120266AB1008FEC73 /* OrderListVC.swift */,
+				A31F9DE41FB1A35C008CD08A /* OrdersTableVC.swift */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 		A3FC0D2A20153257002AF21F /* OrderExecution */ = {
