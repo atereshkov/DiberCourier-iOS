@@ -16,18 +16,21 @@ class OrderListVC: UIViewController {
     
     private var ordersTableVC: OrdersTableVC? = nil
     private var orderDetailVC: OrderDetailVC? = nil
+    private var headerVC: OrderListHeaderVC? = nil
     fileprivate let dropDown = DropDown()
     
     fileprivate var loadingData = false // Used to prevent multiple simultanious load requests
-    
-    fileprivate var sortType: OrderType = PreferenceManager.shared.sortType
+    var type: OrdersMenuType? {
+        didSet {
+            updateOrdersWithType()
+        }
+    }
     
     // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         LogManager.log.info("Initialization")
-        loadData(silent: false)
     }
     
     deinit {
@@ -43,8 +46,9 @@ class OrderListVC: UIViewController {
                 self.ordersTableVC = ordersTableVC
             }
         }
-        if let headerVC = segue.destination as? TopHeaderVC {
+        if let headerVC = segue.destination as? OrderListHeaderVC {
             headerVC.delegate = self
+            self.headerVC = headerVC
         }
     }
     
@@ -78,11 +82,20 @@ class OrderListVC: UIViewController {
     
     // MARK: Helpers
     
-    private func filterByOrderType(_ orders: [OrderView], type: OrderType) -> [OrderView] {
+    private func updateOrdersWithType() {
+        guard let type = type else { return }
+        loadData(silent: false)
+        if let header = headerVC {
+            header.set(title: type.rawValue)
+        }
+    }
+    
+    private func filterByOrderType(_ orders: [OrderView], type: OrdersMenuType) -> [OrderView] {
+        // TODO get from the server
         let userId = PreferenceManager.shared.userId
         switch type {
         case .all:
-            return orders.filter({ $0.status != "Completed" }) // todo get from the server
+            return orders.filter({ $0.status != "Completed" })
         case .in_progress:
             return orders.filter({ $0.courier?.id == userId && $0.status == "In progress" })
         case .my:
@@ -93,19 +106,11 @@ class OrderListVC: UIViewController {
     }
     
     private func setup(_ orders: [OrderDTO], totalElements: Int) {
-        guard let ordersTableVC = self.ordersTableVC else { return }
+        guard let ordersTableVC = self.ordersTableVC, let type = self.type else { return }
         ordersTableVC.totalItems = totalElements
         let ordersDVO = OrderView.from(orders: orders)
-        let filteredOrders = self.filterByOrderType(ordersDVO, type: self.sortType)
+        let filteredOrders = self.filterByOrderType(ordersDVO, type: type)
         ordersTableVC.addOrders(filteredOrders)
-    }
-    
-    fileprivate func handleOrdersTypeSorting(with type: OrderType) {
-        guard let ordersTableVC = ordersTableVC else { return }
-        ordersTableVC.removeAll()
-        PreferenceManager.shared.sortType = type
-        self.sortType = type
-        loadData(silent: false)
     }
     
 }

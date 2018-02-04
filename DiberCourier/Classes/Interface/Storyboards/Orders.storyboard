@@ -776,10 +776,10 @@
             </objects>
             <point key="canvasLocation" x="2732" y="254"/>
         </scene>
-        <!--Top HeaderVC-->
+        <!--Order List HeaderVC-->
         <scene sceneID="1qm-tq-ePU">
             <objects>
-                <viewController id="RMk-Eb-Exm" customClass="TopHeaderVC" customModule="DiberCourier" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="RMk-Eb-Exm" customClass="OrderListHeaderVC" customModule="DiberCourier" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ydc-ei-Tz6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -845,6 +845,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8bi-XJ-1q0"/>
                     </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="5uo-Dr-sr8" id="Rzw-ip-gd9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o0X-5V-rg3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

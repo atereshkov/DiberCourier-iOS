@@ -173,14 +173,7 @@ extension OrdersVC: OrdersMenuDelegate {
     func menuPressed(vc: OrdersMenuVC, type: OrdersMenuType) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Orders", bundle: nil)
         guard let orderListVC = storyBoard.instantiateViewController(withIdentifier: "OrderListVC") as? OrderListVC else { return }
-        
-        switch type {
-        case .all: break
-        case .completed: break
-        case .in_progress: break
-        case .my: break
-        }
-        
+        orderListVC.type = type
         self.navigationController?.pushViewController(orderListVC, animated: true)
     }
     

@@ -8,11 +8,11 @@
 
 import UIKit
 
-enum OrdersMenuType {
-    case all
-    case my
-    case completed
-    case in_progress
+enum OrdersMenuType: String {
+    case all = "All"
+    case my = "My"
+    case completed = "Completed"
+    case in_progress = "In progress"
 }
 
 protocol OrdersMenuDelegate: class {

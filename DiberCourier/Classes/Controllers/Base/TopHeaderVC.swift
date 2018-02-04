@@ -33,12 +33,4 @@ class TopHeaderVC: UIViewController {
         self.delegate?.backButtonPressed(vc: self)
     }
     
-    // MARK: Private
-    
-    
-    
-    // MARK: Public API
-    
-    
-    
 }
