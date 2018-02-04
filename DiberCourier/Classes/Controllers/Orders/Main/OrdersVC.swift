@@ -81,10 +81,11 @@ class OrdersVC: UIViewController {
     // MARK: Helpers
     
     private func filterByOrderType(_ orders: [OrderView], type: OrderType) -> [OrderView] {
+        // TODO get from the server
         let userId = PreferenceManager.shared.userId
         switch type {
         case .all:
-            return orders.filter({ $0.status != "Completed" }) // todo get from the server
+            return orders.filter({ $0.status != "Completed" })
         case .in_progress:
             return orders.filter({ $0.courier?.id == userId && $0.status == "In progress" })
         case .my:
