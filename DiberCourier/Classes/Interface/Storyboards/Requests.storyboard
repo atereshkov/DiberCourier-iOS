@@ -43,6 +43,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lYB-th-9mO" userLabel="TopBackgroundView" customClass="GradientView" customModule="DiberCourier" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" red="0.21960784310000001" green="0.93725490199999995" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="0.066666666669999999" green="0.59999999999999998" blue="0.5568627451" alpha="0.60217360050000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AwR-6r-NtY">
                                 <rect key="frame" x="0.0" y="65" width="375" height="553"/>
                                 <connections>
@@ -61,13 +74,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="lYB-th-9mO" firstAttribute="trailing" secondItem="AFN-1A-nI6" secondAttribute="trailing" id="0GR-fY-GaK"/>
                             <constraint firstItem="kSh-bB-wSa" firstAttribute="top" secondItem="AFN-1A-nI6" secondAttribute="top" id="14w-FD-5M9"/>
                             <constraint firstItem="AFN-1A-nI6" firstAttribute="trailing" secondItem="AwR-6r-NtY" secondAttribute="trailing" id="59y-FQ-8TZ"/>
+                            <constraint firstItem="lYB-th-9mO" firstAttribute="leading" secondItem="AFN-1A-nI6" secondAttribute="leading" id="5Su-dt-EgE"/>
                             <constraint firstItem="AwR-6r-NtY" firstAttribute="leading" secondItem="AFN-1A-nI6" secondAttribute="leading" id="Mz4-aH-XKe"/>
                             <constraint firstItem="AFN-1A-nI6" firstAttribute="trailing" secondItem="kSh-bB-wSa" secondAttribute="trailing" id="VAE-Dy-nqp"/>
                             <constraint firstItem="AwR-6r-NtY" firstAttribute="top" secondItem="kSh-bB-wSa" secondAttribute="bottom" id="Xh6-de-X88"/>
+                            <constraint firstItem="kSh-bB-wSa" firstAttribute="top" secondItem="lYB-th-9mO" secondAttribute="bottom" id="aR9-JI-MDN"/>
                             <constraint firstItem="AFN-1A-nI6" firstAttribute="bottom" secondItem="AwR-6r-NtY" secondAttribute="bottom" id="no6-jM-cIC"/>
                             <constraint firstItem="kSh-bB-wSa" firstAttribute="leading" secondItem="AFN-1A-nI6" secondAttribute="leading" id="smi-QM-GQt"/>
+                            <constraint firstAttribute="top" secondItem="lYB-th-9mO" secondAttribute="top" id="zu5-56-loI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AFN-1A-nI6"/>
                     </view>

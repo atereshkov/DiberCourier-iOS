@@ -44,6 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = storyboard.instantiateInitialViewController()
         self.window?.makeKeyAndVisible()
         
+        UIApplication.shared.statusBarStyle = .lightContent
+        
         return true
     }
 
