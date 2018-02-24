@@ -13,6 +13,16 @@ enum OrdersMenuType: String {
     case my = "My"
     case completed = "Completed"
     case in_progress = "In progress"
+    
+    func searchQuery() -> String {
+        let id = PreferenceManager.shared.userId
+        switch self {
+        case .all: return ""
+        case .my: return "courier.id:\(id)"
+        case .completed: return "status:Completed"
+        case .in_progress: return "status:In progress"
+        }
+    }
 }
 
 protocol OrdersMenuDelegate: class {

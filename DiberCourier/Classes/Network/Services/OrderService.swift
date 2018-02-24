@@ -51,6 +51,31 @@ class OrderService: NSObject {
         }
     }
     
+    func getOrders(query: String, page: Int, size: Int,
+                   callback:((_ result: OrdersResult) -> ())? = nil) {
+        let endpoint = OrderEndpoint.searchOrders(query: query, page: page, size: size)
+        
+        sessionManager.request(endpoint.url)
+            .validate()
+            .responseJSON { response in
+                var orders = [OrderDTO]()
+                if response.result.error == nil, let data = response.result.value as? [String: Any] {
+                    if let ordersData = data["content"] as? [[String: Any]] {
+                        for orderData in ordersData {
+                            if let order = OrderDTO.with(data: orderData) {
+                                orders.append(order)
+                            }
+                        }
+                    }
+                    let totalPages = data["totalPages"] as? Int ?? 0
+                    let totalElements = data["totalElements"] as? Int ?? 0
+                    callback?(OrdersResult.Success(orders: orders, totalPages: totalPages, totalElements: totalElements))
+                } else {
+                    callback?(OrdersResult.UnexpectedError(error: response.result.error))
+                }
+        }
+    }
+    
     func getOrder(id: Int, callback:((_ result: OrderResult) -> ())? = nil) {
         let endpoint = OrderEndpoint.order(id: id)
         

@@ -55,13 +55,15 @@ class OrderListVC: UIViewController {
     // MARK: Networking
     
     private func loadData(silent: Bool, page: Int = 0, size: Int = Pagination.pageSize) {
+        guard let type = type else { return }
         guard !loadingData else { return }
         loadingData = true
         if !silent {
             MBProgressHUD.showAdded(to: self.view, animated: true)
         }
         
-        OrderService.shared.getOrders(page: page, size: size) { [weak self] (result) in
+        let query = type.searchQuery()
+        OrderService.shared.getOrders(query: query, page: page, size: size) { [weak self] (result) in
             guard let self_ = self else { return }
             defer {
                 MBProgressHUD.hide(for: self_.view, animated: true)
@@ -90,6 +92,7 @@ class OrderListVC: UIViewController {
         }
     }
     
+    /*
     private func filterByOrderType(_ orders: [OrderView], type: OrdersMenuType) -> [OrderView] {
         // TODO get from the server
         let userId = PreferenceManager.shared.userId
@@ -104,13 +107,13 @@ class OrderListVC: UIViewController {
             return orders.filter({ $0.status == "Completed" })
         }
     }
+    */
     
     private func setup(_ orders: [OrderDTO], totalElements: Int) {
-        guard let ordersTableVC = self.ordersTableVC, let type = self.type else { return }
+        guard let ordersTableVC = self.ordersTableVC else { return }
         ordersTableVC.totalItems = totalElements
         let ordersDVO = OrderView.from(orders: orders)
-        let filteredOrders = self.filterByOrderType(ordersDVO, type: type)
-        ordersTableVC.addOrders(filteredOrders)
+        ordersTableVC.addOrders(ordersDVO)
     }
     
 }

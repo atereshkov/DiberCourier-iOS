@@ -12,6 +12,7 @@ import Alamofire
 enum OrderEndpoint: BaseEndPoint {
     
     case orders(page: Int, size: Int)
+    case searchOrders(query: String, page: Int, size: Int)
     case order(id: Int)
     case addRequest(orderId: Int)
     
@@ -22,6 +23,12 @@ enum OrderEndpoint: BaseEndPoint {
             url.append("orders")
             url.append("?page=\(page)&size=\(size)")
             return (url: url, method: .get, parameters: nil)
+        case .searchOrders(let query, let page, let size):
+            var url = "\(Endpoint.base.rawValue)\(Endpoint.apiVersion.rawValue)"
+            url.append("orders")
+            url.append("?search=\(query)&page=\(page)&size=\(size)")
+            let endUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? url
+            return (url: endUrl, method: .get, parameters: nil)
         case .order(let id):
             var url = "\(Endpoint.base.rawValue)\(Endpoint.apiVersion.rawValue)"
             url.append("orders/\(id)")
