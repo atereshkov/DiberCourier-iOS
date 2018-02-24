@@ -17,10 +17,10 @@ enum OrdersMenuType: String {
     func searchQuery() -> String {
         let id = PreferenceManager.shared.userId
         switch self {
-        case .all: return ""
+        case .all: return "status!In progress, status!Completed"
         case .my: return "courier.id:\(id)"
         case .completed: return "status:Completed"
-        case .in_progress: return "status:In progress"
+        case .in_progress: return "status:In progress,courier.id:\(id)"
         }
     }
 }
