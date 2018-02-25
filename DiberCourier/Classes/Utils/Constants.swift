@@ -16,12 +16,14 @@ enum Segues: String {
     case requestsTable = "RequestsTableVC"
     case showOrderDetails = "ShowOrderDetails"
     case showRequestDetails = "ShowRequestDetails"
+    case ordersMainHeader = "ordersMainHeader"
 }
 
 enum Storyboards: String {
     case order = "Order"
     case request = "Request"
     case orderExecution = "OrderExecution"
+    case map = "GoogleMap"
 }
 
 enum Cells: String {

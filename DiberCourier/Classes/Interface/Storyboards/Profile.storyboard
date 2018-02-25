@@ -234,6 +234,7 @@
                             <constraint firstItem="2D5-XZ-Tqh" firstAttribute="top" secondItem="ARA-uo-lcU" secondAttribute="top" constant="4" id="qoj-vc-e0k"/>
                             <constraint firstItem="A98-O0-j2e" firstAttribute="top" secondItem="2D5-XZ-Tqh" secondAttribute="bottom" constant="4" id="w3V-O0-h7F"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="Scx-Ja-UKE"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ILy-Xv-S7E" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -274,6 +275,7 @@
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MP4-rv-hGr" secondAttribute="trailing" constant="16" id="rP7-Ik-BtT"/>
                             <constraint firstItem="IAh-4K-6Rx" firstAttribute="centerY" secondItem="mK0-hH-xp6" secondAttribute="centerY" id="yHc-oD-ItE"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="1aT-fd-dN2"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ylt-Od-x70" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -318,6 +320,7 @@
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xau-EA-841" secondAttribute="trailing" constant="16" id="g78-5H-LW8"/>
                             <constraint firstItem="ka3-SB-NJf" firstAttribute="leading" secondItem="3LC-VT-EqZ" secondAttribute="leading" constant="16" id="pg6-87-Skf"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="Lwq-df-oSB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q2f-Rw-ynq" userLabel="First Responder" sceneMemberID="firstResponder"/>

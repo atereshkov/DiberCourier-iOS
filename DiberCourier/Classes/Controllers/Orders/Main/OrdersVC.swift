@@ -44,6 +44,10 @@ class OrdersVC: UIViewController {
                 ordersTableVC.delegate = self
                 self.ordersTableVC = ordersTableVC
             }
+        } else if segue.identifier == Segues.ordersMainHeader.rawValue {
+            if let headerVC = segue.destination as? OrdersMainHeaderVC {
+                headerVC.delegate = self
+            }
         }
         if let ordersMenuVC = segue.destination as? OrdersMenuVC {
             ordersMenuVC.delegate = self
@@ -164,14 +168,34 @@ extension OrdersVC: OrdersMenuDelegate {
 extension OrdersVC: OrderDetailVCDelegate {
     
     func shouldPresentExecutionVC(from vc: OrderDetailVC, orderId: Int) {
+        // Pop previous VC
         self.navigationController?.popViewController(animated: false)
-        let storyboard = UIStoryboard(name: Storyboards.orderExecution.rawValue, bundle: nil)
         
+        // Show OrderExecutionVC
+        let storyboard = UIStoryboard(name: Storyboards.orderExecution.rawValue, bundle: nil)
         if let navVC = storyboard.instantiateInitialViewController() as? UINavigationController,
             let orderExecutionVC = navVC.rootViewController as? OrderExecutionVC {
             orderExecutionVC.orderId = orderId
             self.navigationController?.pushViewController(orderExecutionVC, animated: true)
         }
+    }
+    
+}
+
+// MARK: OrdersMainHeaderVCDelegate
+
+extension OrdersVC: OrdersMainHeaderVCDelegate {
+    
+    func mapButtonPressed(vc: OrdersMainHeaderVC) {
+        let storyboard = UIStoryboard(name: Storyboards.map.rawValue, bundle: nil)
+        if let navVC = storyboard.instantiateInitialViewController() as? UINavigationController,
+            let mapVC = navVC.rootViewController as? MapViewController {
+            self.navigationController?.pushViewController(mapVC, animated: true)
+        }
+    }
+    
+    func searchButtonPressed(vc: OrdersMainHeaderVC) {
+        // TODO Show Search
     }
     
 }

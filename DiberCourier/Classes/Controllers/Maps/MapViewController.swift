@@ -2,66 +2,107 @@
 //  MapViewController.swift
 //  DiberCourier
 //
-//  Created by Alexander Tereshkov on 1/13/18.
+//  Created by Alexander Tereshkov on 2/25/18.
 //  Copyright © 2018 Diber. All rights reserved.
 //
 
 import Foundation
-import GoogleMaps
+import MapKit
 
 class MapViewController: UIViewController {
     
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var pointDetailLabel: UILabel!
+    @IBOutlet weak var pointDetailView: UIView!
+    
+    fileprivate var selectedPoint: CustomPinAnnotation?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Create a GMSCameraPosition that tells the map to display the
-        // coordinate -33.86,151.20 at zoom level 6.
-        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
-        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        view = mapView
         
-        // Creates a marker in the center of the map.
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        marker.map = mapView
+        self.setupInitialPosition()
     }
     
-    // Actions
+    deinit {
+        LogManager.log.info("Deinit")
+    }
     
-    @IBAction func backButtonPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+    // MARK: Private
+    
+    private func setupMap(items: [OrderView]) {
+//        for item in items {
+//            let annotation = CustomPinAnnotation()
+//            guard let lat = item.location?.lat, let lon = item.location?.lon else {
+//                LogManager.log.info("Error during parsing of lon/lat")
+//                continue
+//            }
+//            annotation.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+//            annotation.title = item.title
+//            annotation.order = item
+//            mapView.addAnnotation(annotation)
+//        }
+    }
+    
+    private func setupInitialPosition() {
+        let span = MKCoordinateSpanMake(22, 22) // Zoom level
+        let lat = 53.0891117
+        let long = 28.341105
+        let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: lat, longitude: long), span: span)
+        mapView.setRegion(region, animated: true)
+    }
+    
+    /*
+    fileprivate func selectAnnotation(item: OrderView) {
+        let annotations = mapView.annotations.flatMap({ $0 as? CustomPinAnnotation })
+        guard let selectedAnnotation = annotations.filter({ $0.order?.id == item.id }).first else { return }
+        self.mapView.selectAnnotation(selectedAnnotation, animated: true)
+        self.mapView.region.center = selectedAnnotation.coordinate
+        self.showPointDetailView(for: item)
+    }
+    */
+    
+    fileprivate func showPointDetailView(for item: OrderView) {
+        self.pointDetailLabel.text = "\(item.id)"
+        // Show point detail view if needed
+        if self.pointDetailView.alpha != 1 {
+            self.pointDetailView.isHidden = false
+            UIView.animate(withDuration: 0.25, animations: {
+                self.pointDetailView.alpha = 1
+            }, completion:  nil)
+        }
+    }
+    
+    fileprivate func hidePointDetailView() {
+        UIView.animate(withDuration: 0.25, animations: {
+            self.pointDetailView.alpha = 0
+        }, completion:  {
+            (value: Bool) in
+            self.pointDetailView.isHidden = false
+        })
+    }
+    
+    // MARK: Actions
+    
+    @IBAction func backDidPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
 }
 
-extension MapViewController: GMSMapViewDelegate {
+extension MapViewController: MKMapViewDelegate {
     
-    /* handles Info Window tap */
-    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
-        print("didTapInfoWindowOf")
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        if let annotation = view.annotation as? CustomPinAnnotation, let item = annotation.order {
+            self.showPointDetailView(for: item)
+        }
+        
+        guard let annotation = view.annotation as? CustomPinAnnotation else { return }
+        self.selectedPoint = annotation
     }
     
-    /* handles Info Window long press */
-    func mapView(_ mapView: GMSMapView, didLongPressInfoWindowOf marker: GMSMarker) {
-        print("didLongPressInfoWindowOf")
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        self.hidePointDetailView()
+        self.selectedPoint = nil
     }
     
-    /* set a custom Info Window */
-    func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
-        let view = UIView(frame: CGRect.init(x: 0, y: 0, width: 200, height: 70))
-        view.backgroundColor = UIColor.white
-        view.layer.cornerRadius = 6
-        
-        let lbl1 = UILabel(frame: CGRect.init(x: 8, y: 8, width: view.frame.size.width - 16, height: 15))
-        lbl1.text = "Hi there!"
-        view.addSubview(lbl1)
-        
-        let lbl2 = UILabel(frame: CGRect.init(x: lbl1.frame.origin.x, y: lbl1.frame.origin.y + lbl1.frame.size.height + 3, width: view.frame.size.width - 16, height: 15))
-        lbl2.text = "I am a custom info window."
-        lbl2.font = UIFont.systemFont(ofSize: 14, weight: .light)
-        view.addSubview(lbl2)
-        
-        return view
-    }
 }

@@ -32,7 +32,7 @@
 		A32F807B200A117100E8F29D /* RoundedStyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32F807A200A117100E8F29D /* RoundedStyledButton.swift */; };
 		A32F807D200A150700E8F29D /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A32F807C200A150700E8F29D /* Signup.storyboard */; };
 		A32F807F200A15EA00E8F29D /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32F807E200A15EA00E8F29D /* SignupVC.swift */; };
-		A32F8082200A1A6C00E8F29D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32F8081200A1A6C00E8F29D /* MapViewController.swift */; };
+		A32F8082200A1A6C00E8F29D /* GMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32F8081200A1A6C00E8F29D /* GMapViewController.swift */; };
 		A32F8084200A203900E8F29D /* GoogleMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A32F8083200A203900E8F29D /* GoogleMap.storyboard */; };
 		A33AE34C1FB0734E00180661 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A33AE34E1FB0734E00180661 /* Localizable.strings */; };
 		A33AE3531FB082FA00180661 /* MainNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33AE3521FB082FA00180661 /* MainNavigationVC.swift */; };
@@ -54,6 +54,7 @@
 		A39A2C681FD467980014BD46 /* OrderRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39A2C671FD467980014BD46 /* OrderRequestView.swift */; };
 		A39A2C6B1FD469740014BD46 /* OrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39A2C6A1FD469740014BD46 /* OrderDetailView.swift */; };
 		A39A2C6D1FD4698F0014BD46 /* OrderPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39A2C6C1FD4698F0014BD46 /* OrderPriceView.swift */; };
+		A39E51922042E0F300E2DAE2 /* CustomPinAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39E51912042E0F300E2DAE2 /* CustomPinAnnotation.swift */; };
 		A3A999A81FB086C800D63B35 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A999A71FB086C800D63B35 /* LogManager.swift */; };
 		A3A999AA1FB0871A00D63B35 /* PreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A999A91FB0871A00D63B35 /* PreferenceManager.swift */; };
 		A3A999AC1FB0877100D63B35 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A999AB1FB0877100D63B35 /* NetworkManager.swift */; };
@@ -83,6 +84,7 @@
 		A3F672C12042C442002A9125 /* OrdersMainHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F672C02042C442002A9125 /* OrdersMainHeaderVC.swift */; };
 		A3F672C32042D4F4002A9125 /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F672C22042D4F4002A9125 /* UserInfoVC.swift */; };
 		A3F672C52042D501002A9125 /* UserSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F672C42042D501002A9125 /* UserSettingsVC.swift */; };
+		A3F672C72042DFEE002A9125 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F672C62042DFEE002A9125 /* MapViewController.swift */; };
 		A3FC0D2520152013002AF21F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3FC0D2420152013002AF21F /* Profile.storyboard */; };
 		A3FC0D2720152D22002AF21F /* OrderExecutionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC0D2620152D22002AF21F /* OrderExecutionService.swift */; };
 		A3FC0D2920152D82002AF21F /* OrderExecutionEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC0D2820152D82002AF21F /* OrderExecutionEndpoint.swift */; };
@@ -145,7 +147,7 @@
 		A32F807A200A117100E8F29D /* RoundedStyledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedStyledButton.swift; sourceTree = "<group>"; };
 		A32F807C200A150700E8F29D /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
 		A32F807E200A15EA00E8F29D /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
-		A32F8081200A1A6C00E8F29D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A32F8081200A1A6C00E8F29D /* GMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMapViewController.swift; sourceTree = "<group>"; };
 		A32F8083200A203900E8F29D /* GoogleMap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GoogleMap.storyboard; sourceTree = "<group>"; };
 		A33AE34D1FB0734E00180661 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A33AE34F1FB073A200180661 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		A39A2C671FD467980014BD46 /* OrderRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRequestView.swift; sourceTree = "<group>"; };
 		A39A2C6A1FD469740014BD46 /* OrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailView.swift; sourceTree = "<group>"; };
 		A39A2C6C1FD4698F0014BD46 /* OrderPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPriceView.swift; sourceTree = "<group>"; };
+		A39E51912042E0F300E2DAE2 /* CustomPinAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPinAnnotation.swift; sourceTree = "<group>"; };
 		A3A999A71FB086C800D63B35 /* LogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
 		A3A999A91FB0871A00D63B35 /* PreferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceManager.swift; sourceTree = "<group>"; };
 		A3A999AB1FB0877100D63B35 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -199,6 +202,7 @@
 		A3F672C02042C442002A9125 /* OrdersMainHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersMainHeaderVC.swift; sourceTree = "<group>"; };
 		A3F672C22042D4F4002A9125 /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
 		A3F672C42042D501002A9125 /* UserSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsVC.swift; sourceTree = "<group>"; };
+		A3F672C62042DFEE002A9125 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A3FC0D2420152013002AF21F /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		A3FC0D2620152D22002AF21F /* OrderExecutionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderExecutionService.swift; sourceTree = "<group>"; };
 		A3FC0D2820152D82002AF21F /* OrderExecutionEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderExecutionEndpoint.swift; sourceTree = "<group>"; };
@@ -311,7 +315,9 @@
 		A32F8080200A1A5800E8F29D /* Maps */ = {
 			isa = PBXGroup;
 			children = (
-				A32F8081200A1A6C00E8F29D /* MapViewController.swift */,
+				A32F8081200A1A6C00E8F29D /* GMapViewController.swift */,
+				A3F672C62042DFEE002A9125 /* MapViewController.swift */,
+				A39E51912042E0F300E2DAE2 /* CustomPinAnnotation.swift */,
 			);
 			path = Maps;
 			sourceTree = "<group>";
@@ -975,11 +981,12 @@
 				A39A2C6D1FD4698F0014BD46 /* OrderPriceView.swift in Sources */,
 				A3F672C12042C442002A9125 /* OrdersMainHeaderVC.swift in Sources */,
 				A31F9DE81FB1A387008CD08A /* OrderCell.swift in Sources */,
+				A39E51922042E0F300E2DAE2 /* CustomPinAnnotation.swift in Sources */,
 				A3E2D57420266B0B008FEC73 /* RecentOrderCell.swift in Sources */,
 				A3A999BE1FB0974100D63B35 /* WeakTimer.swift in Sources */,
 				A3FC0D2E2015331A002AF21F /* OrderExecutionVC.swift in Sources */,
 				A3A999C01FB0976800D63B35 /* User.swift in Sources */,
-				A32F8082200A1A6C00E8F29D /* MapViewController.swift in Sources */,
+				A32F8082200A1A6C00E8F29D /* GMapViewController.swift in Sources */,
 				A3A999BA1FB0970D00D63B35 /* AlertControllerHelper.swift in Sources */,
 				A31F9DF61FB1A60F008CD08A /* OrderEndpoint.swift in Sources */,
 				A3A999AE1FB0878800D63B35 /* OAuth2Handler.swift in Sources */,
@@ -992,6 +999,7 @@
 				A3C491BA1FB23E9F005574E7 /* OrderDetailVC.swift in Sources */,
 				A3F672C52042D501002A9125 /* UserSettingsVC.swift in Sources */,
 				A386F0DA1FE5D8B200BC8B30 /* RequestsVC.swift in Sources */,
+				A3F672C72042DFEE002A9125 /* MapViewController.swift in Sources */,
 				A3A999B61FB096B700D63B35 /* AuthEndpoint.swift in Sources */,
 				A386F0DE1FE5DA4A00BC8B30 /* RequestCell.swift in Sources */,
 				A3E2D56E20265C5B008FEC73 /* MyProfileVC.swift in Sources */,
