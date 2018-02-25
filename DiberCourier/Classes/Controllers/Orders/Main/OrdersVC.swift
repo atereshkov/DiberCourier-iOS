@@ -80,39 +80,12 @@ class OrdersVC: UIViewController {
     
     // MARK: Helpers
     
-    /*
-    private func filterByOrderType(_ orders: [OrderView], type: OrderType) -> [OrderView] {
-        // TODO get from the server
-        let userId = PreferenceManager.shared.userId
-        switch type {
-        case .all:
-            return orders.filter({ $0.status != "Completed" })
-        case .in_progress:
-            return orders.filter({ $0.courier?.id == userId && $0.status == "In progress" })
-        case .my:
-            return orders.filter({ $0.courier?.id == userId })
-        case .completed:
-            return orders.filter({ $0.status == "Completed" })
-        }
-    }
-    */
-    
     private func setup(_ orders: [OrderDTO], totalElements: Int) {
         guard let ordersTableVC = self.ordersTableVC else { return }
         ordersTableVC.totalItems = totalElements
         let ordersDVO = OrderView.from(orders: orders)
         ordersTableVC.addOrders(ordersDVO)
     }
-    
-    /*
-    fileprivate func handleOrdersTypeSorting(with type: OrderType) {
-        guard let ordersTableVC = ordersTableVC else { return }
-        ordersTableVC.removeAll()
-        PreferenceManager.shared.sortType = type
-        self.sortType = type
-        loadData(silent: false)
-    }
-    */
     
     // MARK: Scrolling
     
