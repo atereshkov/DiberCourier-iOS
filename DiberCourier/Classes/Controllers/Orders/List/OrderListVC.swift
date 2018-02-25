@@ -142,6 +142,7 @@ extension OrderListVC: OrdersTableDelegate {
             if let orderNavVC = storyboard.instantiateInitialViewController() as? UINavigationController,
                 let orderDetailVC = orderNavVC.rootViewController as? OrderDetailVC {
                 orderDetailVC.orderId = order.id
+                orderDetailVC.delegate = self
                 //self.present(orderNavVC, animated: true, completion: nil)
                 self.navigationController?.pushViewController(orderDetailVC, animated: true)
             }
@@ -162,6 +163,23 @@ extension OrderListVC: TopHeaderVCDelegate {
     
     func backButtonPressed(vc: TopHeaderVC) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+}
+
+// MARK: OrderDetailVCDelegate
+
+extension OrderListVC: OrderDetailVCDelegate {
+    
+    func shouldPresentExecutionVC(from vc: OrderDetailVC, orderId: Int) {
+        self.navigationController?.popViewController(animated: false)
+        let storyboard = UIStoryboard(name: Storyboards.orderExecution.rawValue, bundle: nil)
+        
+        if let navVC = storyboard.instantiateInitialViewController() as? UINavigationController,
+            let orderExecutionVC = navVC.rootViewController as? OrderExecutionVC {
+            orderExecutionVC.orderId = orderId
+            self.navigationController?.pushViewController(orderExecutionVC, animated: true)
+        }
     }
     
 }

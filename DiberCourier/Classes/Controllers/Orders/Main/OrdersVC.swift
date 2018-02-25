@@ -159,6 +159,7 @@ extension OrdersVC: OrdersTableDelegate {
             if let orderNavVC = storyboard.instantiateInitialViewController() as? UINavigationController,
                 let orderDetailVC = orderNavVC.rootViewController as? OrderDetailVC {
                 orderDetailVC.orderId = order.id
+                orderDetailVC.delegate = self
                 self.navigationController?.pushViewController(orderDetailVC, animated: true)
             }
         }
@@ -172,6 +173,8 @@ extension OrdersVC: OrdersTableDelegate {
     
 }
 
+// MARK: OrdersMenuDelegate
+
 extension OrdersVC: OrdersMenuDelegate {
     
     func menuPressed(vc: OrdersMenuVC, type: OrdersMenuType) {
@@ -179,6 +182,23 @@ extension OrdersVC: OrdersMenuDelegate {
         guard let orderListVC = storyBoard.instantiateViewController(withIdentifier: "OrderListVC") as? OrderListVC else { return }
         orderListVC.type = type
         self.navigationController?.pushViewController(orderListVC, animated: true)
+    }
+    
+}
+
+// MARK: OrderDetailVCDelegate
+
+extension OrdersVC: OrderDetailVCDelegate {
+    
+    func shouldPresentExecutionVC(from vc: OrderDetailVC, orderId: Int) {
+        self.navigationController?.popViewController(animated: false)
+        let storyboard = UIStoryboard(name: Storyboards.orderExecution.rawValue, bundle: nil)
+        
+        if let navVC = storyboard.instantiateInitialViewController() as? UINavigationController,
+            let orderExecutionVC = navVC.rootViewController as? OrderExecutionVC {
+            orderExecutionVC.orderId = orderId
+            self.navigationController?.pushViewController(orderExecutionVC, animated: true)
+        }
     }
     
 }

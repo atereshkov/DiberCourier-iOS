@@ -11,6 +11,10 @@ import MBProgressHUD
 import Localize_Swift
 import PopupDialog
 
+protocol OrderDetailVCDelegate: class {
+    func shouldPresentExecutionVC(from vc: OrderDetailVC, orderId: Int)
+}
+
 class OrderDetailVC: UIViewController {
     
     @IBOutlet weak var detailsView: OrderDetailView!
@@ -18,6 +22,8 @@ class OrderDetailVC: UIViewController {
     @IBOutlet weak var priceView: OrderPriceView!
     
     fileprivate var loadingData = false // Used to prevent multiple simultanious load requests
+    
+    weak var delegate: OrderDetailVCDelegate? = nil
     
     var orderId: Int?
     fileprivate(set) var order: OrderView?
@@ -261,9 +267,13 @@ extension OrderDetailVC {
             switch result {
             case .Success():
                 guard let order = self_.order else { return }
-                self_.showAlert(title: "Order execution started", message: "You need to deliver this order by \(order.date.toString())")
                 LogManager.log.info("Order with id \(id) started")
-            // TODO: Dismiss self and show OrderExecutionVC
+                
+                let title = "Order execution started"
+                let msg = "You need to deliver this order by \(order.date.toString())"
+                self_.showAlert(title: title, message: msg, callback: {
+                    self_.delegate?.shouldPresentExecutionVC(from: self_, orderId: id)
+                })
             case .UnexpectedError(let error):
                 self_.showUnexpectedErrorAlert(error: error)
             case .OfflineError:
