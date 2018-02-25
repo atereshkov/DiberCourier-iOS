@@ -35,7 +35,7 @@ class OrderDetailView: UIView {
         fromAddressLabel.text = order.addressFrom.address
         toAddressLabel.text = order.addressTo.address
         descriptionLabel.text = order.descr
-        dateLabel.text = "\(order.date)"
+        dateLabel.text = order.date.toString()
     }
     
     // MARK: Actions

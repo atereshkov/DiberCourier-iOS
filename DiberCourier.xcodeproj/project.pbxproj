@@ -80,6 +80,7 @@
 		A3E2D57420266B0B008FEC73 /* RecentOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2D57320266B0B008FEC73 /* RecentOrderCell.swift */; };
 		A3E2D57620266C2E008FEC73 /* RecentOrdersTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2D57520266C2E008FEC73 /* RecentOrdersTableVC.swift */; };
 		A3E2D57B2026FA71008FEC73 /* OrderListHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2D57A2026FA71008FEC73 /* OrderListHeaderVC.swift */; };
+		A3F672C12042C442002A9125 /* OrdersMainHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F672C02042C442002A9125 /* OrdersMainHeaderVC.swift */; };
 		A3FC0D2520152013002AF21F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3FC0D2420152013002AF21F /* Profile.storyboard */; };
 		A3FC0D2720152D22002AF21F /* OrderExecutionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC0D2620152D22002AF21F /* OrderExecutionService.swift */; };
 		A3FC0D2920152D82002AF21F /* OrderExecutionEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC0D2820152D82002AF21F /* OrderExecutionEndpoint.swift */; };
@@ -193,6 +194,7 @@
 		A3E2D57320266B0B008FEC73 /* RecentOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentOrderCell.swift; sourceTree = "<group>"; };
 		A3E2D57520266C2E008FEC73 /* RecentOrdersTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentOrdersTableVC.swift; sourceTree = "<group>"; };
 		A3E2D57A2026FA71008FEC73 /* OrderListHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListHeaderVC.swift; sourceTree = "<group>"; };
+		A3F672C02042C442002A9125 /* OrdersMainHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersMainHeaderVC.swift; sourceTree = "<group>"; };
 		A3FC0D2420152013002AF21F /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		A3FC0D2620152D22002AF21F /* OrderExecutionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderExecutionService.swift; sourceTree = "<group>"; };
 		A3FC0D2820152D82002AF21F /* OrderExecutionEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderExecutionEndpoint.swift; sourceTree = "<group>"; };
@@ -545,6 +547,7 @@
 				A31F9DE21FB1A340008CD08A /* OrdersVC.swift */,
 				A3E2D57520266C2E008FEC73 /* RecentOrdersTableVC.swift */,
 				A34C407A201E59230045E678 /* OrdersMenuVC.swift */,
+				A3F672C02042C442002A9125 /* OrdersMainHeaderVC.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -964,6 +967,7 @@
 				A39A2C6B1FD469740014BD46 /* OrderDetailView.swift in Sources */,
 				A39A2C681FD467980014BD46 /* OrderRequestView.swift in Sources */,
 				A39A2C6D1FD4698F0014BD46 /* OrderPriceView.swift in Sources */,
+				A3F672C12042C442002A9125 /* OrdersMainHeaderVC.swift in Sources */,
 				A31F9DE81FB1A387008CD08A /* OrderCell.swift in Sources */,
 				A3E2D57420266B0B008FEC73 /* RecentOrderCell.swift in Sources */,
 				A3A999BE1FB0974100D63B35 /* WeakTimer.swift in Sources */,

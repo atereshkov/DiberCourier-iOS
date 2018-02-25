@@ -589,10 +589,10 @@
             </objects>
             <point key="canvasLocation" x="2849" y="-846"/>
         </scene>
-        <!--View Controller-->
+        <!--Orders Main HeaderVC-->
         <scene sceneID="yoz-Eg-YUj">
             <objects>
-                <viewController id="N1Y-tt-23P" sceneMemberID="viewController">
+                <viewController id="N1Y-tt-23P" customClass="OrdersMainHeaderVC" customModule="DiberCourier" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Oil-g2-F2P">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -601,12 +601,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JwO-D7-jVI">
-                                        <rect key="frame" x="325" y="3" width="40" height="40"/>
+                                        <rect key="frame" x="325" y="1.5" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="alI-Qg-EXF"/>
                                             <constraint firstAttribute="height" constant="40" id="f7p-n3-GDC"/>
                                         </constraints>
-                                        <state key="normal" image="ic_search_white"/>
+                                        <state key="normal" image="ic_map"/>
+                                        <connections>
+                                            <action selector="mapButtonPressed:" destination="N1Y-tt-23P" eventType="touchUpInside" id="1JC-es-Hqt"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Orders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6e8-x0-9Xs">
                                         <rect key="frame" x="14" y="11.5" width="120" height="23.5"/>
@@ -617,12 +620,25 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xU8-4K-5Ia">
+                                        <rect key="frame" x="281" y="3" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="D2b-DV-tY3"/>
+                                            <constraint firstAttribute="width" constant="40" id="NXP-3n-efn"/>
+                                        </constraints>
+                                        <state key="normal" image="ic_search_white"/>
+                                        <connections>
+                                            <action selector="searchButtonPressed:" destination="N1Y-tt-23P" eventType="touchUpInside" id="ayH-qr-gVW"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="6e8-x0-9Xs" firstAttribute="centerY" secondItem="Jyc-pd-Q4M" secondAttribute="centerY" id="2da-FL-xzw"/>
                                     <constraint firstItem="6e8-x0-9Xs" firstAttribute="leading" secondItem="Jyc-pd-Q4M" secondAttribute="leading" constant="14" id="8zZ-Lj-lDX"/>
-                                    <constraint firstItem="JwO-D7-jVI" firstAttribute="centerY" secondItem="Jyc-pd-Q4M" secondAttribute="centerY" id="gTo-qb-VX2"/>
+                                    <constraint firstItem="xU8-4K-5Ia" firstAttribute="centerY" secondItem="Jyc-pd-Q4M" secondAttribute="centerY" id="Zar-Zx-y8q"/>
+                                    <constraint firstItem="JwO-D7-jVI" firstAttribute="centerY" secondItem="Jyc-pd-Q4M" secondAttribute="centerY" constant="-1" id="gTo-qb-VX2"/>
+                                    <constraint firstItem="JwO-D7-jVI" firstAttribute="leading" secondItem="xU8-4K-5Ia" secondAttribute="trailing" constant="4" id="knl-GN-QOy"/>
                                     <constraint firstAttribute="trailing" secondItem="JwO-D7-jVI" secondAttribute="trailing" constant="10" id="yWZ-Yh-7fn"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -894,6 +910,7 @@
         <image name="ic_back" width="13" height="21"/>
         <image name="ic_done_white" width="24" height="24"/>
         <image name="ic_identity_white" width="24" height="24"/>
+        <image name="ic_map" width="18" height="18"/>
         <image name="ic_new" width="24" height="24"/>
         <image name="ic_search_white" width="24" height="24"/>
         <image name="ic_swap_white" width="24" height="24"/>

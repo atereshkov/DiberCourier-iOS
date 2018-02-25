@@ -260,7 +260,8 @@ extension OrderDetailVC {
             
             switch result {
             case .Success():
-                self_.showAlert(title: "Order", message: "Order execution started. You can start the delivery")
+                guard let order = self_.order else { return }
+                self_.showAlert(title: "Order execution started", message: "You need to deliver this order by \(order.date.toString())")
                 LogManager.log.info("Order with id \(id) started")
             // TODO: Dismiss self and show OrderExecutionVC
             case .UnexpectedError(let error):

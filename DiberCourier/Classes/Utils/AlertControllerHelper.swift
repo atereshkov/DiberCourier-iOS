@@ -55,7 +55,7 @@ extension UIAlertController {
     
     static func showAlert(title: String?, message: String?, fromViewController controller: UIViewController) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "alert.ok".localized(), style: UIAlertActionStyle.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "alert.ok".localized(), style: .default, handler: nil))
         controller.present(alert, animated: true, completion: nil)
     }
 }
@@ -95,7 +95,7 @@ extension UIViewController {
     func showAuthExpiredAlert(callback: (() -> ())? = nil) {
         let alert = UIAlertController(title: "alert.error.title".localized(),
                                       message: "alert.session.expired.error.msg".localized(),
-                                      preferredStyle: UIAlertControllerStyle.alert)
+                                      preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "alert.ok".localized(),
                                       style: UIAlertActionStyle.default,
@@ -105,10 +105,10 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func showAlertWithCallback(title : String?, message: String?, callback: (() -> ())? = nil) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+    func showAlert(title : String?, message: String?, callback: (() -> ())? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "alert.ok".localized(), style: UIAlertActionStyle.default, handler: { (action) in
+        alert.addAction(UIAlertAction(title: "alert.ok".localized(), style: .default, handler: { (action) in
             callback?()
         }))
         present(alert, animated: true, completion: nil)
