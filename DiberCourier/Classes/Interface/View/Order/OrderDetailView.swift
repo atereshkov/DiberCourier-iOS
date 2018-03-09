@@ -32,10 +32,20 @@ class OrderDetailView: UIView {
     // MARK: Public API
     
     func set(order: OrderView) {
-        fromAddressLabel.text = order.addressFrom.address
-        toAddressLabel.text = order.addressTo.address
-        descriptionLabel.text = order.descr
+        let streetFrom = order.addressFrom.address
+        let cityFrom = order.addressFrom.city
+        let countryFrom = order.addressFrom.country
+        let fromAddress = streetFrom + ", " + cityFrom + ", " + countryFrom
+        fromAddressLabel.text = fromAddress
+        
+        let streetTo = order.addressFrom.address
+        let cityTo = order.addressFrom.city
+        let countryTo = order.addressFrom.country
+        let toAddress = streetTo + ", " + cityTo + ", " + countryTo
+        toAddressLabel.text = toAddress
+        
         dateLabel.text = order.date.toString()
+        //descriptionLabel.text = order.descr
     }
     
     // MARK: Actions
