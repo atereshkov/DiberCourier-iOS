@@ -124,10 +124,10 @@ class OrderRequestView: UIView {
                 self.hintLabel.text = "You have canceled your request. Submit again?"
             case .canceled_by_customer:
                 // todo use modified date instead creation date
-                self.hintLabel.text = "Your request was rejected by the customer on \(request.date)"
+                self.hintLabel.text = "Your request was rejected by the customer on \(request.date.toString())"
             case .not_reviewed:
                 // todo use modified date instead creation date
-                self.hintLabel.text = "You have already submitted the request on \(request.date)"
+                self.hintLabel.text = "You have already submitted the request on \(request.date.toString())"
             case .accepted:
                 self.hintLabel.text = "Your request was accepted by the customer."
                 self.startOrderButton.isHidden = false
