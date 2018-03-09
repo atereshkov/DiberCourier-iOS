@@ -41,12 +41,6 @@ class OrderDetailVC: UIViewController {
     
     // MARK: Prepare segues
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let headerVC = segue.destination as? TopHeaderVC {
-            headerVC.delegate = self
-        }
-    }
-    
     deinit {
         LogManager.log.info("Deinitialization")
     }
@@ -54,7 +48,7 @@ class OrderDetailVC: UIViewController {
     // MARK: Actions
     
     @IBAction func backButtonDidPress(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     // MARK: Helpers
@@ -280,16 +274,6 @@ extension OrderDetailVC {
                 self_.showOfflineErrorAlert()
             }
         }
-    }
-    
-}
-
-// MARK: TopHeaderVC Delegate
-
-extension OrderDetailVC: TopHeaderVCDelegate {
-    
-    func backButtonPressed(vc: TopHeaderVC) {
-        self.navigationController?.popViewController(animated: true)
     }
     
 }
