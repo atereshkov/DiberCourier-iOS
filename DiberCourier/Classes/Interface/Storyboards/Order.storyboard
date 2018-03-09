@@ -186,6 +186,20 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJn-5P-2yH">
+                                                <rect key="frame" x="12" y="4" width="10" height="10"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="10" id="P74-Jj-IJZ"/>
+                                                    <constraint firstAttribute="width" constant="10" id="tQT-to-vqS"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dZg-r4-Vog">
                                                 <rect key="frame" x="11" y="49" width="12" height="12"/>
                                                 <color key="backgroundColor" red="0.0" green="0.63529411764705879" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -272,8 +286,10 @@
                                             <constraint firstItem="6SS-ih-WYz" firstAttribute="centerY" secondItem="dZg-r4-Vog" secondAttribute="centerY" id="Fgx-Ra-BZB"/>
                                             <constraint firstAttribute="bottom" secondItem="dZg-r4-Vog" secondAttribute="bottom" constant="3" id="I3N-jV-e5L"/>
                                             <constraint firstItem="6oT-zq-S1I" firstAttribute="centerX" secondItem="DTD-1s-NoS" secondAttribute="centerX" id="cBz-EY-KOa"/>
+                                            <constraint firstItem="eJn-5P-2yH" firstAttribute="centerY" secondItem="DTD-1s-NoS" secondAttribute="centerY" id="cJa-ZR-xjm"/>
                                             <constraint firstItem="dZg-r4-Vog" firstAttribute="centerX" secondItem="l7Z-0U-3SB" secondAttribute="centerX" id="obk-dx-jxk"/>
                                             <constraint firstAttribute="width" constant="34" id="qq0-4X-9FP"/>
+                                            <constraint firstItem="eJn-5P-2yH" firstAttribute="centerX" secondItem="DTD-1s-NoS" secondAttribute="centerX" id="qug-8M-Ade"/>
                                             <constraint firstItem="DTD-1s-NoS" firstAttribute="centerX" secondItem="l7Z-0U-3SB" secondAttribute="centerX" id="rf6-R1-6ZX"/>
                                             <constraint firstItem="6SS-ih-WYz" firstAttribute="centerX" secondItem="dZg-r4-Vog" secondAttribute="centerX" id="uY3-sU-3zg"/>
                                             <constraint firstItem="6oT-zq-S1I" firstAttribute="top" secondItem="DTD-1s-NoS" secondAttribute="bottom" constant="4" id="yrL-0C-csK"/>

@@ -38,9 +38,9 @@ class OrderDetailView: UIView {
         let fromAddress = streetFrom + ", " + cityFrom + ", " + countryFrom
         fromAddressLabel.text = fromAddress
         
-        let streetTo = order.addressFrom.address
-        let cityTo = order.addressFrom.city
-        let countryTo = order.addressFrom.country
+        let streetTo = order.addressTo.address
+        let cityTo = order.addressTo.city
+        let countryTo = order.addressTo.country
         let toAddress = streetTo + ", " + cityTo + ", " + countryTo
         toAddressLabel.text = toAddress
         
