@@ -17,7 +17,6 @@
             <string>Arial-BoldMT</string>
         </array>
         <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
             <string>HelveticaNeue-Bold</string>
         </array>
     </customFonts>
@@ -403,10 +402,49 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZLg-BY-zMp" userLabel="Request View" customClass="OrderRequestView" customModule="DiberCourier" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="579" width="375" height="74"/>
+                                <rect key="frame" x="0.0" y="559" width="375" height="94"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DqA-aA-XaQ" userLabel="Request Label View">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mE2-ce-Zwh">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                                                <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="Hci-bA-eff"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zc8-1v-WZD">
+                                                <rect key="frame" x="0.0" y="45" width="375" height="1"/>
+                                                <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="cZx-WK-59C"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Request for execution" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wS-bc-D0v">
+                                                <rect key="frame" x="32" y="0.0" width="311" height="46"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
+                                                <color key="textColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Zc8-1v-WZD" secondAttribute="trailing" id="16U-zV-RYA"/>
+                                            <constraint firstAttribute="trailing" secondItem="3wS-bc-D0v" secondAttribute="trailing" constant="32" id="9za-iG-La6"/>
+                                            <constraint firstItem="mE2-ce-Zwh" firstAttribute="leading" secondItem="DqA-aA-XaQ" secondAttribute="leading" id="Qec-Vf-19Z"/>
+                                            <constraint firstItem="mE2-ce-Zwh" firstAttribute="top" secondItem="DqA-aA-XaQ" secondAttribute="top" id="UVk-Fn-WV4"/>
+                                            <constraint firstItem="3wS-bc-D0v" firstAttribute="height" secondItem="DqA-aA-XaQ" secondAttribute="height" id="a3T-YV-khc"/>
+                                            <constraint firstAttribute="height" constant="46" id="d6t-Ge-0ck"/>
+                                            <constraint firstItem="Zc8-1v-WZD" firstAttribute="leading" secondItem="DqA-aA-XaQ" secondAttribute="leading" id="dfq-Gq-FbH"/>
+                                            <constraint firstItem="3wS-bc-D0v" firstAttribute="leading" secondItem="DqA-aA-XaQ" secondAttribute="leading" constant="32" id="k1l-EM-WMd"/>
+                                            <constraint firstAttribute="trailing" secondItem="mE2-ce-Zwh" secondAttribute="trailing" id="o54-Fd-ryG"/>
+                                            <constraint firstAttribute="bottom" secondItem="Zc8-1v-WZD" secondAttribute="bottom" id="q9w-i0-xoC"/>
+                                            <constraint firstItem="3wS-bc-D0v" firstAttribute="centerY" secondItem="DqA-aA-XaQ" secondAttribute="centerY" id="qjk-qj-MMC"/>
+                                        </constraints>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9b-Ck-WLf" customClass="RoundedStyledButton" customModule="DiberCourier" customModuleProvider="target">
-                                        <rect key="frame" x="32" y="38" width="311" height="34"/>
+                                        <rect key="frame" x="32" y="56" width="311" height="34"/>
                                         <color key="backgroundColor" red="0.33725490200000002" green="0.56862745100000001" blue="0.7843137255" alpha="0.79928345479999996" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="MdJ-LF-FfO"/>
@@ -426,7 +464,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OkN-Wz-Rw9" customClass="RoundedStyledButton" customModule="DiberCourier" customModuleProvider="target">
-                                        <rect key="frame" x="32" y="38" width="311" height="34"/>
+                                        <rect key="frame" x="32" y="56" width="311" height="34"/>
                                         <color key="backgroundColor" red="0.33725490200000002" green="0.56862745100000001" blue="0.7843137255" alpha="0.79928345479999996" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="9Jg-Jk-YU1"/>
@@ -446,7 +484,7 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ut-tK-f2j" customClass="RoundedStyledButton" customModule="DiberCourier" customModuleProvider="target">
-                                        <rect key="frame" x="32" y="38" width="311" height="34"/>
+                                        <rect key="frame" x="32" y="56" width="311" height="34"/>
                                         <color key="backgroundColor" red="0.33725490200000002" green="0.56862745100000001" blue="0.7843137255" alpha="0.79928345479999996" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="9KE-BI-Ox1"/>
@@ -465,33 +503,24 @@
                                             <action selector="startOrderDidPress:" destination="ZLg-BY-zMp" eventType="touchUpInside" id="wbk-nN-V8z"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Request for execution" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wS-bc-D0v">
-                                        <rect key="frame" x="32" y="0.0" width="311" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="32" id="jnZ-jt-cPo"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="2Ut-tK-f2j" secondAttribute="trailing" constant="32" id="1eX-8g-r85"/>
+                                    <constraint firstAttribute="trailing" secondItem="DqA-aA-XaQ" secondAttribute="trailing" id="3nP-l6-b6Y"/>
                                     <constraint firstItem="g9b-Ck-WLf" firstAttribute="leading" secondItem="ZLg-BY-zMp" secondAttribute="leading" constant="32" id="5YJ-WE-c9B"/>
+                                    <constraint firstItem="DqA-aA-XaQ" firstAttribute="top" secondItem="ZLg-BY-zMp" secondAttribute="top" id="9EZ-qa-OE9"/>
                                     <constraint firstItem="g9b-Ck-WLf" firstAttribute="centerX" secondItem="ZLg-BY-zMp" secondAttribute="centerX" id="AAk-oe-TBQ"/>
-                                    <constraint firstItem="3wS-bc-D0v" firstAttribute="top" secondItem="ZLg-BY-zMp" secondAttribute="top" id="BR5-Bc-AlQ"/>
-                                    <constraint firstItem="OkN-Wz-Rw9" firstAttribute="top" secondItem="3wS-bc-D0v" secondAttribute="bottom" constant="6" id="K1m-2A-d7b"/>
-                                    <constraint firstItem="g9b-Ck-WLf" firstAttribute="top" secondItem="3wS-bc-D0v" secondAttribute="bottom" constant="6" id="X6V-kB-OUY"/>
+                                    <constraint firstItem="DqA-aA-XaQ" firstAttribute="leading" secondItem="ZLg-BY-zMp" secondAttribute="leading" id="XBz-bw-Hsh"/>
                                     <constraint firstItem="OkN-Wz-Rw9" firstAttribute="centerX" secondItem="ZLg-BY-zMp" secondAttribute="centerX" id="XSJ-Ho-ai5"/>
+                                    <constraint firstItem="2Ut-tK-f2j" firstAttribute="top" secondItem="DqA-aA-XaQ" secondAttribute="bottom" constant="10" id="atF-dd-19a"/>
                                     <constraint firstAttribute="trailing" secondItem="OkN-Wz-Rw9" secondAttribute="trailing" constant="32" id="kQW-ka-vAN"/>
-                                    <constraint firstItem="3wS-bc-D0v" firstAttribute="leading" secondItem="ZLg-BY-zMp" secondAttribute="leading" constant="32" id="l4g-QK-P04"/>
                                     <constraint firstAttribute="trailing" secondItem="g9b-Ck-WLf" secondAttribute="trailing" constant="32" id="miB-G2-ryq"/>
-                                    <constraint firstItem="2Ut-tK-f2j" firstAttribute="top" secondItem="3wS-bc-D0v" secondAttribute="bottom" constant="6" id="mmE-k5-yP3"/>
                                     <constraint firstItem="2Ut-tK-f2j" firstAttribute="leading" secondItem="ZLg-BY-zMp" secondAttribute="leading" constant="32" id="nnX-Aq-aek"/>
-                                    <constraint firstAttribute="height" constant="74" id="oIr-3u-GEu"/>
-                                    <constraint firstAttribute="trailing" secondItem="3wS-bc-D0v" secondAttribute="trailing" constant="32" id="omC-BB-XKD"/>
+                                    <constraint firstAttribute="height" constant="94" id="oIr-3u-GEu"/>
                                     <constraint firstItem="OkN-Wz-Rw9" firstAttribute="leading" secondItem="ZLg-BY-zMp" secondAttribute="leading" constant="32" id="rpE-f9-nnF"/>
+                                    <constraint firstItem="g9b-Ck-WLf" firstAttribute="top" secondItem="DqA-aA-XaQ" secondAttribute="bottom" constant="10" id="swF-D7-1rF"/>
+                                    <constraint firstItem="OkN-Wz-Rw9" firstAttribute="top" secondItem="DqA-aA-XaQ" secondAttribute="bottom" constant="10" id="txe-B0-juG"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="cancelRequestButton" destination="OkN-Wz-Rw9" id="6JI-Dh-d1c"/>
