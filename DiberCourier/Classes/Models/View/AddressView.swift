@@ -18,8 +18,10 @@ class AddressView {
     private(set) var region: String?
     private(set) var address: String
     private(set) var phone: String
+    private(set) var longitude: Double?
+    private(set) var latitude: Double?
     
-    init(id: Int, name: String, postalCode: Int? = nil, country: String, city: String, region: String? = nil, address: String, phone: String) {
+    init(id: Int, name: String, postalCode: Int? = nil, country: String, city: String, region: String? = nil, address: String, phone: String, lat: Double, lon: Double) {
         self.id = id
         self.name = name
         self.postalCode = postalCode
@@ -28,6 +30,8 @@ class AddressView {
         self.region = region
         self.address = address
         self.phone = phone
+        self.latitude = lat
+        self.longitude = lon
     }
     
 }
@@ -42,8 +46,10 @@ extension AddressView {
         let city = address.city
         let addressStr = address.address
         let phone = address.phone
+        let longitude = address.longitude
+        let latitude = address.latitude
         
-        return AddressView(id: id, name: name, postalCode: postalCode, country: country, city: city, address: addressStr, phone: phone)
+        return AddressView(id: id, name: name, postalCode: postalCode, country: country, city: city, address: addressStr, phone: phone, lat: latitude, lon: longitude)
     }
     
     class func from(addresses: [AddressDTO]) -> [AddressView] {

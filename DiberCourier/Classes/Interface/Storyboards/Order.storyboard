@@ -50,6 +50,9 @@
                                 <subviews>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="r9F-cx-yv8">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="7a2-AW-BHf" id="BBH-FV-Xtd"/>
+                                        </connections>
                                     </mapView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -555,6 +558,7 @@
                     <navigationItem key="navigationItem" id="WpC-hY-dg7"/>
                     <connections>
                         <outlet property="detailsView" destination="uIP-4p-Phe" id="Hw9-m7-mH1"/>
+                        <outlet property="mapView" destination="r9F-cx-yv8" id="OC7-Eh-m0c"/>
                         <outlet property="priceView" destination="Qhp-Um-sud" id="gcN-ee-J8H"/>
                         <outlet property="requestView" destination="ZLg-BY-zMp" id="bM3-Cl-i92"/>
                     </connections>
