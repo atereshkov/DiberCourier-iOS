@@ -22,7 +22,8 @@ class OrderPriceView: UIView {
     // Public API
     
     func setPrice(_ price: Double) {
-        priceLabel.text = "\(price)"
+        // TODO currency depends on the server
+        priceLabel.text = "$\(price)"
     }
     
 }
