@@ -42,6 +42,7 @@ class RecentOrderCell: UITableViewCell {
         descriptionLabel.text = item.descr
         dateTimeLabel.text = item.date.toString()
         
+        /*
         switch item.status {
         case "In progress":
             icon.image = #imageLiteral(resourceName: "ic_swap")
@@ -50,6 +51,7 @@ class RecentOrderCell: UITableViewCell {
         default:
             icon.image = nil
         }
+        */
     }
     
 }
