@@ -34,6 +34,7 @@ class MyProfileVC: UIViewController {
     
     fileprivate func signOut() {
         // TODO SignOut logic
+        PreferenceManager.shared.token = ""
         
         let loginStoryboard = UIStoryboard(name: "Login", bundle: nil)
         if let loginVc = loginStoryboard.instantiateInitialViewController() {
