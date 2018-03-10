@@ -22,6 +22,7 @@ class OrderDetailVC: UIViewController {
     @IBOutlet weak var detailsView: OrderDetailView!
     @IBOutlet weak var requestView: OrderRequestView!
     @IBOutlet weak var priceView: OrderPriceView!
+    @IBOutlet weak var distanceView: OrderDistanceView!
     
     fileprivate var loadingData = false // Used to prevent multiple simultanious load requests
     
@@ -64,8 +65,8 @@ class OrderDetailVC: UIViewController {
         priceView.setPrice(order.price)
         requestView.set(order: order)
         
-        guard let latitude1 = order.addressFrom.latitude, let longitude1 = order.addressFrom.longitude else { return}
-        guard let latitude2 = order.addressTo.latitude, let longitude2 = order.addressTo.longitude else { return}
+        guard let latitude1 = order.addressFrom.latitude, let longitude1 = order.addressFrom.longitude else { return }
+        guard let latitude2 = order.addressTo.latitude, let longitude2 = order.addressTo.longitude else { return }
         let firstCord = CLLocationCoordinate2D(latitude: latitude1, longitude: longitude1)
         let secondCord = CLLocationCoordinate2D(latitude: latitude2, longitude: longitude2)
         self.showRouteOnMap(pickupCoordinate: firstCord, destinationCoordinate: secondCord)
@@ -73,7 +74,7 @@ class OrderDetailVC: UIViewController {
         let loc1 = CLLocation(latitude: latitude1, longitude: longitude1)
         let loc2 = CLLocation(latitude: latitude2, longitude: longitude2)
         let distance: CLLocationDistance = loc1.distance(from: loc2)
-        Swift.print(distance/1000)
+        distanceView.set(distance: distance)
     }
     
     private func showContent(_ show: Bool) {
