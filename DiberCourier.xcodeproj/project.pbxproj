@@ -52,6 +52,8 @@
 		A386F0E81FE6628700BC8B30 /* RequestDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A386F0E71FE6628700BC8B30 /* RequestDetailVC.swift */; };
 		A386F0EA1FE667F800BC8B30 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = A386F0E91FE667F800BC8B30 /* Enums.swift */; };
 		A38826F82054391B008056F6 /* OrderDistanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38826F72054391B008056F6 /* OrderDistanceView.swift */; };
+		A38826FA20547164008056F6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38826F920547164008056F6 /* User.swift */; };
+		A38826FC2054716C008056F6 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38826FB2054716C008056F6 /* UserView.swift */; };
 		A39A2C681FD467980014BD46 /* OrderRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39A2C671FD467980014BD46 /* OrderRequestView.swift */; };
 		A39A2C6B1FD469740014BD46 /* OrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39A2C6A1FD469740014BD46 /* OrderDetailView.swift */; };
 		A39A2C6D1FD4698F0014BD46 /* OrderPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39A2C6C1FD4698F0014BD46 /* OrderPriceView.swift */; };
@@ -68,7 +70,7 @@
 		A3A999BA1FB0970D00D63B35 /* AlertControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A999B91FB0970D00D63B35 /* AlertControllerHelper.swift */; };
 		A3A999BC1FB0972400D63B35 /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A999BB1FB0972400D63B35 /* Realm.swift */; };
 		A3A999BE1FB0974100D63B35 /* WeakTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A999BD1FB0974100D63B35 /* WeakTimer.swift */; };
-		A3A999C01FB0976800D63B35 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A999BF1FB0976800D63B35 /* User.swift */; };
+		A3A999C01FB0976800D63B35 /* UserRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A999BF1FB0976800D63B35 /* UserRealm.swift */; };
 		A3A999C21FB0977700D63B35 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A999C11FB0977700D63B35 /* Role.swift */; };
 		A3A999C51FB0979500D63B35 /* RealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A999C41FB0979500D63B35 /* RealmObject.swift */; };
 		A3A999C71FB097F800D63B35 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A999C61FB097F800D63B35 /* LoginVC.swift */; };
@@ -171,6 +173,8 @@
 		A386F0E71FE6628700BC8B30 /* RequestDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDetailVC.swift; sourceTree = "<group>"; };
 		A386F0E91FE667F800BC8B30 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		A38826F72054391B008056F6 /* OrderDistanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDistanceView.swift; sourceTree = "<group>"; };
+		A38826F920547164008056F6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A38826FB2054716C008056F6 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		A39A2C671FD467980014BD46 /* OrderRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRequestView.swift; sourceTree = "<group>"; };
 		A39A2C6A1FD469740014BD46 /* OrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailView.swift; sourceTree = "<group>"; };
 		A39A2C6C1FD4698F0014BD46 /* OrderPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPriceView.swift; sourceTree = "<group>"; };
@@ -187,7 +191,7 @@
 		A3A999B91FB0970D00D63B35 /* AlertControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerHelper.swift; sourceTree = "<group>"; };
 		A3A999BB1FB0972400D63B35 /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
 		A3A999BD1FB0974100D63B35 /* WeakTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakTimer.swift; sourceTree = "<group>"; };
-		A3A999BF1FB0976800D63B35 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A3A999BF1FB0976800D63B35 /* UserRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRealm.swift; sourceTree = "<group>"; };
 		A3A999C11FB0977700D63B35 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 		A3A999C41FB0979500D63B35 /* RealmObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmObject.swift; sourceTree = "<group>"; };
 		A3A999C61FB097F800D63B35 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -248,6 +252,7 @@
 				A31F9DEB1FB1A3C8008CD08A /* Address.swift */,
 				A31F9DF11FB1A446008CD08A /* Order.swift */,
 				A31D0D2C1FCB4740000D37F1 /* Request.swift */,
+				A38826F920547164008056F6 /* User.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -408,6 +413,7 @@
 				A31F9DE91FB1A3A4008CD08A /* OrderView.swift */,
 				A31F9DED1FB1A3E2008CD08A /* AddressView.swift */,
 				A386F0DF1FE5DADA00BC8B30 /* RequestView.swift */,
+				A38826FB2054716C008056F6 /* UserView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -416,7 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				A3A999C31FB0978B00D63B35 /* Base */,
-				A3A999BF1FB0976800D63B35 /* User.swift */,
+				A3A999BF1FB0976800D63B35 /* UserRealm.swift */,
 				A3A999C11FB0977700D63B35 /* Role.swift */,
 			);
 			path = Realm;
@@ -947,6 +953,7 @@
 				A3A999C91FB09A4000D63B35 /* String.swift in Sources */,
 				A34C407D201E5A160045E678 /* GradientView.swift in Sources */,
 				A386F0E41FE5DF5D00BC8B30 /* RequestEndpoint.swift in Sources */,
+				A38826FC2054716C008056F6 /* UserView.swift in Sources */,
 				A3A999AA1FB0871A00D63B35 /* PreferenceManager.swift in Sources */,
 				A3A999A81FB086C800D63B35 /* LogManager.swift in Sources */,
 				A386F0E81FE6628700BC8B30 /* RequestDetailVC.swift in Sources */,
@@ -967,6 +974,7 @@
 				A31F9DEC1FB1A3C8008CD08A /* Address.swift in Sources */,
 				A31F9DF41FB1A5E5008CD08A /* OrderService.swift in Sources */,
 				A386F0E01FE5DADA00BC8B30 /* RequestView.swift in Sources */,
+				A38826FA20547164008056F6 /* User.swift in Sources */,
 				A31F9DEA1FB1A3A4008CD08A /* OrderView.swift in Sources */,
 				A3A999C51FB0979500D63B35 /* RealmObject.swift in Sources */,
 				A3E2D57020265C6A008FEC73 /* MyProfileHeaderVC.swift in Sources */,
@@ -988,7 +996,7 @@
 				A3E2D57420266B0B008FEC73 /* RecentOrderCell.swift in Sources */,
 				A3A999BE1FB0974100D63B35 /* WeakTimer.swift in Sources */,
 				A3FC0D2E2015331A002AF21F /* OrderExecutionVC.swift in Sources */,
-				A3A999C01FB0976800D63B35 /* User.swift in Sources */,
+				A3A999C01FB0976800D63B35 /* UserRealm.swift in Sources */,
 				A32F8082200A1A6C00E8F29D /* GMapViewController.swift in Sources */,
 				A3A999BA1FB0970D00D63B35 /* AlertControllerHelper.swift in Sources */,
 				A31F9DF61FB1A60F008CD08A /* OrderEndpoint.swift in Sources */,

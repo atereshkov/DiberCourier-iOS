@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class MyProfileVC: UIViewController {
     
+    fileprivate var loadingData = false // Used to prevent multiple simultanious load requests
     
     // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         LogManager.log.info("Initialization")
+        
+        loadData(silent: false)
     }
     
     // MARK: Prepare segues
@@ -42,7 +46,52 @@ class MyProfileVC: UIViewController {
         }
     }
     
+    private func showContent(_ show: Bool) {
+        //self.view.isHidden = !show
+    }
+    
+    private func setup(_ user: UserDTO) {
+        let userView = UserView.create(from: user)
+        // TODO map data to view
+    }
+    
 }
+
+// MARK: Networking
+
+extension MyProfileVC {
+    
+    private func loadData(silent: Bool) {
+        showContent(false)
+        
+        guard !loadingData else { return }
+        loadingData = true
+        if !silent {
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+        }
+        
+        UserService.shared.getUserProfileData() { [weak self] (result) in
+            guard let self_ = self else { return }
+            defer {
+                MBProgressHUD.hide(for: self_.view, animated: true)
+                self_.loadingData = false
+            }
+            
+            switch result {
+            case .Success(let user):
+                self_.setup(user)
+                self_.showContent(true)
+            case .UnexpectedError(let error):
+                self_.showUnexpectedErrorAlert(error: error)
+            case .OfflineError:
+                self_.showOfflineErrorAlert()
+            }
+        }
+    }
+    
+}
+
+// MARK: HeaderDelegate
 
 extension MyProfileVC: MyProfileHeaderDelegate {
     

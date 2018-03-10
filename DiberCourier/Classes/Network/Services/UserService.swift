@@ -38,4 +38,28 @@ class UserService: NSObject {
         }
     }
     
+    enum UserDataResult {
+        case Success(user: UserDTO)
+        case OfflineError
+        case UnexpectedError(error: Error?)
+    }
+    
+    func getUserProfileData(callback:((_ result: UserDataResult) -> ())? = nil) {
+        let endpoint = AuthEndpoint.userInfo
+        
+        sessionManager.request(endpoint.url)
+            .validate()
+            .responseJSON {(response) in
+                if let result = response.result.value as? [String: Any] {
+                    if let user = UserDTO.with(data: result) {
+                        callback?(UserDataResult.Success(user: user))
+                    } else {
+                        callback?(UserDataResult.UnexpectedError(error: nil))
+                    }
+                } else {
+                    callback?(UserDataResult.UnexpectedError(error: response.result.error))
+                }
+        }
+    }
+    
 }
