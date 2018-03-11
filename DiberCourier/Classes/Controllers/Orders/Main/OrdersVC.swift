@@ -63,7 +63,8 @@ class OrdersVC: UIViewController {
             MBProgressHUD.showAdded(to: self.view, animated: true)
         }
         
-        OrderService.shared.getOrders(page: page, size: size) { [weak self] (result) in
+        // TODO use ../api/latest call to get latest orders
+        OrderService.shared.getOrders(page: page, size: 100) { [weak self] (result) in
             guard let self_ = self else { return }
             defer {
                 MBProgressHUD.hide(for: self_.view, animated: true)
