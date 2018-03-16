@@ -10,6 +10,9 @@ import UIKit
 
 class UserInfoVC: UIViewController {
     
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var activeLabel: UILabel!
     
     // MARK: Lifecycle
     
@@ -21,4 +24,13 @@ class UserInfoVC: UIViewController {
     deinit {
         LogManager.log.info("Deinitialization")
     }
+    
+    // Public API
+    
+    func setup(user: UserView) {
+        nameLabel.text = user.fullname
+        emailLabel.text = user.email
+        activeLabel.text = user.enabled ? "Active" : "Disabled"
+    }
+    
 }

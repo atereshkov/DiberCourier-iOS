@@ -252,6 +252,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Scx-Ja-UKE"/>
                     </view>
+                    <connections>
+                        <outlet property="activeLabel" destination="6rq-LP-aBg" id="92c-q1-nPA"/>
+                        <outlet property="emailLabel" destination="A98-O0-j2e" id="HOi-gu-6fH"/>
+                        <outlet property="nameLabel" destination="2D5-XZ-Tqh" id="iP8-kX-G3F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ILy-Xv-S7E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -11,6 +11,8 @@ import MBProgressHUD
 
 class MyProfileVC: UIViewController {
     
+    private var userInfoVC: UserInfoVC? = nil
+    
     fileprivate var loadingData = false // Used to prevent multiple simultanious load requests
     
     // MARK: Lifecycle
@@ -27,6 +29,8 @@ class MyProfileVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let headerVC = segue.destination as? MyProfileHeaderVC {
             headerVC.delegate = self
+        } else if let userInfoVC = segue.destination as? UserInfoVC {
+            self.userInfoVC = userInfoVC
         }
     }
     
@@ -51,8 +55,9 @@ class MyProfileVC: UIViewController {
     }
     
     private func setup(_ user: UserDTO) {
-        let userView = UserView.create(from: user)
-        // TODO map data to view
+        guard let userView = UserView.create(from: user) else { return }
+        guard let userInfoVC = self.userInfoVC else { return }
+        userInfoVC.setup(user: userView)
     }
     
 }
