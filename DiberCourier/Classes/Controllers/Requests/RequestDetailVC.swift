@@ -28,15 +28,17 @@ class RequestDetailVC: UIViewController {
         loadData(silent: false, id: requestId)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let headerVC = segue.destination as? TopHeaderVC {
+            headerVC.delegate = self
+        }
+    }
+    
     deinit {
         LogManager.log.info("Deinitialization")
     }
     
     // MARK: Actions
-    
-    @IBAction func backButtonDidPress(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
     
     @IBAction func cancelRequestDidPress(_ sender: Any) {
         let msg = "alert.request.cancel".localized()
@@ -117,6 +119,14 @@ class RequestDetailVC: UIViewController {
                 self_.showOfflineErrorAlert()
             }
         }
+    }
+    
+}
+
+extension RequestDetailVC: TopHeaderVCDelegate {
+    
+    func backButtonPressed(vc: TopHeaderVC) {
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
