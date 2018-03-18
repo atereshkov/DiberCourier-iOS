@@ -15,6 +15,8 @@ class RequestDetailVC: UIViewController {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
+    private var topHeaderVC: TopHeaderVC? = nil
+    
     fileprivate var loadingData = false // Used to prevent multiple simultanious load requests
     
     var requestId: Int?
@@ -71,6 +73,10 @@ class RequestDetailVC: UIViewController {
         case .accepted:
             self.cancelRequestButton.isHidden = true
         }
+        
+        //if let headerVC = topHeaderVC {
+            // set header label "Request #123"
+        //}
     }
     
     // MARK: Networking
