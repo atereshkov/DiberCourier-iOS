@@ -13,6 +13,7 @@ class RequestDetailVC: UIViewController {
     
     @IBOutlet weak var cancelRequestButton: UIButton!
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     fileprivate var loadingData = false // Used to prevent multiple simultanious load requests
     
@@ -58,6 +59,7 @@ class RequestDetailVC: UIViewController {
         
         guard let request = self.request else { return }
         statusLabel.text = request.status.displayName()
+        dateLabel.text = request.date.toString()
         
         switch request.status {
         case .canceled_by_courier:
