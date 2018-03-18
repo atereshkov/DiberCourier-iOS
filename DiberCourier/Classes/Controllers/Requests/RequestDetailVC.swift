@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MBProgressHUD
+import SVProgressHUD
 
 class RequestDetailVC: UIViewController {
     
@@ -77,13 +77,13 @@ class RequestDetailVC: UIViewController {
         guard !loadingData else { return }
         loadingData = true
         if !silent {
-            MBProgressHUD.showAdded(to: self.view, animated: true)
+            SVProgressHUD.show()
         }
         
         RequestService.shared.getRequest(id: id) { [weak self] (result) in
             guard let self_ = self else { return }
             defer {
-                MBProgressHUD.hide(for: self_.view, animated: true)
+                SVProgressHUD.dismiss()
                 self_.loadingData = false
             }
             
@@ -100,12 +100,12 @@ class RequestDetailVC: UIViewController {
     
     private func cancelRequest() {
         guard let requestId = requestId else { return }
-        MBProgressHUD.showAdded(to: self.view, animated: true)
+        SVProgressHUD.show()
         
         RequestService.shared.cancelRequest(id: requestId) { [weak self] (result) in
             guard let self_ = self else { return }
             defer {
-                MBProgressHUD.hide(for: self_.view, animated: true)
+                SVProgressHUD.dismiss()
             }
             
             switch result {

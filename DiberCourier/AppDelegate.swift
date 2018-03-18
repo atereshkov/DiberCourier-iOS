@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 import GoogleMaps
+import SVProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -46,7 +47,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIApplication.shared.statusBarStyle = .lightContent
         
+        // SVProgressHUD Customizing
+        customizeSVProgressHUD()
+        
         return true
+    }
+    
+    fileprivate func customizeSVProgressHUD() {
+        SVProgressHUD.setDefaultMaskType(.clear)
+        SVProgressHUD.setBackgroundColor(.clear)
+        let progressColor = UIColor(red:0, green:0.68, blue:0.94, alpha:1)
+        SVProgressHUD.setForegroundColor(progressColor)
+        
+        if let view = self.window {
+            SVProgressHUD.setContainerView(view)
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

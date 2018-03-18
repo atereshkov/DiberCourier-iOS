@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MBProgressHUD
+import SVProgressHUD
 import DropDown
 
 class OrdersVC: UIViewController {
@@ -60,14 +60,14 @@ class OrdersVC: UIViewController {
         guard !loadingData else { return }
         loadingData = true
         if !silent {
-            MBProgressHUD.showAdded(to: self.view, animated: true)
+            SVProgressHUD.show()
         }
         
         // TODO use ../api/latest call to get latest orders
         OrderService.shared.getOrders(page: page, size: 100) { [weak self] (result) in
             guard let self_ = self else { return }
             defer {
-                MBProgressHUD.hide(for: self_.view, animated: true)
+                SVProgressHUD.dismiss()
                 self_.loadingData = false
             }
             

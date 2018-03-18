@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import MBProgressHUD
+import SVProgressHUD
 
 class LoginVC: UIViewController {
     
@@ -46,7 +46,7 @@ class LoginVC: UIViewController {
     // MARK: Networking
     
     private func perfomLogin(_ login: String, _ password: String) {
-        MBProgressHUD.showAdded(to: self.view, animated: true)
+        SVProgressHUD.show()
         
         AuthService.shared.getToken(login: login, password: password) { [weak self] (result) in
             guard let self_ = self else {
@@ -54,7 +54,7 @@ class LoginVC: UIViewController {
             }
             
             defer {
-                MBProgressHUD.hide(for: self_.view, animated: true)
+                SVProgressHUD.dismiss()
             }
             
             switch result {
@@ -72,15 +72,14 @@ class LoginVC: UIViewController {
     }
     
     private func getUserInfo() {
-        MBProgressHUD.showAdded(to: self.view, animated: true)
-        
+        SVProgressHUD.show()
         UserService.shared.getUserInfo() { [weak self] (result) in
             guard let self_ = self else {
                 return
             }
             
             defer {
-                MBProgressHUD.hide(for: self_.view, animated: true)
+                SVProgressHUD.dismiss()
             }
             
             switch result {

@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import MBProgressHUD
+import SVProgressHUD
 
 protocol OrderRequestViewDelegate: class {
     func executeOrderDidPress()
@@ -77,14 +77,14 @@ class OrderRequestView: UIView {
         loadingData = true
         if !silent {
             // TODO remove mbgrogress, hide self instead
-            MBProgressHUD.showAdded(to: self, animated: true)
+            SVProgressHUD.show()
         }
         
         LogManager.log.info("Get request with orderId: \(orderId) and courierId: \(courierId)")
         RequestService.shared.getRequest(orderId: orderId, courierId: courierId) { [weak self] (result) in
             guard let self_ = self else { return }
             defer {
-                MBProgressHUD.hide(for: self_, animated: true)
+                SVProgressHUD.dismiss()
                 self_.loadingData = false
             }
             

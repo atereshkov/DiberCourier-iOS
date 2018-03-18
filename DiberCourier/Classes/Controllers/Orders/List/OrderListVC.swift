@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MBProgressHUD
+import SVProgressHUD
 import DropDown
 
 class OrderListVC: UIViewController {
@@ -59,14 +59,14 @@ class OrderListVC: UIViewController {
         guard !loadingData else { return }
         loadingData = true
         if !silent {
-            MBProgressHUD.showAdded(to: self.view, animated: true)
+            SVProgressHUD.show()
         }
         
         let query = type.searchQuery()
         OrderService.shared.getOrders(query: query, page: page, size: size) { [weak self] (result) in
             guard let self_ = self else { return }
             defer {
-                MBProgressHUD.hide(for: self_.view, animated: true)
+                SVProgressHUD.dismiss()
                 self_.loadingData = false
             }
             

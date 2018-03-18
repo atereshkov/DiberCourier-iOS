@@ -9,7 +9,7 @@ target 'DiberCourier' do
 
   # Main
   pod 'Alamofire', '~> 4.5.0'
-  pod 'MBProgressHUD', '~> 1.0.0'
+  pod 'SVProgressHUD', '~> 2.2.2'
   pod 'AsyncSwift'
   pod 'ReachabilitySwift', '~> 3'
   pod 'RealmSwift', '3.0.1'

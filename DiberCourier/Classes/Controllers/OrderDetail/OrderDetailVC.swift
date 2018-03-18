@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MBProgressHUD
+import SVProgressHUD
 import Localize_Swift
 import PopupDialog
 import MapKit
@@ -250,13 +250,13 @@ extension OrderDetailVC {
         guard !loadingData else { return }
         loadingData = true
         if !silent {
-            MBProgressHUD.showAdded(to: self.view, animated: true)
+            SVProgressHUD.show()
         }
         
         OrderService.shared.getOrder(id: id) { [weak self] (result) in
             guard let self_ = self else { return }
             defer {
-                MBProgressHUD.hide(for: self_.view, animated: true)
+                SVProgressHUD.dismiss()
                 self_.loadingData = false
             }
             
@@ -274,12 +274,12 @@ extension OrderDetailVC {
     
     private func addRequest() {
         guard let id = orderId else { return }
-        MBProgressHUD.showAdded(to: self.view, animated: true)
+        SVProgressHUD.show()
         
         RequestService.shared.addRequest(orderId: id) { [weak self] (result) in
             guard let self_ = self else { return }
             defer {
-                MBProgressHUD.hide(for: self_.view, animated: true)
+                SVProgressHUD.dismiss()
             }
             
             switch result {
@@ -297,12 +297,12 @@ extension OrderDetailVC {
     }
     
     private func cancelRequest(id: Int) {
-        MBProgressHUD.showAdded(to: self.view, animated: true)
+        SVProgressHUD.show()
         
         RequestService.shared.cancelRequest(id: id) { [weak self] (result) in
             guard let self_ = self else { return }
             defer {
-                MBProgressHUD.hide(for: self_.view, animated: true)
+                SVProgressHUD.dismiss()
             }
             
             switch result {
@@ -321,13 +321,13 @@ extension OrderDetailVC {
     
     private func startOrder() {
         guard let id = orderId else { return }
-        MBProgressHUD.showAdded(to: self.view, animated: true)
+        SVProgressHUD.show()
         
         let status: OrderExecution = .in_progress
         OrderExecutionService.shared.startOrder(id: id, status: status) { [weak self] (result) in
             guard let self_ = self else { return }
             defer {
-                MBProgressHUD.hide(for: self_.view, animated: true)
+                SVProgressHUD.dismiss()
             }
             
             switch result {

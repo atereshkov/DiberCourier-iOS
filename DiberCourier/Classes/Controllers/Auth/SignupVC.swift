@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import MBProgressHUD
+import SVProgressHUD
 
 class SignupVC: UIViewController {
     

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import MBProgressHUD
+import SVProgressHUD
 import Localize_Swift
 import PopupDialog
 
@@ -67,13 +67,13 @@ extension OrderExecutionVC {
         guard !loadingData else { return }
         loadingData = true
         if !silent {
-            MBProgressHUD.showAdded(to: self.view, animated: true)
+            SVProgressHUD.show()
         }
         
         OrderService.shared.getOrder(id: id) { [weak self] (result) in
             guard let self_ = self else { return }
             defer {
-                MBProgressHUD.hide(for: self_.view, animated: true)
+                SVProgressHUD.dismiss()
                 self_.loadingData = false
             }
             
