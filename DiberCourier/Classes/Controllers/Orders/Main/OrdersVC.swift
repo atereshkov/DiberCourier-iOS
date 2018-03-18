@@ -63,8 +63,8 @@ class OrdersVC: UIViewController {
             SVProgressHUD.show()
         }
         
-        // TODO use ../api/latest call to get latest orders
-        OrderService.shared.getOrders(page: page, size: 100) { [weak self] (result) in
+        let latest = "status!In progress, status!Completed"
+        OrderService.shared.getOrders(query: latest, page: page, size: 100) { [weak self] (result) in
             guard let self_ = self else { return }
             defer {
                 SVProgressHUD.dismiss()
