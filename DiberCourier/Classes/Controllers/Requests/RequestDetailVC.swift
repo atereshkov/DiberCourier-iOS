@@ -14,6 +14,7 @@ class RequestDetailVC: UIViewController {
     @IBOutlet weak var cancelRequestButton: UIButton!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var orderLabel: UILabel!
     
     private var topHeaderVC: TopHeaderVC? = nil
     
@@ -29,6 +30,9 @@ class RequestDetailVC: UIViewController {
         LogManager.log.info("Initialization")
         guard let requestId = requestId else { return }
         loadData(silent: false, id: requestId)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleOrderTap(_:)))
+        orderLabel.addGestureRecognizer(tap)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -42,6 +46,17 @@ class RequestDetailVC: UIViewController {
     }
     
     // MARK: Actions
+    
+    @objc func handleOrderTap(_ sender: UITapGestureRecognizer) {
+        guard let orderId = self.request?.order.id else { return }
+        let storyboard = UIStoryboard(name: Storyboards.order.rawValue, bundle: nil)
+        
+        if let orderNavVC = storyboard.instantiateInitialViewController() as? UINavigationController,
+            let orderDetailVC = orderNavVC.rootViewController as? OrderDetailVC {
+            orderDetailVC.orderId = orderId
+            self.navigationController?.pushViewController(orderDetailVC, animated: true)
+        }
+    }
     
     @IBAction func cancelRequestDidPress(_ sender: Any) {
         let msg = "alert.request.cancel".localized()
@@ -62,6 +77,7 @@ class RequestDetailVC: UIViewController {
         guard let request = self.request else { return }
         statusLabel.text = request.status.displayName()
         dateLabel.text = request.date.toString()
+        orderLabel.text = "#\(request.order.id)"
         
         switch request.status {
         case .canceled_by_courier:
