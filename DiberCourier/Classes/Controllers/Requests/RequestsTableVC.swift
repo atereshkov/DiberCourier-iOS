@@ -94,6 +94,10 @@ class RequestsTableVC: UITableViewController {
         return requests.count
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 66
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
