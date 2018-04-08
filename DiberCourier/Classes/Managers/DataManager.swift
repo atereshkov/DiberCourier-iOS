@@ -43,6 +43,7 @@ class DataManager: NSObject {
 }
 
 // MARK: User
+/*
 extension DataManager {
     
     func getUser(with name: String) -> User? {
@@ -64,3 +65,4 @@ extension DataManager {
     }
     
 }
+*/

@@ -17,10 +17,10 @@ class OrderDTO {
     private(set) var status: String
     private(set) var addressFrom: AddressDTO? = nil
     private(set) var addressTo: AddressDTO? = nil
-    private(set) var courier: User? = nil
-    private(set) var customer: User? = nil
+    private(set) var courier: UserDTO? = nil
+    private(set) var customer: UserDTO? = nil
     
-    init(id: Int, date: Date, descr: String, price: Double, status: String, addressFrom: AddressDTO? = nil, addressTo: AddressDTO? = nil, courier: User? = nil, customer: User? = nil) {
+    init(id: Int, date: Date, descr: String, price: Double, status: String, addressFrom: AddressDTO? = nil, addressTo: AddressDTO? = nil, courier: UserDTO? = nil, customer: UserDTO? = nil) {
         self.id = id
         self.date = date
         self.descr = descr
@@ -54,13 +54,13 @@ extension OrderDTO {
         if let addressFromData = data["addressFrom"] as? [String: Any] {
             addressFrom = AddressDTO.with(data: addressFromData)
         }
-        var courier: User?
+        var courier: UserDTO?
         if let courierData = data["courier"] as? [String: Any] {
-            courier = User.with(data: courierData)
+            courier = UserDTO.with(data: courierData)
         }
-        var customer: User?
+        var customer: UserDTO?
         if let customerData = data["customer"] as? [String: Any] {
-            customer = User.with(data: customerData)
+            customer = UserDTO.with(data: customerData)
         }
         
         return OrderDTO(id: id, date: date, descr: descr, price: price, status: status, addressFrom: addressFrom, addressTo: addressTo, courier: courier, customer: customer)

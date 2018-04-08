@@ -17,10 +17,10 @@ class OrderView {
     private(set) var status: String // TODO: change status to Enum
     private(set) var addressFrom: AddressView
     private(set) var addressTo: AddressView
-    private(set) var courier: User? = nil
-    private(set) var customer: User
+    private(set) var courier: UserView? = nil
+    private(set) var customer: UserView
     
-    init(id: Int, date: Date, descr: String, price: Double, status: String, addressFrom: AddressView, addressTo: AddressView, courier: User? = nil, customer: User) {
+    init(id: Int, date: Date, descr: String, price: Double, status: String, addressFrom: AddressView, addressTo: AddressView, courier: UserView? = nil, customer: UserView) {
         self.id = id
         self.date = date
         self.descr = descr
@@ -37,7 +37,7 @@ class OrderView {
 extension OrderView {
     
     class func create(from order: OrderDTO) -> OrderView? {
-        guard let addressFrom = order.addressFrom, let addressTo = order.addressTo, let customer = order.customer else {
+        guard let addressFrom = order.addressFrom, let addressTo = order.addressTo, let customerDTO = order.customer, let customer = UserView.create(from: customerDTO) else {
             LogManager.log.info("Failed to map OrderView from Order. AddressFrom or AddressTo or Customer is nil")
             return nil
         }
@@ -47,7 +47,11 @@ extension OrderView {
         let descr = order.descr
         let price = order.price
         let status = order.status
-        let courier = order.courier
+        
+        var courier: UserView?
+        if let courierDTO = order.courier {
+            courier = UserView.create(from: courierDTO)
+        }
         
         guard let addressFromView = AddressView.create(from: addressFrom), let addressToView = AddressView.create(from: addressTo) else { return nil }
         

@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 
+/*
 class User: RealmObject {
     
     @objc private(set) dynamic var id: Int = -1
@@ -65,3 +66,4 @@ extension User {
         return User(id: id, email: email, username: username, password: password, enabled: enabled, fullname: fullname, roles: roles)
     }
 }
+*/

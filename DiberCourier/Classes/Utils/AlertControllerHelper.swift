@@ -17,12 +17,12 @@ extension UIAlertController {
         UIAlertController.showAlert(
             title: "alert.error.title".localized(),
             message: error?.localizedDescription,
-            fromViewController: viewController)
+            from: viewController)
     }
     
-    static func showErrorAlertControllerWithMessage(message: String, fromViewController viewController: UIViewController) {
+    static func showErrorAlertController(with message: String, from VC: UIViewController) {
         UIAlertController.showAlert(
-            title: "alert.error.title".localized(), message: message, fromViewController: viewController)
+            title: "alert.error.title".localized(), message: message, from: VC)
     }
     
     static func showAlertController(title: String? = nil, message: String? = nil, fromViewController viewController: UIViewController) {
@@ -30,7 +30,7 @@ extension UIAlertController {
         
         let errorMessage = message ?? "\("alert.error.unexpected.description".localized()) \("alert.error.unexpected.recovery".localized())"
         
-        UIAlertController.showAlert(title: errorTitle, message: errorMessage, fromViewController: viewController)
+        UIAlertController.showAlert(title: errorTitle, message: errorMessage, from: viewController)
     }
     
     // MARK: Offline error
@@ -39,7 +39,7 @@ extension UIAlertController {
         UIAlertController.showAlert(
             title: "alert.error.title".localized(),
             message: "alert.offline.message".localized(),
-            fromViewController: controller)
+            from: controller)
     }
     
     // MARK: Login errors
@@ -48,12 +48,12 @@ extension UIAlertController {
         UIAlertController.showAlert(
             title: "alert.error.title".localized(),
             message: "alert.login.user.error.message".localized(),
-            fromViewController: controller)
+            from: controller)
     }
     
     // MARK: Common
     
-    static func showAlert(title: String?, message: String?, fromViewController controller: UIViewController) {
+    static func showAlert(title: String?, message: String?, from controller: UIViewController) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "alert.ok".localized(), style: .default, handler: nil))
         controller.present(alert, animated: true, completion: nil)
@@ -82,7 +82,7 @@ extension UIViewController {
     }
     
     func showAlert(title : String?, message: String?) {
-        UIAlertController.showAlert(title: title, message: message, fromViewController: self)
+        UIAlertController.showAlert(title: title, message: message, from: self)
     }
     
     func showMissingErrorAlert() {

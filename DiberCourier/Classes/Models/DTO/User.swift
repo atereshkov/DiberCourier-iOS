@@ -23,6 +23,9 @@ class UserDTO {
     var isCourier: Bool {
         return roles.contains(where: { $0.name == "ROLE_COURIER" })
     }
+    var isAdmin: Bool {
+        return roles.contains(where: { $0.name == "ROLE_ADMIN" })
+    }
     
     init(id: Int, email: String, username: String, enabled: Bool, fullname: String, roles: [RoleDTO] = []) {
         self.id = id

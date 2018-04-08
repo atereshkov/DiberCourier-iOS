@@ -15,7 +15,7 @@ class UserService: NSObject {
     let sessionManager = NetworkManager.shared.sessionManager
     
     enum UserInfoResult {
-        case Success(user: User)
+        case Success(user: UserDTO)
         case OfflineError
         case UnexpectedError(error: Error?)
     }
@@ -27,7 +27,7 @@ class UserService: NSObject {
             .validate()
             .responseJSON {(response) in
                 if let result = response.result.value as? [String: Any] {
-                    if let user = User.with(data: result) {
+                    if let user = UserDTO.with(data: result) {
                         callback?(UserInfoResult.Success(user: user))
                     } else {
                         callback?(UserInfoResult.UnexpectedError(error: nil))

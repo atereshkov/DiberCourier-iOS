@@ -85,7 +85,11 @@ class LoginVC: UIViewController {
             switch result {
             case .Success(let user):
                 PreferenceManager.shared.userId = user.id
-                self_.performSegue(withIdentifier: Segues.mainScreen.rawValue, sender: self)
+                if user.isCourier || user.isAdmin {
+                    self_.performSegue(withIdentifier: Segues.mainScreen.rawValue, sender: self)
+                } else {
+                    self_.showMessageErrorAlert(message: "alert.user.incorrect.role".localized())
+                }
             case .UnexpectedError(let error):
                 self_.showUnexpectedErrorAlert(error: error)
             case .OfflineError:
