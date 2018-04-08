@@ -32,3 +32,5 @@
 // Orders
 
 "alert.order.start.execution" = "Are you sure you want to start order execution?";
+"alert.order.cancel" = "Are you sure you want to cancel order execution?";
+"alert.order.complete" = "Are you sure you want to complete order execution?";

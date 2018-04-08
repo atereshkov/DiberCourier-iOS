@@ -27,6 +27,18 @@ class OrderService: NSObject {
         case UnexpectedError(error: Error?)
     }
     
+    enum CompleteOrderResult {
+        case Success()
+        case OfflineError
+        case UnexpectedError(error: Error?)
+    }
+    
+    enum CancelOrderResult {
+        case Success()
+        case OfflineError
+        case UnexpectedError(error: Error?)
+    }
+    
     func getOrders(page: Int, size: Int, callback:((_ result: OrdersResult) -> ())? = nil) {
         let endpoint = OrderEndpoint.orders(page: page, size: size)
         
@@ -88,6 +100,42 @@ class OrderService: NSObject {
                     }
                 } else {
                     callback?(OrderResult.UnexpectedError(error: response.result.error))
+                }
+        }
+    }
+    
+    func completeOrder(id: Int, callback:((_ result: CompleteOrderResult) -> ())? = nil) {
+        let endpoint = OrderEndpoint.complete(id: id, status: OrderStatus.completed_by_courier)
+        
+        sessionManager.request(endpoint.url, method: endpoint.method, parameters: endpoint.parameters, encoding: JSONEncoding.default)
+            .validate()
+            .responseJSON { response in
+                if response.result.error == nil, let data = response.result.value as? [String: Any] {
+                    if let _ = OrderDTO.with(data: data) {
+                        callback?(CompleteOrderResult.Success())
+                    } else {
+                        callback?(CompleteOrderResult.UnexpectedError(error: response.result.error))
+                    }
+                } else {
+                    callback?(CompleteOrderResult.UnexpectedError(error: response.result.error))
+                }
+        }
+    }
+    
+    func cancelOrder(id: Int, callback:((_ result: CancelOrderResult) -> ())? = nil) {
+        let endpoint = OrderEndpoint.cancel(id: id, status: OrderStatus.canceled_by_courier)
+        
+        sessionManager.request(endpoint.url, method: endpoint.method, parameters: endpoint.parameters, encoding: JSONEncoding.default)
+            .validate()
+            .responseJSON { response in
+                if response.result.error == nil, let data = response.result.value as? [String: Any] {
+                    if let _ = OrderDTO.with(data: data) {
+                        callback?(CancelOrderResult.Success())
+                    } else {
+                        callback?(CancelOrderResult.UnexpectedError(error: response.result.error))
+                    }
+                } else {
+                    callback?(CancelOrderResult.UnexpectedError(error: response.result.error))
                 }
         }
     }

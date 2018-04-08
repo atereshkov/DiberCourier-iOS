@@ -18,6 +18,7 @@ class OrderExecutionVC: UIViewController {
     @IBOutlet weak var detailsView: OrderDetailView!
     @IBOutlet weak var priceView: OrderPriceView!
     @IBOutlet weak var distanceView: OrderDistanceView!
+    @IBOutlet weak var orderStatusView: UILabel!
     
     fileprivate var loadingData = false // Used to prevent multiple simultanious load requests
     
@@ -34,12 +35,6 @@ class OrderExecutionVC: UIViewController {
         detailsView.delegate = self
     }
     
-    // MARK: Prepare segues
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-    }
-    
     deinit {
         LogManager.log.info("Deinitialization")
     }
@@ -48,6 +43,26 @@ class OrderExecutionVC: UIViewController {
     
     @IBAction func backButtonDidPress(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func completeOrderDidPress(_ sender: Any) {
+        let msg = "alert.order.complete".localized()
+        let cancel = UIAlertAction(title: "alert.cancel".localized(), style: .cancel) { (action) in }
+        let ok = UIAlertAction(title: "alert.yes".localized(), style: .default, handler: { (action) in
+            self.completeOrder()
+        })
+        
+        self.showAlert(with: "alert.order".localized(), and: msg, buttons: [ok, cancel])
+    }
+    
+    @IBAction func cancelOrderDidPress(_ sender: Any) {
+        let msg = "alert.order.cancel".localized()
+        let cancel = UIAlertAction(title: "alert.cancel".localized(), style: .cancel) { (action) in }
+        let ok = UIAlertAction(title: "alert.yes".localized(), style: .default, handler: { (action) in
+            self.cancelOrder()
+        })
+        
+        self.showAlert(with: "alert.order".localized(), and: msg, buttons: [ok, cancel])
     }
     
     // MARK: Helpers
@@ -59,6 +74,7 @@ class OrderExecutionVC: UIViewController {
         guard let order = self.order else { return }
         detailsView.set(order: order)
         priceView.setPrice(order.price)
+        orderStatusView.text = order.status
         
         guard let latitude1 = order.addressFrom.latitude, let longitude1 = order.addressFrom.longitude else { return }
         guard let latitude2 = order.addressTo.latitude, let longitude2 = order.addressTo.longitude else { return }
@@ -222,14 +238,53 @@ extension OrderExecutionVC {
         }
     }
     
-}
-
-// MARK: TopHeaderVC Delegate
-
-extension OrderExecutionVC: TopHeaderVCDelegate {
+    fileprivate func cancelOrder() {
+        guard let id = orderId else { return }
+        guard !loadingData else { return }
+        loadingData = true
+        SVProgressHUD.show()
+        
+        OrderService.shared.getOrder(id: id) { [weak self] (result) in
+            guard let self_ = self else { return }
+            defer {
+                SVProgressHUD.dismiss()
+                self_.loadingData = false
+            }
+            
+            switch result {
+            case .Success(let order):
+                self_.setup(order)
+            case .UnexpectedError(let error):
+                self_.showUnexpectedErrorAlert(error: error)
+            case .OfflineError:
+                self_.showOfflineErrorAlert()
+            }
+        }
+    }
     
-    func backButtonPressed(vc: TopHeaderVC) {
-        self.navigationController?.popViewController(animated: true)
+    fileprivate func completeOrder() {
+        guard let id = orderId else { return }
+        guard !loadingData else { return }
+        loadingData = true
+        SVProgressHUD.show()
+        
+        OrderService.shared.getOrder(id: id) { [weak self] (result) in
+            guard let self_ = self else { return }
+            defer {
+                SVProgressHUD.dismiss()
+                self_.loadingData = false
+            }
+            
+            switch result {
+            case .Success(let order):
+                // TODO do something
+                break
+            case .UnexpectedError(let error):
+                self_.showUnexpectedErrorAlert(error: error)
+            case .OfflineError:
+                self_.showOfflineErrorAlert()
+            }
+        }
     }
     
 }

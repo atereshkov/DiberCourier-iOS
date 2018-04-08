@@ -15,6 +15,8 @@ enum OrderEndpoint: BaseEndPoint {
     case searchOrders(query: String, page: Int, size: Int)
     case order(id: Int)
     case addRequest(orderId: Int)
+    case complete(id: Int, status: OrderStatus)
+    case cancel(id: Int, status: OrderStatus)
     
     func provideCallDetails() -> (url: String, method: HTTPMethod, parameters: [String : Any]?) {
         switch self {
@@ -38,6 +40,24 @@ enum OrderEndpoint: BaseEndPoint {
             url.append("orders/\(orderId)")
             url.append("/requests")
             return (url: url, method: .post, parameters: nil)
+        case .complete(let id, let status):
+            var url = "\(Endpoint.base.rawValue)\(Endpoint.apiVersion.rawValue)"
+            url.append("orders/\(id)")
+            url.append("/status")
+            
+            let params: [String: String] = [
+                "status": status.rawValue
+            ]
+            return (url: url, method: .put, parameters: params)
+        case .cancel(let id, let status):
+            var url = "\(Endpoint.base.rawValue)\(Endpoint.apiVersion.rawValue)"
+            url.append("orders/\(id)")
+            url.append("/status")
+            
+            let params: [String: String] = [
+                "status": status.rawValue
+            ]
+            return (url: url, method: .put, parameters: params)
         }
     }
     
