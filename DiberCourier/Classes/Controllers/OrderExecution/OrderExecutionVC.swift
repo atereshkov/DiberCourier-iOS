@@ -10,10 +10,14 @@ import Foundation
 import SVProgressHUD
 import Localize_Swift
 import PopupDialog
+import MapKit
 
 class OrderExecutionVC: UIViewController {
     
-    
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var detailsView: OrderDetailView!
+    @IBOutlet weak var priceView: OrderPriceView!
+    @IBOutlet weak var distanceView: OrderDistanceView!
     
     fileprivate var loadingData = false // Used to prevent multiple simultanious load requests
     
@@ -43,7 +47,7 @@ class OrderExecutionVC: UIViewController {
     // MARK: Actions
     
     @IBAction func backButtonDidPress(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     // MARK: Helpers
@@ -53,7 +57,137 @@ class OrderExecutionVC: UIViewController {
         self.order = orderView
         
         guard let order = self.order else { return }
-        // TODO bind data
+        detailsView.set(order: order)
+        priceView.setPrice(order.price)
+        
+        guard let latitude1 = order.addressFrom.latitude, let longitude1 = order.addressFrom.longitude else { return }
+        guard let latitude2 = order.addressTo.latitude, let longitude2 = order.addressTo.longitude else { return }
+        let firstCord = CLLocationCoordinate2D(latitude: latitude1, longitude: longitude1)
+        let secondCord = CLLocationCoordinate2D(latitude: latitude2, longitude: longitude2)
+        self.showRouteOnMap(pickupCoordinate: firstCord, destinationCoordinate: secondCord)
+        
+        let loc1 = CLLocation(latitude: latitude1, longitude: longitude1)
+        let loc2 = CLLocation(latitude: latitude2, longitude: longitude2)
+        let distance: CLLocationDistance = loc1.distance(from: loc2)
+        distanceView.set(distance: distance)
+    }
+    
+}
+
+// MARK: OrderDetailViewDelegate
+
+extension OrderExecutionVC: OrderDetailViewDelegate {
+    
+    func showToAddressDetails() {
+        guard let address = self.order?.addressTo else { return }
+        
+        let title = "Destination address"
+        let message = "\(address.country), \(address.city), \(address.address)"
+        let popup = PopupDialog(title: title, message: message)
+        
+        let clipboardButton = DefaultButton(title: "COPY TO CLIPBOARD", dismissOnTap: false) {
+            let strAddress = "\(address.country), \(address.city), \(address.address)"
+            UIPasteboard.general.string = strAddress
+        }
+        
+        let mapButton = DefaultButton(title: "SHOW ON MAP") {
+            let mapLinkQuery = GoogleMaps.apiURL + "\(address.country), \(address.city), \(address.address)"
+            let link = mapLinkQuery.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+            if let link = link, let url = URL(string: link) {
+                Swift.print("URL: \(url)")
+                UIApplication.shared.open(url)
+            }
+        }
+        
+        let closeButton = CancelButton(title: "CLOSE") { }
+        
+        popup.addButtons([clipboardButton, mapButton, closeButton])
+        self.present(popup, animated: true, completion: nil)
+    }
+    
+    func showFromAddreesDetails() {
+        guard let address = self.order?.addressFrom else { return }
+        
+        let title = "Address from"
+        let message = "\(address.country), \(address.city), \(address.address)"
+        let popup = PopupDialog(title: title, message: message)
+        
+        let clipboardButton = DefaultButton(title: "COPY TO CLIPBOARD", dismissOnTap: false) {
+            let strAddress = "\(address.country), \(address.city), \(address.address)"
+            UIPasteboard.general.string = strAddress
+        }
+        
+        let mapButton = DefaultButton(title: "SHOW ON MAP") {
+            let mapLinkQuery = GoogleMaps.apiURL + "\(address.country), \(address.city), \(address.address)"
+            let link = mapLinkQuery.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+            if let link = link, let url = URL(string: link) {
+                Swift.print("URL: \(url)")
+                UIApplication.shared.open(url)
+            }
+        }
+        
+        let closeButton = CancelButton(title: "CLOSE") { }
+        
+        popup.addButtons([clipboardButton, mapButton, closeButton])
+        self.present(popup, animated: true, completion: nil)
+    }
+    
+}
+
+// MARK: MKMapViewDelegate
+
+extension OrderExecutionVC: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(overlay: overlay)
+        renderer.strokeColor = UIColor(red: 17.0/255.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1)
+        renderer.lineWidth = 3.0
+        return renderer
+    }
+    
+    func showRouteOnMap(pickupCoordinate: CLLocationCoordinate2D, destinationCoordinate: CLLocationCoordinate2D) {
+        let sourcePlacemark = MKPlacemark(coordinate: pickupCoordinate, addressDictionary: nil)
+        let destinationPlacemark = MKPlacemark(coordinate: destinationCoordinate, addressDictionary: nil)
+        
+        let sourceMapItem = MKMapItem(placemark: sourcePlacemark)
+        let destinationMapItem = MKMapItem(placemark: destinationPlacemark)
+        
+        let sourceAnnotation = MKPointAnnotation()
+        if let location = sourcePlacemark.location {
+            sourceAnnotation.coordinate = location.coordinate
+        }
+        
+        let destinationAnnotation = MKPointAnnotation()
+        if let location = destinationPlacemark.location {
+            destinationAnnotation.coordinate = location.coordinate
+        }
+        
+        self.mapView.showAnnotations([sourceAnnotation,destinationAnnotation], animated: true )
+        
+        let directionRequest = MKDirectionsRequest()
+        directionRequest.source = sourceMapItem
+        directionRequest.destination = destinationMapItem
+        directionRequest.transportType = .automobile
+        
+        // Calculate the direction
+        let directions = MKDirections(request: directionRequest)
+        
+        directions.calculate {
+            (response, error) -> Void in
+            guard let response = response else {
+                if let error = error {
+                    print("Error: \(error)")
+                }
+                return
+            }
+            
+            let route = response.routes[0]
+            self.mapView.add((route.polyline), level: MKOverlayLevel.aboveRoads)
+            
+            // Uncomment to get region zoom in of polygon rect
+            //let rect = route.polyline.boundingMapRect
+            //self.mapView.setRegion(MKCoordinateRegionForMapRect(rect), animated: true)
+        }
     }
     
 }
