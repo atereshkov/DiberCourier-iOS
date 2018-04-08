@@ -445,10 +445,10 @@
                                     <outlet property="toAddressLabel" destination="G6J-el-9Ax" id="htJ-Wt-eeX"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tGA-hU-J3M" userLabel="Request View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tGA-hU-J3M">
                                 <rect key="frame" x="0.0" y="559" width="375" height="94"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bq9-zJ-pYF" userLabel="Request Label View">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bq9-zJ-pYF">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nl6-9h-XxJ">

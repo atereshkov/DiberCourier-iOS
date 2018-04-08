@@ -30,14 +30,14 @@ class OrderExecutionVC: UIViewController {
         super.viewDidLoad()
         LogManager.log.info("Initialization")
         loadData(silent: false)
+        
+        detailsView.delegate = self
     }
     
     // MARK: Prepare segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let headerVC = segue.destination as? TopHeaderVC {
-            headerVC.delegate = self
-        }
+        
     }
     
     deinit {
