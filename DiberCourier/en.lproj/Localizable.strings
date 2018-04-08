@@ -20,6 +20,7 @@
 
 "alert.yes" = "Yes";
 "alert.cancel" = "Cancel";
+"alert.no" = "No";
 
 "alert.request" = "Request";
 "alert.order" = "Order";

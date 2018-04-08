@@ -196,7 +196,11 @@ extension OrdersVC: OrdersMainHeaderVCDelegate {
     }
     
     func searchButtonPressed(vc: OrdersMainHeaderVC) {
-        // TODO Show Search
+        let storyboard = UIStoryboard(name: Storyboards.search.rawValue, bundle: nil)
+        if let navVC = storyboard.instantiateInitialViewController() as? UINavigationController,
+            let searchVC = navVC.rootViewController as? SearchVC {
+            self.navigationController?.pushViewController(searchVC, animated: true)
+        }
     }
     
 }

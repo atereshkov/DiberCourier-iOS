@@ -47,7 +47,7 @@ class OrderExecutionVC: UIViewController {
     
     @IBAction func completeOrderDidPress(_ sender: Any) {
         let msg = "alert.order.complete".localized()
-        let cancel = UIAlertAction(title: "alert.cancel".localized(), style: .cancel) { (action) in }
+        let cancel = UIAlertAction(title: "alert.no".localized(), style: .cancel) { (action) in }
         let ok = UIAlertAction(title: "alert.yes".localized(), style: .default, handler: { (action) in
             self.completeOrder()
         })
@@ -57,7 +57,7 @@ class OrderExecutionVC: UIViewController {
     
     @IBAction func cancelOrderDidPress(_ sender: Any) {
         let msg = "alert.order.cancel".localized()
-        let cancel = UIAlertAction(title: "alert.cancel".localized(), style: .cancel) { (action) in }
+        let cancel = UIAlertAction(title: "alert.no".localized(), style: .cancel) { (action) in }
         let ok = UIAlertAction(title: "alert.yes".localized(), style: .default, handler: { (action) in
             self.cancelOrder()
         })

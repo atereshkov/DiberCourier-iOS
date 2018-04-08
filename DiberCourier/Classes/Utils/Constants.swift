@@ -24,6 +24,7 @@ enum Storyboards: String {
     case request = "Request"
     case orderExecution = "OrderExecution"
     case map = "GoogleMap"
+    case search = "Search"
 }
 
 enum Cells: String {
