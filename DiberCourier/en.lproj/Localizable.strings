@@ -17,7 +17,7 @@
 "alert.error.unexpected.nodata" = "No data";
 "alert.session.expired.error.msg" = "Sorry! Your session has been expired. You will be navigated to login screen";
 "alert.title.information" = "Information";
-"alert.user.incorrect.role" = "You can't use this app due to your role";
+"alert.user.incorrect.role" = "Only couriers can access this app. You have to download 'Client' App.";
 
 "alert.yes" = "Yes";
 "alert.cancel" = "Cancel";
