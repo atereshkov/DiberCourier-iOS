@@ -38,8 +38,8 @@ extension UserView {
         let username = dto.username
         let enabled = dto.enabled
         let fullname = dto.fullname
-        let customer = dto.customer
-        let courier = dto.courier
+        let customer = dto.isCustomer
+        let courier = dto.isCourier
         
         return UserView(id: id, email: email, username: username, enabled: enabled, fullname: fullname, customer: customer, courier: courier)
     }
