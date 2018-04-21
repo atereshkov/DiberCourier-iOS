@@ -15,9 +15,9 @@ class TicketDTO {
     private(set) var title: String = ""
     private(set) var createdDate: Date = Date(timeIntervalSince1970: 1)
     private(set) var updatedDate: Date = Date(timeIntervalSince1970: 1)
-    private(set) var user: UserDTO
+    private(set) var user: UserDTO?
     
-    init(id: Int, status: String, title: String, createdDate: Date, updatedDate: Date, user: UserDTO) {
+    init(id: Int, status: String, title: String, createdDate: Date, updatedDate: Date, user: UserDTO? = nil) {
         self.id = id
         self.status = status
         self.title = title
@@ -42,4 +42,10 @@ extension TicketDTO {
         
         return TicketDTO(id: id, status: status, title: title, createdDate: createdDate, updatedDate: updatedDate, user: user)
     }
+    
+    class func withTest(data: [String: Any]) -> TicketDTO? {
+        guard let title = data["title"] as? String else { return nil }
+        return TicketDTO(id: 0, status: "", title: title, createdDate:  Date(timeIntervalSince1970: 1), updatedDate: Date(timeIntervalSince1970: 1), user: nil)
+    }
+    
 }

@@ -162,6 +162,7 @@
                                                         <state key="normal" image="ic_back"/>
                                                         <connections>
                                                             <action selector="backButtonPressed:" destination="YQ0-tR-W3K" eventType="touchUpInside" id="FLD-ia-Ie2"/>
+                                                            <action selector="backButtonPressed:" destination="hBz-hO-Riy" eventType="touchUpInside" id="Y1j-Hp-eEl"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New ticket" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5G-IB-yzk">
@@ -280,6 +281,7 @@
                     </view>
                     <connections>
                         <outlet property="messageTextView" destination="mWS-tK-BDe" id="5KD-fc-0yP"/>
+                        <outlet property="subjectTextField" destination="OaE-tV-oPE" id="3ej-qj-o0j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTl-Nb-JtP" userLabel="First Responder" sceneMemberID="firstResponder"/>

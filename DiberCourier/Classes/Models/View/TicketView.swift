@@ -31,7 +31,7 @@ class TicketView {
 extension TicketView {
     
     class func create(from dto: TicketDTO) -> TicketView? {
-        guard let user = UserView.create(from: dto.user) else { return nil }
+        guard let userDto = dto.user, let user = UserView.create(from: userDto) else { return nil }
         let id = dto.id
         let status = dto.status
         let title = dto.title
