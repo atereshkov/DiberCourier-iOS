@@ -14,6 +14,9 @@ protocol TicketCellDelegate : class {
 
 class TicketCell: UITableViewCell {
     
+    @IBOutlet weak var ticketIdLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var subjectLabel: UILabel!
     
     weak var delegate: TicketCellDelegate?
     
@@ -30,7 +33,9 @@ class TicketCell: UITableViewCell {
     //MARK:- Public
     
     public func bind(with item: TicketView) {
-        
+        self.ticketIdLabel.text = "#\(item.id)"
+        self.statusLabel.text = item.status
+        self.subjectLabel.text = item.title
     }
     
 }

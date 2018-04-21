@@ -99,6 +99,10 @@ class TicketTableVC: UITableViewController {
         return 1
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 66
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard indexPath.row >= 0 && indexPath.row < tickets.count else { return }
         let ticket = tickets[indexPath.row]

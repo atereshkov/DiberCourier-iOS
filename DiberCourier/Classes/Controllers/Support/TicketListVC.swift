@@ -32,11 +32,9 @@ class TicketListVC: UIViewController {
     // MARK: Prepare segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Segues.ticketsTable.rawValue {
-            if let ticketTableVC = segue.destination as? TicketTableVC {
-                ticketTableVC.delegate = self
-                self.ticketTableVC = ticketTableVC
-            }
+        if let ticketTableVC = segue.destination as? TicketTableVC {
+            ticketTableVC.delegate = self
+            self.ticketTableVC = ticketTableVC
         }
     }
     
@@ -106,7 +104,7 @@ extension TicketListVC: TicketTableDelegate {
     func didPullRefresh(totalLoadedTickets: Int) {
         guard let ticketTableVC = self.ticketTableVC else { return }
         ticketTableVC.removeAll()
-        self.loadData(silent: false, size: totalLoadedTickets)
+        self.loadData(silent: false, size: 1000) // TODO pass totalLoadedTickets in case of pagination
     }
     
 }
