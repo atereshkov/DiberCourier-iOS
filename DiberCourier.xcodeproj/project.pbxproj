@@ -34,6 +34,8 @@
 		A3249B24208B62F3008732DB /* MyProfileSupportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3249B23208B62F3008732DB /* MyProfileSupportVC.swift */; };
 		A3249B26208B6768008732DB /* NewTicketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3249B25208B6768008732DB /* NewTicketVC.swift */; };
 		A3249B28208B72C3008732DB /* NewTicketDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3249B27208B72C3008732DB /* NewTicketDTO.swift */; };
+		A3249B2A208BA942008732DB /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3249B29208BA942008732DB /* Message.swift */; };
+		A3249B2C208BA954008732DB /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3249B2B208BA954008732DB /* MessageView.swift */; };
 		A324C6EC1FAF7A7600E0A02D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324C6EB1FAF7A7600E0A02D /* AppDelegate.swift */; };
 		A324C6F51FAF7A7600E0A02D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A324C6F31FAF7A7600E0A02D /* Main.storyboard */; };
 		A324C6F71FAF7A7600E0A02D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A324C6F61FAF7A7600E0A02D /* Assets.xcassets */; };
@@ -161,6 +163,8 @@
 		A3249B23208B62F3008732DB /* MyProfileSupportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileSupportVC.swift; sourceTree = "<group>"; };
 		A3249B25208B6768008732DB /* NewTicketVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketVC.swift; sourceTree = "<group>"; };
 		A3249B27208B72C3008732DB /* NewTicketDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketDTO.swift; sourceTree = "<group>"; };
+		A3249B29208BA942008732DB /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		A3249B2B208BA954008732DB /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		A324C6E81FAF7A7600E0A02D /* DiberCourier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiberCourier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A324C6EB1FAF7A7600E0A02D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A324C6F41FAF7A7600E0A02D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -286,6 +290,7 @@
 				A3C1E985207A7A0D00B1F8BA /* RoleDTO.swift */,
 				A3249B19208A7F69008732DB /* Ticket.swift */,
 				A3249B27208B72C3008732DB /* NewTicketDTO.swift */,
+				A3249B29208BA942008732DB /* Message.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -453,6 +458,7 @@
 				A386F0DF1FE5DADA00BC8B30 /* RequestView.swift */,
 				A38826FB2054716C008056F6 /* UserView.swift */,
 				A3249B17208A7F60008732DB /* TicketView.swift */,
+				A3249B2B208BA954008732DB /* MessageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1025,6 +1031,7 @@
 				A3C1E97E207A756A00B1F8BA /* SearchVC.swift in Sources */,
 				A3A999A81FB086C800D63B35 /* LogManager.swift in Sources */,
 				A386F0E81FE6628700BC8B30 /* RequestDetailVC.swift in Sources */,
+				A3249B2C208BA954008732DB /* MessageView.swift in Sources */,
 				A31D0D2D1FCB4740000D37F1 /* Request.swift in Sources */,
 				A34C407B201E59230045E678 /* OrdersMenuVC.swift in Sources */,
 				A386F0EA1FE667F800BC8B30 /* Enums.swift in Sources */,
@@ -1067,6 +1074,7 @@
 				A39A2C6D1FD4698F0014BD46 /* OrderPriceView.swift in Sources */,
 				A3F672C12042C442002A9125 /* OrdersMainHeaderVC.swift in Sources */,
 				A31F9DE81FB1A387008CD08A /* OrderCell.swift in Sources */,
+				A3249B2A208BA942008732DB /* Message.swift in Sources */,
 				A39E51922042E0F300E2DAE2 /* CustomPinAnnotation.swift in Sources */,
 				A3E2D57420266B0B008FEC73 /* RecentOrderCell.swift in Sources */,
 				A3A999BE1FB0974100D63B35 /* WeakTimer.swift in Sources */,

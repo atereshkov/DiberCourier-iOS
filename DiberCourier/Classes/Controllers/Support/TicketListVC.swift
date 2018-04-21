@@ -93,8 +93,7 @@ extension TicketListVC: TicketTableDelegate {
     func didSelectTicket(ticket: TicketView) {
         let storyboard = UIStoryboard(name: Storyboards.tickets.rawValue, bundle: nil)
         
-        if let ticketNavVC = storyboard.instantiateInitialViewController() as? UINavigationController,
-            let ticketVC = ticketNavVC.rootViewController as? TicketVC {
+        if let ticketVC = storyboard.instantiateViewController(withIdentifier: Controllers.ticketDetails.rawValue) as? TicketVC {
             ticketVC.ticketId = ticket.id
             //ticketVC.delegate = self
             self.navigationController?.pushViewController(ticketVC, animated: true)

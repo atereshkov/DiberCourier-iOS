@@ -36,6 +36,10 @@ enum Cells: String {
     case requests = "RequestCell"
 }
 
+enum Controllers: String {
+    case ticketDetails = "TicketVC"
+}
+
 class NetworkConstant {
     static let grantType = "grant_type"
     static let clientId = "client_id"

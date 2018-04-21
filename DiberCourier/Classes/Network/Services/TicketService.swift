@@ -33,6 +33,12 @@ class TicketService: NSObject {
         case UnexpectedError(error: Error?)
     }
     
+    enum MessagesResult {
+        case Success(messages: [MessageDTO])
+        case OfflineError
+        case UnexpectedError(error: Error?)
+    }
+    
     func getTickets(userId: Int, page: Int, size: Int, callback:((_ result: TicketsResult) -> ())? = nil) {
         let endpoint = TicketEndpoint.tickets(userId: userId, page: page, size: size)
         
@@ -91,6 +97,26 @@ class TicketService: NSObject {
                     }
                 } else {
                     callback?(CreateTicketResult.UnexpectedError(error: response.result.error))
+                }
+        }
+    }
+    
+    func getMessages(ticketId: Int, callback:((_ result: MessagesResult) -> ())? = nil) {
+        let endpoint = TicketEndpoint.messages(ticketId: ticketId)
+        
+        sessionManager.request(endpoint.url)
+            .validate()
+            .responseJSON { response in
+                var messages = [MessageDTO]()
+                if response.result.error == nil, let messagesData = response.result.value as? [[String: Any]] {
+                    for messageData in messagesData {
+                        if let message = MessageDTO.with(data: messageData) {
+                            messages.append(message)
+                        }
+                    }
+                    callback?(MessagesResult.Success(messages: messages))
+                } else {
+                    callback?(MessagesResult.UnexpectedError(error: response.result.error))
                 }
         }
     }

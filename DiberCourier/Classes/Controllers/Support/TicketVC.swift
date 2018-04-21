@@ -11,7 +11,7 @@ import SVProgressHUD
 
 class TicketVC: UIViewController {
     
-    
+    @IBOutlet weak var headerLabel: UILabel!
     
     fileprivate var loadingData = false // Used to prevent multiple simultanious load requests
     
@@ -24,7 +24,8 @@ class TicketVC: UIViewController {
         super.viewDidLoad()
         LogManager.log.info("Initialization")
         guard let ticketId = ticketId else { return }
-        loadData(silent: false, id: ticketId)
+        headerLabel.text = "Ticket #\(ticketId)"
+        loadTicket(silent: false, id: ticketId)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -37,7 +38,9 @@ class TicketVC: UIViewController {
     
     // MARK: Actions
     
-    
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     // MARK: Helpers
     
@@ -46,12 +49,16 @@ class TicketVC: UIViewController {
         self.ticket = ticketView
         
         guard let ticket = self.ticket else { return }
-        //
+        self.loadMessages(ticketId: ticket.id)
+    }
+    
+    private func load(_ messages: [MessageDTO]) {
+        let messages = MessageView.from(messages)
     }
     
     // MARK: Networking
     
-    private func loadData(silent: Bool, id: Int) {
+    private func loadTicket(silent: Bool, id: Int) {
         guard !loadingData else { return }
         loadingData = true
         if !silent {
@@ -68,7 +75,34 @@ class TicketVC: UIViewController {
             
             switch result {
             case .Success(let ticket):
+                self_.loadingData = false
                 self_.setup(ticket)
+            case .UnexpectedError(let error):
+                self_.showUnexpectedErrorAlert(error: error)
+            case .OfflineError:
+                self_.showOfflineErrorAlert()
+            }
+        }
+    }
+    
+    private func loadMessages(silent: Bool = false, ticketId: Int) {
+        guard !loadingData else { return }
+        loadingData = true
+        if !silent {
+            SVProgressHUD.show()
+        }
+        
+        let userId = PreferenceManager.shared.userId
+        TicketService.shared.getMessages(ticketId: ticketId) { [weak self] (result) in
+            guard let self_ = self else { return }
+            defer {
+                SVProgressHUD.dismiss()
+                self_.loadingData = false
+            }
+            
+            switch result {
+            case .Success(let messages):
+                self_.load(messages)
             case .UnexpectedError(let error):
                 self_.showUnexpectedErrorAlert(error: error)
             case .OfflineError:
