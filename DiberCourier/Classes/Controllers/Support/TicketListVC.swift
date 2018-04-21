@@ -96,7 +96,8 @@ extension TicketListVC: TicketTableDelegate {
         if let ticketVC = storyboard.instantiateViewController(withIdentifier: Controllers.ticketDetails.rawValue) as? TicketVC {
             ticketVC.ticketId = ticket.id
             //ticketVC.delegate = self
-            self.navigationController?.pushViewController(ticketVC, animated: true)
+            //self.navigationController?.pushViewController(ticketVC, animated: true)
+            self.present(ticketVC, animated: true, completion: nil)
         }
     }
     

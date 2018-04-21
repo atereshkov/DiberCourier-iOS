@@ -11,6 +11,8 @@ import SVProgressHUD
 
 class TicketVC: UIViewController {
     
+    private var messagesTableVC: MessagesTableVC? = nil
+    
     @IBOutlet weak var headerLabel: UILabel!
     
     fileprivate var loadingData = false // Used to prevent multiple simultanious load requests
@@ -29,7 +31,9 @@ class TicketVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if let messagesTableVC = segue.destination as? MessagesTableVC {
+            self.messagesTableVC = messagesTableVC
+        }
     }
     
     deinit {
@@ -39,7 +43,8 @@ class TicketVC: UIViewController {
     // MARK: Actions
     
     @IBAction func backButtonPressed(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        //self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: Helpers
@@ -54,6 +59,9 @@ class TicketVC: UIViewController {
     
     private func load(_ messages: [MessageDTO]) {
         let messages = MessageView.from(messages)
+        
+        guard let messagesTableVC = self.messagesTableVC else { return }
+        messagesTableVC.setMessages(messages)
     }
     
     // MARK: Networking

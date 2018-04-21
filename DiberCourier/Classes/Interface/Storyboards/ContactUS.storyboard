@@ -447,12 +447,22 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZsL-4u-2FB">
+                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                                <connections>
+                                    <segue destination="hjp-Hr-SF6" kind="embed" id="Y87-JI-hNj"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="q4K-Ja-ZhO" firstAttribute="bottom" secondItem="ZsL-4u-2FB" secondAttribute="bottom" id="0po-wX-6rN"/>
+                            <constraint firstItem="ZsL-4u-2FB" firstAttribute="leading" secondItem="q4K-Ja-ZhO" secondAttribute="leading" id="3Uj-Zj-IDC"/>
+                            <constraint firstItem="ZsL-4u-2FB" firstAttribute="top" secondItem="g6h-m0-RRT" secondAttribute="bottom" id="Doo-dj-gW2"/>
                             <constraint firstAttribute="top" secondItem="g6h-m0-RRT" secondAttribute="top" id="KDz-g7-Be8"/>
                             <constraint firstItem="zyt-K3-Zde" firstAttribute="top" secondItem="q4K-Ja-ZhO" secondAttribute="top" id="OSd-OA-DF9"/>
                             <constraint firstItem="g6h-m0-RRT" firstAttribute="leading" secondItem="q4K-Ja-ZhO" secondAttribute="leading" id="Yh2-Sn-zEK"/>
+                            <constraint firstItem="q4K-Ja-ZhO" firstAttribute="trailing" secondItem="ZsL-4u-2FB" secondAttribute="trailing" id="gwW-bq-CDP"/>
                             <constraint firstItem="q4K-Ja-ZhO" firstAttribute="trailing" secondItem="g6h-m0-RRT" secondAttribute="trailing" id="pu7-r7-uZB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="q4K-Ja-ZhO"/>
@@ -464,6 +474,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebm-l1-9q6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="598" y="867"/>
+        </scene>
+        <!--Messages TableVC-->
+        <scene sceneID="4iX-wd-Zma">
+            <objects>
+                <tableViewController id="hjp-Hr-SF6" customClass="MessagesTableVC" customModule="DiberCourier" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5Mz-lK-yU6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="597"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="YwN-EB-Y6B">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YwN-EB-Y6B" id="VyV-E3-z6q">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hjp-Hr-SF6" id="eNW-1w-2gz"/>
+                            <outlet property="delegate" destination="hjp-Hr-SF6" id="bO3-dJ-gFI"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YfH-jR-dNs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1415" y="867"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kcd-Rc-yyU">
