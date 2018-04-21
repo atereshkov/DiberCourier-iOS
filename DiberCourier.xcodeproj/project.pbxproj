@@ -32,6 +32,7 @@
 		A3249B20208A8A93008732DB /* TicketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3249B1F208A8A93008732DB /* TicketService.swift */; };
 		A3249B22208A8B63008732DB /* TicketEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3249B21208A8B63008732DB /* TicketEndpoint.swift */; };
 		A3249B24208B62F3008732DB /* MyProfileSupportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3249B23208B62F3008732DB /* MyProfileSupportVC.swift */; };
+		A3249B26208B6768008732DB /* NewTicketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3249B25208B6768008732DB /* NewTicketVC.swift */; };
 		A324C6EC1FAF7A7600E0A02D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324C6EB1FAF7A7600E0A02D /* AppDelegate.swift */; };
 		A324C6F51FAF7A7600E0A02D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A324C6F31FAF7A7600E0A02D /* Main.storyboard */; };
 		A324C6F71FAF7A7600E0A02D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A324C6F61FAF7A7600E0A02D /* Assets.xcassets */; };
@@ -157,6 +158,7 @@
 		A3249B1F208A8A93008732DB /* TicketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketService.swift; sourceTree = "<group>"; };
 		A3249B21208A8B63008732DB /* TicketEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketEndpoint.swift; sourceTree = "<group>"; };
 		A3249B23208B62F3008732DB /* MyProfileSupportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileSupportVC.swift; sourceTree = "<group>"; };
+		A3249B25208B6768008732DB /* NewTicketVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTicketVC.swift; sourceTree = "<group>"; };
 		A324C6E81FAF7A7600E0A02D /* DiberCourier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiberCourier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A324C6EB1FAF7A7600E0A02D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A324C6F41FAF7A7600E0A02D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -584,6 +586,7 @@
 				A3249B13208A7D0F008732DB /* TicketListVC.swift */,
 				A3249B15208A7D20008732DB /* TicketTableVC.swift */,
 				A3249B1D208A88F5008732DB /* TicketVC.swift */,
+				A3249B25208B6768008732DB /* NewTicketVC.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -1007,6 +1010,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3249B26208B6768008732DB /* NewTicketVC.swift in Sources */,
 				A31F9DE51FB1A35C008CD08A /* OrdersTableVC.swift in Sources */,
 				A3A999C91FB09A4000D63B35 /* String.swift in Sources */,
 				A34C407D201E5A160045E678 /* GradientView.swift in Sources */,
