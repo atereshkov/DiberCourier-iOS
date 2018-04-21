@@ -292,17 +292,16 @@
         <scene sceneID="c75-n3-Rj0">
             <objects>
                 <tableViewController id="xgl-S8-v6q" customClass="TicketTableVC" customModule="DiberCourier" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WZZ-h9-fb7">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WZZ-h9-fb7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="597"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TicketCell" rowHeight="66" id="fGG-AO-rU1" customClass="TicketCell" customModule="DiberCourier" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TicketCell" rowHeight="66" id="fGG-AO-rU1" customClass="TicketCell" customModule="DiberCourier" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fGG-AO-rU1" id="GEZ-mV-RjU">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="65.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ticket #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pEH-K6-1wI">
@@ -317,6 +316,13 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uB6-ib-zjG">
+                                            <rect key="frame" x="0.0" y="65" width="375" height="1"/>
+                                            <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="N84-cb-FDe"/>
+                                            </constraints>
+                                        </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGS-lq-81y">
                                             <rect key="frame" x="239" y="10" width="120" height="18"/>
                                             <constraints>
@@ -332,10 +338,13 @@
                                         <constraint firstItem="C2Z-xE-BBv" firstAttribute="leading" secondItem="GEZ-mV-RjU" secondAttribute="leading" constant="16" id="I7F-jh-E2A"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="C2Z-xE-BBv" secondAttribute="trailing" constant="16" id="XhK-8P-4tX"/>
                                         <constraint firstAttribute="trailing" secondItem="bGS-lq-81y" secondAttribute="trailing" constant="16" id="YLh-z9-iWo"/>
+                                        <constraint firstAttribute="trailing" secondItem="uB6-ib-zjG" secondAttribute="trailing" id="ZNB-5C-RKs"/>
+                                        <constraint firstItem="uB6-ib-zjG" firstAttribute="leading" secondItem="GEZ-mV-RjU" secondAttribute="leading" id="bJy-LS-MbJ"/>
                                         <constraint firstAttribute="bottom" secondItem="C2Z-xE-BBv" secondAttribute="bottom" constant="8" id="dBY-8o-uD7"/>
                                         <constraint firstItem="bGS-lq-81y" firstAttribute="top" secondItem="GEZ-mV-RjU" secondAttribute="top" constant="10" id="h5r-J5-Ph1"/>
                                         <constraint firstItem="pEH-K6-1wI" firstAttribute="top" secondItem="GEZ-mV-RjU" secondAttribute="top" constant="10" id="im9-Rt-xSi"/>
                                         <constraint firstItem="bGS-lq-81y" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pEH-K6-1wI" secondAttribute="trailing" constant="10" id="qXl-Af-4iR"/>
+                                        <constraint firstAttribute="bottom" secondItem="uB6-ib-zjG" secondAttribute="bottom" id="u9Y-m1-Ckt"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
