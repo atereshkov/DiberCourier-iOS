@@ -31,6 +31,7 @@
 		A3249B1E208A88F5008732DB /* TicketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3249B1D208A88F5008732DB /* TicketVC.swift */; };
 		A3249B20208A8A93008732DB /* TicketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3249B1F208A8A93008732DB /* TicketService.swift */; };
 		A3249B22208A8B63008732DB /* TicketEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3249B21208A8B63008732DB /* TicketEndpoint.swift */; };
+		A3249B24208B62F3008732DB /* MyProfileSupportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3249B23208B62F3008732DB /* MyProfileSupportVC.swift */; };
 		A324C6EC1FAF7A7600E0A02D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324C6EB1FAF7A7600E0A02D /* AppDelegate.swift */; };
 		A324C6F51FAF7A7600E0A02D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A324C6F31FAF7A7600E0A02D /* Main.storyboard */; };
 		A324C6F71FAF7A7600E0A02D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A324C6F61FAF7A7600E0A02D /* Assets.xcassets */; };
@@ -87,7 +88,6 @@
 		A3C1E97B207A734C00B1F8BA /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3C1E97A207A734C00B1F8BA /* Search.storyboard */; };
 		A3C1E97E207A756A00B1F8BA /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C1E97D207A756A00B1F8BA /* SearchVC.swift */; };
 		A3C1E980207A78AB00B1F8BA /* ContactUS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3C1E97F207A78AB00B1F8BA /* ContactUS.storyboard */; };
-		A3C1E984207A793200B1F8BA /* ContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C1E983207A793200B1F8BA /* ContactVC.swift */; };
 		A3C1E986207A7A0D00B1F8BA /* RoleDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C1E985207A7A0D00B1F8BA /* RoleDTO.swift */; };
 		A3C491BA1FB23E9F005574E7 /* OrderDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C491B91FB23E9F005574E7 /* OrderDetailVC.swift */; };
 		A3E2D56B202642AE008FEC73 /* TopHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2D56A202642AE008FEC73 /* TopHeaderVC.swift */; };
@@ -156,6 +156,7 @@
 		A3249B1D208A88F5008732DB /* TicketVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketVC.swift; sourceTree = "<group>"; };
 		A3249B1F208A8A93008732DB /* TicketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketService.swift; sourceTree = "<group>"; };
 		A3249B21208A8B63008732DB /* TicketEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketEndpoint.swift; sourceTree = "<group>"; };
+		A3249B23208B62F3008732DB /* MyProfileSupportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileSupportVC.swift; sourceTree = "<group>"; };
 		A324C6E81FAF7A7600E0A02D /* DiberCourier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiberCourier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A324C6EB1FAF7A7600E0A02D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A324C6F41FAF7A7600E0A02D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -221,7 +222,6 @@
 		A3C1E97A207A734C00B1F8BA /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		A3C1E97D207A756A00B1F8BA /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		A3C1E97F207A78AB00B1F8BA /* ContactUS.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContactUS.storyboard; sourceTree = "<group>"; };
-		A3C1E983207A793200B1F8BA /* ContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactVC.swift; sourceTree = "<group>"; };
 		A3C1E985207A7A0D00B1F8BA /* RoleDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleDTO.swift; sourceTree = "<group>"; };
 		A3C491B91FB23E9F005574E7 /* OrderDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailVC.swift; sourceTree = "<group>"; };
 		A3E2D56A202642AE008FEC73 /* TopHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeaderVC.swift; sourceTree = "<group>"; };
@@ -581,7 +581,6 @@
 		A3C1E981207A791300B1F8BA /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				A3C1E983207A793200B1F8BA /* ContactVC.swift */,
 				A3249B13208A7D0F008732DB /* TicketListVC.swift */,
 				A3249B15208A7D20008732DB /* TicketTableVC.swift */,
 				A3249B1D208A88F5008732DB /* TicketVC.swift */,
@@ -605,6 +604,7 @@
 				A3E2D56F20265C6A008FEC73 /* MyProfileHeaderVC.swift */,
 				A3F672C22042D4F4002A9125 /* UserInfoVC.swift */,
 				A3F672C42042D501002A9125 /* UserSettingsVC.swift */,
+				A3249B23208B62F3008732DB /* MyProfileSupportVC.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -1008,7 +1008,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A31F9DE51FB1A35C008CD08A /* OrdersTableVC.swift in Sources */,
-				A3C1E984207A793200B1F8BA /* ContactVC.swift in Sources */,
 				A3A999C91FB09A4000D63B35 /* String.swift in Sources */,
 				A34C407D201E5A160045E678 /* GradientView.swift in Sources */,
 				A3249B22208A8B63008732DB /* TicketEndpoint.swift in Sources */,
@@ -1053,6 +1052,7 @@
 				A33EF92620023A0F002A9D40 /* Date.swift in Sources */,
 				A31F9DEE1FB1A3E2008CD08A /* AddressView.swift in Sources */,
 				A3E2D57620266C2E008FEC73 /* RecentOrdersTableVC.swift in Sources */,
+				A3249B24208B62F3008732DB /* MyProfileSupportVC.swift in Sources */,
 				A3A999C21FB0977700D63B35 /* Role.swift in Sources */,
 				A39A2C6B1FD469740014BD46 /* OrderDetailView.swift in Sources */,
 				A39A2C681FD467980014BD46 /* OrderRequestView.swift in Sources */,

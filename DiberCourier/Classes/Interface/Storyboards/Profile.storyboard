@@ -313,10 +313,10 @@
             </objects>
             <point key="canvasLocation" x="668" y="129"/>
         </scene>
-        <!--View Controller-->
+        <!--My Profile SupportVC-->
         <scene sceneID="x05-Bw-5uR">
             <objects>
-                <viewController id="DyL-4r-0Gt" sceneMemberID="viewController">
+                <viewController id="DyL-4r-0Gt" customClass="MyProfileSupportVC" customModule="DiberCourier" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3LC-VT-EqZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -340,6 +340,9 @@
                                         <real key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="contactButtonPressed:" destination="DyL-4r-0Gt" eventType="touchUpInside" id="MgY-OQ-NAx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

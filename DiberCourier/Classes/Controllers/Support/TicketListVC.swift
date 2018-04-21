@@ -21,6 +21,8 @@ class TicketListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         LogManager.log.info("Initialization")
+        
+        self.loadData(silent: false)
     }
     
     deinit {
@@ -74,6 +76,12 @@ class TicketListVC: UIViewController {
         ticketTableVC.totalItems = totalElements
         let ticketsDVO = TicketView.from(tickets)
         ticketTableVC.addTickets(ticketsDVO)
+    }
+    
+    // MARK: Actions
+    
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
 }

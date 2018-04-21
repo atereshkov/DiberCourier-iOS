@@ -31,6 +31,8 @@ class MyProfileVC: UIViewController {
             headerVC.delegate = self
         } else if let userInfoVC = segue.destination as? UserInfoVC {
             self.userInfoVC = userInfoVC
+        } else if let supportVC = segue.destination as? MyProfileSupportVC {
+            supportVC.delegate = self
         }
     }
     
@@ -102,6 +104,22 @@ extension MyProfileVC: MyProfileHeaderDelegate {
     
     func signOutButtonPressed(vc: MyProfileHeaderVC) {
         self.signOut()
+    }
+    
+}
+
+// MARK: MyProfileSupportDelegate
+
+extension MyProfileVC: MyProfileSupportDelegate {
+    
+    func contactButtonPressed(vc: MyProfileSupportVC) {
+        let storyboard = UIStoryboard(name: Storyboards.tickets.rawValue, bundle: nil)
+        
+        if let contactNavVC = storyboard.instantiateInitialViewController() as? UINavigationController,
+            let contactVC = contactNavVC.rootViewController as? TicketListVC {
+            //contactVC.delegate = self
+            self.navigationController?.pushViewController(contactVC, animated: true)
+        }
     }
     
 }
