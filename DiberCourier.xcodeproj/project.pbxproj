@@ -23,6 +23,14 @@
 		A31F9DF41FB1A5E5008CD08A /* OrderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F9DF31FB1A5E5008CD08A /* OrderService.swift */; };
 		A31F9DF61FB1A60F008CD08A /* OrderEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F9DF51FB1A60F008CD08A /* OrderEndpoint.swift */; };
 		A31F9DF81FB1AC4B008CD08A /* Orders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31F9DF71FB1AC4B008CD08A /* Orders.storyboard */; };
+		A3249B14208A7D0F008732DB /* TicketListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3249B13208A7D0F008732DB /* TicketListVC.swift */; };
+		A3249B16208A7D20008732DB /* TicketTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3249B15208A7D20008732DB /* TicketTableVC.swift */; };
+		A3249B18208A7F60008732DB /* TicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3249B17208A7F60008732DB /* TicketView.swift */; };
+		A3249B1A208A7F69008732DB /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3249B19208A7F69008732DB /* Ticket.swift */; };
+		A3249B1C208A840D008732DB /* TicketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3249B1B208A840D008732DB /* TicketCell.swift */; };
+		A3249B1E208A88F5008732DB /* TicketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3249B1D208A88F5008732DB /* TicketVC.swift */; };
+		A3249B20208A8A93008732DB /* TicketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3249B1F208A8A93008732DB /* TicketService.swift */; };
+		A3249B22208A8B63008732DB /* TicketEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3249B21208A8B63008732DB /* TicketEndpoint.swift */; };
 		A324C6EC1FAF7A7600E0A02D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A324C6EB1FAF7A7600E0A02D /* AppDelegate.swift */; };
 		A324C6F51FAF7A7600E0A02D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A324C6F31FAF7A7600E0A02D /* Main.storyboard */; };
 		A324C6F71FAF7A7600E0A02D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A324C6F61FAF7A7600E0A02D /* Assets.xcassets */; };
@@ -140,6 +148,14 @@
 		A31F9DF31FB1A5E5008CD08A /* OrderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderService.swift; sourceTree = "<group>"; };
 		A31F9DF51FB1A60F008CD08A /* OrderEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderEndpoint.swift; sourceTree = "<group>"; };
 		A31F9DF71FB1AC4B008CD08A /* Orders.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Orders.storyboard; sourceTree = "<group>"; };
+		A3249B13208A7D0F008732DB /* TicketListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListVC.swift; sourceTree = "<group>"; };
+		A3249B15208A7D20008732DB /* TicketTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketTableVC.swift; sourceTree = "<group>"; };
+		A3249B17208A7F60008732DB /* TicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketView.swift; sourceTree = "<group>"; };
+		A3249B19208A7F69008732DB /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		A3249B1B208A840D008732DB /* TicketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketCell.swift; sourceTree = "<group>"; };
+		A3249B1D208A88F5008732DB /* TicketVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketVC.swift; sourceTree = "<group>"; };
+		A3249B1F208A8A93008732DB /* TicketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketService.swift; sourceTree = "<group>"; };
+		A3249B21208A8B63008732DB /* TicketEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketEndpoint.swift; sourceTree = "<group>"; };
 		A324C6E81FAF7A7600E0A02D /* DiberCourier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiberCourier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A324C6EB1FAF7A7600E0A02D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A324C6F41FAF7A7600E0A02D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -264,6 +280,7 @@
 				A31D0D2C1FCB4740000D37F1 /* Request.swift */,
 				A38826F920547164008056F6 /* User.swift */,
 				A3C1E985207A7A0D00B1F8BA /* RoleDTO.swift */,
+				A3249B19208A7F69008732DB /* Ticket.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -274,6 +291,7 @@
 				A31F9DE71FB1A387008CD08A /* OrderCell.swift */,
 				A3E2D57320266B0B008FEC73 /* RecentOrderCell.swift */,
 				A386F0DD1FE5DA4A00BC8B30 /* RequestCell.swift */,
+				A3249B1B208A840D008732DB /* TicketCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -429,6 +447,7 @@
 				A31F9DED1FB1A3E2008CD08A /* AddressView.swift */,
 				A386F0DF1FE5DADA00BC8B30 /* RequestView.swift */,
 				A38826FB2054716C008056F6 /* UserView.swift */,
+				A3249B17208A7F60008732DB /* TicketView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -473,6 +492,7 @@
 				A31F9DF51FB1A60F008CD08A /* OrderEndpoint.swift */,
 				A386F0E31FE5DF5D00BC8B30 /* RequestEndpoint.swift */,
 				A3FC0D2820152D82002AF21F /* OrderExecutionEndpoint.swift */,
+				A3249B21208A8B63008732DB /* TicketEndpoint.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -485,6 +505,7 @@
 				A31F9DF31FB1A5E5008CD08A /* OrderService.swift */,
 				A386F0E11FE5DF4900BC8B30 /* RequestService.swift */,
 				A3FC0D2620152D22002AF21F /* OrderExecutionService.swift */,
+				A3249B1F208A8A93008732DB /* TicketService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -560,15 +581,10 @@
 		A3C1E981207A791300B1F8BA /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				A3C1E982207A791F00B1F8BA /* Support */,
-			);
-			path = Support;
-			sourceTree = "<group>";
-		};
-		A3C1E982207A791F00B1F8BA /* Support */ = {
-			isa = PBXGroup;
-			children = (
 				A3C1E983207A793200B1F8BA /* ContactVC.swift */,
+				A3249B13208A7D0F008732DB /* TicketListVC.swift */,
+				A3249B15208A7D20008732DB /* TicketTableVC.swift */,
+				A3249B1D208A88F5008732DB /* TicketVC.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -995,9 +1011,11 @@
 				A3C1E984207A793200B1F8BA /* ContactVC.swift in Sources */,
 				A3A999C91FB09A4000D63B35 /* String.swift in Sources */,
 				A34C407D201E5A160045E678 /* GradientView.swift in Sources */,
+				A3249B22208A8B63008732DB /* TicketEndpoint.swift in Sources */,
 				A386F0E41FE5DF5D00BC8B30 /* RequestEndpoint.swift in Sources */,
 				A38826FC2054716C008056F6 /* UserView.swift in Sources */,
 				A3A999AA1FB0871A00D63B35 /* PreferenceManager.swift in Sources */,
+				A3249B1A208A7F69008732DB /* Ticket.swift in Sources */,
 				A3C1E97E207A756A00B1F8BA /* SearchVC.swift in Sources */,
 				A3A999A81FB086C800D63B35 /* LogManager.swift in Sources */,
 				A386F0E81FE6628700BC8B30 /* RequestDetailVC.swift in Sources */,
@@ -1011,9 +1029,11 @@
 				A32F807B200A117100E8F29D /* RoundedStyledButton.swift in Sources */,
 				A34C407F201E604C0045E678 /* BorderedView.swift in Sources */,
 				A3A999AC1FB0877100D63B35 /* NetworkManager.swift in Sources */,
+				A3249B20208A8A93008732DB /* TicketService.swift in Sources */,
 				A3A999B41FB0969B00D63B35 /* BaseEndpoint.swift in Sources */,
 				A31D0D2A1FCACA85000D37F1 /* UINavigationController.swift in Sources */,
 				A3E2D57B2026FA71008FEC73 /* OrderListHeaderVC.swift in Sources */,
+				A3249B1C208A840D008732DB /* TicketCell.swift in Sources */,
 				A3C1E986207A7A0D00B1F8BA /* RoleDTO.swift in Sources */,
 				A3A999B81FB096DE00D63B35 /* AuthService.swift in Sources */,
 				A31F9DEC1FB1A3C8008CD08A /* Address.swift in Sources */,
@@ -1023,9 +1043,11 @@
 				A31F9DEA1FB1A3A4008CD08A /* OrderView.swift in Sources */,
 				A3A999C51FB0979500D63B35 /* RealmObject.swift in Sources */,
 				A3E2D57020265C6A008FEC73 /* MyProfileHeaderVC.swift in Sources */,
+				A3249B14208A7D0F008732DB /* TicketListVC.swift in Sources */,
 				A3A999BC1FB0972400D63B35 /* Realm.swift in Sources */,
 				A386F0DC1FE5D8BD00BC8B30 /* RequestsTableVC.swift in Sources */,
 				A32F807F200A15EA00E8F29D /* SignupVC.swift in Sources */,
+				A3249B18208A7F60008732DB /* TicketView.swift in Sources */,
 				A3E2D56B202642AE008FEC73 /* TopHeaderVC.swift in Sources */,
 				A3FC0D2720152D22002AF21F /* OrderExecutionService.swift in Sources */,
 				A33EF92620023A0F002A9D40 /* Date.swift in Sources */,
@@ -1053,8 +1075,10 @@
 				A3F672C32042D4F4002A9125 /* UserInfoVC.swift in Sources */,
 				A3E2D57220266AB1008FEC73 /* OrderListVC.swift in Sources */,
 				A38826F82054391B008056F6 /* OrderDistanceView.swift in Sources */,
+				A3249B1E208A88F5008732DB /* TicketVC.swift in Sources */,
 				A3C491BA1FB23E9F005574E7 /* OrderDetailVC.swift in Sources */,
 				A3F672C52042D501002A9125 /* UserSettingsVC.swift in Sources */,
+				A3249B16208A7D20008732DB /* TicketTableVC.swift in Sources */,
 				A386F0DA1FE5D8B200BC8B30 /* RequestsVC.swift in Sources */,
 				A3F672C72042DFEE002A9125 /* MapViewController.swift in Sources */,
 				A3A999B61FB096B700D63B35 /* AuthEndpoint.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 import SVProgressHUD
-import DropDown
+//import DropDown
 
 class OrderListVC: UIViewController {
     
@@ -17,7 +17,6 @@ class OrderListVC: UIViewController {
     private var ordersTableVC: OrdersTableVC? = nil
     private var orderDetailVC: OrderDetailVC? = nil
     private var headerVC: OrderListHeaderVC? = nil
-    fileprivate let dropDown = DropDown()
     
     fileprivate var loadingData = false // Used to prevent multiple simultanious load requests
     var type: OrdersMenuType? {
