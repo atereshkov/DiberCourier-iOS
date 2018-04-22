@@ -95,9 +95,10 @@
 		A3C1E986207A7A0D00B1F8BA /* RoleDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C1E985207A7A0D00B1F8BA /* RoleDTO.swift */; };
 		A3C491BA1FB23E9F005574E7 /* OrderDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C491B91FB23E9F005574E7 /* OrderDetailVC.swift */; };
 		A3D65C12208BE351000B842B /* MessagesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D65C11208BE351000B842B /* MessagesTableVC.swift */; };
-		A3D65C14208BE3FA000B842B /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3D65C13208BE3FA000B842B /* MessageTableViewCell.xib */; };
+		A3D65C14208BE3FA000B842B /* MessageTableViewCellSender.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3D65C13208BE3FA000B842B /* MessageTableViewCellSender.xib */; };
 		A3D65C16208BE44D000B842B /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D65C15208BE44D000B842B /* MessageTableViewCell.swift */; };
 		A3D65C19208BE477000B842B /* MessageBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D65C18208BE477000B842B /* MessageBubbleView.swift */; };
+		A3D65C1B208C8163000B842B /* MessageTableViewCellReciever.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3D65C1A208C8163000B842B /* MessageTableViewCellReciever.xib */; };
 		A3E2D56B202642AE008FEC73 /* TopHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2D56A202642AE008FEC73 /* TopHeaderVC.swift */; };
 		A3E2D56E20265C5B008FEC73 /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2D56D20265C5B008FEC73 /* MyProfileVC.swift */; };
 		A3E2D57020265C6A008FEC73 /* MyProfileHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E2D56F20265C6A008FEC73 /* MyProfileHeaderVC.swift */; };
@@ -237,9 +238,10 @@
 		A3C1E985207A7A0D00B1F8BA /* RoleDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleDTO.swift; sourceTree = "<group>"; };
 		A3C491B91FB23E9F005574E7 /* OrderDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailVC.swift; sourceTree = "<group>"; };
 		A3D65C11208BE351000B842B /* MessagesTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableVC.swift; sourceTree = "<group>"; };
-		A3D65C13208BE3FA000B842B /* MessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
+		A3D65C13208BE3FA000B842B /* MessageTableViewCellSender.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTableViewCellSender.xib; sourceTree = "<group>"; };
 		A3D65C15208BE44D000B842B /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		A3D65C18208BE477000B842B /* MessageBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubbleView.swift; sourceTree = "<group>"; };
+		A3D65C1A208C8163000B842B /* MessageTableViewCellReciever.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTableViewCellReciever.xib; sourceTree = "<group>"; };
 		A3E2D56A202642AE008FEC73 /* TopHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeaderVC.swift; sourceTree = "<group>"; };
 		A3E2D56D20265C5B008FEC73 /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
 		A3E2D56F20265C6A008FEC73 /* MyProfileHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileHeaderVC.swift; sourceTree = "<group>"; };
@@ -615,7 +617,8 @@
 			isa = PBXGroup;
 			children = (
 				A3D65C18208BE477000B842B /* MessageBubbleView.swift */,
-				A3D65C13208BE3FA000B842B /* MessageTableViewCell.xib */,
+				A3D65C13208BE3FA000B842B /* MessageTableViewCellSender.xib */,
+				A3D65C1A208C8163000B842B /* MessageTableViewCellReciever.xib */,
 			);
 			path = Messages;
 			sourceTree = "<group>";
@@ -828,9 +831,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A324C6FA1FAF7A7600E0A02D /* LaunchScreen.storyboard in Resources */,
-				A3D65C14208BE3FA000B842B /* MessageTableViewCell.xib in Resources */,
+				A3D65C14208BE3FA000B842B /* MessageTableViewCellSender.xib in Resources */,
 				A31F9DF81FB1AC4B008CD08A /* Orders.storyboard in Resources */,
 				A386F0E61FE661EE00BC8B30 /* Request.storyboard in Resources */,
+				A3D65C1B208C8163000B842B /* MessageTableViewCellReciever.xib in Resources */,
 				A33AE34C1FB0734E00180661 /* Localizable.strings in Resources */,
 				A3C1E97B207A734C00B1F8BA /* Search.storyboard in Resources */,
 				A3C1E980207A78AB00B1F8BA /* ContactUS.storyboard in Resources */,

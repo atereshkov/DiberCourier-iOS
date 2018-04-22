@@ -23,7 +23,8 @@ class MessagesTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(UINib(nibName: "MessageTableViewCell", bundle: nil), forCellReuseIdentifier: Cells.ticketMessages.rawValue)
+        tableView.register(UINib(nibName: "MessageTableViewCellReciever", bundle: nil), forCellReuseIdentifier: Cells.ticketMessagesSender.rawValue)
+        tableView.register(UINib(nibName: "MessageTableViewCellSender", bundle: nil), forCellReuseIdentifier: Cells.ticketMessagesReciever.rawValue)
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 10.0
     }
@@ -46,14 +47,22 @@ class MessagesTableVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Cells.ticketMessages.rawValue) as? MessageTableViewCell else {
-            return UITableViewCell()
-        }
-        
         let message = messages[indexPath.row]
-        let text = message.message
         let currentUserIsSender = message.user.id == PreferenceManager.shared.userId
-        cell.configure(with: text, currentUserIsSender: currentUserIsSender)
-        return cell
+        
+        if currentUserIsSender {
+            if let senderCell = tableView.dequeueReusableCell(withIdentifier: Cells.ticketMessagesSender.rawValue) as? MessageTableViewCell {
+                let text = message.message
+                senderCell.configure(with: text, currentUserIsSender: currentUserIsSender)
+                return senderCell
+            }
+        } else {
+            if let recieverCell = tableView.dequeueReusableCell(withIdentifier: Cells.ticketMessagesReciever.rawValue) as? MessageTableViewCell {
+                let text = message.message
+                recieverCell.configure(with: text, currentUserIsSender: currentUserIsSender)
+                return recieverCell
+            }
+        }
+        return UITableViewCell()
     }
 }

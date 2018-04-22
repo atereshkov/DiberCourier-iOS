@@ -34,7 +34,8 @@ enum Cells: String {
     case ticket = "TicketCell"
     case recentOrder = "RecentOrderCell"
     case requests = "RequestCell"
-    case ticketMessages = "MessageTableViewCell"
+    case ticketMessagesSender = "MessageTableViewCellSender"
+    case ticketMessagesReciever = "MessageTableViewCellReciever"
 }
 
 enum Controllers: String {
