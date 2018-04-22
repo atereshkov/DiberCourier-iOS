@@ -472,10 +472,10 @@
             </objects>
             <point key="canvasLocation" x="597.60000000000002" y="866.71664167916049"/>
         </scene>
-        <!--View Controller-->
+        <!--Send MessageVC-->
         <scene sceneID="s3b-9c-skY">
             <objects>
-                <viewController id="gL6-8G-0ql" sceneMemberID="viewController">
+                <viewController id="gL6-8G-0ql" customClass="SendMessageVC" customModule="DiberCourier" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Eml-1Y-nhq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -493,6 +493,9 @@
                                     <constraint firstAttribute="width" constant="32" id="NbY-Ki-kda"/>
                                 </constraints>
                                 <state key="normal" image="ic_send"/>
+                                <connections>
+                                    <action selector="sendButtonPressed:" destination="gL6-8G-0ql" eventType="touchUpInside" id="0EI-lh-5VH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
@@ -505,6 +508,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sey-WB-K7H"/>
                     </view>
+                    <connections>
+                        <outlet property="messageTextField" destination="REc-kz-J1a" id="T2s-rV-oIh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cJ7-I5-FzE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

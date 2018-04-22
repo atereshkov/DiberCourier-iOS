@@ -9,9 +9,16 @@
 import UIKit
 import SVProgressHUD
 
+protocol SendMessageDelegate: class {
+    func messageSent(vc: SendMessageVC)
+}
+
 class SendMessageVC: UIViewController {
     
+    @IBOutlet weak var messageTextField: UITextField!
     
+    public var ticketId: Int?
+    weak var delegate: SendMessageDelegate? = nil
     
     // MARK: Lifecycle
     
@@ -28,15 +35,16 @@ class SendMessageVC: UIViewController {
     // MARK: Actions
     
     @IBAction func sendButtonPressed(_ sender: Any) {
-        
+        guard let message = messageTextField.text, !message.isEmpty else { return }
+        sendMessage(message: message)
     }
     
     // MARK: Networking
     
-    /*
     private func sendMessage(message: String) {
+        guard let ticketId = self.ticketId else { return }
         let userId = PreferenceManager.shared.userId
-        TicketService.shared.createTicket(userId: userId, ticket: ticket) { [weak self] (result) in
+        TicketService.shared.sendMessage(userId: userId, ticketId: ticketId, message: message) { [weak self] (result) in
             guard let self_ = self else { return }
             defer {
                 SVProgressHUD.dismiss()
@@ -44,8 +52,9 @@ class SendMessageVC: UIViewController {
             
             switch result {
             case .Success(let ticket):
-                LogManager.log.debug("Ticket with id \(ticket.id) successfully created")
-                self_.dismiss(animated: true, completion: nil)
+                // TODO show toast message sent
+                self?.messageTextField.text = ""
+                self_.delegate?.messageSent(vc: self_)
             case .UnexpectedError(let error):
                 self_.showUnexpectedErrorAlert(error: error)
             case .OfflineError:
@@ -53,6 +62,5 @@ class SendMessageVC: UIViewController {
             }
         }
     }
-    */
     
 }

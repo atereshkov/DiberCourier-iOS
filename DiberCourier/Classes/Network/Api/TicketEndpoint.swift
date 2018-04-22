@@ -15,6 +15,7 @@ enum TicketEndpoint: BaseEndPoint {
     case ticket(userId: Int, id: Int)
     case createTicket(userId: Int, ticket: NewTicketDTO)
     case messages(ticketId: Int)
+    case sendMessage(userId: Int, ticketId: Int, message: String)
     
     func provideCallDetails() -> (url: String, method: HTTPMethod, parameters: [String : Any]?) {
         switch self {
@@ -44,6 +45,17 @@ enum TicketEndpoint: BaseEndPoint {
             url.append(String(ticketId))
             url.append("/messages")
             return (url: url, method: .post, parameters: nil)
+        case .sendMessage(let userId, let ticketId, let message):
+            var url = "\(Endpoint.base.rawValue)\(Endpoint.apiVersion.rawValue)"
+            url.append("users/")
+            url.append(String(userId))
+            url.append("/tickets/")
+            url.append(String(ticketId))
+            url.append("/messages")
+            let messageJSON = [
+                "msg": message
+            ]
+            return (url: url, method: .post, parameters: messageJSON)
         }
     }
     

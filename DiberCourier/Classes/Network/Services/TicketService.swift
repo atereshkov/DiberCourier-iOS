@@ -39,6 +39,12 @@ class TicketService: NSObject {
         case UnexpectedError(error: Error?)
     }
     
+    enum SendMessageResult {
+        case Success() // TODO add message
+        case OfflineError
+        case UnexpectedError(error: Error?)
+    }
+    
     func getTickets(userId: Int, page: Int, size: Int, callback:((_ result: TicketsResult) -> ())? = nil) {
         let endpoint = TicketEndpoint.tickets(userId: userId, page: page, size: size)
         
@@ -117,6 +123,26 @@ class TicketService: NSObject {
                     callback?(MessagesResult.Success(messages: messages))
                 } else {
                     callback?(MessagesResult.UnexpectedError(error: response.result.error))
+                }
+        }
+    }
+    
+    func sendMessage(userId: Int, ticketId: Int, message: String, callback:((_ result: SendMessageResult) -> ())? = nil) {
+        let endpoint = TicketEndpoint.sendMessage(userId: userId, ticketId: ticketId, message: message)
+        
+        sessionManager.request(endpoint.url, method: endpoint.method, parameters: endpoint.parameters, encoding: JSONEncoding.default)
+            .validate()
+            .responseJSON { response in
+                if let data = response.result.value as? [String: Any] {
+                    if let error = data["error_description"] as? String {
+                        let customError = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: error])
+                        callback?(SendMessageResult.UnexpectedError(error: customError))
+                    } else {
+                        // TODO change to DTO object
+                        callback?(SendMessageResult.Success())
+                    }
+                } else {
+                    callback?(SendMessageResult.UnexpectedError(error: response.result.error))
                 }
         }
     }

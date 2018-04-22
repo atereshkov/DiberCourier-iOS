@@ -12,6 +12,7 @@ import SVProgressHUD
 class TicketVC: UIViewController {
     
     private var messagesTableVC: MessagesTableVC? = nil
+    private var sendMessageVC: SendMessageVC? = nil
     
     @IBOutlet weak var headerLabel: UILabel!
     
@@ -33,6 +34,10 @@ class TicketVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let messagesTableVC = segue.destination as? MessagesTableVC {
             self.messagesTableVC = messagesTableVC
+        } else if let sendMessageVC = segue.destination as? SendMessageVC {
+            sendMessageVC.ticketId = self.ticketId
+            sendMessageVC.delegate = self
+            self.sendMessageVC = sendMessageVC
         }
     }
     
@@ -117,6 +122,15 @@ class TicketVC: UIViewController {
                 self_.showOfflineErrorAlert()
             }
         }
+    }
+    
+}
+
+extension TicketVC: SendMessageDelegate {
+    
+    func messageSent(vc: SendMessageVC) {
+        guard let ticketId = self.ticketId else { return }
+        self.loadMessages(silent: false, ticketId: ticketId)
     }
     
 }

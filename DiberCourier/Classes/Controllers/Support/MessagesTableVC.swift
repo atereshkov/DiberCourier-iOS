@@ -15,7 +15,6 @@ protocol MessagesTableDelegate: class {
 class MessagesTableVC: UITableViewController {
     
     fileprivate var messages = [MessageView]()
-    
     weak var delegate: TicketTableDelegate?
     
     // MARK: Lifecycle
@@ -29,6 +28,10 @@ class MessagesTableVC: UITableViewController {
         tableView.estimatedRowHeight = 10.0
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     deinit {
         LogManager.log.info("Deinitialization")
     }
@@ -38,6 +41,10 @@ class MessagesTableVC: UITableViewController {
     public func setMessages(_ messages: [MessageView]) {
         self.messages = messages
         tableView.reloadData()
+        
+        if messages.count > 0 {
+            tableView.scrollToRow(at: IndexPath(item: messages.count-1, section: 0), at: .bottom, animated: false)
+        }
     }
     
     // MARK: TableView
