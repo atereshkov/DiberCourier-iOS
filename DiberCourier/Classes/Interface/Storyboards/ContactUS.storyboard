@@ -386,14 +386,25 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1J-RE-LDN">
+                                                        <rect key="frame" x="337" y="10" width="30" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="30" id="MUs-lH-Zmi"/>
+                                                            <constraint firstAttribute="height" constant="30" id="i3h-JR-jMi"/>
+                                                        </constraints>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="ic_more_vert"/>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="lb9-2L-aXW" firstAttribute="leading" secondItem="D0U-3j-cq1" secondAttribute="leading" constant="4" id="5GG-3L-ape"/>
+                                                    <constraint firstAttribute="trailing" secondItem="s1J-RE-LDN" secondAttribute="trailing" constant="8" id="5jS-aD-8qa"/>
                                                     <constraint firstItem="Qqj-Fq-M1c" firstAttribute="centerY" secondItem="D0U-3j-cq1" secondAttribute="centerY" id="6Ie-X9-hbs"/>
                                                     <constraint firstItem="Qqj-Fq-M1c" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lb9-2L-aXW" secondAttribute="trailing" constant="6" id="Ne6-1y-1Yj"/>
                                                     <constraint firstItem="lb9-2L-aXW" firstAttribute="centerY" secondItem="D0U-3j-cq1" secondAttribute="centerY" id="RtM-fI-svF"/>
                                                     <constraint firstItem="Qqj-Fq-M1c" firstAttribute="centerX" secondItem="D0U-3j-cq1" secondAttribute="centerX" id="XRX-sC-2C6"/>
+                                                    <constraint firstItem="s1J-RE-LDN" firstAttribute="centerY" secondItem="D0U-3j-cq1" secondAttribute="centerY" id="xi4-Gu-9Im"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="YES"/>
@@ -579,6 +590,7 @@
         <image name="ic_attach_file" width="24" height="24"/>
         <image name="ic_back" width="13" height="21"/>
         <image name="ic_done_white" width="24" height="24"/>
+        <image name="ic_more_vert" width="24" height="24"/>
         <image name="ic_send" width="128" height="128"/>
         <image name="ic_support" width="24" height="24"/>
     </resources>
