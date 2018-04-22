@@ -14,6 +14,7 @@ class TicketVC: UIViewController {
     private var messagesTableVC: MessagesTableVC? = nil
     private var sendMessageVC: SendMessageVC? = nil
     
+    @IBOutlet weak var sendMessageBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var headerLabel: UILabel!
     
     fileprivate var loadingData = false // Used to prevent multiple simultanious load requests
@@ -29,6 +30,9 @@ class TicketVC: UIViewController {
         guard let ticketId = ticketId else { return }
         headerLabel.text = "Ticket #\(ticketId)"
         loadTicket(silent: false, id: ticketId)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -42,7 +46,24 @@ class TicketVC: UIViewController {
     }
     
     deinit {
+        NotificationCenter.default.removeObserver(self)
         LogManager.log.info("Deinitialization")
+    }
+    
+    // MARK: Notifications
+    
+    @objc private func keyboardWasShown(notification: NSNotification) {
+        let info = notification.userInfo!
+        let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        
+        sendMessageBottomConstraint.constant = keyboardFrame.size.height
+        
+        guard let messagesTableVC = self.messagesTableVC else { return }
+        messagesTableVC.scrollMessagesToBottom()
+    }
+    
+    @objc private func keyboardWillHide(notification:NSNotification){
+        sendMessageBottomConstraint.constant = 0
     }
     
     // MARK: Actions

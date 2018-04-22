@@ -466,6 +466,7 @@
                     </view>
                     <connections>
                         <outlet property="headerLabel" destination="Qqj-Fq-M1c" id="mws-hH-YnT"/>
+                        <outlet property="sendMessageBottomConstraint" destination="9xF-L0-mx7" id="ZnT-Ut-fb0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebm-l1-9q6" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -41,9 +41,12 @@ class MessagesTableVC: UITableViewController {
     public func setMessages(_ messages: [MessageView]) {
         self.messages = messages
         tableView.reloadData()
-        
+        scrollMessagesToBottom()
+    }
+    
+    public func scrollMessagesToBottom() {
         if messages.count > 0 {
-            tableView.scrollToRow(at: IndexPath(item: messages.count-1, section: 0), at: .bottom, animated: false)
+            tableView.scrollToRow(at: IndexPath(item: messages.count - 1, section: 0), at: .bottom, animated: false)
         }
     }
     

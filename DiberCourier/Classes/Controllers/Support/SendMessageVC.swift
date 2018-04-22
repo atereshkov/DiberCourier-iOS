@@ -25,7 +25,6 @@ class SendMessageVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         LogManager.log.info("Initialization")
-        
     }
     
     deinit {
@@ -51,7 +50,7 @@ class SendMessageVC: UIViewController {
             }
             
             switch result {
-            case .Success(let ticket):
+            case .Success(_):
                 // TODO show toast message sent
                 self?.messageTextField.text = ""
                 self_.delegate?.messageSent(vc: self_)
