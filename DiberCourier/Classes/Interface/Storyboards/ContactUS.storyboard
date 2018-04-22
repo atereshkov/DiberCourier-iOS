@@ -31,20 +31,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zbq-LQ-lOR" customClass="GradientView" customModule="DiberCourier" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trx-DX-EuY">
-                                                        <rect key="frame" x="4" y="10.5" width="40" height="30"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="0MC-ma-0LK"/>
-                                                            <constraint firstAttribute="width" constant="40" id="oMg-x7-T6K"/>
-                                                        </constraints>
-                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" image="ic_back"/>
-                                                        <connections>
-                                                            <action selector="backButtonPressed:" destination="YQ0-tR-W3K" eventType="touchUpInside" id="PGu-MQ-srf"/>
-                                                        </connections>
-                                                    </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Us" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRS-Zp-hO8">
-                                                        <rect key="frame" x="137.5" y="14" width="101.5" height="23.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tickets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRS-Zp-hO8">
+                                                        <rect key="frame" x="16" y="14" width="64.5" height="23.5"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -63,13 +51,10 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="trx-DX-EuY" firstAttribute="leading" secondItem="Zbq-LQ-lOR" secondAttribute="leading" constant="4" id="2fI-7w-GTs"/>
                                                     <constraint firstAttribute="trailing" secondItem="pcg-FO-ULd" secondAttribute="trailing" constant="4" id="2xw-gv-KYT"/>
-                                                    <constraint firstItem="lRS-Zp-hO8" firstAttribute="centerX" secondItem="Zbq-LQ-lOR" secondAttribute="centerX" id="FKy-O3-EHc"/>
-                                                    <constraint firstItem="pcg-FO-ULd" firstAttribute="centerY" secondItem="trx-DX-EuY" secondAttribute="centerY" id="RpT-xR-MkB"/>
-                                                    <constraint firstItem="trx-DX-EuY" firstAttribute="centerY" secondItem="Zbq-LQ-lOR" secondAttribute="centerY" id="hUj-MU-nZp"/>
+                                                    <constraint firstItem="pcg-FO-ULd" firstAttribute="centerY" secondItem="Zbq-LQ-lOR" secondAttribute="centerY" id="YVJ-sd-WTv"/>
+                                                    <constraint firstItem="lRS-Zp-hO8" firstAttribute="leading" secondItem="Zbq-LQ-lOR" secondAttribute="leading" constant="16" id="jQU-cA-8Ay"/>
                                                     <constraint firstItem="lRS-Zp-hO8" firstAttribute="centerY" secondItem="Zbq-LQ-lOR" secondAttribute="centerY" id="m7b-3t-ubl"/>
-                                                    <constraint firstItem="lRS-Zp-hO8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="trx-DX-EuY" secondAttribute="trailing" constant="6" id="sZX-98-KJC"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="YES"/>
@@ -109,7 +94,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WBw-6J-eAD">
-                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                                <rect key="frame" x="0.0" y="70" width="375" height="548"/>
                                 <connections>
                                     <segue destination="xgl-S8-v6q" kind="embed" id="LOZ-bo-bBr"/>
                                 </connections>
@@ -293,7 +278,7 @@
             <objects>
                 <tableViewController id="xgl-S8-v6q" customClass="TicketTableVC" customModule="DiberCourier" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WZZ-h9-fb7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="597"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -553,12 +538,14 @@
             </objects>
             <point key="canvasLocation" x="1415" y="867"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Support-->
         <scene sceneID="kcd-Rc-yyU">
             <objects>
-                <navigationController id="Mar-5o-aAA" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="Mar-5o-aAA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Support" image="ic_support" id="HHd-IY-qQm"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6wH-Xv-6LN">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -574,5 +561,6 @@
         <image name="ic_back" width="13" height="21"/>
         <image name="ic_done_white" width="24" height="24"/>
         <image name="ic_send" width="128" height="128"/>
+        <image name="ic_support" width="24" height="24"/>
     </resources>
 </document>
