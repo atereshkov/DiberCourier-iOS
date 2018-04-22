@@ -46,6 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         
         UIApplication.shared.statusBarStyle = .lightContent
+        // TabBar title adjustment
+        UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -2)
         
         // SVProgressHUD Customizing
         customizeSVProgressHUD()
