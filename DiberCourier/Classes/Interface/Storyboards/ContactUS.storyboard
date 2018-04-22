@@ -482,7 +482,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="REc-kz-J1a">
-                                <rect key="frame" x="10" y="10" width="315" height="30"/>
+                                <rect key="frame" x="40" y="10" width="285" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -498,14 +498,25 @@
                                     <action selector="sendButtonPressed:" destination="gL6-8G-0ql" eventType="touchUpInside" id="0EI-lh-5VH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hK-LX-baB">
+                                <rect key="frame" x="4" y="8.5" width="33" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="DrR-ca-y8O"/>
+                                    <constraint firstAttribute="width" constant="33" id="Z0f-6L-eyt"/>
+                                </constraints>
+                                <color key="tintColor" red="0.46814084049999999" green="0.54440212249999997" blue="0.59869909290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="ic_attach_file"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="4hK-LX-baB" firstAttribute="centerY" secondItem="sey-WB-K7H" secondAttribute="centerY" id="DaG-nA-q9x"/>
+                            <constraint firstItem="REc-kz-J1a" firstAttribute="leading" secondItem="4hK-LX-baB" secondAttribute="trailing" constant="3" id="GxV-6Q-3sd"/>
                             <constraint firstItem="sey-WB-K7H" firstAttribute="trailing" secondItem="hZC-KP-K6q" secondAttribute="trailing" constant="8" id="YMP-RX-3Py"/>
                             <constraint firstItem="hZC-KP-K6q" firstAttribute="leading" secondItem="REc-kz-J1a" secondAttribute="trailing" constant="10" id="edH-56-57J"/>
                             <constraint firstItem="hZC-KP-K6q" firstAttribute="centerY" secondItem="sey-WB-K7H" secondAttribute="centerY" id="gnx-Ma-uFu"/>
-                            <constraint firstItem="REc-kz-J1a" firstAttribute="leading" secondItem="sey-WB-K7H" secondAttribute="leading" constant="10" id="jqJ-yA-gQz"/>
                             <constraint firstItem="REc-kz-J1a" firstAttribute="centerY" secondItem="sey-WB-K7H" secondAttribute="centerY" id="ydt-lW-UPe"/>
+                            <constraint firstItem="4hK-LX-baB" firstAttribute="leading" secondItem="sey-WB-K7H" secondAttribute="leading" constant="4" id="zIT-uZ-AAQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sey-WB-K7H"/>
                     </view>
@@ -565,6 +576,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_attach_file" width="24" height="24"/>
         <image name="ic_back" width="13" height="21"/>
         <image name="ic_done_white" width="24" height="24"/>
         <image name="ic_send" width="128" height="128"/>
