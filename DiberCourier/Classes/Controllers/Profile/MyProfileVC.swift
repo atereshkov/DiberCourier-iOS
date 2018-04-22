@@ -115,10 +115,8 @@ extension MyProfileVC: MyProfileSupportDelegate {
     func contactButtonPressed(vc: MyProfileSupportVC) {
         let storyboard = UIStoryboard(name: Storyboards.tickets.rawValue, bundle: nil)
         
-        if let contactNavVC = storyboard.instantiateInitialViewController() as? UINavigationController,
-            let contactVC = contactNavVC.rootViewController as? TicketListVC {
-            //contactVC.delegate = self
-            self.navigationController?.pushViewController(contactVC, animated: true)
+        if let newTicketVC = storyboard.instantiateViewController(withIdentifier: Controllers.newTicket.rawValue) as? NewTicketVC {
+            self.present(newTicketVC, animated: true, completion: nil)
         }
     }
     

@@ -40,6 +40,7 @@ enum Cells: String {
 
 enum Controllers: String {
     case ticketDetails = "TicketVC"
+    case newTicket = "NewTicketVC"
 }
 
 class NetworkConstant {
