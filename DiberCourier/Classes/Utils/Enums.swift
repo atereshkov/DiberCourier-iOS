@@ -76,15 +76,15 @@ enum OrderStatus: String {
     
     case canceled_by_courier = "Canceled by courier"
     case canceled_by_customer = "Canceled by customer"
-    case completed_by_courier = "Completed by courier"
-    case completed_by_customer = "Completed by customer"
+    case completed_by_courier = "Delivered"
+    case completed_by_customer = "Completed"
     
     func displayName() -> String {
         switch self {
         case .canceled_by_courier: return "Canceled by courier"
         case .canceled_by_customer: return "Canceled by customer"
-        case .completed_by_courier: return "Completed by courier"
-        case .completed_by_customer: return "Completed by customer"
+        case .completed_by_courier: return "Delivered"
+        case .completed_by_customer: return "Completed"
         }
     }
     

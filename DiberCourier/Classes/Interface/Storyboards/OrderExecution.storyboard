@@ -155,6 +155,7 @@
                                             <constraint firstAttribute="height" constant="24" id="70H-S7-ZsU"/>
                                             <constraint firstAttribute="width" constant="40" id="jpG-Rh-kxX"/>
                                         </constraints>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="ic_info"/>
                                         <connections>
                                             <action selector="fromAddressPressed:" destination="qkI-KG-X74" eventType="touchUpInside" id="XQz-Dj-Pd1"/>
@@ -166,6 +167,7 @@
                                             <constraint firstAttribute="width" constant="40" id="Jkl-yg-14B"/>
                                             <constraint firstAttribute="height" constant="24" id="TaT-J0-D9e"/>
                                         </constraints>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="ic_info"/>
                                         <connections>
                                             <action selector="toAddressPressed:" destination="qkI-KG-X74" eventType="touchUpInside" id="aHo-cr-jgG"/>
@@ -527,12 +529,44 @@
                                             <action selector="cancelOrderDidPress:" destination="4mE-Gz-cEt" eventType="touchUpInside" id="Xit-WD-5vQ"/>
                                         </connections>
                                     </button>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ys2-fq-JPi">
+                                        <rect key="frame" x="0.0" y="46" width="375" height="48"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message goes here..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xam-WI-sbM">
+                                                <rect key="frame" x="16" y="16" width="138" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hr5-ed-NMz">
+                                                <rect key="frame" x="327" y="12" width="40" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="Enz-WY-r9e"/>
+                                                    <constraint firstAttribute="width" constant="40" id="zq7-cb-ryr"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="ic_info"/>
+                                                <connections>
+                                                    <action selector="statusInfoButtonPressed:" destination="4mE-Gz-cEt" eventType="touchUpInside" id="Jvc-8G-q0x"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Hr5-ed-NMz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xam-WI-sbM" secondAttribute="trailing" constant="8" id="BxM-fS-YZs"/>
+                                            <constraint firstItem="xam-WI-sbM" firstAttribute="leading" secondItem="ys2-fq-JPi" secondAttribute="leading" constant="16" id="DmL-Ib-hSs"/>
+                                            <constraint firstItem="xam-WI-sbM" firstAttribute="centerY" secondItem="ys2-fq-JPi" secondAttribute="centerY" id="HAx-pQ-fuZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="Hr5-ed-NMz" secondAttribute="trailing" constant="8" id="Wje-zP-7T6"/>
+                                            <constraint firstItem="Hr5-ed-NMz" firstAttribute="centerY" secondItem="ys2-fq-JPi" secondAttribute="centerY" id="muS-Ok-gBp"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="AGv-gE-1Th" firstAttribute="top" secondItem="Bq9-zJ-pYF" secondAttribute="bottom" constant="10" id="2BQ-OQ-axv"/>
                                     <constraint firstAttribute="height" constant="94" id="2yG-at-aVY"/>
                                     <constraint firstItem="Bq9-zJ-pYF" firstAttribute="leading" secondItem="tGA-hU-J3M" secondAttribute="leading" id="6wt-Ax-BIs"/>
+                                    <constraint firstAttribute="bottom" secondItem="ys2-fq-JPi" secondAttribute="bottom" id="7V5-Bg-Kq6"/>
                                     <constraint firstItem="2gr-tO-gka" firstAttribute="width" secondItem="tGA-hU-J3M" secondAttribute="width" multiplier="1:2.3" id="KIi-3F-yHD"/>
                                     <constraint firstItem="AGv-gE-1Th" firstAttribute="width" secondItem="2gr-tO-gka" secondAttribute="width" id="OWa-C4-Ifb"/>
                                     <constraint firstItem="2gr-tO-gka" firstAttribute="top" secondItem="Bq9-zJ-pYF" secondAttribute="bottom" constant="10" id="SVb-vT-Jk3"/>
@@ -540,6 +574,9 @@
                                     <constraint firstAttribute="trailing" secondItem="AGv-gE-1Th" secondAttribute="trailing" constant="16" id="fZo-49-i8f"/>
                                     <constraint firstAttribute="trailing" secondItem="Bq9-zJ-pYF" secondAttribute="trailing" id="gBX-lB-FZh"/>
                                     <constraint firstItem="Bq9-zJ-pYF" firstAttribute="top" secondItem="tGA-hU-J3M" secondAttribute="top" id="oqb-wR-YhT"/>
+                                    <constraint firstItem="ys2-fq-JPi" firstAttribute="top" secondItem="Bq9-zJ-pYF" secondAttribute="bottom" id="rZf-R3-YsQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="ys2-fq-JPi" secondAttribute="trailing" id="t2Q-Lj-dIA"/>
+                                    <constraint firstItem="ys2-fq-JPi" firstAttribute="leading" secondItem="tGA-hU-J3M" secondAttribute="leading" id="vm2-6T-8kX"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -564,11 +601,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="R1Y-8P-k7V"/>
                     <connections>
+                        <outlet property="cancelButton" destination="AGv-gE-1Th" id="x03-jo-aeA"/>
+                        <outlet property="completeButton" destination="2gr-tO-gka" id="Euh-lm-66q"/>
                         <outlet property="detailsView" destination="qkI-KG-X74" id="Qc3-E3-EYF"/>
                         <outlet property="distanceView" destination="vs8-zz-Lr5" id="Sx3-sv-AmA"/>
                         <outlet property="mapView" destination="zcY-zo-jNT" id="S9d-se-Iej"/>
                         <outlet property="orderStatusView" destination="3pP-wK-Klb" id="clF-nh-PKT"/>
                         <outlet property="priceView" destination="MIi-UM-A4D" id="MSV-vP-RrW"/>
+                        <outlet property="subMessageLabel" destination="xam-WI-sbM" id="zs7-7g-j40"/>
+                        <outlet property="subMessageView" destination="ys2-fq-JPi" id="ObL-qy-YjR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gh8-2L-uhN" userLabel="First Responder" sceneMemberID="firstResponder"/>

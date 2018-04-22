@@ -19,6 +19,10 @@ class OrderExecutionVC: UIViewController {
     @IBOutlet weak var priceView: OrderPriceView!
     @IBOutlet weak var distanceView: OrderDistanceView!
     @IBOutlet weak var orderStatusView: UILabel!
+    @IBOutlet weak var completeButton: RoundedStyledButton!
+    @IBOutlet weak var cancelButton: RoundedStyledButton!
+    @IBOutlet weak var subMessageView: UIView!
+    @IBOutlet weak var subMessageLabel: UILabel!
     
     fileprivate var loadingData = false // Used to prevent multiple simultanious load requests
     
@@ -43,6 +47,11 @@ class OrderExecutionVC: UIViewController {
     
     @IBAction func backButtonDidPress(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func statusInfoButtonPressed(_ sender: Any) {
+        guard let order = self.order else { return }
+        // TODO Show popup
     }
     
     @IBAction func completeOrderDidPress(_ sender: Any) {
@@ -72,6 +81,7 @@ class OrderExecutionVC: UIViewController {
         self.order = orderView
         
         guard let order = self.order else { return }
+        subMessageView.isHidden = true
         detailsView.set(order: order)
         priceView.setPrice(order.price)
         orderStatusView.text = order.status
@@ -86,6 +96,19 @@ class OrderExecutionVC: UIViewController {
         let loc2 = CLLocation(latitude: latitude2, longitude: longitude2)
         let distance: CLLocationDistance = loc1.distance(from: loc2)
         distanceView.set(distance: distance)
+        
+        // TODO extract order status to enum
+        if order.status == "Delivered" {
+            cancelButton.isHidden = true
+            completeButton.isHidden = true
+            subMessageView.isHidden = false
+            subMessageLabel.text = "Order was delivered. Customer has 48 hours to approve the delivery"
+        } else if order.status == "Completed" {
+            cancelButton.isHidden = true
+            completeButton.isHidden = true
+            subMessageView.isHidden = false
+            subMessageLabel.text = "Order was approved by the customer"
+        }
     }
     
 }
@@ -244,7 +267,7 @@ extension OrderExecutionVC {
         loadingData = true
         SVProgressHUD.show()
         
-        OrderService.shared.getOrder(id: id) { [weak self] (result) in
+        OrderService.shared.cancelOrder(id: id) { [weak self] (result) in
             guard let self_ = self else { return }
             defer {
                 SVProgressHUD.dismiss()
@@ -253,6 +276,7 @@ extension OrderExecutionVC {
             
             switch result {
             case .Success(let order):
+                // TODO
                 self_.setup(order)
             case .UnexpectedError(let error):
                 self_.showUnexpectedErrorAlert(error: error)
@@ -268,7 +292,7 @@ extension OrderExecutionVC {
         loadingData = true
         SVProgressHUD.show()
         
-        OrderService.shared.getOrder(id: id) { [weak self] (result) in
+        OrderService.shared.completeOrder(id: id) { [weak self] (result) in
             guard let self_ = self else { return }
             defer {
                 SVProgressHUD.dismiss()
@@ -278,7 +302,7 @@ extension OrderExecutionVC {
             switch result {
             case .Success(let order):
                 // TODO do something
-                break
+                self_.setup(order)
             case .UnexpectedError(let error):
                 self_.showUnexpectedErrorAlert(error: error)
             case .OfflineError:

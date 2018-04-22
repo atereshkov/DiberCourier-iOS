@@ -109,7 +109,7 @@ extension OrderListVC: OrdersTableDelegate {
     func didSelectOrder(order: OrderView) {
         // TODO: change status to Enum
         switch order.status {
-        case "In progress":
+        case "In progress", "Delivered", "Completed":
             let storyboard = UIStoryboard(name: Storyboards.orderExecution.rawValue, bundle: nil)
             
             if let navVC = storyboard.instantiateInitialViewController() as? UINavigationController,

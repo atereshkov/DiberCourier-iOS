@@ -28,13 +28,13 @@ class OrderService: NSObject {
     }
     
     enum CompleteOrderResult {
-        case Success()
+        case Success(order: OrderDTO)
         case OfflineError
         case UnexpectedError(error: Error?)
     }
     
     enum CancelOrderResult {
-        case Success()
+        case Success(order: OrderDTO)
         case OfflineError
         case UnexpectedError(error: Error?)
     }
@@ -111,8 +111,8 @@ class OrderService: NSObject {
             .validate()
             .responseJSON { response in
                 if response.result.error == nil, let data = response.result.value as? [String: Any] {
-                    if let _ = OrderDTO.with(data: data) {
-                        callback?(CompleteOrderResult.Success())
+                    if let order = OrderDTO.with(data: data) {
+                        callback?(CompleteOrderResult.Success(order: order))
                     } else {
                         callback?(CompleteOrderResult.UnexpectedError(error: response.result.error))
                     }
@@ -129,8 +129,8 @@ class OrderService: NSObject {
             .validate()
             .responseJSON { response in
                 if response.result.error == nil, let data = response.result.value as? [String: Any] {
-                    if let _ = OrderDTO.with(data: data) {
-                        callback?(CancelOrderResult.Success())
+                    if let order = OrderDTO.with(data: data) {
+                        callback?(CancelOrderResult.Success(order: order))
                     } else {
                         callback?(CancelOrderResult.UnexpectedError(error: response.result.error))
                     }
